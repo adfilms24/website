@@ -4,9 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Cinematographer & Content Creator — Visual storytelling für Brands, Events und Social Media. Basel, Zürich & International.">
-<meta name="keywords" content="Cinematographer, Fotograf, Videograf, Content Creator, Commercial Video, Social Media, Drohne, Brand Films">
+<meta name="keywords" content="Cinematographer, Videograf, Content Creator, Commercial Video, Social Media, Drohne, Brand Film">
 <meta name="author" content="Abdi Dhiblawe">
-<title>www.adfilms24.ch — Cinematography & Direction</title>
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#060606">
+<link rel="canonical" href="https://www.a.d.films24.ch/">
+<title>www.a.d.films24.ch — Cinematography & Direction</title>
+
+<!-- Favicon (inline SVG, no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060606'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23777777'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060606'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23777777'/%3E%3C/svg%3E">
+
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="a.d.films24">
+<meta property="og:title" content="A.D. Films24 — Cinematography & Direction">
+<meta property="og:description" content="Cinematographer & Content Creator — Visual storytelling für Brands, Events und Social Media. Zürich & International.">
+<meta property="og:url" content="https://www.a.d.films24.ch/">
+<meta property="og:locale" content="de_CH">
+<meta property="og:image" content="https://www.a.d.films24.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A.D. Films24 — Cinematography & Direction">
+<meta name="twitter:description" content="Cinematographer & Content Creator — Visual storytelling für Brands, Events und Social Media. Zürich & International.">
+<meta name="twitter:image" content="https://www.a.d.films24.ch/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "A.D. Films24",
+  "founder": { "@type": "Person", "name": "Abdi Dhiblawe" },
+  "description": "Cinematographer & Content Creator — Visual storytelling für Brands, Events und Social Media.",
+  "url": "https://www.a.d.films24.ch/",
+  "email": "abdi.dhiblawe1@gmail.com",
+  "telephone": "+41767649300",
+  "areaServed": ["Zürich", "Basel", "Schweiz"],
+  "sameAs": [
+    "https://instagram.com/a.d.films24",
+    "https://www.youtube.com/@adfilms24"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,63 +109,6 @@ body {
 a { color: inherit; text-decoration: none; }
 button { background: none; border: none; color: inherit; font-family: inherit; cursor: none; }
 img, video { display: block; max-width: 100%; }
-
-/* Password gate overlay */
-.access-gate {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(6,6,6,0.95);
-  z-index: 10050;
-  padding: 2rem;
-  text-align: center;
-}
-.access-gate.active { display: flex; }
-.access-gate-panel {
-  width: min(520px, 100%);
-  background: rgba(14,14,14,0.98);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.35);
-}
-.access-gate h2 {
-  font-family: var(--f-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
-}
-.access-gate p {
-  color: var(--bone-60);
-  margin-bottom: 1.8rem;
-  line-height: 1.75;
-}
-.access-gate input {
-  width: 100%;
-  padding: 1rem 1rem;
-  font-family: var(--f-mono);
-  font-size: 0.95rem;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.03);
-  color: var(--bone);
-  margin-bottom: 1rem;
-}
-.access-gate button {
-  width: 100%;
-  padding: 1rem 1rem;
-  background: var(--orange);
-  color: var(--void);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 600;
-}
-.access-gate .gate-note {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--bone-25);
-}
-
 ::-webkit-scrollbar { width: 2px; }
 ::-webkit-scrollbar-track { background: var(--void); }
 ::-webkit-scrollbar-thumb { background: var(--orange); }
@@ -290,8 +274,17 @@ body::after {
   letter-spacing: 0.08em;
   color: var(--bone);
   transition: color .3s;
+  display: flex;
+  align-items: center;
 }
 .nav-logo span { color: var(--orange); }
+.nav-logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
+  transition: height .4s var(--swift);
+}
+#nav.pinned .nav-logo-img { height: 26px; }
 
 .nav-center {
   display: flex;
@@ -1610,11 +1603,15 @@ footer {
 }
 
 @media (max-width: 480px) {
-  body { cursor: auto; }
-  #dot, #ring { display: none; }
   .lbox-t, .lbox-b { height: 7%; }
   .hero-scroll { display: none; }
   .counters { grid-template-columns: 1fr; }
+}
+
+/* Disable custom cursor on touch/no-hover devices (tablets, phones) */
+@media (hover: none), (pointer: coarse) {
+  body, button { cursor: auto; }
+  #dot, #ring { display: none; }
 }
 </style>
 </head>
@@ -1651,12 +1648,14 @@ footer {
   <a href="#services" class="mnav-item" onclick="closeM()">LEISTUNGEN</a>
   <a href="#testimonials" class="mnav-item" onclick="closeM()">KUNDEN</a>
   <a href="#contact" class="mnav-item" onclick="closeM()">KONTAKT</a>
-  <p class="mnav-bottom">© 2024 · Zürich & LONDON</p>
+  <p class="mnav-bottom">© 2025 · Zürich & International</p>
 </div>
 
 <!-- ── NAV ────────────────────────────── -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">www.a.d.films24.ch<span>.</span></a>
+  <a href="#hero" class="nav-logo">
+    <img src="logo.svg" alt="A.D. Films24" class="nav-logo-img">
+  </a>
   <ul class="nav-center">
     <li><a href="#portfolio">Projekte</a></li>
     <li><a href="#about">Über mich</a></li>
@@ -1680,10 +1679,12 @@ footer {
 ══════════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline preload="metadata" poster="poster.jpg">
-      <source src="showreel.mp4" type="video/mp4">
-      Dein Browser unterstützt dieses Video-Format nicht.
-    </video>
+    <!--
+      VIDEO: Ersetze den Platzhalter:
+      <video autoplay muted loop playsinline preload="none" poster="poster.jpg">
+        <source src="showreel.mp4" type="video/mp4">
+      </video>
+    -->
     <div class="hero-bg-ph"></div>
   </div>
 
@@ -1727,21 +1728,24 @@ footer {
   <div class="hero-body" style="max-width:1440px; margin:0 auto;">
     <p class="hero-eyebrow">
       <span class="hero-eyebrow-line"></span>
-      Videograf & Content Creator  Zürich
+      Videograf & Content Creator · Zürich
     </p>
     <h1 class="hero-h1">
       <span class="h1-row"><span class="h1-inner">CREATE</span></span>
       <span class="h1-row"><span class="h1-inner">MORE.</span></span>
     </h1>
     <div class="hero-sub-row">
-      <p class="hero-desc">Cinematic Precision. Emotional Impact.<br>For Brands, who wanna stand out.</p>
+      <p class="hero-desc">Cinematic Precision. Emotional Impact.<br>Für Brands, die unvergessen bleiben wollen.</p>
       <div class="hero-actions">
         <a href="#portfolio" class="cta-primary">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
           Portfolio
         </a>
-        <a href="#contact" class="cta-ghost">Request Project</a>
-        <a href="/showreel.mp4" download class="cta-ghost">Download Showreel</a>
+        <a href="#contact" class="cta-ghost">Projekt anfragen</a>
+        <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="cta-ghost">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 3.5v5l4-2.5-4-2.5z" fill="currentColor"/></svg>
+          YouTube Kanal
+        </a>
       </div>
     </div>
   </div>
@@ -1775,19 +1779,19 @@ footer {
   <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
     <div class="counters">
       <div class="ctr" data-n="01" data-sr="u">
-        <div class="ctr-val">20<sup>+</sup></div>
+        <div class="ctr-val">120<sup>+</sup></div>
         <div class="ctr-lbl">Projekte realisiert</div>
       </div>
       <div class="ctr" data-n="02" data-sr="u" data-d="2">
-        <div class="ctr-val">2</div>
+        <div class="ctr-val">1</div>
         <div class="ctr-lbl">Jahre Erfahrung</div>
       </div>
       <div class="ctr" data-n="03" data-sr="u" data-d="3">
-        <div class="ctr-val">4<sup>+</sup></div>
+        <div class="ctr-val">40<sup>+</sup></div>
         <div class="ctr-lbl">Premium-Kunden</div>
       </div>
       <div class="ctr" data-n="04" data-sr="u" data-d="4">
-        <div class="ctr-val">100K<sup>+</sup></div>
+        <div class="ctr-val">8M<sup>+</sup></div>
         <div class="ctr-lbl">Views generiert</div>
       </div>
     </div>
@@ -1817,25 +1821,18 @@ footer {
       </div>
     </div>
 
-    <div class="pf-video" data-sr="u" data-d="4" style="margin: 2.5rem 0; overflow: hidden; border-radius: 24px; background: #090909;">
-      <video controls preload="metadata" poster="poster.jpg" style="width:100%; display:block;">
-        <source src="showreel.mp4" type="video/mp4">
-        Dein Browser unterstützt das Video-Format nicht.
-      </video>
-    </div>
-
     <div class="pf-mosaic" data-sr="u" data-d="2">
 
       <!-- XL Featured -->
       <div class="pf-cell" data-size="xl" data-cat="commercial"
-           data-title="FINELLI — URBAN MOTION" data-client="FINELLI Switzerland"
-           data-cam="Sony FX3 / DJI Ronin 5 " data-year="2024"
-           data-desc="Cineastische Kurzfilme für einen Streetbrand in der Schweiz. Urbane Bewegung und sportliche Energie — gedreht auf den Straßen Zürichs von der Golden Hour bis Blue Hour. Roh, echt, kraftvoll."
+           data-title="NIKE — URBAN MOTION" data-client="Nike Switzerland"
+           data-cam="Sony FX3 / DJI Ronin 4D" data-year="2024"
+           data-desc="Cineastische Kampagne für Nike Schweiz. Urbane Bewegung und sportliche Energie — gedreht auf den Straßen Zürichs von der Golden Hour bis Blue Hour. Roh, echt, kraftvoll."
            onclick="openModal(this)">
         <div class="pf-cell-bg bg-a"><span class="pf-glyph">N</span></div>
         <div class="pf-overlay">
           <div class="pf-tag">Commercial · 2024</div>
-          <div class="pf-title">Streetbrand — URBAN MOTION</div>
+          <div class="pf-title">NIKE — URBAN MOTION</div>
         </div>
         <div class="pf-caret">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
@@ -1846,12 +1843,12 @@ footer {
       <div class="pf-cell" data-size="tall" data-cat="real-estate"
            data-title="PENTHOUSE ZÜRICHSEE" data-client="Sotheby's International"
            data-cam="DJI Inspire 3 / RED Komodo" data-year="2024"
-           data-desc="Luxuriöse Immobilienpräsentation eines Apartments direkt am Zürichsee. Drohnenaufnahmen bei Sonnenuntergang, cinematische Innenraumshots mit natürlichem Licht."
+           data-desc="Luxuriöse Immobilienpräsentation eines Penthouse-Apartments direkt am Zürichsee. Drohnenaufnahmen bei Sonnenuntergang, cinematische Innenraumshots mit natürlichem Licht."
            onclick="openModal(this)">
         <div class="pf-cell-bg bg-b"><span class="pf-glyph">◆</span></div>
         <div class="pf-overlay">
           <div class="pf-tag">Real Estate · 2024</div>
-          <div class="pf-title">Apartment ZÜRICHSEE</div>
+          <div class="pf-title">PENTHOUSE ZÜRICHSEE</div>
         </div>
         <div class="pf-caret">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
@@ -1860,13 +1857,14 @@ footer {
 
       <!-- Wide -->
       <div class="pf-cell" data-size="wide" data-cat="automotive"
-           data-title="PORSCHE 911 — RAW POWER" data-client="Auto Zentrum Zürich"
+           data-title="PORSCHE 911 — RAW POWER" data-client="Porsche Zentrum Zürich"
            data-cam="Sony FX6 / Phantom Flex 4K" data-year="2023"
-           data-desc="Hochgeschwindigkeits-Cinematik für Autos. Slow-Motion bis 1.000fps trifft auf dramatische Fahraufnahmen durch die Alpen."
+           data-desc="Hochgeschwindigkeits-Cinematik für den Porsche 911 GT3. Slow-Motion bis 1.000fps trifft auf dramatische Fahraufnahmen durch die Alpen."
            onclick="openModal(this)">
         <div class="pf-cell-bg bg-c"><span class="pf-glyph">◎</span></div>
         <div class="pf-overlay">
           <div class="pf-tag">Automotive · 2023</div>
+          <div class="pf-title">PORSCHE 911 — RAW POWER</div>
         </div>
         <div class="pf-caret">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
@@ -1875,14 +1873,14 @@ footer {
 
       <!-- Wide -->
       <div class="pf-cell" data-size="wide" data-cat="travel"
-           data-title="WANDERLUST — Schweiz" data-client="Swiss Travel Agency"
+           data-title="WANDERLUST — ICELAND" data-client="Swiss Travel Agency"
            data-cam="Sony FX3 / DJI Mini 4 Pro" data-year="2024"
-           data-desc="Zwei Tage durch Berge Extremlandschaften:  Geysire, Gletscherhöhlen. Eine visuelle Reise."
+           data-desc="Zehn Tage durch Islands Extremlandschaften: Polarlichter, Geysire, Gletscherhöhlen. Eine visuelle Reise, die Fernweh weckt."
            onclick="openModal(this)">
         <div class="pf-cell-bg bg-d"><span class="pf-glyph">✦</span></div>
         <div class="pf-overlay">
           <div class="pf-tag">Travel · 2024</div>
-          <div class="pf-title">WANDERLUST — Schweiz</div>
+          <div class="pf-title">WANDERLUST — ICELAND</div>
         </div>
         <div class="pf-caret">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
@@ -1909,7 +1907,7 @@ footer {
       <div class="pf-cell" data-size="sq" data-cat="social"
            data-title="@BRAND — SOCIAL SERIES" data-client="Luxury Skincare Brand"
            data-cam="Sony A7 IV / Zhiyun Crane 4" data-year="2024"
-           data-desc="Monatliche Content-Serie für Instagram & TikTok. 12 Reels, Mehr + Views. Sell-out nach jedem Posting. Modernes Brand Storytelling."
+           data-desc="Monatliche Content-Serie für Instagram & TikTok. 12 Reels, 40M+ Views. Sell-out nach jedem Posting. Modernes Brand Storytelling."
            onclick="openModal(this)">
         <div class="pf-cell-bg bg-f"><span class="pf-glyph">∞</span></div>
         <div class="pf-overlay">
@@ -1931,11 +1929,11 @@ footer {
     <span class="dm-item">VISUAL <span class="o">STORIES</span></span>
     <span class="dm-item">CINEMATIC <span class="o">PRECISION</span></span>
     <span class="dm-item">PREMIUM <span class="o">CONTENT</span></span>
-    <span class="dm-item">ZÜRICH & <span class="o">LONDON</span></span>
+    <span class="dm-item">ZÜRICH & <span class="o">INTERNATIONAL</span></span>
     <span class="dm-item">VISUAL <span class="o">STORIES</span></span>
     <span class="dm-item">CINEMATIC <span class="o">PRECISION</span></span>
     <span class="dm-item">PREMIUM <span class="o">CONTENT</span></span>
-    <span class="dm-item">ZÜRICH & <span class="o">LONDON</span></span>
+    <span class="dm-item">ZÜRICH & <span class="o">INTERNATIONAL</span></span>
   </div>
 </div>
 
@@ -1969,13 +1967,13 @@ footer {
           MEINE VISION,<br><span class="serif">deine Geschichte</span>
         </h2>
         <p class="about-bio">
-          A.D.Films24 ist ein Videoproduktions-Studio aus Zürich, Schweiz. Wir produzieren professionelle Brand Films, Social Media Content, Eventvideos, Drohnenaufnahmen und Unternehmensfotos für Firmen, Start-ups, Restaurants und Influencer in der ganzen Schweiz. Von Konzept bis Color Grading — kreativ, schnell, hochwertig., Videograf und Content Creator aus Zürich — mit einer <strong>tiefen Leidenschaft für visuelles Storytelling</strong>. Was mich antreibt, ist nicht die Technik, sondern der Moment, in dem ein Bild etwas auslöst.
+          Ich bin Abdi Dhiblawe, Cinematographer und Content Creator aus Zürich — mit einer <strong>tiefen Leidenschaft für visuelles Storytelling</strong>. Was mich antreibt, ist nicht die Technik, sondern der Moment, in dem ein Bild etwas auslöst.
         </p>
         <p class="about-bio">
-          Mit 2 Jahr Erfahrung in <strong>Commercial, Streetfilms und Social Media</strong> haben wir gelernt: Jede Marke hat eine Geschichte. Die Frage ist nur, ob sie gut genug erzählt wird.
+          Mit über 1 Jahr Erfahrung in <strong>Commercial, Automotive, Real Estate und Social Media</strong> habe ich gelernt: Jede Marke hat eine Geschichte. Die Frage ist nur, ob sie gut genug erzählt wird.
         </p>
         <p class="about-bio">
-          Wir arbeiten international — von Zürich bis London — mit einem klaren Anspruch: <strong>kein Kompromiss in Qualität.</strong>
+          Ich arbeite international — von Zürich bis Dubai — mit einem klaren Anspruch: <strong>kein Kompromiss in Qualität.</strong>
         </p>
 
         <div class="gear-section">
@@ -2006,10 +2004,10 @@ footer {
     <div class="srv-header">
       <div>
         <div class="s-meta" data-sr="u">Leistungen</div>
-        <h2 class="h-display" data-sr="u" data-d="2">WAS WIR FÜR<br><span class="accent">DICH TUN</span></h2>
+        <h2 class="h-display" data-sr="u" data-d="2">WAS ICH FÜR<br><span class="accent">DICH TUE.</span></h2>
       </div>
       <p class="srv-header-desc" data-sr="r" data-d="2">
-        Von der ersten Idee bis zum finalen Export alles aus einer Hand. Kein Kompromiss. Kein Schritt übersprungen.
+        Von der ersten Idee bis zum finalen Export — alles aus einer Hand. Kein Kompromiss. Kein Schritt übersprungen.
       </p>
     </div>
 
@@ -2122,8 +2120,8 @@ footer {
           <p class="test-body">„Die Qualität hat unsere Erwartungen bei weitem übertroffen. Unser Instagram-Engagement stieg um 340% — wir buchen bereits das nächste Projekt."</p>
           <div class="test-foot">
             <div>
-              <div class="test-author-name">MARC.</div>
-              <div class="test-author-role">SALES AGENT · Luxury Brand Zürich</div>
+              <div class="test-author-name">Sarah M.</div>
+              <div class="test-author-role">CMO · Luxury Brand Zürich</div>
             </div>
             <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
           </div>
@@ -2132,11 +2130,11 @@ footer {
         <div class="test-card" data-sr="r" data-d="2">
           <span class="test-q">&ldquo;</span>
           <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="test-body">„Professionell, kreativ, zuverlässig.“</p>
+          <p class="test-body">„Professionell, kreativ, zuverlässig. Der Automotive-Film wurde intern als bestes Content-Stück des Jahres ausgezeichnet. Absolute Empfehlung."</p>
           <div class="test-foot">
             <div>
-              <div class="test-author-name">SHANIK.</div>
-              <div class="test-author-role">MODEL ·</div>
+              <div class="test-author-name">Thomas K.</div>
+              <div class="test-author-role">Marketing Director · Autohaus AG</div>
             </div>
             <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
           </div>
@@ -2148,8 +2146,8 @@ footer {
           <p class="test-body">„48 Stunden nach dem Brand Film hatten wir mehr Anfragen als im ganzen Vorjahr. Der ROI war schlicht unglaublich."</p>
           <div class="test-foot">
             <div>
-              <div class="test-author-name">Marc </div>
-              <div class="test-author-role">Saler Agent · Tech Startup Zürich</div>
+              <div class="test-author-name">Marc F.</div>
+              <div class="test-author-role">Founder · Tech Startup Zürich</div>
             </div>
             <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
           </div>
@@ -2157,10 +2155,10 @@ footer {
 
         <div class="test-card" data-sr="r" data-d="4">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Unser Event wurde so festgehalten, als wäre es ein Kurzfilm. Das Editing ist auf einem anderen Level! Wir haben ihn auf allen Kanälen eingesetzt."</p>
+          <p class="test-body">„Unser Event wurde so festgehalten, als wäre es ein Kurzfilm. Das Editing ist auf einem anderen Level — wir haben ihn auf allen Kanälen eingesetzt."</p>
           <div class="test-foot">
             <div>
-              <div class="test-author-name">Laura </div>
+              <div class="test-author-name">Laura B.</div>
               <div class="test-author-role">Event Manager · Basel</div>
             </div>
             <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
@@ -2169,7 +2167,15 @@ footer {
       </div>
     </div>
 
- 
+    <div class="clients-strip" data-sr="u" data-d="2">
+      <span class="client-logo">NIKE</span>
+      <span class="client-logo">PORSCHE</span>
+      <span class="client-logo">SOTHEBY'S</span>
+      <span class="client-logo">ART BASEL</span>
+      <span class="client-logo">NESPRESSO</span>
+      <span class="client-logo">IWC</span>
+      <span class="client-logo">AUDI</span>
+      <span class="client-logo">MARRIOTT</span>
     </div>
   </div>
 </section>
@@ -2187,20 +2193,24 @@ footer {
         <div class="s-meta" data-sr="u">Kontakt</div>
         <h2 class="h-display" data-sr="u" data-d="2">LASS UNS<br>REDEN.</h2>
         <p class="contact-tagline" data-sr="u" data-d="3">
-          Bereit für ein Projekt, das bleibt? Schreib mir.
+          Bereit für ein Projekt, das bleibt? Schreib mir — 
         </p>
         <div class="contact-links" data-sr="u" data-d="4">
-          <a href="mailto:abdi.dhiblawe@gmail.com" class="contact-item">
+          <a href="mailto:abdi.dhiblawe1@gmail.com" class="contact-item">
             <div class="contact-icon">✉</div>
-            <div><span class="c-lbl">E-Mail</span><span class="c-val">a.dfilms24@gmail.com</span></div>
+            <div><span class="c-lbl">E-Mail</span><span class="c-val">abdi.dhiblawe1@gmail.com</span></div>
           </a>
-          <a href="https://wa.me/41767649300" target="_blank" class="contact-item">
+          <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-icon">💬</div>
             <div><span class="c-lbl">WhatsApp</span><span class="c-val">+41 76 764 93 00</span></div>
           </a>
-          <a href="https://instagram.com/a.d.films24" target="_blank" class="contact-item">
+          <a href="https://instagram.com/a.d.films24" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-icon">◈</div>
             <div><span class="c-lbl">Instagram</span><span class="c-val">@a.d.films24</span></div>
+          </a>
+          <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">▶</div>
+            <div><span class="c-lbl">YouTube</span><span class="c-val">@adfilms24</span></div>
           </a>
         </div>
       </div>
@@ -2208,21 +2218,21 @@ footer {
       <form class="contact-form" data-sr="r" data-d="2" onsubmit="sendForm(event)">
         <div class="f-row">
           <div class="f-group">
-            <label>Vorname</label>
-            <input type="text" placeholder="Max" required>
+            <label for="f-vorname">Vorname</label>
+            <input id="f-vorname" name="vorname" type="text" placeholder="Abdi" autocomplete="given-name" required>
           </div>
           <div class="f-group">
-            <label>Nachname</label>
-            <input type="text" placeholder="Mustermann" required>
+            <label for="f-nachname">Nachname</label>
+            <input id="f-nachname" name="nachname" type="text" placeholder="Dhiblawe" autocomplete="family-name" required>
           </div>
         </div>
         <div class="f-group">
-          <label>E-Mail</label>
-          <input type="email" placeholder="max@beispiel.ch" required>
+          <label for="f-email">E-Mail</label>
+          <input id="f-email" name="email" type="email" placeholder="max@beispiel.ch" autocomplete="email" required>
         </div>
         <div class="f-group">
-          <label>Projekttyp</label>
-          <select>
+          <label for="f-projekttyp">Projekttyp</label>
+          <select id="f-projekttyp" name="projekttyp" required>
             <option value="" disabled selected>— Bitte wählen —</option>
             <option>Commercial / Brand Film</option>
             <option>Social Media Content</option>
@@ -2231,8 +2241,8 @@ footer {
           </select>
         </div>
         <div class="f-group">
-          <label>Dein Projekt</label>
-          <textarea placeholder="Erzähl mir von deiner Vision — Zeitrahmen, Budget, Ziele …"></textarea>
+          <label for="f-nachricht">Dein Projekt</label>
+          <textarea id="f-nachricht" name="nachricht" placeholder="Erzähl mir von deiner Vision — Zeitrahmen, Budget, Ziele …"></textarea>
         </div>
         <div class="f-send">
           <button type="submit" class="cta-primary" id="sendBtn">
@@ -2261,14 +2271,14 @@ footer {
       <li><a href="#">Datenschutz</a></li>
     </ul>
     <div class="footer-socials">
-      <a href="https://instagram.com" target="_blank" class="fsoc">IG</a>
-      <a href="https://vimeo.com" target="_blank" class="fsoc">VI</a>
-      <a href="https://youtube.com" target="_blank" class="fsoc">YT</a>
+      <a href="https://instagram.com/a.d.films24" target="_blank" rel="noopener" class="fsoc">IG</a>
+      <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="fsoc">WA</a>
+      <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="fsoc">YT</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 www.a.d.films24.ch Alle Rechte vorbehalten.</span>
-    <span class="footer-copy">Zürich · LONDON · International · Made with precision.</span>
+    <span class="footer-copy">© 2025 www.a.d.films24.ch. Alle Rechte vorbehalten.</span>
+    <span class="footer-copy">Zürich · International · Made with precision.</span>
   </div>
 </footer>
 
@@ -2304,22 +2314,11 @@ footer {
 </div>
 
 <!-- ══════════════════════════════════════
-     PASSWORD GATE
-══════════════════════════════════════════ -->
-<div id="accessGate" class="access-gate">
-  <div class="access-gate-panel">
-    <h2>Zugangscode erforderlich</h2>
-    <p>Gib dein Einmalpasswort ein, um die Website freizuschalten.</p>
-    <input id="gatePassword" type="password" placeholder="Passwort" autocomplete="off" />
-    <button id="gateSubmit" type="button">Freischalten</button>
-    <p id="gateMessage" class="gate-note"></p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+window.addEventListener('DOMContentLoaded', () => emailjs.init("mzeYAXh6J84HSDX5j"));
 /* ── LOADER – FILM COUNTDOWN ─── */
 const loader = document.getElementById('loader');
 const lcount = document.getElementById('lcount');
@@ -2438,80 +2437,73 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 /* ── SHOWREEL ─── */
 document.getElementById('reelBtn').addEventListener('click', () => {
-  window.open('/showreel.mp4', '_blank');
-});
+  const modal = document.getElementById('modal');
+  const modalVid = document.getElementById('modalVid');
+  const showreelId = 'DEINE_VIDEO_ID'; // Ersetze mit deiner Vimeo- oder YouTube-ID
 
-/* ── PASSWORD GATE ─── */
-const ACCESS_PASSWORD = 'adfilms24';
-const STORAGE_KEY = 'adfilms24_access_used';
-const GATE_ALLOW_KEY = 'adfilms24_access_allowed';
-const accessGate = document.getElementById('accessGate');
-const gatePassword = document.getElementById('gatePassword');
-const gateSubmit = document.getElementById('gateSubmit');
-const gateMessage = document.getElementById('gateMessage');
+  document.getElementById('mT').textContent = 'Showreel 2024';
+  document.getElementById('mD').textContent = 'A.D.Films24 — Cinematography & Direction';
+  document.getElementById('mC').textContent = 'A.D.Films24';
+  document.getElementById('mK').textContent = 'Sony FX3';
+  document.getElementById('mY').textContent = '2024';
 
-function lockSite() {
-  accessGate.classList.add('active');
+  modalVid.innerHTML = `
+    <iframe
+      src="https://player.vimeo.com/video/${showreelId}?autoplay=1&color=777777&title=0&byline=0"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      style="width:100%;height:100%;border:0;"
+    ></iframe>`;
+
+  modal.classList.add('open');
   document.body.style.overflow = 'hidden';
-}
-function unlockSite() {
-  accessGate.classList.remove('active');
-  document.body.style.overflow = '';
-}
-function markAccessUsed() {
-  localStorage.setItem(STORAGE_KEY, 'true');
-  localStorage.setItem(GATE_ALLOW_KEY, 'true');
-}
-function isAccessAllowed() {
-  return localStorage.getItem(GATE_ALLOW_KEY) === 'true';
-}
-function isAccessUsed() {
-  return localStorage.getItem(STORAGE_KEY) === 'true';
-}
-function showGateMessage(text, error = false) {
-  gateMessage.textContent = text;
-  gateMessage.style.color = error ? '#ff7a66' : 'var(--bone-25)';
-}
-function validateGate() {
-  const value = gatePassword.value.trim();
-  if (!value) {
-    showGateMessage('Bitte gib ein Passwort ein.', true);
-    return;
-  }
-  if (value === ACCESS_PASSWORD) {
-    markAccessUsed();
-    unlockSite();
-    showGateMessage('Zugang gewährt. Willkommen!', false);
-    return;
-  }
-  showGateMessage('Falsches Passwort. Der Zugang wurde nicht freigeschaltet.', true);
-}
-
-gateSubmit.addEventListener('click', validateGate);
-gatePassword.addEventListener('keypress', e => {
-  if (e.key === 'Enter') validateGate();
 });
-
-if (!isAccessAllowed()) {
-  if (isAccessUsed()) {
-    showGateMessage('Dieses Passwort wurde bereits verwendet. Um einen neuen Zugang zu erhalten, kontaktiere uns.', true);
-    gatePassword.disabled = true;
-    gateSubmit.disabled = true;
-  }
-  lockSite();
-}
 
 /* ── FORM ─── */
 function sendForm(e) {
   e.preventDefault();
   const btn = document.getElementById('sendBtn');
-  btn.innerHTML = '✓ &nbsp;Gesendet!';
-  btn.style.background = '#1a6b3a';
-  setTimeout(() => {
-    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg> Anfrage senden';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3500);
+  const form = e.target;
+
+  const fd = new FormData(form);
+  const vorname = fd.get('vorname') || '';
+  const nachname = fd.get('nachname') || '';
+  const projekttyp = fd.get('projekttyp') || '';
+  const templateParams = {
+    name:        `${vorname} ${nachname}`.trim(),
+    title:       projekttyp,
+    email:       fd.get('email') || '',
+    projekttyp:  projekttyp,
+    nachricht:   fd.get('nachricht') || '',
+  };
+
+  // Button-Zustand: Laden
+  btn.disabled = true;
+  btn.innerHTML = '… Wird gesendet';
+
+  emailjs.send(
+    'service_3bk9u16',   // EmailJS Service ID (inserted)
+    'template_d87r2kf',  // EmailJS Template ID (inserted)
+    templateParams
+  ).then(() => {
+    btn.innerHTML = '✓ &nbsp;Gesendet!';
+    btn.style.background = '#1a6b3a';
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg> Anfrage senden';
+      btn.style.background = '';
+      form.reset();
+    }, 3500);
+  }).catch((err) => {
+    console.error('EmailJS Fehler:', err);
+    btn.disabled = false;
+    btn.innerHTML = '⚠ Fehler — Bitte erneut versuchen';
+    btn.style.background = '#6b1a1a';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg> Anfrage senden';
+      btn.style.background = '';
+    }, 4000);
+  });
 }
 </script>
 </body>
