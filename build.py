@@ -129,7 +129,15 @@ def projects_grid(l, t):
         </div>
       </a>''')
     single = " single" if len(pub) == 1 else ""
-    return (f'    <div class="pf-mosaic{single}" data-sr="u" data-d="2">\n' + "\n".join(cells) + "\n    </div>\n"
+    filters = ""
+    cats = []
+    for p in pub:
+        if p["category"] not in cats: cats.append(p["category"])
+    if len(pub) >= 3 and len(cats) >= 2:   # Filter erst sinnvoll, wenn mehrere Projekte/Kategorien da sind
+        btns = f'<button type="button" class="pf-btn active" data-f="all">{t["pf_all"]}</button>' + "".join(
+            f'<button type="button" class="pf-btn" data-f="{c}">{t["categories"].get(c, c)}</button>' for c in cats)
+        filters = f'    <div class="pf-filters" role="group" aria-label="{t["pf_filter_aria"]}" data-sr="u" style="margin-bottom:1.5rem">{btns}</div>\n'
+    return (filters + f'    <div class="pf-mosaic{single}" data-sr="u" data-d="2">\n' + "\n".join(cells) + "\n    </div>\n"
             f'    <p class="soon-note" style="margin-top:2px;" data-sr="u">{t["portfolio_soon"]}</p>')
 
 # ---------- Seiten ----------

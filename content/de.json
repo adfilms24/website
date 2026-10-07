@@ -94,6 +94,7 @@
     "Social Media",
     "Drohne",
     "Real Estate",
+    "Automotive",
     "Events",
     "Travel"
   ],
@@ -249,11 +250,14 @@
     "drone": "Drohne",
     "real-estate": "Real Estate",
     "events": "Events",
-    "travel": "Travel"
+    "travel": "Travel",
+    "automotive": "Automotive"
   },
   "legal_back": "← Zurück zur Startseite",
   "legal_home": "Startseite",
   "intro_note": "",
   "ld_area": "Schweiz",
-  "skip": "Zum Inhalt springen"
+  "skip": "Zum Inhalt springen",
+  "pf_all": "Alle",
+  "pf_filter_aria": "Projekte filtern"
 }
