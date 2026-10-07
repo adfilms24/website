@@ -21,35 +21,75 @@
   },
   {
     "slug": "commercial",
-    "published": false,
+    "published": true,
     "category": "commercial",
-    "year": "",
+    "year": "2026",
     "camera": "",
-    "client": "",
+    "client": "Shanike",
     "title": {
-      "de": "Commercial-Projekt",
-      "en": "Commercial project"
+      "de": "SHANIKE — MODEL COMMERCIAL",
+      "en": "SHANIKE — MODEL COMMERCIAL"
     },
     "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
-    }
+      "de": "Model-Content für Shanike: cineastisch inszeniert für Portfolio und Social Media.",
+      "en": "Model content for Shanike: cinematically staged for portfolio and social media."
+    },
+    "duration": "PT21S",
+    "uploadDate": "2026-06-22"
+  },
+  {
+    "slug": "phunnid",
+    "published": true,
+    "category": "commercial",
+    "year": "2024",
+    "camera": "",
+    "client": "PHUNNID",
+    "title": {
+      "de": "PHUNNID — BRAND SHOOTING",
+      "en": "PHUNNID — BRAND SHOOTING"
+    },
+    "desc": {
+      "de": "Brand-Präsentation eines neuen Kleidungsstücks — hochwertig inszeniert für Marke und Social Media.",
+      "en": "Brand presentation of a new garment — premium staging for the brand and social media."
+    },
+    "duration": "PT33S",
+    "uploadDate": "2026-09-16"
   },
   {
     "slug": "social-media",
-    "published": false,
+    "published": true,
     "category": "social",
-    "year": "",
+    "year": "2026",
     "camera": "",
-    "client": "",
+    "client": "Mahmoud Badri",
     "title": {
-      "de": "Social-Media-Projekt",
-      "en": "Social media project"
+      "de": "BADRI — PERSONAL TRAINING",
+      "en": "BADRI — PERSONAL TRAINING"
     },
     "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
-    }
+      "de": "Social-Media-Content für Personal Trainer Mahmoud Badri — vertikal fürs Feed.",
+      "en": "Social media content for personal trainer Mahmoud Badri — vertical for the feed."
+    },
+    "duration": "PT29S",
+    "uploadDate": "2026-06-15"
+  },
+  {
+    "slug": "events",
+    "published": true,
+    "category": "events",
+    "year": "2025",
+    "camera": "",
+    "client": "Safiya Qasil — ATTAR ONE",
+    "title": {
+      "de": "ATTAR ONE — EVENT",
+      "en": "ATTAR ONE — EVENT"
+    },
+    "desc": {
+      "de": "Event-Coverage für Safiya Qasil (ATTAR ONE) — vertikal eingefangen für Social Media.",
+      "en": "Event coverage for Safiya Qasil (ATTAR ONE) — captured vertically for social media."
+    },
+    "duration": "PT45S",
+    "uploadDate": "2025-11-11"
   },
   {
     "slug": "real-estate",
@@ -77,22 +117,6 @@
     "title": {
       "de": "Drohnen-Projekt",
       "en": "Drone project"
-    },
-    "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
-    }
-  },
-  {
-    "slug": "events",
-    "published": false,
-    "category": "events",
-    "year": "",
-    "camera": "",
-    "client": "",
-    "title": {
-      "de": "Event-Projekt",
-      "en": "Event project"
     },
     "desc": {
       "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
@@ -129,22 +153,6 @@
     "desc": {
       "de": "Cineastische Kampagne in der Schweiz: urbane Bewegung und sportliche Energie, gedreht auf den Strassen Zürichs von der Golden Hour bis zur Blue Hour. Roh, echt, kraftvoll.",
       "en": "Cinematic campaign in Switzerland: urban motion and athletic energy, shot on the streets of Zurich from golden hour to blue hour. Raw, real, powerful."
-    }
-  },
-  {
-    "slug": "phunnid",
-    "published": false,
-    "category": "commercial",
-    "year": "2024",
-    "camera": "",
-    "client": "",
-    "title": {
-      "de": "PHUNNID — BRAND SHOOTING",
-      "en": "PHUNNID — BRAND SHOOTING"
-    },
-    "desc": {
-      "de": "Brand-Präsentation eines neuen Kleidungsstücks — hochwertig inszeniert für Marke und Social Media.",
-      "en": "Brand presentation of a new garment — premium staging for the brand and social media."
     }
   }
 ]
