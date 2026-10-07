@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Impressum von A.D.Films24 — Abdi Dhiblawe, Cinematographer & Content Creator, Schweiz.">
+<meta name="description" content="Impressum von A.D.Films24 — Abdi Dhiblawe, Cinematographer &amp; Content Creator, Schweiz.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#060606">
 <link rel="canonical" href="https://www.adfilms24.ch/impressum.html">
 <title>Impressum — A.D.Films24</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060606'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23777777'/%3E%3C/svg%3E">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>
 :root {
   --void: #060606;
@@ -64,50 +60,90 @@ strong { color: var(--bone); font-weight: 500; }
 .meta-line { font-size: 0.78rem; color: var(--bone-60); margin-bottom: 3rem; }
 footer.page-foot { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); display:flex; gap:1.5rem; flex-wrap:wrap; font-size: 0.78rem; }
 footer.page-foot a { text-decoration: underline; }
+.toc { margin: 0 0 2.5rem; padding: 1.2rem 1.4rem; border: 1px solid var(--line); }
+.toc p { font-size: .7rem; text-transform: uppercase; letter-spacing: .16em; color: var(--bone-60); margin-bottom: .6rem; }
+.toc ol { margin: 0; padding-left: 1.3rem; columns: 2; column-gap: 2rem; }
+.toc li { font-size: .8rem; margin-bottom: .25rem; break-inside: avoid; }
+h3 { font-size: .85rem; font-weight: 500; color: var(--bone); margin: 1.4rem 0 .4rem; }
+table { width: 100%; border-collapse: collapse; margin: .5rem 0 1.4rem; font-size: .8rem; }
+th, td { text-align: left; vertical-align: top; padding: .65rem .7rem; border-bottom: 1px solid var(--line); color: var(--bone-60); }
+th { color: var(--bone); font-weight: 500; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.tbl-wrap { overflow-x: auto; }
+@media (max-width: 600px) { .toc ol { columns: 1; } }
+:focus-visible { outline: 2px solid var(--bone); outline-offset: 3px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="page-head">
-    <a href="index.html" class="logo">www.adfilms24.ch<span>.</span></a>
+    <a href="index.html" class="logo" aria-label="Zur Startseite">www.adfilms24.ch<span>.</span></a>
     <a href="index.html" class="back-link">← Zurück zur Startseite</a>
   </header>
 
   <h1>Impressum</h1>
-  <p class="meta-line">Angaben gemäss Art. 3 UWG (Bundesgesetz gegen den unlauteren Wettbewerb)</p>
+  <p class="meta-line">Angaben gemäss Art. 3 Abs. 1 lit. s UWG (Bundesgesetz gegen den unlauteren Wettbewerb) · Stand: Oktober 2026</p>
 
-  <h2>Verantwortlich für den Inhalt</h2>
+  <h2>Anbieter dieser Website</h2>
   <p>
-    <strong>Abdi Dhiblawe</strong><br>
-    A.D.Films24 — Cinematography &amp; Content Creation<br>
+    <strong>A.D.Films24</strong><br>
+    Inhaber: Abdi Dhiblawe<br>
+    Cinematography &amp; Content Creation<br>
     Schweiz
   </p>
+  <p>Postanschrift: auf Anfrage unter der nachstehenden E-Mail-Adresse.</p>
+
+  <h2>Kontakt</h2>
   <p>
     E-Mail: <a href="mailto:abdi.dhiblawe1@gmail.com">abdi.dhiblawe1@gmail.com</a><br>
-    Telefon / WhatsApp: <a href="https://wa.me/41767649300" target="_blank" rel="noopener">+41 76 764 93 00</a>
-  </p>
-  <p>Postanschrift auf Anfrage über obenstehende E-Mail-Adresse.</p>
-
-  <h2>Haftung für Inhalte</h2>
-  <p>
-    Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die
-    Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine
-    Gewähr übernommen werden.
+    Telefon / WhatsApp: <a href="tel:+41767649300">+41 76 764 93 00</a><br>
+    Kontaktformular: <a href="index.html#contact">www.adfilms24.ch/#contact</a>
   </p>
 
-  <h2>Haftung für Links</h2>
+  <h2>Inhaltlich verantwortlich</h2>
+  <p>Abdi Dhiblawe (Anschrift und Kontakt wie oben).</p>
+
+  <h2>Hosting und technischer Betrieb</h2>
   <p>
-    Diese Website enthält Links zu externen Websites Dritter (z.B. Instagram,
-    YouTube, WhatsApp), auf deren Inhalte kein Einfluss besteht. Für diese
-    fremden Inhalte kann daher keine Verantwortung übernommen werden.
+    Diese Website wird bei der Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA gehostet.
+    Schriften, Skripte und Videos werden von der eigenen Domain ausgeliefert. Weitere Angaben zur
+    Datenbearbeitung finden Sie in der <a href="datenschutz.html">Datenschutzerklärung</a>.
   </p>
 
-  <h2>Urheberrecht</h2>
+  <h2>Haftungsausschluss</h2>
+  <h3>Inhalte</h3>
   <p>
-    Die durch A.D.Films24 erstellten Inhalte (Texte, Bilder, Videos, Design)
-    unterliegen dem Schweizer Urheberrecht. Vervielfältigung, Bearbeitung oder
-    Verwendung ausserhalb der Grenzen des Urheberrechts bedürfen der
-    schriftlichen Zustimmung.
+    Die Inhalte dieser Website werden mit grösstmöglicher Sorgfalt erstellt und regelmässig
+    überprüft. Dennoch wird keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der
+    Angaben übernommen. Haftungsansprüche, die sich auf Schäden materieller oder immaterieller Art
+    beziehen, die durch die Nutzung oder Nichtnutzung der angebotenen Informationen verursacht
+    wurden, sind ausgeschlossen, soweit dies gesetzlich zulässig ist. Alle Angebote sind
+    unverbindlich; der Anbieter behält sich vor, Teile der Website ohne gesonderte Ankündigung zu
+    ändern, zu ergänzen oder zu löschen.
+  </p>
+  <h3>Verweise und Links</h3>
+  <p>
+    Diese Website enthält Verweise auf externe Websites Dritter (z.&nbsp;B. Instagram, YouTube,
+    WhatsApp), auf deren Inhalte kein Einfluss besteht. Für diese fremden Inhalte kann keine
+    Verantwortung übernommen werden. Verantwortlich ist stets der jeweilige Anbieter. Zum Zeitpunkt
+    der Verlinkung waren keine Rechtsverstösse erkennbar. Bei Bekanntwerden solcher Verstösse werden
+    entsprechende Links umgehend entfernt.
+  </p>
+
+  <h2>Urheber- und Kennzeichenrecht</h2>
+  <p>
+    Sämtliche Inhalte dieser Website (Texte, Fotografien, Videos, Showreel, Logo, Grafiken und
+    Design) sind, sofern nicht anders gekennzeichnet, urheberrechtlich geschützt und stehen im
+    Eigentum von A.D.Films24 bzw. Abdi Dhiblawe (&copy; 2026). Vervielfältigung, Bearbeitung,
+    Verbreitung, öffentliche Wiedergabe oder jede Verwertung ausserhalb der Grenzen des
+    Urheberrechts bedürfen der vorgängigen schriftlichen Zustimmung. Namen und Marken Dritter, die
+    allenfalls genannt werden, gehören den jeweiligen Inhabern.
+  </p>
+
+  <h2>Datenschutz</h2>
+  <p>
+    Informationen zur Bearbeitung von Personendaten finden Sie in der
+    <a href="datenschutz.html">Datenschutzerklärung</a>. Für Vertragsverhältnisse gelten die
+    <a href="agb.html">Allgemeinen Geschäftsbedingungen</a>.
   </p>
 
   <footer class="page-foot">

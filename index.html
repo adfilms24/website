@@ -49,10 +49,9 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Bebas Neue (brutal display) + Instrument Serif (editorial body) + JetBrains Mono (precision detail) -->
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Schriften lokal gehostet (kein Abruf bei Google) -->
+<link rel="preload" href="/assets/fonts/JTUSjIg69CK48gW7PXoo9WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 
 <style>
 /* ════════════════════════════════════════
@@ -1556,6 +1555,48 @@ footer {
   to { opacity: 1; }
 }
 
+
+/* ════════════════════════════════════════
+   SHOWREEL / HERO VIDEO / MODAL VIDEO
+════════════════════════════════════════ */
+.hero-bg-ph {
+  background:
+    linear-gradient(180deg, rgba(6,6,6,0.55), rgba(6,6,6,0.75)),
+    url('/assets/video/showreel-poster.jpg') center / cover no-repeat,
+    #060606;
+}
+.hero-bg video {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  filter: brightness(.55) saturate(.9);
+}
+.hero-bg video.on { opacity: 1; }
+.modal-vid video { width:100%; height:100%; background:#000; object-fit:contain; }
+.pf-mosaic.single .pf-cell[data-size] { grid-column: 1 / -1; grid-row: span 3; cursor: pointer; }
+.pf-cell.featured .pf-cell-bg {
+  background: linear-gradient(rgba(6,6,6,.25), rgba(6,6,6,.35)), url('/assets/video/showreel-poster.jpg') center / cover no-repeat;
+}
+.pf-cell.featured .pf-overlay { opacity: 1; transform: none; }
+.pf-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 84px; height: 84px; border: 1px solid var(--line-strong); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(6,6,6,.45); backdrop-filter: blur(6px);
+  transition: transform .5s var(--spring), border-color .3s;
+}
+.pf-cell.featured:hover .pf-play { transform: translate(-50%,-50%) scale(1.1); border-color: var(--orange); }
+.soon-note {
+  border: 1px solid var(--line);
+  padding: 2.5rem;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--bone-60);
+}
+@media (prefers-reduced-motion: reduce) { .hero-bg video { display: none; } }
+
 /* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
@@ -1679,13 +1720,9 @@ footer {
 ══════════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-bg">
-    <!--
-      VIDEO: Ersetze den Platzhalter:
-      <video autoplay muted loop playsinline preload="none" poster="poster.jpg">
-        <source src="showreel.mp4" type="video/mp4">
-      </video>
-    -->
     <div class="hero-bg-ph"></div>
+    <!-- Showreel als stummer Hintergrund-Loop (wird nur auf grossen Bildschirmen ohne Datensparmodus geladen, siehe JS) -->
+    <video id="heroVideo" muted loop playsinline preload="none" poster="/assets/video/showreel-poster.jpg" aria-hidden="true" tabindex="-1" data-src="/assets/video/showreel.mp4"></video>
   </div>
 
   <!-- Film perforations left & right -->
@@ -1715,7 +1752,7 @@ footer {
       <div class="reel-ring-spin"></div>
       <span class="reel-icon">▶</span>
     </div>
-    <span class="reel-caption">Showreel 2024</span>
+    <span class="reel-caption">Showreel 2026</span>
   </button>
 
   <!-- Scroll indicator -->
@@ -1741,6 +1778,10 @@ footer {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
           Portfolio
         </a>
+        <button type="button" class="cta-ghost" id="reelBtn2" aria-label="Showreel abspielen">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 2l7 4-7 4z" fill="currentColor"/></svg>
+          Showreel
+        </button>
         <a href="#contact" class="cta-ghost">Projekt anfragen</a>
         <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="cta-ghost">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 3.5v5l4-2.5-4-2.5z" fill="currentColor"/></svg>
@@ -1809,115 +1850,37 @@ footer {
           AUSGEWÄHLTE<br><span class="serif">Arbeiten</span>
         </h2>
       </div>
-      <div class="pf-filters" data-sr="u" data-d="3">
-        <button class="pf-btn active" data-f="all">Alle</button>
-        <button class="pf-btn" data-f="commercial">Commercial</button>
-        <button class="pf-btn" data-f="social">Social</button>
-        <button class="pf-btn" data-f="real-estate">Real Estate</button>
-        <button class="pf-btn" data-f="events">Events</button>
-        <button class="pf-btn" data-f="travel">Travel</button>
+      </div>
+
+    <!--
+      NEUES PROJEKT HINZUFÜGEN: Zelle unten kopieren, in .pf-mosaic einfügen und
+      "single" von der Klasse .pf-mosaic entfernen, sobald mehrere Projekte da sind.
+      Filter-Buttons (Alle / Commercial / …) bei Bedarf wieder oberhalb ergänzen:
+      <div class="pf-filters"><button class="pf-btn active" data-f="all">Alle</button> ...</div>
+
+      <div class="pf-cell" data-size="std" data-cat="commercial"
+           data-title="PROJEKTNAME" data-client="Kunde" data-cam="Kamera" data-year="2026"
+           data-desc="Kurzbeschreibung." onclick="openModal(this)">
+        <div class="pf-cell-bg bg-a"><span class="pf-glyph">A</span></div>
+        <div class="pf-overlay"><div class="pf-tag">Kategorie · 2026</div><div class="pf-title">PROJEKTNAME</div></div>
+      </div>
+    -->
+    <div class="pf-mosaic single" data-sr="u" data-d="2">
+      <div class="pf-cell featured" data-size="xl" data-cat="showreel"
+           data-title="SHOWREEL 2026" data-client="A.D.Films24" data-cam="Sony FX3" data-year="2026"
+           data-desc="Ein Auszug aus meiner aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich."
+           data-video="/assets/video/showreel.mp4" data-poster="/assets/video/showreel-poster.jpg"
+           role="button" tabindex="0" aria-label="Showreel 2026 abspielen"
+           onclick="openModal(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(this)}">
+        <div class="pf-cell-bg"></div>
+        <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
+        <div class="pf-overlay">
+          <div class="pf-tag">Showreel · 2026</div>
+          <div class="pf-title">SHOWREEL 2026</div>
+        </div>
       </div>
     </div>
-
-    <div class="pf-mosaic" data-sr="u" data-d="2">
-
-      <!-- XL Featured -->
-      <div class="pf-cell" data-size="xl" data-cat="commercial"
-           data-title="NIKE — URBAN MOTION" data-client="Nike Switzerland"
-           data-cam="Sony FX3 / DJI Ronin 4D" data-year="2024"
-           data-desc="Cineastische Kampagne für Nike Schweiz. Urbane Bewegung und sportliche Energie — gedreht auf den Straßen Zürichs von der Golden Hour bis Blue Hour. Roh, echt, kraftvoll."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-a"><span class="pf-glyph">N</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Commercial · 2024</div>
-          <div class="pf-title">NIKE — URBAN MOTION</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-      <!-- Tall -->
-      <div class="pf-cell" data-size="tall" data-cat="real-estate"
-           data-title="PENTHOUSE ZÜRICHSEE" data-client="Sotheby's International"
-           data-cam="DJI Inspire 3 / RED Komodo" data-year="2024"
-           data-desc="Luxuriöse Immobilienpräsentation eines Penthouse-Apartments direkt am Zürichsee. Drohnenaufnahmen bei Sonnenuntergang, cinematische Innenraumshots mit natürlichem Licht."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-b"><span class="pf-glyph">◆</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Real Estate · 2024</div>
-          <div class="pf-title">PENTHOUSE ZÜRICHSEE</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-      <!-- Wide -->
-      <div class="pf-cell" data-size="wide" data-cat="automotive"
-           data-title="PORSCHE 911 — RAW POWER" data-client="Porsche Zentrum Zürich"
-           data-cam="Sony FX6 / Phantom Flex 4K" data-year="2023"
-           data-desc="Hochgeschwindigkeits-Cinematik für den Porsche 911 GT3. Slow-Motion bis 1.000fps trifft auf dramatische Fahraufnahmen durch die Alpen."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-c"><span class="pf-glyph">◎</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Automotive · 2023</div>
-          <div class="pf-title">PORSCHE 911 — RAW POWER</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-      <!-- Wide -->
-      <div class="pf-cell" data-size="wide" data-cat="travel"
-           data-title="WANDERLUST — ICELAND" data-client="Swiss Travel Agency"
-           data-cam="Sony FX3 / DJI Mini 4 Pro" data-year="2024"
-           data-desc="Zehn Tage durch Islands Extremlandschaften: Polarlichter, Geysire, Gletscherhöhlen. Eine visuelle Reise, die Fernweh weckt."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-d"><span class="pf-glyph">✦</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Travel · 2024</div>
-          <div class="pf-title">WANDERLUST — ICELAND</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-      <!-- Std -->
-      <div class="pf-cell" data-size="sq" data-cat="events"
-           data-title="ART BASEL — OPENING NIGHT" data-client="Art Basel"
-           data-cam="Sony FX3 / Sony 24-70 GM II" data-year="2024"
-           data-desc="Die Opening Night der Art Basel Basel — Kunst, Menschen, Atmosphäre. Dokumentarisch und cinematisch zugleich."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-e"><span class="pf-glyph">◉</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Events · 2024</div>
-          <div class="pf-title">ART BASEL — OPENING</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-      <!-- Sq -->
-      <div class="pf-cell" data-size="sq" data-cat="social"
-           data-title="@BRAND — SOCIAL SERIES" data-client="Luxury Skincare Brand"
-           data-cam="Sony A7 IV / Zhiyun Crane 4" data-year="2024"
-           data-desc="Monatliche Content-Serie für Instagram & TikTok. 12 Reels, 40M+ Views. Sell-out nach jedem Posting. Modernes Brand Storytelling."
-           onclick="openModal(this)">
-        <div class="pf-cell-bg bg-f"><span class="pf-glyph">∞</span></div>
-        <div class="pf-overlay">
-          <div class="pf-tag">Social Media · 2024</div>
-          <div class="pf-title">@BRAND — SOCIAL SERIES</div>
-        </div>
-        <div class="pf-caret">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="#FF4D00" stroke-width="1.4"/></svg>
-        </div>
-      </div>
-
-    </div>
+    <p class="soon-note" style="margin-top:2px;" data-sr="u">Weitere Projekte und Referenzen folgen in Kürze.</p>
   </div>
 </section>
 
@@ -2099,81 +2062,25 @@ footer {
 <section class="section" id="testimonials" style="background:var(--void);">
   <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
     <div class="test-layout">
-
-      <!-- Sticky sidebar -->
       <div class="test-sidebar">
-        <div class="s-meta" data-sr="u">Testimonials</div>
+        <div class="s-meta" data-sr="u">Kunden</div>
         <h2 class="h-display" data-sr="u" data-d="2">WAS<br>KUNDEN<br><span class="serif">sagen</span></h2>
-        <div class="test-stat" data-sr="u" data-d="3">
-          <div class="ts-num">4.9<sup>/5</sup></div>
-          <div class="ts-label">Durchschnittsbewertung</div>
-        </div>
       </div>
-
-      <!-- Cards -->
       <div class="test-cards-col">
-        <div class="test-card" data-sr="r" data-d="1">
-          <span class="test-q">&ldquo;</span>
-          <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="test-body">„Die Qualität hat unsere Erwartungen bei weitem übertroffen. Unser Instagram-Engagement stieg um 340% — wir buchen bereits das nächste Projekt."</p>
-          <div class="test-foot">
-            <div>
-              <div class="test-author-name">Sarah M.</div>
-              <div class="test-author-role">CMO · Luxury Brand Zürich</div>
-            </div>
-            <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <!--
+          KUNDENSTIMME HINZUFÜGEN (nur echte, freigegebene Aussagen verwenden):
+          <div class="test-card" data-sr="r" data-d="1">
+            <span class="test-q">&ldquo;</span>
+            <p class="test-body">„Zitat des Kunden."</p>
+            <div class="test-foot"><div>
+              <div class="test-author-name">Vorname N.</div>
+              <div class="test-author-role">Funktion · Firma</div>
+            </div></div>
           </div>
-        </div>
-
-        <div class="test-card" data-sr="r" data-d="2">
-          <span class="test-q">&ldquo;</span>
-          <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="test-body">„Professionell, kreativ, zuverlässig. Der Automotive-Film wurde intern als bestes Content-Stück des Jahres ausgezeichnet. Absolute Empfehlung."</p>
-          <div class="test-foot">
-            <div>
-              <div class="test-author-name">Thomas K.</div>
-              <div class="test-author-role">Marketing Director · Autohaus AG</div>
-            </div>
-            <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          </div>
-        </div>
-
-        <div class="test-card" data-sr="r" data-d="3">
-          <span class="test-q">&ldquo;</span>
-          <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="test-body">„48 Stunden nach dem Brand Film hatten wir mehr Anfragen als im ganzen Vorjahr. Der ROI war schlicht unglaublich."</p>
-          <div class="test-foot">
-            <div>
-              <div class="test-author-name">Marc F.</div>
-              <div class="test-author-role">Founder · Tech Startup Zürich</div>
-            </div>
-            <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          </div>
-        </div>
-
-        <div class="test-card" data-sr="r" data-d="4">
-          <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Unser Event wurde so festgehalten, als wäre es ein Kurzfilm. Das Editing ist auf einem anderen Level — wir haben ihn auf allen Kanälen eingesetzt."</p>
-          <div class="test-foot">
-            <div>
-              <div class="test-author-name">Laura B.</div>
-              <div class="test-author-role">Event Manager · Basel</div>
-            </div>
-            <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          </div>
-        </div>
+          KUNDENLOGOS: <div class="clients-strip"><span class="client-logo">FIRMA</span> ...</div> unterhalb von .test-layout
+        -->
+        <p class="soon-note" data-sr="r">Hier erscheinen in Kürze Stimmen und Referenzen meiner Kunden.</p>
       </div>
-    </div>
-
-    <div class="clients-strip" data-sr="u" data-d="2">
-      <span class="client-logo">NIKE</span>
-      <span class="client-logo">PORSCHE</span>
-      <span class="client-logo">SOTHEBY'S</span>
-      <span class="client-logo">ART BASEL</span>
-      <span class="client-logo">NESPRESSO</span>
-      <span class="client-logo">IWC</span>
-      <span class="client-logo">AUDI</span>
-      <span class="client-logo">MARRIOTT</span>
     </div>
   </div>
 </section>
@@ -2316,7 +2223,7 @@ footer {
 <!-- ══════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
-<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="/assets/vendor/emailjs.min.js"></script>
 <script defer src="/cookie-consent.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', () => emailjs.init("mzeYAXh6J84HSDX5j"));
@@ -2415,50 +2322,73 @@ document.querySelectorAll('.pf-btn').forEach(btn => {
 });
 
 /* ── MODAL ─── */
-function openModal(el) {
-  document.getElementById('mT').textContent = el.dataset.title  || '—';
-  document.getElementById('mD').textContent = el.dataset.desc   || '—';
-  document.getElementById('mC').textContent = el.dataset.client || '—';
-  document.getElementById('mK').textContent = el.dataset.cam    || '—';
-  document.getElementById('mY').textContent = el.dataset.year   || '—';
-  document.getElementById('modalVidLabel').textContent = el.dataset.title;
-  /*
-    REAL VIDEO EMBED:
-    document.getElementById('modalVid').innerHTML =
-      `<iframe src="https://player.vimeo.com/video/YOUR_ID?autoplay=1&color=ff4d00" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-  */
-  document.getElementById('modal').classList.add('open');
+const modalEl = document.getElementById('modal');
+const modalVid = document.getElementById('modalVid');
+const modalVidDefault = modalVid.innerHTML;
+let lastFocus = null;
+
+function playInModal(src, poster) {
+  modalVid.innerHTML = '';
+  const v = document.createElement('video');
+  v.controls = true; v.autoplay = true; v.playsInline = true; v.preload = 'auto';
+  v.poster = poster || '';
+  v.setAttribute('controlslist', 'nodownload');
+  const so = document.createElement('source'); so.src = src; so.type = 'video/mp4';
+  v.appendChild(so);
+  modalVid.appendChild(v);
+  v.play().catch(() => {});
+}
+function fillModal(t, d, c, k, y) {
+  document.getElementById('mT').textContent = t || '—';
+  document.getElementById('mD').textContent = d || '—';
+  document.getElementById('mC').textContent = c || '—';
+  document.getElementById('mK').textContent = k || '—';
+  document.getElementById('mY').textContent = y || '—';
+}
+function showModal() {
+  lastFocus = document.activeElement;
+  modalEl.classList.add('open');
   document.body.style.overflow = 'hidden';
+  const cb = modalEl.querySelector('.modal-close'); if (cb) cb.focus();
+}
+function openModal(el) {
+  fillModal(el.dataset.title, el.dataset.desc, el.dataset.client, el.dataset.cam, el.dataset.year);
+  if (el.dataset.video) playInModal(el.dataset.video, el.dataset.poster);
+  else { modalVid.innerHTML = modalVidDefault; document.getElementById('modalVidLabel').textContent = el.dataset.title; }
+  showModal();
 }
 function closeModal() {
-  document.getElementById('modal').classList.remove('open');
+  modalEl.classList.remove('open');
   document.body.style.overflow = '';
+  const v = modalVid.querySelector('video'); if (v) { v.pause(); }
+  setTimeout(() => { if (!modalEl.classList.contains('open')) modalVid.innerHTML = modalVidDefault; }, 450);
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 /* ── SHOWREEL ─── */
-document.getElementById('reelBtn').addEventListener('click', () => {
-  const modal = document.getElementById('modal');
-  const modalVid = document.getElementById('modalVid');
-  const showreelId = 'DEINE_VIDEO_ID'; // Ersetze mit deiner Vimeo- oder YouTube-ID
+function openShowreel() {
+  fillModal('Showreel 2026', 'Ein Auszug aus meiner aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich.', 'A.D.Films24', 'Sony FX3', '2026');
+  playInModal('/assets/video/showreel.mp4', '/assets/video/showreel-poster.jpg');
+  showModal();
+}
+document.getElementById('reelBtn').addEventListener('click', openShowreel);
+document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 
-  document.getElementById('mT').textContent = 'Showreel 2024';
-  document.getElementById('mD').textContent = 'A.D.Films24 — Cinematography & Direction';
-  document.getElementById('mC').textContent = 'A.D.Films24';
-  document.getElementById('mK').textContent = 'Sony FX3';
-  document.getElementById('mY').textContent = '2024';
-
-  modalVid.innerHTML = `
-    <iframe
-      src="https://player.vimeo.com/video/${showreelId}?autoplay=1&color=777777&title=0&byline=0"
-      allow="autoplay; fullscreen"
-      allowfullscreen
-      style="width:100%;height:100%;border:0;"
-    ></iframe>`;
-
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-});
+/* ── HERO VIDEO (nur Desktop, ohne Datensparmodus / reduzierte Bewegung) ─── */
+(function () {
+  const v = document.getElementById('heroVideo');
+  if (!v) return;
+  const conn = navigator.connection || {};
+  const ok = window.matchMedia('(min-width: 900px)').matches &&
+             !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+             !conn.saveData && !/(^|-)2g$/.test(conn.effectiveType || '');
+  if (!ok) return;
+  v.src = v.dataset.src;
+  v.addEventListener('canplay', () => { v.classList.add('on'); v.play().catch(() => {}); }, { once: true });
+  document.addEventListener('visibilitychange', () => { document.hidden ? v.pause() : v.play().catch(() => {}); });
+  v.load();
+})();
 
 /* ── FORM ─── */
 function sendForm(e) {
