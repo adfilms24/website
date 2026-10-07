@@ -19,7 +19,7 @@ MAIL = "abdi.dhiblawe1@gmail.com"
 
 def load(p): return json.loads((ROOT / p).read_text(encoding="utf-8"))
 import hashlib
-_ASSET_RE = re.compile(r'(?<=["\'(=])(/assets/(?:css|js|vendor)/[\w.-]+\.(?:css|js)|/cookie-consent\.js)(?=["\')\s>])')
+_ASSET_RE = re.compile(r'(?<=["\'(=])(/assets/(?:css|js|vendor)/[\w.-]+\.(?:css|js)|/assets/video/[\w./-]+\.(?:mp4|jpg|jpeg|png|webp)|/cookie-consent\.js)(?=["\')\s>])')
 def _ver(path):
     f = ROOT / path.lstrip("/")
     return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
