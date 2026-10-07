@@ -200,6 +200,7 @@
     "Social Media",
     "Drone",
     "Real Estate",
+    "Automotive",
     "Events",
     "Travel"
   ],
@@ -251,9 +252,12 @@
     "drone": "Drone",
     "real-estate": "Real estate",
     "events": "Events",
-    "travel": "Travel"
+    "travel": "Travel",
+    "automotive": "Automotive"
   },
   "legal_back": "← Back to home",
   "legal_home": "Home",
-  "intro_note": ""
+  "intro_note": "",
+  "pf_all": "All",
+  "pf_filter_aria": "Filter projects"
 }

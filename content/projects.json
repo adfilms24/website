@@ -114,5 +114,37 @@
       "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
       "en": "This project will be published soon. Video and description to follow."
     }
+  },
+  {
+    "slug": "vip-transport",
+    "published": false,
+    "category": "automotive",
+    "year": "2024",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "VIP TRANSPORT — URBAN MOTION",
+      "en": "VIP TRANSPORT — URBAN MOTION"
+    },
+    "desc": {
+      "de": "Cineastische Kampagne in der Schweiz: urbane Bewegung und sportliche Energie, gedreht auf den Strassen Zürichs von der Golden Hour bis zur Blue Hour. Roh, echt, kraftvoll.",
+      "en": "Cinematic campaign in Switzerland: urban motion and athletic energy, shot on the streets of Zurich from golden hour to blue hour. Raw, real, powerful."
+    }
+  },
+  {
+    "slug": "phunnid",
+    "published": false,
+    "category": "commercial",
+    "year": "2024",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "PHUNNID — BRAND SHOOTING",
+      "en": "PHUNNID — BRAND SHOOTING"
+    },
+    "desc": {
+      "de": "Brand-Präsentation eines neuen Kleidungsstücks — hochwertig inszeniert für Marke und Social Media.",
+      "en": "Brand presentation of a new garment — premium staging for the brand and social media."
+    }
   }
 ]
