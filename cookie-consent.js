@@ -10,6 +10,10 @@
   ausgeführt, wenn "Akzeptieren" angeklickt wurde bzw. bereits wurde.
 */
 (function () {
+  var EN = (document.documentElement.lang || "de").toLowerCase().indexOf("en") === 0;
+  var TXT = EN
+    ? { text: "This website currently only uses technically necessary functions, no tracking cookies. More in our ", link: "privacy policy", href: "/en/privacy.html", accept: "Accept", necessary: "Necessary only" }
+    : { text: "Diese Website verwendet aktuell nur technisch notwendige Funktionen, keine Tracking-Cookies. Mehr dazu in unserer ", link: "Datenschutzerklärung", href: "/datenschutz.html", accept: "Akzeptieren", necessary: "Nur notwendige" };
   var STORAGE_KEY = "adf24_cookie_consent"; // "accepted" | "declined"
 
   function loadAnalyticsIfConsented() {
@@ -44,7 +48,7 @@
     var wrap = document.createElement("div");
     wrap.id = "cookie-banner";
     wrap.setAttribute("role", "region");
-    wrap.setAttribute("aria-label", "Cookie-Hinweis");
+    wrap.setAttribute("aria-label", EN ? "Cookie notice" : "Cookie-Hinweis");
     wrap.style.cssText =
       "position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:99999;" +
       "max-width:560px;margin:0 auto;background:#0e0e0e;color:#EDE9E0;" +
@@ -55,17 +59,14 @@
 
     var text = document.createElement("p");
     text.style.cssText = "margin:0 0 1rem 0;";
-    text.innerHTML =
-      "Diese Website verwendet aktuell nur technisch notwendige Funktionen, " +
-      "keine Tracking-Cookies. Mehr dazu in unserer " +
-      '<a href="datenschutz.html" style="color:#EDE9E0;text-decoration:underline;">Datenschutzerklärung</a>.';
+    text.innerHTML = TXT.text + '<a href="' + TXT.href + '" style="color:#EDE9E0;text-decoration:underline;">' + TXT.link + '</a>.';
 
     var btnRow = document.createElement("div");
     btnRow.style.cssText = "display:flex;gap:0.75rem;flex-wrap:wrap;";
 
     var acceptBtn = document.createElement("button");
     acceptBtn.type = "button";
-    acceptBtn.textContent = "Akzeptieren";
+    acceptBtn.textContent = TXT.accept;
     acceptBtn.style.cssText =
       "background:#777777;color:#060606;border:none;padding:0.6rem 1.2rem;" +
       "font-family:inherit;font-size:0.8rem;font-weight:600;text-transform:uppercase;" +
@@ -76,7 +77,7 @@
 
     var declineBtn = document.createElement("button");
     declineBtn.type = "button";
-    declineBtn.textContent = "Nur notwendige";
+    declineBtn.textContent = TXT.necessary;
     declineBtn.style.cssText =
       "background:transparent;color:#EDE9E0;border:1px solid rgba(255,255,255,0.16);" +
       "padding:0.6rem 1.2rem;font-family:inherit;font-size:0.8rem;text-transform:uppercase;" +

@@ -1,3 +1,8 @@
+/* Texte der aktuellen Sprache (kommen als JSON-Block aus der HTML-Seite) */
+let I18N = {};
+try { I18N = JSON.parse(document.getElementById('i18n').textContent); } catch (_) {}
+const tr = (k, fb) => (I18N[k] !== undefined ? I18N[k] : fb);
+
 /* EmailJS (Public Key ist für den Browser gedacht; in EmailJS die erlaubten Domains auf adfilms24.ch beschränken) */
 if (window.emailjs) emailjs.init("mzeYAXh6J84HSDX5j");
 const FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -18,9 +23,12 @@ function runCount() {
   if (ci < marks.length) marks[ci].classList.add('lit');
   ci++;
   if (ci < countVals.length) setTimeout(runCount, 520);
-  else setTimeout(() => loader.classList.add('exit'), 400);
+  else setTimeout(() => {
+    loader.classList.add('exit');
+    try { localStorage.setItem('adf24_intro_seen', '1'); } catch (_) {}   /* Intro nur beim ersten Besuch */
+  }, 400);
 }
-setTimeout(runCount, 400);
+if (!document.documentElement.classList.contains('no-intro')) setTimeout(runCount, 400);
 
 /* ── CURSOR (nur Geräte mit Maus; Animationsschleife läuft nur während der Bewegung) ─── */
 if (FINE_POINTER) {
@@ -56,7 +64,7 @@ function setMenu(open) {
   mnav.classList.toggle('on', open);
   burger.classList.toggle('x', open);
   burger.setAttribute('aria-expanded', String(open));
-  burger.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  burger.setAttribute('aria-label', open ? (burger.dataset.labelClose || 'Close menu') : (burger.dataset.labelOpen || 'Open menu'));
   if (open) mnav.removeAttribute('inert'); else mnav.setAttribute('inert', '');
   document.body.style.overflow = open ? 'hidden' : '';
 }
@@ -169,15 +177,9 @@ document.addEventListener('keydown', e => {
 });
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalScrim').addEventListener('click', closeModal);
-/* Portfolio-Karten (Klick + Tastatur) */
-document.querySelectorAll('.pf-cell').forEach(c => {
-  c.addEventListener('click', () => openModal(c));
-  c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(c); } });
-});
-
 /* ── SHOWREEL ─── */
 function openShowreel() {
-  fillModal('Showreel 2026', 'Ein Auszug aus meiner aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich.', 'A.D.Films24', 'Sony FX3', '2026');
+  fillModal(tr('showreel_title','Showreel 2026'), tr('showreel_desc',''), tr('showreel_client','A.D.Films24'), tr('showreel_camera','Sony FX3'), tr('showreel_year','2026'));
   playInModal('/assets/video/showreel.mp4', '/assets/video/showreel-poster.jpg');
   showModal();
 }
@@ -200,8 +202,8 @@ document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 })();
 
 /* ── FORM ─── */
-const SEND_LABEL = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg> Anfrage senden';
-const MAIL = 'abdi.dhiblawe1@gmail.com';
+const SEND_LABEL = document.getElementById('sendBtn').innerHTML;
+const MAIL = tr('mail', 'abdi.dhiblawe1@gmail.com');
 const COOLDOWN_MS = 30000;
 function setStatus(el, cls, html) { el.className = 'f-status ' + cls; el.innerHTML = html; }
 
@@ -220,7 +222,7 @@ function sendForm(e) {
   /* Spam-Schutz 2: Pause zwischen zwei Anfragen */
   let last = 0; try { last = +sessionStorage.getItem('adf24_last_send') || 0; } catch (_) {}
   const wait = COOLDOWN_MS - (Date.now() - last);
-  if (wait > 0) { setStatus(st, 'err', `Bitte warte noch ${Math.ceil(wait/1000)} Sekunden, bevor du erneut sendest.`); return; }
+  if (wait > 0) { setStatus(st, 'err', tr('form_wait','Please wait {s} seconds.').replace('{s}', Math.ceil(wait/1000))); return; }
 
   const fd = new FormData(form);
   const vorname = fd.get('vorname') || '';
@@ -235,22 +237,22 @@ function sendForm(e) {
   };
 
   btn.disabled = true;
-  btn.innerHTML = '… Wird gesendet';
-  setStatus(st, '', 'Deine Anfrage wird gesendet …');
+  btn.innerHTML = tr('form_sending','… Sending');
+  setStatus(st, '', tr('form_sending_status','Sending …'));
 
   emailjs.send('service_3bk9u16', 'template_d87r2kf', templateParams)
     .then(() => {
       try { sessionStorage.setItem('adf24_last_send', String(Date.now())); } catch (_) {}
-      btn.innerHTML = '✓ &nbsp;Gesendet!';
+      btn.innerHTML = tr('form_sent_btn','✓ Sent');
       btn.style.background = '#1a6b3a';
-      setStatus(st, 'ok', 'Danke! Deine Anfrage ist angekommen. Ich melde mich so schnell wie möglich bei dir.');
+      setStatus(st, 'ok', tr('form_ok','Thank you!'));
       setTimeout(() => { btn.disabled = false; btn.innerHTML = SEND_LABEL; btn.style.background = ''; form.reset(); }, 3500);
     })
     .catch((err) => {
       console.error('EmailJS Fehler:', err);
       btn.disabled = false;
       btn.innerHTML = SEND_LABEL;
-      setStatus(st, 'err', `Das Senden hat leider nicht geklappt. Bitte versuche es nochmals oder schreibe direkt an <a href="mailto:${MAIL}">${MAIL}</a> bzw. per <a href="https://wa.me/41767649300" target="_blank" rel="noopener">WhatsApp</a>.`);
+      setStatus(st, 'err', tr('form_fail','Sending failed.').replace(/\{mail\}/g, MAIL));
     });
 }
 document.querySelector('.contact-form').addEventListener('submit', sendForm);
