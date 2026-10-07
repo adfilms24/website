@@ -1644,3 +1644,54 @@ footer {
 .hero-eyebrow, .timecode, .hero-desc, .reel-caption, .scroll-word { text-shadow: 0 1px 14px rgba(0,0,0,.85), 0 0 3px rgba(0,0,0,.6); }
 .hero-eyebrow { color: var(--bone-60); }
 .hero-bg video { filter: brightness(.46) saturate(.9); }
+
+
+/* ════════════════════════════════════════
+   Sprachwechsel, Intro nur einmal, Projektseiten
+════════════════════════════════════════ */
+.nav-lang {
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bone-60);
+  border: 1px solid var(--line-strong); padding: .5rem .8rem; transition: color .3s, border-color .3s;
+}
+.nav-lang:hover { color: var(--bone); border-color: var(--bone); }
+.mnav-lang { font-size: 1.6rem; margin-top: 1rem; }
+
+/* Wer das Intro schon kennt, sieht es nicht noch einmal: Hero-Animationen starten sofort */
+.no-intro #loader { display: none; }
+.no-intro .hero-eyebrow { animation-delay: .1s; }
+.no-intro .h1-row:nth-child(1) .h1-inner { animation-delay: .15s; }
+.no-intro .h1-row:nth-child(2) .h1-inner { animation-delay: .27s; }
+.no-intro .hero-sub-row { animation-delay: .5s; }
+.no-intro .reel-trigger { animation-delay: .7s; }
+.no-intro .hero-scroll { animation-delay: .8s; }
+
+.pf-mosaic { grid-auto-flow: dense; }
+a.pf-cell { display: block; color: inherit; }
+.pf-cell-bg.has-img { background-size: cover; background-position: center; }
+.pf-cell:focus-visible .pf-overlay { opacity: 1; transform: none; }
+
+/* Projektseiten */
+.pj { max-width: 1100px; margin: 0 auto; padding: 9rem 3rem 5rem; }
+.pj-title { margin: .6rem 0 2.2rem; }
+.pj-video { aspect-ratio: 16 / 9; background: var(--deep-2); border: 1px solid var(--line); overflow: hidden; }
+.pj-video video { width: 100%; height: 100%; display: block; background: #000; object-fit: contain; }
+.pj-soon { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--bone-60); letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; }
+.pj-soon span { width: 64px; height: 64px; border: 1px solid var(--line-strong); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.pj-body { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; margin-top: 2.5rem; }
+.pj-desc { font-family: var(--f-serif); font-style: italic; font-size: 1.15rem; line-height: 1.9; color: var(--bone-60); }
+.pj-meta { display: grid; gap: 1.2rem; align-content: start; }
+.pj-meta dt { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); margin-bottom: .2rem; }
+.pj-meta dd { font-family: var(--f-serif); font-size: 1.05rem; color: var(--bone); }
+.pj-cta { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.pj-cta h2 { font-family: var(--f-display); font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: .02em; font-weight: 400; }
+.pj-draft { display: inline-block; margin-bottom: 1rem; padding: .5rem .9rem; border: 1px dashed var(--line-strong); font-size: .78rem; color: var(--bone-60); }
+.pj-foot { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: .78rem; }
+.pj-foot a { text-decoration: underline; }
+.pj-backlink { border-color: transparent; padding-left: 0; }
+.pj-nav .nav-right { gap: 1rem; }
+@media (max-width: 768px) {
+  .pj { padding: 7rem 1.5rem 4rem; }
+  .pj-body { grid-template-columns: 1fr; gap: 2rem; }
+  .pj-backlink { display: none; }
+}
+@media (max-width: 1200px) { .nav-pill { display: none; } }

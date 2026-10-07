@@ -1,0 +1,118 @@
+[
+  {
+    "slug": "showreel-2026",
+    "published": true,
+    "category": "showreel",
+    "year": "2026",
+    "camera": "Sony FX3",
+    "client": "A.D.Films24",
+    "title": {
+      "de": "SHOWREEL 2026",
+      "en": "SHOWREEL 2026"
+    },
+    "desc": {
+      "de": "Ein Auszug aus meiner aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich.",
+      "en": "A selection of my current work: cinematography, slow motion and visual storytelling from Zurich."
+    },
+    "video": "/assets/video/showreel.mp4",
+    "poster": "/assets/video/showreel-poster.jpg",
+    "duration": "PT14S",
+    "uploadDate": "2026-09-16"
+  },
+  {
+    "slug": "commercial",
+    "published": false,
+    "category": "commercial",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Commercial-Projekt",
+      "en": "Commercial project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  },
+  {
+    "slug": "social-media",
+    "published": false,
+    "category": "social",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Social-Media-Projekt",
+      "en": "Social media project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  },
+  {
+    "slug": "real-estate",
+    "published": false,
+    "category": "real-estate",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Real-Estate-Projekt",
+      "en": "Real estate project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  },
+  {
+    "slug": "drone",
+    "published": false,
+    "category": "drone",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Drohnen-Projekt",
+      "en": "Drone project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  },
+  {
+    "slug": "events",
+    "published": false,
+    "category": "events",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Event-Projekt",
+      "en": "Event project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  },
+  {
+    "slug": "travel",
+    "published": false,
+    "category": "travel",
+    "year": "",
+    "camera": "",
+    "client": "",
+    "title": {
+      "de": "Travel-Projekt",
+      "en": "Travel project"
+    },
+    "desc": {
+      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
+      "en": "This project will be published soon. Video and description to follow."
+    }
+  }
+]

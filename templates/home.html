@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{meta_desc}}">
+<meta name="keywords" content="{{meta_keywords}}">
+<meta name="author" content="Abdi Dhiblawe">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#060606">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang}}
+<title>{{title}}</title>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="a.d.films24">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:image" content="https://www.adfilms24.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{og_desc}}">
+<meta name="twitter:image" content="https://www.adfilms24.ch/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "A.D. Films24",
+  "founder": { "@type": "Person", "name": "Abdi Dhiblawe" },
+  "description": "{{ld_desc}}",
+  "url": "https://www.adfilms24.ch/",
+  "email": "abdi.dhiblawe1@gmail.com",
+  "telephone": "+41767649300",
+  "areaServed": ["{{ld_area}}"],
+  "sameAs": [
+    "https://instagram.com/a.d.films24",
+    "https://www.youtube.com/@adfilms24"
+  ]
+}
+</script>
+
+<!-- Schriften lokal gehostet (kein Abruf bei Google) -->
+<link rel="preload" href="/assets/fonts/JTUSjIg69CK48gW7PXoo9WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{vo_name}}",
+  "description": "{{vo_desc}}",
+  "thumbnailUrl": "https://www.adfilms24.ch/assets/video/showreel-poster.jpg",
+  "uploadDate": "2026-09-16",
+  "duration": "PT14S",
+  "contentUrl": "https://www.adfilms24.ch/assets/video/showreel.mp4",
+  "publisher": { "@type": "Organization", "name": "A.D.Films24", "url": "https://www.adfilms24.ch/" }
+}
+</script>
+<link rel="preload" href="/assets/video/showreel-poster.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/boot.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{skip}}</a>
+
+<!-- ── LOADER ─────────────────────────── -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-count" id="lcount">3</div>
+    <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    <div class="loader-label">{{loader_label}}</div>
+  </div>
+  <div class="loader-marks" id="lmarks">
+    <div class="loader-mark lit"></div>
+    <div class="loader-mark lit"></div>
+    <div class="loader-mark lit"></div>
+    <div class="loader-mark"></div>
+    <div class="loader-mark"></div>
+    <div class="loader-mark"></div>
+    <div class="loader-mark"></div>
+    <div class="loader-mark"></div>
+  </div>
+</div>
+
+<!-- ── CURSOR ─────────────────────────── -->
+<div id="dot"></div>
+<div id="ring"></div>
+
+<!-- ── MOBILE NAV ─────────────────────── -->
+<div id="mnav" inert aria-label="{{menu_aria}}">
+  <a href="#hero" class="mnav-item">{{m_home}}</a>
+  <a href="#portfolio" class="mnav-item">{{m_projects}}</a>
+  <a href="#about" class="mnav-item">{{m_about}}</a>
+  <a href="#services" class="mnav-item">{{m_services}}</a>
+  <a href="#testimonials" class="mnav-item">{{m_clients}}</a>
+  <a href="#contact" class="mnav-item">{{m_contact}}</a>
+  <a href="{{lang_switch_url}}" class="mnav-item mnav-lang" hreflang="{{other_lang}}" lang="{{other_lang}}">{{lang_switch_label}}</a>
+  <p class="mnav-bottom">{{mnav_bottom}}</p>
+</div>
+
+<!-- ── NAV ────────────────────────────── -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="/logo.svg" alt="A.D. Films24" class="nav-logo-img">
+  </a>
+  <ul class="nav-center">
+    <li><a href="#portfolio">{{n_projects}}</a></li>
+    <li><a href="#about">{{n_about}}</a></li>
+    <li><a href="#services">{{n_services}}</a></li>
+    <li><a href="#testimonials">{{n_clients}}</a></li>
+    <li><a href="#contact">{{n_contact}}</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="nav-pill">
+      <span class="nav-dot"></span>
+      <span>{{n_available}}</span>
+    </a>
+    <a href="{{lang_switch_url}}" class="nav-lang" hreflang="{{other_lang}}" lang="{{other_lang}}" aria-label="{{lang_switch_aria}}">{{lang_switch_label}}</a>
+    <button type="button" class="burger" id="burger" aria-label="{{menu_open}}" data-label-open="{{menu_open}}" data-label-close="{{menu_close}}" aria-expanded="false" aria-controls="mnav">
+      <b></b><b></b><b></b>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<main id="main" tabindex="-1">
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-ph"></div>
+    <!-- Showreel als stummer Hintergrund-Loop (wird nur auf grossen Bildschirmen ohne Datensparmodus geladen, siehe JS) -->
+    <video id="heroVideo" muted loop playsinline preload="none" poster="/assets/video/showreel-poster.jpg" aria-hidden="true" tabindex="-1" data-src="/assets/video/showreel-hero.mp4"></video>
+  </div>
+
+  <!-- Film perforations left & right -->
+  <div class="perfs">
+    <div class="perf"></div><div class="perf"></div><div class="perf"></div>
+    <div class="perf"></div><div class="perf"></div><div class="perf"></div>
+    <div class="perf"></div><div class="perf"></div>
+  </div>
+  <div class="perfs perfs-r">
+    <div class="perf"></div><div class="perf"></div><div class="perf"></div>
+    <div class="perf"></div><div class="perf"></div><div class="perf"></div>
+    <div class="perf"></div><div class="perf"></div>
+  </div>
+
+  <!-- Cinematic bars -->
+  <div class="lbox-t"></div>
+  <div class="lbox-b"></div>
+  <div class="hero-vgn"></div>
+  <div class="hero-vgn-side"></div>
+
+  <!-- Timecode -->
+  <div class="timecode" id="tc">00:00:00:00</div>
+
+  <!-- Floating showreel -->
+  <button class="reel-trigger" id="reelBtn">
+    <div class="reel-ring-outer">
+      <div class="reel-ring-spin"></div>
+      <span class="reel-icon">▶</span>
+    </div>
+    <span class="reel-caption">{{reel_caption}}</span>
+  </button>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <span class="scroll-word">{{scroll}}</span>
+    <div class="scroll-line-track"><div class="scroll-line-fill"></div></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="hero-body" style="max-width:1440px; margin:0 auto;">
+    <p class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      {{hero_eyebrow}}
+    </p>
+    <h1 class="hero-h1">
+      <span class="h1-row"><span class="h1-inner">CREATE</span></span>
+      <span class="h1-row"><span class="h1-inner">MORE.</span></span>
+      <span class="sr-only"> – {{hero_sr}}</span>
+    </h1>
+    <div class="hero-sub-row">
+      <p class="hero-desc">{{hero_desc}}</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="cta-primary">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
+          {{cta_portfolio}}
+        </a>
+        <button type="button" class="cta-ghost" id="reelBtn2" aria-label="{{showreel_play_aria}}">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 2l7 4-7 4z" fill="currentColor"/></svg>
+          {{cta_showreel}}
+        </button>
+        <a href="#contact" class="cta-ghost">{{cta_inquire}}</a>
+        <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="cta-ghost">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 3.5v5l4-2.5-4-2.5z" fill="currentColor"/></svg>
+          {{cta_youtube}}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker band -->
+<div class="intro-band">
+  {{ticker}}
+</div>
+
+<!-- Counters -->
+<div class="section" style="background:var(--deep-1); padding-top:5rem; padding-bottom:5rem;">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="counters">
+      <div class="ctr" data-n="01" data-sr="u">
+        <div class="ctr-val">{{c1_val}}</div>
+        <div class="ctr-lbl">{{c1_label}}</div>
+      </div>
+      <div class="ctr" data-n="02" data-sr="u" data-d="2">
+        <div class="ctr-val">{{c2_val}}</div>
+        <div class="ctr-lbl">{{c2_label}}</div>
+      </div>
+      <div class="ctr" data-n="03" data-sr="u" data-d="3">
+        <div class="ctr-val">{{c3_val}}</div>
+        <div class="ctr-lbl">{{c3_label}}</div>
+      </div>
+      <div class="ctr" data-n="04" data-sr="u" data-d="4">
+        <div class="ctr-val">{{c4_val}}</div>
+        <div class="ctr-lbl">{{c4_label}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PORTFOLIO
+══════════════════════════════════════════ -->
+<section class="section" id="portfolio">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+
+    <div class="pf-controls">
+      <div>
+        <div class="s-meta" data-sr="u">{{portfolio_meta}}</div>
+        <h2 class="h-display" data-sr="u" data-d="2">
+          {{portfolio_h2}}
+        </h2>
+      </div>
+      </div>
+
+{{projects_grid}}
+  </div>
+</section>
+
+<!-- Full-bleed marquee -->
+<div class="divider-full">
+  {{marquee}}
+</div>
+
+<!-- ══════════════════════════════════════
+     ÜBER MICH
+══════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="about-layout">
+
+      <!-- Image column -->
+      <div class="about-img-col" data-sr="l">
+        <div class="about-main-img">
+          <!--
+            Bild einbinden:
+            <img src="portrait.jpg" alt="Dein Name – Cinematographer" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          -->
+          <div class="about-main-img-inner"><span>◎</span></div>
+        </div>
+        <div class="about-bts-img">
+          <!-- Behind-the-scenes: <img src="bts.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;"> -->
+          <div class="about-bts-img-inner"><span>◉</span></div>
+        </div>
+        <div class="about-data-tag">{{about_tag}}</div>
+      </div>
+
+      <!-- Text column -->
+      <div data-sr="r">
+        <div class="s-meta">{{about_meta}}</div>
+        <h2 class="h-display">
+          {{about_h2}}
+        </h2>
+        <p class="about-bio">
+          {{about_p1}}
+        </p>
+        <p class="about-bio">
+          {{about_p2}}
+        </p>
+        <p class="about-bio">
+          {{about_p3}}
+        </p>
+
+        <div class="gear-section">
+          <div class="gear-head">{{gear_head}}</div>
+          <div class="gear-rows">
+{{gear}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     LEISTUNGEN
+══════════════════════════════════════════ -->
+<section class="section" id="services" style="background:var(--deep-1);">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="srv-header">
+      <div>
+        <div class="s-meta" data-sr="u">{{services_meta}}</div>
+        <h2 class="h-display" data-sr="u" data-d="2">{{services_h2}}</h2>
+      </div>
+      <p class="srv-header-desc" data-sr="r" data-d="2">
+        {{services_desc}}
+      </p>
+    </div>
+
+    <div class="srv-list-editorial" data-sr="u" data-d="2">
+{{services}}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="section" id="testimonials" style="background:var(--void);">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="test-layout">
+      <div class="test-sidebar">
+        <div class="s-meta" data-sr="u">{{clients_meta}}</div>
+        <h2 class="h-display" data-sr="u" data-d="2">{{clients_h2}}</h2>
+      </div>
+      <div class="test-cards-col">
+        <!--
+          KUNDENSTIMME HINZUFÜGEN (nur echte, freigegebene Aussagen verwenden):
+          <div class="test-card" data-sr="r" data-d="1">
+            <span class="test-q">&ldquo;</span>
+            <p class="test-body">„Zitat des Kunden."</p>
+            <div class="test-foot"><div>
+              <div class="test-author-name">Vorname N.</div>
+              <div class="test-author-role">Funktion · Firma</div>
+            </div></div>
+          </div>
+          KUNDENLOGOS: <div class="clients-strip"><span class="client-logo">FIRMA</span> ...</div> unterhalb von .test-layout
+        -->
+        <p class="soon-note" data-sr="r">{{clients_soon}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     KONTAKT
+══════════════════════════════════════════ -->
+<section class="section" id="contact" style="background:var(--deep-1);">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem; position:relative;">
+    <div class="contact-bg-text">{{contact_bg}}</div>
+    <div class="contact-layout">
+
+      <div class="contact-info">
+        <a href="#hero" class="nav-logo" style="display: block; margin-bottom: 2.5rem; font-size: 1.4rem;">www.adfilms24.ch<span>.</span></a>
+        <div class="s-meta" data-sr="u">{{contact_meta}}</div>
+        <h2 class="h-display" data-sr="u" data-d="2">{{contact_h2}}</h2>
+        <p class="contact-tagline" data-sr="u" data-d="3">
+          {{contact_tagline}}
+        </p>
+        <div class="contact-links" data-sr="u" data-d="4">
+          <a href="mailto:abdi.dhiblawe1@gmail.com" class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div><span class="c-lbl">{{lbl_email}}</span><span class="c-val">abdi.dhiblawe1@gmail.com</span></div>
+          </a>
+          <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div><span class="c-lbl">WhatsApp</span><span class="c-val">+41 76 764 93 00</span></div>
+          </a>
+          <a href="https://instagram.com/a.d.films24" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">◈</div>
+            <div><span class="c-lbl">Instagram</span><span class="c-val">@a.d.films24</span></div>
+          </a>
+          <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">▶</div>
+            <div><span class="c-lbl">YouTube</span><span class="c-val">@adfilms24</span></div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" data-sr="r" data-d="2">
+        <div class="f-row">
+          <div class="f-group">
+            <label for="f-vorname">{{f_first}}</label>
+            <input id="f-vorname" name="vorname" type="text" placeholder="Abdi" autocomplete="given-name" required>
+          </div>
+          <div class="f-group">
+            <label for="f-nachname">{{f_last}}</label>
+            <input id="f-nachname" name="nachname" type="text" placeholder="Dhiblawe" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="f-email">{{f_email}}</label>
+          <input id="f-email" name="email" type="email" placeholder="{{ph_email}}" autocomplete="email" required>
+        </div>
+        <div class="f-group">
+          <label for="f-projekttyp">{{f_type}}</label>
+          <select id="f-projekttyp" name="projekttyp" required>
+            <option value="" disabled selected>{{f_choose}}</option>
+            <option>{{opt1}}</option>
+            <option>{{opt2}}</option>
+            <option>{{opt3}}</option>
+            <option>{{opt4}}</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label for="f-nachricht">{{f_msg}}</label>
+          <textarea id="f-nachricht" name="nachricht" placeholder="{{ph_msg}}"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-website">{{f_hp}}</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="f-send">
+          <button type="submit" class="cta-primary" id="sendBtn">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
+            {{f_send}}
+          </button>
+          <p class="f-note">{{f_note1}}</p>
+          <p class="f-note">{{f_note2}}</p>
+        </div>
+      <p class="f-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">www.adfilms24.ch<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#portfolio">{{n_projects}}</a></li>
+      <li><a href="#about">{{foot_about}}</a></li>
+      <li><a href="#services">{{n_services}}</a></li>
+      <li><a href="#contact">{{n_contact}}</a></li>
+      <li><a href="{{imprint_url}}">{{foot_imprint}}</a></li>
+      <li><a href="{{privacy_url}}">{{foot_privacy}}</a></li>
+      <li><a href="{{terms_url}}">{{foot_terms}}</a></li>
+    </ul>
+    <div class="footer-socials">
+      <a href="https://instagram.com/a.d.films24" target="_blank" rel="noopener" class="fsoc">IG</a>
+      <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="fsoc">WA</a>
+      <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="fsoc">YT</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 www.adfilms24.ch. {{foot_copy1}}</span>
+    <span class="footer-copy">{{foot_copy2}}</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     MODAL
+══════════════════════════════════════════ -->
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true">
+  <div class="modal-scrim" id="modalScrim"></div>
+  <div class="modal-panel">
+    <button type="button" class="modal-close" id="modalClose" aria-label="{{close_aria}}">✕</button>
+    <div class="modal-vid" id="modalVid">
+      <!--
+        Vimeo: <iframe src="https://player.vimeo.com/video/YOURID?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        YouTube: <iframe src="https://www.youtube.com/embed/YOURID?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      -->
+      <div class="modal-vid-ph">
+        <div class="modal-vid-ph-play">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#FF4D00"/></svg>
+        </div>
+        <span id="modalVidLabel">{{modal_ph}}</span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <h2 class="modal-title" id="mT">—</h2>
+      <p class="modal-desc" id="mD">—</p>
+      <div class="modal-meta">
+        <div class="modal-meta-row"><label>{{modal_client}}</label><span id="mC">—</span></div>
+        <div class="modal-meta-row"><label>{{modal_camera}}</label><span id="mK">—</span></div>
+        <div class="modal-meta-row"><label>{{modal_year}}</label><span id="mY">—</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script type="application/json" id="i18n">{{i18n_json}}</script>
+<script defer src="/assets/vendor/emailjs.min.js"></script>
+<script defer src="/assets/js/main.js"></script>
+<script defer src="/cookie-consent.js"></script>
+</body>
+</html>

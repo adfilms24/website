@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /content/
+Disallow: /templates/
+Disallow: /tools/
 
 Sitemap: https://www.adfilms24.ch/sitemap.xml

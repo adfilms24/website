@@ -1,0 +1,259 @@
+{
+  "meta_desc": "Videographer and content creator in Zurich: commercial, social media and drone videos with a cinematic look for brands, events and real estate. Watch the showreel.",
+  "meta_keywords": "Cinematographer, videographer, content creator, commercial video, social media, drone, brand film, Zurich",
+  "title": "A.D.Films24 — Videographer &amp; Content Creator in Zurich",
+  "og_desc": "Cinematographer & content creator — visual storytelling for brands, events and social media. Switzerland & international.",
+  "ld_desc": "Cinematographer & content creator — visual storytelling for brands, events and social media.",
+  "ld_area": "Switzerland",
+  "vo_name": "Showreel 2026 — A.D.Films24",
+  "vo_desc": "Showreel 2026 by A.D.Films24: cinematography, slow motion and visual storytelling from Zurich.",
+  "skip": "Skip to content",
+  "loader_label": "Loading",
+  "menu_aria": "Main menu",
+  "m_home": "HOME",
+  "m_projects": "PROJECTS",
+  "m_about": "ABOUT",
+  "m_services": "SERVICES",
+  "m_clients": "CLIENTS",
+  "m_contact": "CONTACT",
+  "mnav_bottom": "© 2025 · Switzerland & International",
+  "n_projects": "Projects",
+  "n_about": "About",
+  "n_services": "Services",
+  "n_clients": "Clients",
+  "n_contact": "Contact",
+  "n_available": "Available",
+  "menu_open": "Open menu",
+  "menu_close": "Close menu",
+  "lang_switch_label": "DE",
+  "lang_switch_aria": "Auf Deutsch wechseln",
+  "lang_name": "English",
+  "reel_caption": "Showreel 2026",
+  "scroll": "Scroll",
+  "hero_eyebrow": "Videographer & Content Creator · Zurich",
+  "hero_sr": "Videographer &amp; Content Creator in Zurich",
+  "hero_desc": "Cinematic precision. Emotional impact.<br>For brands that want to be remembered.",
+  "cta_portfolio": "Portfolio",
+  "showreel_play_aria": "Play showreel",
+  "cta_showreel": "Showreel",
+  "cta_inquire": "Request a project",
+  "cta_youtube": "YouTube channel",
+  "c1_label": "Projects delivered",
+  "c2_label": "Years of experience",
+  "c3_label": "Premium clients",
+  "c4_label": "Views generated",
+  "c1_val": "30<sup>+</sup>",
+  "c2_val": "2",
+  "c3_val": "4<sup>+</sup>",
+  "c4_val": "1M<sup>+</sup>",
+  "portfolio_meta": "Portfolio",
+  "portfolio_h2": "SELECTED<br><span class=\"serif\">Work</span>",
+  "portfolio_soon": "More projects and references coming soon.",
+  "about_tag": "Zurich · CH · 2025",
+  "about_meta": "About me",
+  "about_h2": "MY VISION,<br><span class=\"serif\">your story</span>",
+  "about_p1": "I'm Abdi Dhiblawe, a cinematographer and content creator from Zurich — with a <strong>deep passion for visual storytelling</strong>. What drives me isn't the technology, but the moment when an image makes you feel something.",
+  "about_p2": "With over a year of experience in <strong>commercial, automotive, real estate and social media</strong>, I've learned this: every brand has a story. The only question is whether it's told well enough.",
+  "about_p3": "I work internationally — from Zurich to Dubai — with one clear standard: <strong>no compromise on quality.</strong>",
+  "gear_head": "Equipment",
+  "gear": [
+    [
+      "Sony FX3",
+      "Cinema camera"
+    ],
+    [
+      "Gimbal Ronin RS5",
+      "Stabilisation"
+    ],
+    [
+      "Sony 24-70mm GM II",
+      "Main lens"
+    ],
+    [
+      "Drone",
+      "Aerial footage"
+    ],
+    [
+      "Microphone",
+      "Audio"
+    ],
+    [
+      "MacBook Pro",
+      "Workstation"
+    ],
+    [
+      "DaVinci Resolve Studio / Adobe Premium",
+      "Color grading"
+    ],
+    [
+      "Aperture Light & Dome",
+      "Lighting"
+    ],
+    [
+      "Atomos Ninja V",
+      "Monitor"
+    ]
+  ],
+  "services_meta": "Services",
+  "services_h2": "WHAT I DO<br><span class=\"accent\">FOR YOU.</span>",
+  "services_desc": "From the first idea to the final export — everything from a single source. No compromises. No step skipped.",
+  "services": [
+    {
+      "num": "01",
+      "name": "VIDEOGRAPHY",
+      "sub": "Cinematic Production",
+      "tags": [
+        "Pre-production",
+        "Multi-location",
+        "Color grading"
+      ]
+    },
+    {
+      "num": "02",
+      "name": "SOCIAL MEDIA",
+      "sub": "Content Strategy & Production",
+      "tags": [
+        "Reels & TikTok",
+        "Monthly",
+        "Analytics"
+      ]
+    },
+    {
+      "num": "03",
+      "name": "EDITING & GRADING",
+      "sub": "Post-Production Excellence",
+      "tags": [
+        "DaVinci Resolve",
+        "Custom LUTs",
+        "Sound design"
+      ]
+    },
+    {
+      "num": "04",
+      "name": "DRONE SHOTS",
+      "sub": "Aerial Cinematography",
+      "tags": [
+        "A1/A3 licence CH",
+        "DJI Inspire 3",
+        "4K/6K"
+      ]
+    },
+    {
+      "num": "05",
+      "name": "BRANDING VIDEOS",
+      "sub": "Brand Identity Films",
+      "tags": [
+        "Brand story",
+        "Corporate",
+        "Product"
+      ]
+    },
+    {
+      "num": "06",
+      "name": "EVENT COVERAGE",
+      "sub": "Documentary & Highlights",
+      "tags": [
+        "Multi-camera",
+        "Same-day edit",
+        "Livestream"
+      ]
+    }
+  ],
+  "clients_meta": "Clients",
+  "clients_h2": "WHAT<br>CLIENTS<br><span class=\"serif\">say</span>",
+  "clients_soon": "Words and references from my clients will appear here soon.",
+  "contact_bg": "HELLO.",
+  "contact_meta": "Contact",
+  "contact_h2": "LET'S<br>TALK.",
+  "contact_tagline": "Ready for a project that lasts? Write to me — ",
+  "lbl_email": "Email",
+  "f_first": "First name",
+  "f_last": "Last name",
+  "f_email": "Email",
+  "ph_email": "jane@example.com",
+  "f_type": "Project type",
+  "f_choose": "— Please choose —",
+  "opt1": "Commercial / Brand film",
+  "opt2": "Social media content",
+  "opt3": "Drone footage",
+  "opt4": "Other",
+  "f_msg": "Your project",
+  "ph_msg": "Tell me about your vision — timeline, budget, goals …",
+  "f_hp": "Website (leave empty)",
+  "f_send": "Send request",
+  "f_note1": "No advertising. Just real answers.",
+  "f_note2": "By submitting you accept our <a href=\"{{privacy_url}}\" style=\"text-decoration:underline;\">privacy policy</a>.",
+  "foot_about": "About me",
+  "foot_imprint": "Imprint",
+  "foot_privacy": "Privacy",
+  "foot_terms": "Terms",
+  "foot_copy1": "All rights reserved.",
+  "foot_copy2": "Zurich · International · Made with precision.",
+  "close_aria": "Close",
+  "modal_ph": "Video placeholder",
+  "modal_client": "Client",
+  "modal_camera": "Camera",
+  "modal_year": "Year",
+  "ticker": [
+    "Videography",
+    "Commercial",
+    "Social Media",
+    "Drone",
+    "Real Estate",
+    "Events",
+    "Travel"
+  ],
+  "marquee": [
+    [
+      "VISUAL",
+      "STORIES"
+    ],
+    [
+      "CINEMATIC",
+      "PRECISION"
+    ],
+    [
+      "PREMIUM",
+      "CONTENT"
+    ],
+    [
+      "ZURICH &",
+      "INTERNATIONAL"
+    ]
+  ],
+  "showreel_title": "Showreel 2026",
+  "showreel_desc": "A selection of my current work: cinematography, slow motion and visual storytelling from Zurich.",
+  "showreel_client": "A.D.Films24",
+  "showreel_camera": "Sony FX3",
+  "showreel_year": "2026",
+  "form_wait": "Please wait {s} more seconds before sending again.",
+  "form_sending": "… Sending",
+  "form_sending_status": "Sending your request …",
+  "form_sent_btn": "✓ &nbsp;Sent!",
+  "form_ok": "Thank you! Your request has arrived. I'll get back to you as soon as possible.",
+  "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}</a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
+  "pj_back": "← All projects",
+  "pj_client": "Client",
+  "pj_category": "Category",
+  "pj_year": "Year",
+  "pj_camera": "Camera",
+  "pj_soon": "Video coming soon.",
+  "pj_draft": "Draft — this page is not published yet.",
+  "pj_cta_h": "A similar project in mind?",
+  "pj_cta": "Request a project",
+  "pj_more": "More projects",
+  "pj_title_suffix": "Project",
+  "pj_og_locale": "en_GB",
+  "categories": {
+    "showreel": "Showreel",
+    "commercial": "Commercial",
+    "social": "Social media",
+    "drone": "Drone",
+    "real-estate": "Real estate",
+    "events": "Events",
+    "travel": "Travel"
+  },
+  "legal_back": "← Back to home",
+  "legal_home": "Home",
+  "intro_note": ""
+}
