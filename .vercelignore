@@ -1,1 +1,8 @@
 .trash
+# Quellen und Werkzeuge: werden von build.py zu HTML verarbeitet, nicht ausgeliefert
+build.py
+content
+templates
+tests
+README.md
+.github

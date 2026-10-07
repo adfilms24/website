@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  site:
+    name: Build aktuell + Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Seiten neu bauen
+        run: python3 build.py
+      - name: Gebaute Seiten sind eingecheckt
+        run: |
+          if ! git diff --quiet -- . ':!.trash'; then
+            echo "::error::content/ oder templates/ geändert, aber build.py nicht ausgeführt:"
+            git diff --stat
+            exit 1
+          fi
+      - name: Interne Links und Assets
+        run: python3 tests/check_site.py
