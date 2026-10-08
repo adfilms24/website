@@ -1,9 +1,9 @@
 {
-  "meta_desc": "Videographer and content creator in Zurich: commercial, social media and drone videos with a cinematic look for brands, events and real estate. Watch the showreel.",
-  "meta_keywords": "Cinematographer, videographer, content creator, commercial video, social media, drone, brand film, Zurich",
-  "title": "A.D.Films24 — Videographer &amp; Content Creator in Zurich",
-  "og_desc": "Cinematographer & content creator — visual storytelling for brands, events and social media. Switzerland & international.",
-  "ld_desc": "Cinematographer & content creator — visual storytelling for brands, events and social media.",
+  "meta_desc": "Video production from Zurich for SMEs and companies: brand films, social media content, product and event videos. Reliable, transparent and without endless revision rounds.",
+  "meta_keywords": "video production Zurich, brand film, corporate video, SME video, social media content, product video, event video, drone",
+  "title": "A.D.Films24 — Video Production for Businesses in Zurich",
+  "og_desc": "Video production for businesses from Zurich — brand films, social media content, product and event videos. Reliable and transparent.",
+  "ld_desc": "Video production for SMEs and companies from Zurich: brand films, social media content, product and event videos.",
   "ld_area": "Switzerland",
   "vo_name": "Showreel 2026 — A.D.Films24",
   "vo_desc": "Showreel 2026 by A.D.Films24: cinematography, slow motion and visual storytelling from Zurich.",
@@ -30,9 +30,9 @@
   "lang_name": "English",
   "reel_caption": "Showreel 2026",
   "scroll": "Scroll",
-  "hero_eyebrow": "Videographer & Content Creator · Zurich",
-  "hero_sr": "Videographer &amp; Content Creator in Zurich",
-  "hero_desc": "Cinematic precision. Emotional impact.<br>For brands that want to be remembered.",
+  "hero_eyebrow": "Video production for businesses · Zurich",
+  "hero_sr": "Video production for businesses in Zurich",
+  "hero_desc": "Videos for businesses<br>that land on the first cut.",
   "cta_portfolio": "Portfolio",
   "showreel_play_aria": "Play showreel",
   "cta_showreel": "Showreel",
@@ -50,11 +50,11 @@
   "portfolio_h2": "SELECTED<br><span class=\"serif\">Work</span>",
   "portfolio_soon": "More projects and references coming soon.",
   "about_tag": "Zurich · CH · 2025",
-  "about_meta": "About me",
-  "about_h2": "MY VISION,<br><span class=\"serif\">your story</span>",
-  "about_p1": "I'm Abdi Dhiblawe, a cinematographer and content creator from Zurich — with a <strong>deep passion for visual storytelling</strong>. What drives me isn't the technology, but the moment when an image makes you feel something.",
-  "about_p2": "With over a year of experience in <strong>commercial, automotive, real estate and social media</strong>, I've learned this: every brand has a story. The only question is whether it's told well enough.",
-  "about_p3": "I work internationally — from Zurich to Dubai — with one clear standard: <strong>no compromise on quality.</strong>",
+  "about_meta": "About us",
+  "about_h2": "YOUR VIDEO,<br><span class=\"serif\">no detours</span>",
+  "about_p1": "We are <strong>A.D.Films24 Studio</strong>, a video studio in Zurich. We produce videos for <strong>SMEs and companies</strong> — from brand films and social media content to events.",
+  "about_p2": "Our clients get what was agreed, and usually a bit more. <strong>So far, not a single revision request.</strong> Because we settle what the video needs to achieve before the shoot, and then deliver exactly that.",
+  "about_p3": "Transparent from the start: a clear process, a clear price and an honest assessment, even when something doesn't fit.",
   "gear_head": "Equipment",
   "gear": [
     [
@@ -82,7 +82,7 @@
       "Workstation"
     ],
     [
-      "DaVinci Resolve Studio / Adobe Premium",
+      "DaVinci Resolve Studio / Adobe Premiere Pro",
       "Color grading"
     ],
     [
@@ -95,8 +95,8 @@
     ]
   ],
   "services_meta": "Services",
-  "services_h2": "WHAT I DO<br><span class=\"accent\">FOR YOU.</span>",
-  "services_desc": "From the first idea to the final export — everything from a single source. No compromises. No step skipped.",
+  "services_h2": "WHAT WE DO<br><span class=\"accent\">FOR YOU.</span>",
+  "services_desc": "From the first idea to the finished video — everything from a single source. Clearly agreed, reliably delivered.",
   "services": [
     {
       "num": "01",
@@ -161,11 +161,11 @@
   ],
   "clients_meta": "Clients",
   "clients_h2": "WHAT<br>CLIENTS<br><span class=\"serif\">say</span>",
-  "clients_soon": "Words and references from my clients will appear here soon.",
+  "clients_soon": "Words and references from our clients will appear here soon.",
   "contact_bg": "HELLO.",
   "contact_meta": "Contact",
   "contact_h2": "LET'S<br>TALK.",
-  "contact_tagline": "Ready for a project that lasts? Write to me — ",
+  "contact_tagline": "Tell us what your video should achieve. We'll get back to you personally — ",
   "lbl_email": "Email",
   "f_first": "First name",
   "f_last": "Last name",
@@ -178,12 +178,12 @@
   "opt3": "Drone footage",
   "opt4": "Other",
   "f_msg": "Your project",
-  "ph_msg": "Tell me about your vision — timeline, budget, goals …",
+  "ph_msg": "Tell us about your vision — timeline, budget, goals …",
   "f_hp": "Website (leave empty)",
   "f_send": "Send request",
   "f_note1": "No advertising. Just real answers.",
   "f_note2": "By submitting you accept our <a href=\"{{privacy_url}}\" style=\"text-decoration:underline;\">privacy policy</a>.",
-  "foot_about": "About me",
+  "foot_about": "About us",
   "foot_imprint": "Imprint",
   "foot_privacy": "Privacy",
   "foot_terms": "Terms",
@@ -195,27 +195,27 @@
   "modal_camera": "Camera",
   "modal_year": "Year",
   "ticker": [
-    "Videography",
-    "Commercial",
-    "Social Media",
-    "Drone",
-    "Real Estate",
-    "Automotive",
+    "Brand film",
+    "Corporate video",
+    "Social media",
+    "Product video",
     "Events",
-    "Travel"
+    "Food & hospitality",
+    "Portrait",
+    "Drone"
   ],
   "marquee": [
     [
-      "VISUAL",
-      "STORIES"
+      "CAPTURE",
+      "MORE"
     ],
     [
-      "CINEMATIC",
-      "PRECISION"
+      "RELIABLY",
+      "DELIVERED"
     ],
     [
-      "PREMIUM",
-      "CONTENT"
+      "HONEST &",
+      "TRANSPARENT"
     ],
     [
       "ZURICH &",
@@ -223,7 +223,7 @@
     ]
   ],
   "showreel_title": "Showreel 2026",
-  "showreel_desc": "A selection of my current work: cinematography, slow motion and visual storytelling from Zurich.",
+  "showreel_desc": "A selection of our current work: cinematography, slow motion and visual storytelling from Zurich.",
   "showreel_client": "A.D.Films24",
   "showreel_camera": "Sony FX3",
   "showreel_year": "2026",
@@ -231,7 +231,7 @@
   "form_sending": "… Sending",
   "form_sending_status": "Sending your request …",
   "form_sent_btn": "✓ &nbsp;Sent!",
-  "form_ok": "Thank you! Your request has arrived. I'll get back to you as soon as possible.",
+  "form_ok": "Thank you! Your request has arrived. We'll get back to you as soon as possible.",
   "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}</a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
   "pj_back": "← All projects",
   "pj_client": "Client",

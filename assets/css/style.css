@@ -878,7 +878,7 @@ body::after {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: minmax(0, 860px);
   gap: 5rem;
   align-items: start;
 }
@@ -1567,6 +1567,11 @@ footer {
   .nav-center, .nav-pill { display: none; }
   .burger { display: flex; }
   .hero-body { padding: 0 2rem 5rem; }
+  .hero-sub-row { flex-direction: column; align-items: flex-start; gap: 1.75rem; }
+  .hero-desc { max-width: none; }
+  .hero-actions { flex-wrap: wrap; gap: .75rem; }
+  /* Sektionen haben schon 2rem Rand; der innere 3rem-Rand machte den Text auf dem Handy zu schmal */
+  .section > div[style*="padding:0 3rem"] { padding: 0 !important; }
   .reel-trigger { display: none; }
   .perfs, .perfs-r { display: none; }
   .counters { grid-template-columns: 1fr 1fr; }

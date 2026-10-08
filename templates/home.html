@@ -188,7 +188,7 @@
       {{hero_eyebrow}}
     </p>
     <h1 class="hero-h1">
-      <span class="h1-row"><span class="h1-inner">CREATE</span></span>
+      <span class="h1-row"><span class="h1-inner">CAPTURE</span></span>
       <span class="h1-row"><span class="h1-inner">MORE.</span></span>
       <span class="sr-only"> – {{hero_sr}}</span>
     </h1>
@@ -218,30 +218,6 @@
   {{ticker}}
 </div>
 
-<!-- Counters -->
-<div class="section" style="background:var(--deep-1); padding-top:5rem; padding-bottom:5rem;">
-  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
-    <div class="counters">
-      <div class="ctr" data-n="01" data-sr="u">
-        <div class="ctr-val">{{c1_val}}</div>
-        <div class="ctr-lbl">{{c1_label}}</div>
-      </div>
-      <div class="ctr" data-n="02" data-sr="u" data-d="2">
-        <div class="ctr-val">{{c2_val}}</div>
-        <div class="ctr-lbl">{{c2_label}}</div>
-      </div>
-      <div class="ctr" data-n="03" data-sr="u" data-d="3">
-        <div class="ctr-val">{{c3_val}}</div>
-        <div class="ctr-lbl">{{c3_label}}</div>
-      </div>
-      <div class="ctr" data-n="04" data-sr="u" data-d="4">
-        <div class="ctr-val">{{c4_val}}</div>
-        <div class="ctr-lbl">{{c4_label}}</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ══════════════════════════════════════
      PORTFOLIO
 ══════════════════════════════════════════ -->
@@ -267,27 +243,13 @@
 </div>
 
 <!-- ══════════════════════════════════════
-     ÜBER MICH
+     ÜBER UNS
 ══════════════════════════════════════════ -->
 <section class="section" id="about">
   <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
     <div class="about-layout">
 
-      <!-- Image column -->
-      <div class="about-img-col" data-sr="l">
-        <div class="about-main-img">
-          <!--
-            Bild einbinden:
-            <img src="portrait.jpg" alt="Dein Name – Cinematographer" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          -->
-          <div class="about-main-img-inner"><span>◎</span></div>
-        </div>
-        <div class="about-bts-img">
-          <!-- Behind-the-scenes: <img src="bts.jpg" alt="Behind the Scenes" loading="lazy" style="width:100%;height:100%;object-fit:cover;"> -->
-          <div class="about-bts-img-inner"><span>◉</span></div>
-        </div>
-        <div class="about-data-tag">{{about_tag}}</div>
-      </div>
+      <!-- Bildspalte (Porträt + Behind the Scenes) vorerst entfernt — zurückholen: git log -S "about-img-col" templates/home.html -->
 
       <!-- Text column -->
       <div data-sr="r">
@@ -360,7 +322,7 @@
         </div>
         <div class="test-card" data-sr="r" data-d="2">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Ich war sehr zufrieden mit deinere arbeit und kann es nur jedem weiterempfehlen."</p>
+          <p class="test-body">„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen."</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Safiya Qasil</div>
             <div class="test-author-role">ATTAR ONE</div>
@@ -503,10 +465,6 @@
   <div class="modal-panel">
     <button type="button" class="modal-close" id="modalClose" aria-label="{{close_aria}}">✕</button>
     <div class="modal-vid" id="modalVid">
-      <!--
-        Vimeo: <iframe src="https://player.vimeo.com/video/YOURID?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        YouTube: <iframe src="https://www.youtube.com/embed/YOURID?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      -->
       <div class="modal-vid-ph">
         <div class="modal-vid-ph-play">
           <svg width="16" height="18" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#FF4D00"/></svg>
