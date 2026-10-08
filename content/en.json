@@ -259,5 +259,32 @@
   "legal_home": "Home",
   "intro_note": "",
   "pf_all": "All",
-  "pf_filter_aria": "Filter projects"
+  "pf_filter_aria": "Filter projects",
+  "lp_meta": "Service",
+  "lp_includes": "What you get",
+  "lp_for": "Who it's for",
+  "lp_process": "How it works",
+  "lp_example": "Example from our portfolio",
+  "lp_more": "More services",
+  "lp_cta_h": "Planning a project?",
+  "lp_promise": "So far, not a single revision request. Because we settle what the video needs to achieve before the shoot.",
+  "lp_steps": [
+    [
+      "Call",
+      "We clarify the goal, the audience and where the video will be used."
+    ],
+    [
+      "Quote & concept",
+      "A clear price and a clear process before we shoot."
+    ],
+    [
+      "Shoot",
+      "With cinema camera, lighting and sound — on site with you."
+    ],
+    [
+      "Edit & delivery",
+      "Finished in the formats you need."
+    ]
+  ],
+  "srv_more_label": "More on"
 }

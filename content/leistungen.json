@@ -1,0 +1,118 @@
+[
+  {
+    "slug": {"de": "imagefilm-zuerich", "en": "brand-film-zurich"},
+    "project": "phunnid",
+    "nav": {"de": "Imagefilm", "en": "Brand film"},
+    "title": {
+      "de": "Imagefilm & Unternehmensvideo Zürich — A.D.Films24",
+      "en": "Brand Film & Corporate Video Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Imagefilm &amp; Unternehmensvideo in Zürich",
+      "en": "Brand film &amp; corporate video in Zurich"
+    },
+    "meta": {
+      "de": "Imagefilme und Unternehmensvideos für KMU in Zürich: Wir zeigen, wer ihr seid und was euch ausmacht. Zuverlässig produziert, ohne endlose Korrekturschlaufen.",
+      "en": "Brand films and corporate videos for SMEs in Zurich: we show who you are and what sets you apart. Reliably produced, without endless revision rounds."
+    },
+    "intro": {
+      "de": "Ein Imagefilm muss in wenigen Sekunden zeigen, wer ihr seid und warum man euch vertrauen kann. Wir produzieren Imagefilme und Unternehmensvideos für KMU in Zürich und Umgebung — für Website, Social Media, Messen und Recruiting.",
+      "en": "A brand film has a few seconds to show who you are and why people can trust you. We produce brand films and corporate videos for SMEs in and around Zurich — for your website, social media, trade fairs and recruiting."
+    },
+    "includes": {
+      "de": ["Konzept und Drehplan, abgestimmt auf euer Ziel", "Dreh mit Cinema-Kamera, Licht und Ton", "Schnitt, Color Grading und Sounddesign", "Versionen für Website, Social Media (9:16) und Präsentationen", "Drohnenaufnahmen auf Wunsch"],
+      "en": ["Concept and shooting plan tailored to your goal", "Shoot with cinema camera, lighting and sound", "Editing, colour grading and sound design", "Versions for website, social media (9:16) and presentations", "Drone footage on request"]
+    },
+    "for": {
+      "de": ["KMU, die sich auf der Website professionell zeigen wollen", "Firmen, die Fachkräfte gewinnen wollen", "Neueröffnungen und Firmenjubiläen"],
+      "en": ["SMEs that want to present themselves professionally online", "Companies looking to attract skilled staff", "Openings and company anniversaries"]
+    }
+  },
+  {
+    "slug": {"de": "social-media-content-zuerich", "en": "social-media-content-zurich"},
+    "project": "social-media",
+    "nav": {"de": "Social Media", "en": "Social media"},
+    "title": {
+      "de": "Social-Media-Content für KMU in Zürich — A.D.Films24",
+      "en": "Social Media Content for SMEs in Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Social-Media-Content für KMU in Zürich",
+      "en": "Social media content for SMEs in Zurich"
+    },
+    "meta": {
+      "de": "Reels, Kurzvideos und Fotos für Instagram, TikTok und LinkedIn: Social-Media-Content für KMU in Zürich, einzeln oder als monatliches Paket.",
+      "en": "Reels, short videos and photos for Instagram, TikTok and LinkedIn: social media content for SMEs in Zurich, one-off or as a monthly package."
+    },
+    "intro": {
+      "de": "Regelmässiger Content wirkt nur, wenn er gut aussieht und zur Marke passt. Wir produzieren Reels, Kurzvideos und Fotos für Instagram, TikTok und LinkedIn — einzeln oder als monatliches Paket.",
+      "en": "Regular content only works if it looks good and fits your brand. We produce reels, short videos and photos for Instagram, TikTok and LinkedIn — one-off or as a monthly package."
+    },
+    "includes": {
+      "de": ["Reels und Kurzvideos im Hochformat (9:16)", "Mehrere Clips aus einem Drehtag", "Schnitt und Untertitel im Stil eurer Marke", "Fotos aus dem gleichen Dreh auf Wunsch", "Ideen für Hooks und Formate"],
+      "en": ["Reels and short videos in vertical format (9:16)", "Several clips from one shooting day", "Editing and subtitles in your brand's style", "Photos from the same shoot on request", "Ideas for hooks and formats"]
+    },
+    "for": {
+      "de": ["Restaurants, Fitnessstudios, Coiffeure und Läden", "Marken mit eigenem Instagram-Auftritt", "Firmen, die auf LinkedIn sichtbar werden wollen"],
+      "en": ["Restaurants, gyms, hair salons and shops", "Brands with their own Instagram presence", "Companies that want to be visible on LinkedIn"]
+    }
+  },
+  {
+    "slug": {"de": "restaurant-video-zuerich", "en": "restaurant-video-zurich"},
+    "project": "showreel-2026",
+    "nav": {"de": "Gastro &amp; Food", "en": "Restaurant &amp; food"},
+    "title": {
+      "de": "Restaurant- & Food-Video Zürich — A.D.Films24",
+      "en": "Restaurant & Food Video Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Restaurant- &amp; Food-Video in Zürich",
+      "en": "Restaurant &amp; food video in Zurich"
+    },
+    "meta": {
+      "de": "Videos für Restaurants, Bars und Food-Brands in Zürich: Küche, Gerichte und Atmosphäre so gefilmt, dass man reservieren will. Reels und Kurzfilme.",
+      "en": "Videos for restaurants, bars and food brands in Zurich: kitchen, dishes and atmosphere filmed so people want to book a table. Reels and short films."
+    },
+    "intro": {
+      "de": "Gäste entscheiden mit den Augen — oft auf Instagram, bevor sie reservieren. Wir filmen eure Küche, eure Gerichte und eure Atmosphäre so, dass man Hunger bekommt.",
+      "en": "Guests decide with their eyes — often on Instagram, before they book. We film your kitchen, your dishes and your atmosphere so that people get hungry."
+    },
+    "includes": {
+      "de": ["Food-Aufnahmen mit Slow Motion und Details", "Küche, Team und Atmosphäre", "Reels für Instagram und TikTok", "Kurzfilm für Website und Google-Profil", "Fotos der Gerichte auf Wunsch"],
+      "en": ["Food shots with slow motion and details", "Kitchen, team and atmosphere", "Reels for Instagram and TikTok", "Short film for your website and Google profile", "Photos of your dishes on request"]
+    },
+    "for": {
+      "de": ["Restaurants und Bars", "Neueröffnungen", "Caterer und Food-Brands"],
+      "en": ["Restaurants and bars", "New openings", "Caterers and food brands"]
+    }
+  },
+  {
+    "slug": {"de": "event-video-zuerich", "en": "event-video-zurich"},
+    "project": "events",
+    "nav": {"de": "Events", "en": "Events"},
+    "title": {
+      "de": "Event-Video Zürich — Firmenanlässe & Eröffnungen — A.D.Films24",
+      "en": "Event Video Zurich — Corporate Events & Openings — A.D.Films24"
+    },
+    "h1": {
+      "de": "Event-Video in Zürich",
+      "en": "Event video in Zurich"
+    },
+    "meta": {
+      "de": "Event-Videos für Firmenanlässe, Eröffnungen und Launches in Zürich: dokumentarisch begleitet, mit Highlight-Film und Clips für Social Media.",
+      "en": "Event videos for corporate events, openings and launches in Zurich: documented as it happens, with a highlight film and clips for social media."
+    },
+    "intro": {
+      "de": "Ein Anlass dauert einen Abend, das Video bleibt. Wir begleiten Firmenanlässe, Eröffnungen und Launches dokumentarisch und liefern einen Highlight-Film und Clips für Social Media.",
+      "en": "An event lasts one evening, the video stays. We document corporate events, openings and launches and deliver a highlight film and clips for social media."
+    },
+    "includes": {
+      "de": ["Dokumentarische Begleitung des Anlasses", "Highlight-Film", "Kurze Clips im Hochformat für Social Media", "Interviews mit Gästen oder Gastgebern auf Wunsch", "Multi-Kamera auf Wunsch"],
+      "en": ["Documentary coverage of the event", "Highlight film", "Short vertical clips for social media", "Interviews with guests or hosts on request", "Multi-camera on request"]
+    },
+    "for": {
+      "de": ["Firmenanlässe und Jubiläen", "Eröffnungen und Produkt-Launches", "Messen und Konferenzen"],
+      "en": ["Corporate events and anniversaries", "Openings and product launches", "Trade fairs and conferences"]
+    }
+  }
+]

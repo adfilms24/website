@@ -1700,3 +1700,25 @@ a.pf-cell { display: block; color: inherit; }
   .pj-backlink { display: none; }
 }
 @media (max-width: 1200px) { .nav-pill { display: none; } }
+
+/* ── Leistungsseiten ── */
+.srv-more { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: baseline; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+.srv-more span { color: var(--bone-60); }
+.srv-more a { color: var(--bone); text-decoration: underline; text-underline-offset: .3em; }
+.lp-intro { font-family: var(--f-serif); font-style: italic; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.7; color: var(--bone-60); max-width: 820px; }
+.lp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3.5rem 0; }
+.lp-h { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: .02em; margin: 0 0 1.2rem; }
+.lp-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.lp-list li { padding: .85rem 0; border-bottom: 1px solid var(--line); font-family: var(--f-serif); font-size: 1.05rem; color: var(--bone); }
+.lp-label { margin-bottom: 1rem; }
+.lp-label a { text-decoration: underline; }
+.lp .pj-video { margin-bottom: 3.5rem; }
+.lp-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.lp-steps li { background: var(--void); padding: 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
+.lp-step-n { font-size: .72rem; letter-spacing: .2em; color: var(--bone-60); }
+.lp-steps strong { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; letter-spacing: .02em; }
+.lp-steps li > span:last-child { font-family: var(--f-serif); color: var(--bone-60); line-height: 1.6; }
+.lp-promise { margin-top: 2.5rem; font-family: var(--f-serif); font-style: italic; font-size: 1.15rem; color: var(--bone); }
+.lp-more { margin-top: 3rem; }
+@media (max-width: 900px) { .lp-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .lp-cols { grid-template-columns: 1fr; gap: 2.5rem; } .lp-steps { grid-template-columns: 1fr; } }

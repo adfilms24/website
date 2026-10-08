@@ -40,6 +40,7 @@ def esc_json(o): return json.dumps(o, ensure_ascii=False).replace("</", "<\\/")
 
 TEXT = {l: load(f"content/{l}.json") for l in LANGS}
 PROJECTS = load("content/projects.json")
+SERVICES = load("content/leistungen.json")
 
 # ---------- URLs ----------
 LEGAL = {  # Schlüssel -> {lang: (Pfad, Dateiname-im-content)}
@@ -58,6 +59,7 @@ LEGAL_META = {
 }
 def home_url(l): return "/" if l == "de" else "/en/"
 def project_url(l, slug): return f"/projekte/{slug}.html" if l == "de" else f"/en/projects/{slug}.html"
+def service_url(l, s): return f"/leistungen/{s['slug']['de']}.html" if l == "de" else f"/en/services/{s['slug']['en']}.html"
 def other(l): return "en" if l == "de" else "de"
 def hreflang(urls):
     return "\n".join([f'<link rel="alternate" hreflang="{l}" href="{DOMAIN}{u}">' for l, u in urls.items()] +
@@ -107,6 +109,9 @@ def services(t):
         </div>
       </div>''')
     return "\n\n" + "\n\n".join(out) + "\n"
+def service_links(l, t):
+    links = " ".join(f'<a href="{service_url(l, s)}">{s["nav"][l]}</a>' for s in SERVICES)
+    return f'<p class="srv-more" data-sr="u"><span>{t["srv_more_label"]}</span> {links}</p>'
 SIZES = ["xl", "tall", "wide", "wide", "sq", "sq"]
 BGS = ["bg-a", "bg-b", "bg-c", "bg-d", "bg-e", "bg-f"]
 def projects_grid(l, t):
@@ -144,7 +149,7 @@ def projects_grid(l, t):
 def build_home(l):
     urls = {x: home_url(x) for x in LANGS}
     t = common_ctx(l, urls)
-    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), projects_grid=projects_grid(l, t))
+    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t))
     keys = ["menu_open", "menu_close", "showreel_title", "showreel_desc", "showreel_client", "showreel_camera", "showreel_year",
             "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail"]
     t["i18n_json"] = esc_json({**{k: TEXT[l][k] for k in keys}, "mail": MAIL, "lang": l})
@@ -234,6 +239,57 @@ def build_projects():
                               robots="noindex, nofollow" if draft else "index, follow", extra_head=ld, body_class="page-project", css="style.css")
             write(urls[l].lstrip("/"), html)
 
+def build_services():
+    by_slug = {p["slug"]: p for p in PROJECTS}
+    for s in SERVICES:
+        urls = {l: service_url(l, s) for l in LANGS}
+        for l in LANGS:
+            t = TEXT[l]; p = by_slug.get(s["project"])
+            vid = has_video(p) if p and p.get("published") else None
+            video = ""
+            if vid:
+                poster = poster_of(p); pa = f' poster="{poster}"' if poster else ""
+                video = (f'<p class="s-meta lp-label">{t["lp_example"]}: <a href="{project_url(l, p["slug"])}">{p["title"][l]}</a></p>\n'
+                         f'    <div class="pj-video"><video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video></div>')
+            inc = "".join(f"<li>{x}</li>" for x in s["includes"][l])
+            who = "".join(f"<li>{x}</li>" for x in s["for"][l])
+            steps = "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(t["lp_steps"]))
+            more = " ".join(f'<a href="{service_url(l, o)}">{o["nav"][l]}</a>' for o in SERVICES if o is not s)
+            ld = '<script type="application/ld+json">' + esc_json({
+                "@context": "https://schema.org", "@type": "Service", "name": re.sub(r"&amp;", "&", s["h1"][l]),
+                "description": s["meta"][l], "areaServed": {"@type": "City", "name": "Zürich" if l == "de" else "Zurich"},
+                "provider": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}, "url": DOMAIN + urls[l]}) + '</script>'
+            body = f'''<nav id="nav" class="pinned pj-nav">
+    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D. Films24" class="nav-logo-img"></a>
+    <div class="nav-right">
+      <a href="{home_url(l)}#services" class="nav-lang pj-backlink">← {t["n_services"]}</a>
+      <a href="{urls[other(l)]}" class="nav-lang" hreflang="{other(l)}" lang="{other(l)}" aria-label="{t["lang_switch_aria"]}">{t["lang_switch_label"]}</a>
+    </div>
+  </nav>
+  <main id="main" tabindex="-1" class="pj lp">
+    <p class="s-meta">{t["lp_meta"]}</p>
+    <h1 class="h-display pj-title">{s["h1"][l]}</h1>
+    <p class="lp-intro">{s["intro"][l]}</p>
+    <div class="lp-cols">
+      <div><h2 class="lp-h">{t["lp_includes"]}</h2><ul class="lp-list">{inc}</ul></div>
+      <div><h2 class="lp-h">{t["lp_for"]}</h2><ul class="lp-list">{who}</ul></div>
+    </div>
+    {video}
+    <h2 class="lp-h">{t["lp_process"]}</h2>
+    <ol class="lp-steps">{steps}</ol>
+    <p class="lp-promise">{t["lp_promise"]}</p>
+    <div class="pj-cta">
+      <h2>{t["lp_cta_h"]}</h2>
+      <a href="{home_url(l)}#contact" class="cta-primary">{ARROW} {t["pj_cta"]}</a>
+    </div>
+    <p class="srv-more lp-more"><span>{t["lp_more"]}</span> {more}</p>
+    <footer class="page-foot pj-foot">
+      {footer_links(l)}
+    </footer>
+  </main>'''
+            html = page_shell(l, urls, s["title"][l], s["meta"][l], body, extra_head=ld, body_class="page-project", css="style.css")
+            write(urls[l].lstrip("/"), html)
+
 def build_404():
     body = '''  <h1>404</h1>
   <p class="meta-line">Seite nicht gefunden · Page not found</p>
@@ -258,11 +314,12 @@ def build_sitemap():
     out = entry({l: home_url(l) for l in LANGS}, "1.0", "monthly")
     for p in PROJECTS:
         if p.get("published"): out += entry({l: project_url(l, p["slug"]) for l in LANGS}, "0.8", "monthly")
+    for sv in SERVICES: out += entry({l: service_url(l, sv) for l in LANGS}, "0.9", "monthly")
     for k in LEGAL: out += entry({l: LEGAL[k][l] for l in LANGS}, "0.2", "yearly")
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + out + '</urlset>\n')
 
 if __name__ == "__main__":
     for l in LANGS: build_home(l)
-    build_legal(); build_projects(); build_404(); build_sitemap()
+    build_legal(); build_projects(); build_services(); build_404(); build_sitemap()
     n_pub = sum(1 for p in PROJECTS if p.get("published"))
-    print(f"OK: 2 Startseiten, {n_pub} veröffentlichte + {len(PROJECTS)-n_pub} Entwurf-Projekte (je DE/EN), Rechtstexte, 404, Sitemap")
+    print(f"OK: 2 Startseiten, {n_pub} veröffentlichte + {len(PROJECTS)-n_pub} Entwurf-Projekte (je DE/EN), {len(SERVICES)} Leistungsseiten, Rechtstexte, 404, Sitemap")

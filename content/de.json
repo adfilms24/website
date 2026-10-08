@@ -259,5 +259,32 @@
   "ld_area": "Schweiz",
   "skip": "Zum Inhalt springen",
   "pf_all": "Alle",
-  "pf_filter_aria": "Projekte filtern"
+  "pf_filter_aria": "Projekte filtern",
+  "lp_meta": "Leistung",
+  "lp_includes": "Was ihr bekommt",
+  "lp_for": "Für wen",
+  "lp_process": "So läuft es ab",
+  "lp_example": "Beispiel aus unserem Portfolio",
+  "lp_more": "Weitere Leistungen",
+  "lp_cta_h": "Projekt besprechen?",
+  "lp_promise": "Bisher gab es keine einzige Revisionsanfrage. Weil wir vor dem Dreh klären, was das Video leisten soll.",
+  "lp_steps": [
+    [
+      "Gespräch",
+      "Wir klären Ziel, Zielgruppe und wo das Video eingesetzt wird."
+    ],
+    [
+      "Offerte & Konzept",
+      "Klarer Preis und klarer Ablauf, bevor gedreht wird."
+    ],
+    [
+      "Dreh",
+      "Mit Cinema-Kamera, Licht und Ton — vor Ort bei euch."
+    ],
+    [
+      "Schnitt & Abgabe",
+      "Fertig in den Formaten, die ihr braucht."
+    ]
+  ],
+  "srv_more_label": "Mehr zu"
 }
