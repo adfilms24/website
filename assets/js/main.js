@@ -203,7 +203,7 @@ document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 
 /* ── FORM ─── */
 const SEND_LABEL = document.getElementById('sendBtn').innerHTML;
-const MAIL = tr('mail', 'abdi.dhiblawe1@gmail.com');
+const MAIL = tr('mail', 'info@adfilms24.ch');
 const COOLDOWN_MS = 30000;
 function setStatus(el, cls, html) { el.className = 'f-status ' + cls; el.innerHTML = html; }
 

@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 DOMAIN = "https://www.adfilms24.ch"
 LANGS = ["de", "en"]
-MAIL = "abdi.dhiblawe1@gmail.com"
+MAIL = "info@adfilms24.ch"
 
 def load(p): return json.loads((ROOT / p).read_text(encoding="utf-8"))
 import hashlib
