@@ -20,6 +20,34 @@
     "uploadDate": "2026-09-16"
   },
   {
+    "slug": "loco-birria",
+    "published": false,
+    "category": "food",
+    "year": "2026",
+    "camera": "Sony FX3 · Atomos Ninja V",
+    "client": "LOCO BIRRIÁ, Zürich",
+    "title": {
+      "de": "LOCO BIRRIÁ — RESTAURANT CONTENT",
+      "en": "LOCO BIRRIÁ — RESTAURANT CONTENT"
+    },
+    "desc": {
+      "de": "Video- und Social-Media-Content für das Restaurant LOCO BIRRIÁ in Zürich: Küche, Gerichte, Bar und Team, produziert für Instagram, TikTok und die Website.",
+      "en": "Video and social media content for the restaurant LOCO BIRRIÁ in Zurich: kitchen, dishes, bar and team, produced for Instagram, TikTok and the website."
+    },
+    "story": {
+      "de": [
+        "[Ausgangslage vom Restaurant: Was war das Ziel? z. B. mehr Gäste unter der Woche, neue Karte bekannt machen]",
+        "Ein Drehtag vor Ort: Food-Aufnahmen in Slow Motion, Küche und Team in Aktion, Bar und Atmosphäre. Daraus entstanden Reels im Hochformat, 4:5-Clips mit Untertiteln und Aufruf zum Folgen sowie Kurzvideos, in denen das Team selbst die Karte vorstellt.",
+        "[Ergebnis und Zitat vom Inhaber, z. B. «…»]"
+      ],
+      "en": [
+        "[Starting point: what did the restaurant want to achieve?]",
+        "One shooting day on site: slow-motion food shots, the kitchen and team in action, the bar and atmosphere. The result: vertical reels, 4:5 clips with subtitles and a follow call-to-action, and short videos in which the team presents the menu themselves.",
+        "[Result and quote from the owner]"
+      ]
+    }
+  },
+  {
     "slug": "commercial",
     "published": true,
     "category": "commercial",

@@ -231,7 +231,7 @@ def build_legal():
             body += f'\n  <footer class="page-foot">\n    {footer_links(l)}\n  </footer>'
             write(urls[l].lstrip("/"), page_shell(l, urls, title, desc, legal_wrap(l, urls, body)))
 
-CAT_SERVICE = {"commercial": "imagefilm-zuerich", "showreel": "imagefilm-zuerich", "social": "social-media-content-zuerich", "events": "event-video-zuerich"}
+CAT_SERVICE = {"commercial": "imagefilm-zuerich", "showreel": "imagefilm-zuerich", "social": "social-media-content-zuerich", "events": "event-video-zuerich", "food": "restaurant-video-zuerich"}
 def build_projects():
     for p in PROJECTS:
         urls = {l: project_url(l, p["slug"]) for l in LANGS}
