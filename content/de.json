@@ -41,7 +41,7 @@
   "c4_val": "Grosse",
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "AUSGEWÄHLTE<br><span class=\"serif\">Arbeiten</span>",
-  "portfolio_soon": "Weitere Projekte und Referenzen folgen in Kürze.",
+  "portfolio_soon": "",
   "about_tag": "Zürich · CH · 2025",
   "about_meta": "Über uns",
   "about_h2": "DEIN VIDEO,<br><span class=\"serif\">ohne Umwege</span>",
@@ -213,7 +213,7 @@
   ],
   "menu_close": "Menü schliessen",
   "lang_switch_label": "EN",
-  "lang_switch_aria": "Switch to English",
+  "lang_switch_aria": "EN – Switch to English",
   "lang_name": "Deutsch",
   "showreel_title": "Showreel 2026",
   "showreel_desc": "Ein Auszug aus unserer aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich.",
@@ -349,5 +349,10 @@
   "sticky_inquire": "Projekt anfragen",
   "sticky_wa": "WhatsApp",
   "foot_services": "Leistungen",
-  "pj_service": "Passende Leistung"
+  "pj_service": "Passende Leistung",
+  "pj_story": [
+    "Ausgangslage",
+    "Umsetzung",
+    "Ergebnis"
+  ]
 }

@@ -1758,3 +1758,5 @@ a.pf-cell { display: block; color: inherit; }
   .hero-rating { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .sticky-cta { transition: none; } }
+.pj-story-h { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; letter-spacing: .03em; margin: 2rem 0 .5rem; }
+.pj-story { font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--bone-60); }

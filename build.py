@@ -26,8 +26,12 @@ def _ver(path):
 def version_assets(html):
     """Hängt ?v=<Prüfsumme> an CSS/JS-Dateien an, damit Browser nach Änderungen sofort die neue Datei laden."""
     return _ASSET_RE.sub(lambda m: f"{m.group(1)}?v={_ver(m.group(1))}", html)
+FONTS_CSS = (ROOT / "assets/fonts/fonts.css").read_text(encoding="utf-8")
+def inline_fonts(html):
+    """fonts.css direkt in die Seite: spart eine blockierende Anfrage beim ersten Laden."""
+    return html.replace('<link rel="stylesheet" href="/assets/fonts/fonts.css">', "<style>" + re.sub(r"\s+", " ", FONTS_CSS).strip() + "</style>")
 def write(rel, text):
-    if rel.endswith(".html"): text = version_assets(text)
+    if rel.endswith(".html"): text = version_assets(inline_fonts(text))
     p = ROOT / rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(text, encoding="utf-8")
 def render(tpl, ctx):
     """{{key}} durch Werte ersetzen; Werte dürfen selbst {{key}} enthalten (2 Durchgänge)."""
@@ -77,6 +81,10 @@ def has_video(p):
     if p.get("video"): return p["video"]
     f = f"assets/video/projects/{p['slug']}.mp4"
     return "/" + f if (ROOT / f).exists() else None
+def webp_of(path):
+    """Gleiches Bild als WebP, falls vorhanden (kleiner); sonst das Original."""
+    if path and path.endswith(".jpg") and (ROOT / (path[:-4] + ".webp").lstrip("/")).exists(): return path[:-4] + ".webp"
+    return path
 def poster_of(p):
     if p.get("poster"): return p["poster"]
     f = f"assets/video/projects/{p['slug']}.jpg"
@@ -90,7 +98,7 @@ def ticker(t):
     return f'<div class="ticker-track">\n{row}\n    <!-- duplicate -->\n{row}\n  </div>'
 def marquee(t):
     row = "\n".join(f'    <span class="dm-item">{a} <span class="o">{b}</span></span>' for a, b in t["marquee"])
-    return f'<div class="divider-marquee">\n{row}\n{row}\n  </div>'
+    return f'<div class="divider-marquee" aria-hidden="true">\n{row}\n{row}\n  </div>'
 def gear(t):
     return "\n".join(f'            <div class="gear-row"><span class="gear-name">{n}</span><span class="gear-type">{ty}</span></div>' for n, ty in t["gear"])
 ARROW = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>'
@@ -144,7 +152,7 @@ def projects_grid(l, t):
     for i, p in enumerate(pub):
         poster = poster_of(p); vid = has_video(p)
         title = p["title"][l]
-        style = f' style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url(\'{poster}\')"' if poster else ""
+        style = f' style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url(\'{webp_of(poster)}\')"' if poster else ""
         bg = "pf-cell-bg has-img" if poster else f"pf-cell-bg {BGS[i % 6]}"
         glyph = "" if poster else f'<span class="pf-glyph">{title[:1]}</span>'
         play = '\n        <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>' if vid else ""
@@ -167,7 +175,7 @@ def projects_grid(l, t):
             f'<button type="button" class="pf-btn" data-f="{c}">{t["categories"].get(c, c)}</button>' for c in cats)
         filters = f'    <div class="pf-filters" role="group" aria-label="{t["pf_filter_aria"]}" data-sr="u" style="margin-bottom:1.5rem">{btns}</div>\n'
     return (filters + f'    <div class="pf-mosaic{single}" data-sr="u" data-d="2">\n' + "\n".join(cells) + "\n    </div>\n"
-            f'    <p class="soon-note" style="margin-top:2px;" data-sr="u">{t["portfolio_soon"]}</p>')
+            + (f'    <p class="soon-note" style="margin-top:2px;" data-sr="u">{t["portfolio_soon"]}</p>' if t["portfolio_soon"] else ""))
 
 # ---------- Seiten ----------
 def build_home(l):
@@ -184,9 +192,12 @@ def build_home(l):
     html = render((ROOT / "templates/home.html").read_text(encoding="utf-8"), t)
     write("index.html" if l == "de" else "en/index.html", html)
 
-def page_shell(l, urls, title, desc, body, robots="index, follow", extra_head="", body_class="", css="legal.css"):
+def og_for(slug):
+    return f"{DOMAIN}/og/{slug}.jpg" if (ROOT / f"og/{slug}.jpg").exists() else f"{DOMAIN}/og-image.png"
+def page_shell(l, urls, title, desc, body, robots="index, follow", extra_head="", body_class="", css="legal.css", og_image=None):
     t = common_ctx(l, urls)
     t.update(title=title, desc=desc, body=body, robots=robots, extra_head=extra_head, body_class=body_class, css=css,
+             og_image=og_image or f"{DOMAIN}/og-image.png",
              legal_back=TEXT[l]["legal_back"])
     return render((ROOT / "templates/page.html").read_text(encoding="utf-8"), t)
 
@@ -229,7 +240,7 @@ def build_projects():
             title = p["title"][l]; draft = not p.get("published")
             cat = t["categories"].get(p["category"], p["category"])
             if vid:
-                pa = f' poster="{poster}"' if poster else ""
+                pa = f' poster="{webp_of(poster)}"' if poster else ""
                 video = f'<video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video>'
             else:
                 video = f'<div class="pj-soon"><span>▶</span><p>{t["pj_soon"]}</p></div>'
@@ -244,12 +255,14 @@ def build_projects():
                     "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
                     "contentUrl": DOMAIN + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
             draft_note = f'<p class="pj-draft">{t["pj_draft"]}</p>' if draft else ""
+            # Optional in projects.json: "story": {"de": ["Ausgangslage …", "Umsetzung …", "Ergebnis …"], "en": [...]}
+            story = "".join(f'<h2 class="pj-story-h">{h}</h2><p class="pj-story">{txt}</p>' for h, txt in zip(t["pj_story"], p.get("story", {}).get(l, [])))
             sv = next((x for x in SERVICES if x["slug"]["de"] == CAT_SERVICE.get(p["category"])), None)
             related = f'<p class="srv-more lp-more"><span>{t["pj_service"]}</span> <a href="{service_url(l, sv)}">{sv["nav"][l]}</a></p>' if sv else ""
             if not draft:
                 ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (title, urls[l])])
             body = f'''<nav id="nav" class="pinned pj-nav">
-    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D. Films24" class="nav-logo-img"></a>
+    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24" class="nav-logo-img" width="325" height="90"></a>
     <div class="nav-right">
       <a href="{home_url(l)}#portfolio" class="nav-lang pj-backlink">{t["pj_back"]}</a>
       <a href="{urls[other(l)]}" class="nav-lang" hreflang="{other(l)}" lang="{other(l)}" aria-label="{t["lang_switch_aria"]}">{t["lang_switch_label"]}</a>
@@ -261,7 +274,10 @@ def build_projects():
     <h1 class="h-display pj-title">{title}</h1>
     <div class="pj-video">{video}</div>
     <div class="pj-body">
-      <p class="pj-desc">{p["desc"][l]}</p>
+      <div>
+        <p class="pj-desc">{p["desc"][l]}</p>
+        {story}
+      </div>
       <dl class="pj-meta">{''.join(rows)}</dl>
     </div>
     <div class="pj-cta">
@@ -274,7 +290,7 @@ def build_projects():
     </footer>
   </main>'''
             html = page_shell(l, urls, f'{title} — A.D.Films24', p["desc"][l], body,
-                              robots="noindex, nofollow" if draft else "index, follow", extra_head=ld, body_class="page-project", css="style.css")
+                              robots="noindex, nofollow" if draft else "index, follow", extra_head=ld, body_class="page-project", css="style.css", og_image=og_for(p["slug"]))
             write(urls[l].lstrip("/"), html)
 
 def build_services():
@@ -286,7 +302,7 @@ def build_services():
             vid = has_video(p) if p and p.get("published") else None
             video = ""
             if vid:
-                poster = poster_of(p); pa = f' poster="{poster}"' if poster else ""
+                poster = poster_of(p); pa = f' poster="{webp_of(poster)}"' if poster else ""
                 video = (f'<p class="s-meta lp-label">{t["lp_example"]}: <a href="{project_url(l, p["slug"])}">{p["title"][l]}</a></p>\n'
                          f'    <div class="pj-video"><video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video></div>')
             inc = "".join(f"<li>{x}</li>" for x in s["includes"][l])
@@ -298,7 +314,7 @@ def build_services():
                 "description": s["meta"][l], "areaServed": {"@type": "City", "name": "Zürich" if l == "de" else "Zurich"},
                 "provider": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}, "url": DOMAIN + urls[l]}) + '</script>'
             body = f'''<nav id="nav" class="pinned pj-nav">
-    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D. Films24" class="nav-logo-img"></a>
+    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24" class="nav-logo-img" width="325" height="90"></a>
     <div class="nav-right">
       <a href="{home_url(l)}#services" class="nav-lang pj-backlink">← {t["n_services"]}</a>
       <a href="{urls[other(l)]}" class="nav-lang" hreflang="{other(l)}" lang="{other(l)}" aria-label="{t["lang_switch_aria"]}">{t["lang_switch_label"]}</a>
@@ -326,7 +342,7 @@ def build_services():
     </footer>
   </main>'''
             ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (t["n_services"], home_url(l) + "#services"), (re.sub("&amp;", "&", s["h1"][l]), urls[l])])
-            html = page_shell(l, urls, s["title"][l], s["meta"][l], body, extra_head=ld, body_class="page-project", css="style.css")
+            html = page_shell(l, urls, s["title"][l], s["meta"][l], body, extra_head=ld, body_class="page-project", css="style.css", og_image=og_for(s["slug"]["de"]))
             write(urls[l].lstrip("/"), html)
 
 def build_404():

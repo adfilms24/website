@@ -25,7 +25,7 @@
   "menu_open": "Open menu",
   "menu_close": "Close menu",
   "lang_switch_label": "DE",
-  "lang_switch_aria": "Auf Deutsch wechseln",
+  "lang_switch_aria": "DE – Auf Deutsch wechseln",
   "lang_name": "English",
   "reel_caption": "Showreel 2026",
   "scroll": "Scroll",
@@ -47,7 +47,7 @@
   "c4_val": "Strong",
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "SELECTED<br><span class=\"serif\">Work</span>",
-  "portfolio_soon": "More projects and references coming soon.",
+  "portfolio_soon": "",
   "about_tag": "Zurich · CH · 2025",
   "about_meta": "About us",
   "about_h2": "YOUR VIDEO,<br><span class=\"serif\">no detours</span>",
@@ -349,5 +349,10 @@
   "sticky_inquire": "Request a project",
   "sticky_wa": "WhatsApp",
   "foot_services": "Services",
-  "pj_service": "Related service"
+  "pj_service": "Related service",
+  "pj_story": [
+    "Challenge",
+    "What we did",
+    "Result"
+  ]
 }
