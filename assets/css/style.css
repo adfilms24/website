@@ -865,11 +865,11 @@ body::after {
   font-family: var(--f-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   letter-spacing: 0.04em;
-  color: var(--bone-08);
+  color: rgba(237,233,224,0.38);
   padding: 0 2rem;
   flex-shrink: 0;
 }
-.dm-item .o { color: var(--orange); }
+.dm-item .o { color: var(--bone); }
 
 /* ════════════════════════════════════════
    ABOUT
