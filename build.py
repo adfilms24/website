@@ -275,7 +275,7 @@ def build_projects():
     {draft_note}
     <p class="s-meta">{cat}</p>
     <h1 class="h-display pj-title">{title}</h1>
-    <div class="pj-video">{video}</div>
+    <div class="pj-video{' pj-video--v' if p.get('format') == 'vertical' else ''}">{video}</div>
     <div class="pj-body">
       <div>
         <p class="pj-desc">{p["desc"][l]}</p>
@@ -307,7 +307,7 @@ def build_services():
             if vid:
                 poster = poster_of(p); pa = f' poster="{webp_of(poster)}"' if poster else ""
                 video = (f'<p class="s-meta lp-label">{t["lp_example"]}: <a href="{project_url(l, p["slug"])}">{p["title"][l]}</a></p>\n'
-                         f'    <div class="pj-video"><video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video></div>')
+                         f'    <div class="pj-video{' pj-video--v' if p.get('format') == 'vertical' else ''}"><video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video></div>')
             inc = "".join(f"<li>{x}</li>" for x in s["includes"][l])
             who = "".join(f"<li>{x}</li>" for x in s["for"][l])
             steps = "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(t["lp_steps"]))

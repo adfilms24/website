@@ -1766,3 +1766,6 @@ a.pf-cell { display: block; color: inherit; }
 .about-bts-img { position: absolute; }
 .about-main-img img { filter: contrast(1.05); }
 @media (max-width: 1100px) { .about-img-col { max-width: 520px; margin-bottom: 3rem; } }
+/* Hochformat-Videos (Reels) im passenden 9:16-Rahmen statt klein im Querformat */
+.pj-video.pj-video--v { aspect-ratio: 9 / 16; width: min(440px, 100%, calc(80vh * 9 / 16)); margin-left: auto; margin-right: auto; }
+.pj-video.pj-video--v video { object-fit: cover; }

@@ -47,7 +47,8 @@
       ]
     },
     "uploadDate": "2026-10-09",
-    "duration": "PT25S"
+    "duration": "PT25S",
+    "format": "vertical"
   },
   {
     "slug": "rooftop-sportclub",
@@ -135,7 +136,8 @@
         "We filmed the Maybach, the interior and typical service moments at Lake Zurich – short, vertical and tailored to Instagram.",
         "The client is happy with the result; the clip shows the service as premium as it is."
       ]
-    }
+    },
+    "format": "vertical"
   },
   {
     "slug": "phunnid",
@@ -171,7 +173,8 @@
       "en": "Social media content for personal trainer Mahmoud Badri — vertical for the feed."
     },
     "duration": "PT29S",
-    "uploadDate": "2026-06-15"
+    "uploadDate": "2026-06-15",
+    "format": "vertical"
   },
   {
     "slug": "events",
@@ -189,7 +192,8 @@
       "en": "Event coverage for Safiya Qasil (ATTAR ONE) — captured vertically for social media."
     },
     "duration": "PT45S",
-    "uploadDate": "2025-11-11"
+    "uploadDate": "2025-11-11",
+    "format": "vertical"
   },
   {
     "slug": "commercial",
