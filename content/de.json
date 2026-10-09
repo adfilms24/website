@@ -42,7 +42,7 @@
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "AUSGEWÄHLTE<br><span class=\"serif\">Arbeiten</span>",
   "portfolio_soon": "",
-  "about_tag": "Zürich · CH · 2025",
+  "about_tag": "Abdi Dhiblawe · CEO",
   "about_meta": "Über uns",
   "about_h2": "DEIN VIDEO,<br><span class=\"serif\">ohne Umwege</span>",
   "about_p1": "Wir sind <strong>A.D.Films24 Studio</strong>, ein Videostudio aus Zürich. Wir produzieren Videos für <strong>KMU und Unternehmen</strong> — vom Imagefilm über Social-Media-Content bis zum Event.",
@@ -247,7 +247,8 @@
     "events": "Events",
     "travel": "Travel",
     "automotive": "Automotive",
-    "food": "Gastro & Food"
+    "food": "Gastro & Food",
+    "fitness": "Fitness"
   },
   "legal_back": "← Zurück zur Startseite",
   "legal_home": "Startseite",
@@ -355,5 +356,7 @@
     "Ausgangslage",
     "Umsetzung",
     "Ergebnis"
-  ]
+  ],
+  "portrait_alt": "Abdi Dhiblawe, CEO von A.D.Films24 Studio",
+  "bts_alt": "Kamera-Rig am Fenster hoch über Zürich"
 }

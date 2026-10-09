@@ -210,7 +210,16 @@
   <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
     <div class="about-layout">
 
-      <!-- Bildspalte (Porträt + Behind the Scenes) vorerst entfernt — zurückholen: git log -S "about-img-col" templates/home.html -->
+      <!-- Bildspalte: Porträt + Behind the Scenes -->
+      <div class="about-img-col" data-sr="l">
+        <div class="about-main-img">
+          <img src="/assets/img/portrait-abdi.webp" alt="{{portrait_alt}}" width="900" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div class="about-bts-img">
+          <img src="/assets/img/bts-zuerich.webp" alt="{{bts_alt}}" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <div class="about-data-tag">{{about_tag}}</div>
+      </div>
 
       <!-- Text column -->
       <div data-sr="r">

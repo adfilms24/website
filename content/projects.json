@@ -50,22 +50,58 @@
     "duration": "PT25S"
   },
   {
-    "slug": "commercial",
+    "slug": "rooftop-sportclub",
     "published": true,
-    "category": "commercial",
+    "category": "fitness",
     "year": "2026",
-    "camera": "",
-    "client": "Shanike",
+    "camera": "Sony FX3",
+    "client": "Rooftop Sportclub Zürich",
     "title": {
-      "de": "SHANIKE — MODEL COMMERCIAL",
-      "en": "SHANIKE — MODEL COMMERCIAL"
+      "de": "ROOFTOP SPORTCLUB — IMAGEFILM",
+      "en": "ROOFTOP SPORTCLUB — BRAND FILM"
     },
     "desc": {
-      "de": "Model-Content für Shanike: cineastisch inszeniert für Portfolio und Social Media.",
-      "en": "Model content for Shanike: cinematically staged for portfolio and social media."
+      "de": "Imagefilm für den Rooftop Sportclub in Zürich: Training auf der Dachterrasse, Calisthenics und Community, gefilmt in 4K.",
+      "en": "Brand film for Rooftop Sportclub in Zurich: training on the rooftop terrace, calisthenics and community, shot in 4K."
     },
-    "duration": "PT21S",
-    "uploadDate": "2026-06-22"
+    "uploadDate": "2026-07-09",
+    "duration": "PT32S"
+  },
+  {
+    "slug": "sushi-chef-ale",
+    "published": true,
+    "category": "food",
+    "year": "2026",
+    "camera": "Sony FX3",
+    "client": "Sushi-Chef Ale",
+    "title": {
+      "de": "ALE — SUSHI-CHEF PORTRAIT",
+      "en": "ALE — SUSHI CHEF PORTRAIT"
+    },
+    "desc": {
+      "de": "Porträtfilm über Sushi-Chef Ale: Messer, Fisch und Handwerk in der Küche, erzählt in ruhigen, dokumentarischen Bildern.",
+      "en": "Portrait film about sushi chef Ale: knives, fish and craft in the kitchen, told in calm, documentary images."
+    },
+    "uploadDate": "2026-01-19",
+    "duration": "PT1M29S"
+  },
+  {
+    "slug": "drivecab",
+    "published": true,
+    "category": "automotive",
+    "year": "2026",
+    "camera": "Sony FX3",
+    "client": "DRIVECAB",
+    "title": {
+      "de": "DRIVECAB — CHAUFFEUR SERVICE",
+      "en": "DRIVECAB — CHAUFFEUR SERVICE"
+    },
+    "desc": {
+      "de": "Social-Media-Clip für den Chauffeur-Service DRIVECAB in Zürich: Maybach, Interieur und Service-Momente am Zürichsee, vertikal für Instagram.",
+      "en": "Social media clip for the chauffeur service DRIVECAB in Zurich: Maybach, interior and service moments at Lake Zurich, vertical for Instagram."
+    },
+    "uploadDate": "2026-09-17",
+    "duration": "PT12S"
   },
   {
     "slug": "phunnid",
@@ -120,6 +156,24 @@
     },
     "duration": "PT45S",
     "uploadDate": "2025-11-11"
+  },
+  {
+    "slug": "commercial",
+    "published": true,
+    "category": "commercial",
+    "year": "2026",
+    "camera": "",
+    "client": "Shanike",
+    "title": {
+      "de": "SHANIKE — MODEL COMMERCIAL",
+      "en": "SHANIKE — MODEL COMMERCIAL"
+    },
+    "desc": {
+      "de": "Model-Content für Shanike: cineastisch inszeniert für Portfolio und Social Media.",
+      "en": "Model content for Shanike: cinematically staged for portfolio and social media."
+    },
+    "duration": "PT21S",
+    "uploadDate": "2026-06-22"
   },
   {
     "slug": "real-estate",

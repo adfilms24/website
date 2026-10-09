@@ -48,7 +48,7 @@
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "SELECTED<br><span class=\"serif\">Work</span>",
   "portfolio_soon": "",
-  "about_tag": "Zurich · CH · 2025",
+  "about_tag": "Abdi Dhiblawe · CEO",
   "about_meta": "About us",
   "about_h2": "YOUR VIDEO,<br><span class=\"serif\">no detours</span>",
   "about_p1": "We are <strong>A.D.Films24 Studio</strong>, a video studio in Zurich. We produce videos for <strong>SMEs and companies</strong> — from brand films and social media content to events.",
@@ -249,7 +249,8 @@
     "events": "Events",
     "travel": "Travel",
     "automotive": "Automotive",
-    "food": "Food & hospitality"
+    "food": "Food & hospitality",
+    "fitness": "Fitness"
   },
   "legal_back": "← Back to home",
   "legal_home": "Home",
@@ -355,5 +356,7 @@
     "Challenge",
     "What we did",
     "Result"
-  ]
+  ],
+  "portrait_alt": "Abdi Dhiblawe, CEO of A.D.Films24 Studio",
+  "bts_alt": "Camera rig at a window high above Zurich"
 }

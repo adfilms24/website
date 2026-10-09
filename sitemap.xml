@@ -55,19 +55,55 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.adfilms24.ch/projekte/commercial.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/commercial.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/commercial.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/commercial.html"/>
+    <loc>https://www.adfilms24.ch/projekte/rooftop-sportclub.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/rooftop-sportclub.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/rooftop-sportclub.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/rooftop-sportclub.html"/>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.adfilms24.ch/en/projects/commercial.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/commercial.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/commercial.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/commercial.html"/>
+    <loc>https://www.adfilms24.ch/en/projects/rooftop-sportclub.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/rooftop-sportclub.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/rooftop-sportclub.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/rooftop-sportclub.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/sushi-chef-ale.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/sushi-chef-ale.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/sushi-chef-ale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/sushi-chef-ale.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/sushi-chef-ale.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/sushi-chef-ale.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/sushi-chef-ale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/sushi-chef-ale.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/drivecab.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/drivecab.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/drivecab.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/drivecab.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/drivecab.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/drivecab.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/drivecab.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/drivecab.html"/>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -122,6 +158,24 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/events.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/events.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/events.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/commercial.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/commercial.html"/>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/commercial.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/commercial.html"/>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
