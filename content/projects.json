@@ -68,19 +68,19 @@
     "duration": "PT32S"
   },
   {
-    "slug": "sushi-chef-ale",
+    "slug": "sushi-restaurant-zuerich",
     "published": true,
     "category": "food",
     "year": "2026",
     "camera": "Sony FX3",
-    "client": "Sushi-Chef Ale",
+    "client": "Sushi-Restaurant, Zürich",
     "title": {
-      "de": "ALE — SUSHI-CHEF PORTRAIT",
-      "en": "ALE — SUSHI CHEF PORTRAIT"
+      "de": "SUSHI-RESTAURANT ZÜRICH — KÜCHENFILM",
+      "en": "SUSHI RESTAURANT ZURICH — KITCHEN FILM"
     },
     "desc": {
-      "de": "Porträtfilm über Sushi-Chef Ale: Messer, Fisch und Handwerk in der Küche, erzählt in ruhigen, dokumentarischen Bildern.",
-      "en": "Portrait film about sushi chef Ale: knives, fish and craft in the kitchen, told in calm, documentary images."
+      "de": "Film für ein Sushi-Restaurant in Zürich: der Koch, Messer, Fisch und Handwerk in der Küche, erzählt in ruhigen, dokumentarischen Bildern.",
+      "en": "Film for a sushi restaurant in Zurich: the chef, knives, fish and craft in the kitchen, told in calm, documentary images."
     },
     "uploadDate": "2026-01-19",
     "duration": "PT1M29S"
