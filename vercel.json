@@ -61,5 +61,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/projekte/sushi-chef-ale.html",
+      "destination": "/projekte/sushi-restaurant-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/sushi-chef-ale.html",
+      "destination": "/en/projects/sushi-restaurant-zuerich.html",
+      "permanent": true
+    }
   ]
 }
