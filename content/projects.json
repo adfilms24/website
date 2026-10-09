@@ -21,7 +21,7 @@
   },
   {
     "slug": "loco-birria",
-    "published": false,
+    "published": true,
     "category": "food",
     "year": "2026",
     "camera": "Sony FX3 · Atomos Ninja V",
@@ -36,16 +36,18 @@
     },
     "story": {
       "de": [
-        "[Ausgangslage vom Restaurant: Was war das Ziel? z. B. mehr Gäste unter der Woche, neue Karte bekannt machen]",
+        "LOCO BIRRIÁ brauchte regelmässig Content für Instagram und TikTok, der zeigt, was Gäste vor Ort erleben: die Küche, die Teller und die Bar – ohne Studio-Look.",
         "Ein Drehtag vor Ort: Food-Aufnahmen in Slow Motion, Küche und Team in Aktion, Bar und Atmosphäre. Daraus entstanden Reels im Hochformat, 4:5-Clips mit Untertiteln und Aufruf zum Folgen sowie Kurzvideos, in denen das Team selbst die Karte vorstellt.",
-        "[Ergebnis und Zitat vom Inhaber, z. B. «…»]"
+        "Das Team ist zufrieden, und die Zusammenarbeit geht weiter: Wir liefern Content für die nächsten Wochen, aktuell auch für die Zeit im Legere bis Dezember."
       ],
       "en": [
-        "[Starting point: what did the restaurant want to achieve?]",
+        "LOCO BIRRIÁ needed regular content for Instagram and TikTok that shows what guests experience on site: the kitchen, the dishes and the bar – without a studio look.",
         "One shooting day on site: slow-motion food shots, the kitchen and team in action, the bar and atmosphere. The result: vertical reels, 4:5 clips with subtitles and a follow call-to-action, and short videos in which the team presents the menu themselves.",
-        "[Result and quote from the owner]"
+        "The team is happy and the collaboration continues: we deliver content for the coming weeks, currently also for their time at Legere until December."
       ]
-    }
+    },
+    "uploadDate": "2026-10-09",
+    "duration": "PT25S"
   },
   {
     "slug": "commercial",
