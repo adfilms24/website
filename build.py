@@ -196,6 +196,9 @@ def og_for(slug):
     return f"{DOMAIN}/og/{slug}.jpg" if (ROOT / f"og/{slug}.jpg").exists() else f"{DOMAIN}/og-image.png"
 def page_shell(l, urls, title, desc, body, robots="index, follow", extra_head="", body_class="", css="legal.css", og_image=None):
     t = common_ctx(l, urls)
+    if css == "style.css":  # Projekt- und Leistungsseiten: Schriften vorladen, damit sich nichts verschiebt
+        extra_head = "".join(f'<link rel="preload" href="/assets/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>' for f in (
+            "JTUSjIg69CK48gW7PXoo9WlhyyTh89Y", "jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7Motmp5g", "jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs")) + extra_head
     t.update(title=title, desc=desc, body=body, robots=robots, extra_head=extra_head, body_class=body_class, css=css,
              og_image=og_image or f"{DOMAIN}/og-image.png",
              legal_back=TEXT[l]["legal_back"])
