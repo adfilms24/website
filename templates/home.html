@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{lang}}" class="no-intro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{meta_desc}}">
-<meta name="keywords" content="{{meta_keywords}}">
 <meta name="author" content="Abdi Dhiblawe">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#060606">
@@ -19,7 +18,7 @@
 
 <!-- Open Graph / Social Preview -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="a.d.films24">
+<meta property="og:site_name" content="A.D.Films24">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{og_desc}}">
 <meta property="og:url" content="{{canonical}}">
@@ -33,23 +32,7 @@
 <meta name="twitter:image" content="https://www.adfilms24.ch/og-image.png">
 
 <!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "A.D. Films24",
-  "founder": { "@type": "Person", "name": "Abdi Dhiblawe" },
-  "description": "{{ld_desc}}",
-  "url": "https://www.adfilms24.ch/",
-  "email": "info@adfilms24.ch",
-  "telephone": "+41767649300",
-  "areaServed": ["{{ld_area}}"],
-  "sameAs": [
-    "https://instagram.com/a.d.films24",
-    "https://www.youtube.com/@adfilms24"
-  ]
-}
-</script>
+{{business_ld}}
 
 <!-- Schriften lokal gehostet (kein Abruf bei Google) -->
 <link rel="preload" href="/assets/fonts/JTUSjIg69CK48gW7PXoo9WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
@@ -70,29 +53,10 @@
 </script>
 <link rel="preload" href="/assets/video/showreel-poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="/assets/css/style.css">
-<script src="/assets/js/boot.js"></script>
+<noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main">{{skip}}</a>
-
-<!-- ── LOADER ─────────────────────────── -->
-<div id="loader">
-  <div class="loader-inner">
-    <div class="loader-count" id="lcount">3</div>
-    <div class="loader-progress"><div class="loader-progress-bar"></div></div>
-    <div class="loader-label">{{loader_label}}</div>
-  </div>
-  <div class="loader-marks" id="lmarks">
-    <div class="loader-mark lit"></div>
-    <div class="loader-mark lit"></div>
-    <div class="loader-mark lit"></div>
-    <div class="loader-mark"></div>
-    <div class="loader-mark"></div>
-    <div class="loader-mark"></div>
-    <div class="loader-mark"></div>
-    <div class="loader-mark"></div>
-  </div>
-</div>
 
 <!-- ── CURSOR ─────────────────────────── -->
 <div id="dot"></div>
@@ -195,19 +159,16 @@
     <div class="hero-sub-row">
       <p class="hero-desc">{{hero_desc}}</p>
       <div class="hero-actions">
-        <a href="#portfolio" class="cta-primary">
+        <a href="#contact" class="cta-primary">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
-          {{cta_portfolio}}
+          {{cta_inquire}}
         </a>
         <button type="button" class="cta-ghost" id="reelBtn2" aria-label="{{showreel_play_aria}}">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 2l7 4-7 4z" fill="currentColor"/></svg>
           {{cta_showreel}}
         </button>
-        <a href="#contact" class="cta-ghost">{{cta_inquire}}</a>
-        <a href="https://www.youtube.com/@adfilms24" target="_blank" rel="noopener" class="cta-ghost">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 3.5v5l4-2.5-4-2.5z" fill="currentColor"/></svg>
-          {{cta_youtube}}
-        </a>
+        <a href="#portfolio" class="cta-ghost">{{cta_portfolio}}</a>
+        <a href="{{google_url}}" target="_blank" rel="noopener" class="hero-rating"><span aria-hidden="true">★★★★★</span> {{rating_label}}</a>
       </div>
     </div>
   </div>
@@ -302,6 +263,18 @@
 </section>
 
 <!-- ══════════════════════════════════════
+     ABLAUF
+══════════════════════════════════════════ -->
+<section class="section" id="process">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="s-meta" data-sr="u">{{process_meta}}</div>
+    <h2 class="h-display" data-sr="u" data-d="2">{{process_h2}}</h2>
+    <ol class="lp-steps proc-steps" data-sr="u" data-d="3">{{process_steps}}</ol>
+    <p class="lp-promise" data-sr="u">{{lp_promise}}</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      TESTIMONIALS
 ══════════════════════════════════════════ -->
 <section class="section" id="testimonials" style="background:var(--void);">
@@ -310,15 +283,16 @@
       <div class="test-sidebar">
         <div class="s-meta" data-sr="u">{{clients_meta}}</div>
         <h2 class="h-display" data-sr="u" data-d="2">{{clients_h2}}</h2>
+        <a href="{{google_url}}" target="_blank" rel="noopener" class="g-rating" data-sr="u" data-d="3"><span class="g-stars" aria-hidden="true">★★★★★</span><span>{{rating_label}}</span><span class="g-more">{{rating_link}} →</span></a>
       </div>
       <div class="test-cards-col">
         <!-- Echte Google-Bewertungen, unverändert übernommen -->
         <div class="test-card" data-sr="r" data-d="1">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">Helped me expand my model portfolio beautifully - very excited for future collaboration!✨</p>
+          <p class="test-body">„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen."</p>
           <div class="test-foot"><div>
-            <div class="test-author-name">Shanike</div>
-            <div class="test-author-role">Model</div>
+            <div class="test-author-name">Mahmoud Badri</div>
+            <div class="test-author-role">Personal Trainer</div>
           </div></div>
         </div>
         <div class="test-card" data-sr="r" data-d="2">
@@ -339,13 +313,26 @@
         </div>
         <div class="test-card" data-sr="r" data-d="4">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen."</p>
+          <p class="test-body">Helped me expand my model portfolio beautifully - very excited for future collaboration!✨</p>
           <div class="test-foot"><div>
-            <div class="test-author-name">Mahmoud Badri</div>
-            <div class="test-author-role">Personal Trainer</div>
+            <div class="test-author-name">Shanike</div>
+            <div class="test-author-role">Model</div>
           </div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="section" id="faq" style="background:var(--void);">
+  <div style="max-width:1100px; margin:0 auto; padding:0 3rem;">
+    <div class="s-meta" data-sr="u">{{faq_meta}}</div>
+    <h2 class="h-display" data-sr="u" data-d="2">{{faq_h2}}</h2>
+    <div class="faq-list" data-sr="u" data-d="3">
+{{faq_items}}
     </div>
   </div>
 </section>
@@ -404,10 +391,27 @@
           <label for="f-projekttyp">{{f_type}}</label>
           <select id="f-projekttyp" name="projekttyp" required>
             <option value="" disabled selected>{{f_choose}}</option>
-            <option>{{opt1}}</option>
-            <option>{{opt2}}</option>
-            <option>{{opt3}}</option>
-            <option>{{opt4}}</option>
+{{project_type_opts}}
+          </select>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label for="f-budget">{{f_budget}}</label>
+            <select id="f-budget" name="budget">
+              <option value="">{{f_none}}</option>
+{{budget_opts_html}}
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="f-termin">{{f_date}}</label>
+            <input id="f-termin" name="termin" type="text" placeholder="{{ph_date}}">
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="f-quelle">{{f_source}}</label>
+          <select id="f-quelle" name="quelle">
+            <option value="">{{f_none}}</option>
+{{source_opts_html}}
           </select>
         </div>
         <div class="f-group">
@@ -442,6 +446,7 @@
       <li><a href="#about">{{foot_about}}</a></li>
       <li><a href="#services">{{n_services}}</a></li>
       <li><a href="#contact">{{n_contact}}</a></li>
+{{footer_service_links}}
       <li><a href="{{imprint_url}}">{{foot_imprint}}</a></li>
       <li><a href="{{privacy_url}}">{{foot_privacy}}</a></li>
       <li><a href="{{terms_url}}">{{foot_terms}}</a></li>
@@ -453,10 +458,16 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 www.adfilms24.ch. {{foot_copy1}}</span>
+    <span class="footer-copy">© {{year}} A.D.Films24. {{foot_copy1}}</span>
     <span class="footer-copy">{{foot_copy2}}</span>
   </div>
 </footer>
+
+<!-- Mobile: fixe Anfrage-Leiste -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="#contact" class="sticky-cta-main" tabindex="-1">{{sticky_inquire}}</a>
+  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa" tabindex="-1">{{sticky_wa}}</a>
+</div>
 
 <!-- ══════════════════════════════════════
      MODAL

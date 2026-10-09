@@ -7,29 +7,6 @@ const tr = (k, fb) => (I18N[k] !== undefined ? I18N[k] : fb);
 if (window.emailjs) emailjs.init("mzeYAXh6J84HSDX5j");
 const FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-/* ── LOADER – FILM COUNTDOWN ─── */
-const loader = document.getElementById('loader');
-const lcount = document.getElementById('lcount');
-const marks  = document.querySelectorAll('.loader-mark');
-const countVals = ['3','2','1','▶'];
-let ci = 0;
-
-function runCount() {
-  lcount.style.animation = 'none';
-  void lcount.offsetWidth;
-  lcount.style.animation = 'countFlash .5s ease both';
-  lcount.textContent = countVals[ci];
-  // light up marks
-  if (ci < marks.length) marks[ci].classList.add('lit');
-  ci++;
-  if (ci < countVals.length) setTimeout(runCount, 520);
-  else setTimeout(() => {
-    loader.classList.add('exit');
-    try { localStorage.setItem('adf24_intro_seen', '1'); } catch (_) {}   /* Intro nur beim ersten Besuch */
-  }, 400);
-}
-if (!document.documentElement.classList.contains('no-intro')) setTimeout(runCount, 400);
-
 /* ── CURSOR (nur Geräte mit Maus; Animationsschleife läuft nur während der Bewegung) ─── */
 if (FINE_POINTER) {
   const dot  = document.getElementById('dot');
@@ -205,6 +182,13 @@ document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 const SEND_LABEL = document.getElementById('sendBtn').innerHTML;
 const MAIL = tr('mail', 'info@adfilms24.ch');
 const COOLDOWN_MS = 30000;
+/* Budget, Wunschtermin und Herkunft an die Nachricht anhängen (EmailJS-Template bleibt unverändert) */
+function withDetails(fd, msg) {
+  const rows = [['budget','lbl_budget','Budget'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
+    .map(([k, lk, fb]) => (fd.get(k) ? `${tr(lk, fb)}: ${fd.get(k)}` : ''))
+    .filter(Boolean);
+  return rows.length ? `${msg}\n\n— ${rows.join('\n')}` : msg;
+}
 function setStatus(el, cls, html) { el.className = 'f-status ' + cls; el.innerHTML = html; }
 
 function sendForm(e) {
@@ -233,7 +217,7 @@ function sendForm(e) {
     title:       projekttyp,
     email:       fd.get('email') || '',
     projekttyp:  projekttyp,
-    nachricht:   fd.get('nachricht') || '',
+    nachricht:   withDetails(fd, fd.get('nachricht') || ''),
   };
 
   btn.disabled = true;
@@ -256,3 +240,20 @@ function sendForm(e) {
     });
 }
 document.querySelector('.contact-form').addEventListener('submit', sendForm);
+
+/* ── MOBILE: fixe Anfrage-Leiste (nach dem Hero, ausgeblendet im Kontaktbereich) ─── */
+(() => {
+  const bar = document.getElementById('stickyCta');
+  const hero = document.getElementById('hero');
+  const contact = document.getElementById('contact');
+  if (!bar || !hero || !contact || !('IntersectionObserver' in window)) return;
+  let heroVisible = true, contactVisible = false;
+  const update = () => {
+    const show = !heroVisible && !contactVisible;
+    bar.classList.toggle('show', show);
+    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    bar.querySelectorAll('a').forEach(a => a.tabIndex = show ? 0 : -1);
+  };
+  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
+  new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
+})();

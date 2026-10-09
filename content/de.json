@@ -1,6 +1,5 @@
 {
   "meta_desc": "Videoproduktion aus Zürich für KMU und Unternehmen: Imagefilme, Social-Media-Content, Produkt- und Eventvideos. Zuverlässig, transparent und ohne endlose Korrekturschlaufen.",
-  "meta_keywords": "Videoproduktion Zürich, Imagefilm, Unternehmensvideo, KMU Video, Social Media Content, Produktvideo, Eventvideo, Drohne",
   "title": "A.D.Films24 — Videoproduktion für Unternehmen in Zürich",
   "og_desc": "Videoproduktion für Unternehmen aus Zürich — Imagefilme, Social-Media-Content, Produkt- und Eventvideos. Zuverlässig und transparent.",
   "ld_desc": "Videoproduktion für KMU und Unternehmen aus Zürich: Imagefilme, Social-Media-Content, Produkt- und Eventvideos.",
@@ -67,12 +66,8 @@
   "ph_email": "max@beispiel.ch",
   "f_type": "Projekttyp",
   "f_choose": "— Bitte wählen —",
-  "opt1": "Commercial / Brand Film",
-  "opt2": "Social Media Content",
-  "opt3": "Drohnenaufnahmen",
-  "opt4": "Anderes",
   "f_msg": "Dein Projekt",
-  "ph_msg": "Erzähl uns von deiner Vision — Zeitrahmen, Budget, Ziele …",
+  "ph_msg": "Was soll das Video erreichen, und wo wird es eingesetzt?",
   "f_hp": "Website (bitte leer lassen)",
   "f_send": "Anfrage senden",
   "f_note1": "Keine Werbung. Nur echte Antworten.",
@@ -286,5 +281,73 @@
       "Fertig in den Formaten, die ihr braucht."
     ]
   ],
-  "srv_more_label": "Mehr zu"
+  "srv_more_label": "Mehr zu",
+  "google_url": "https://maps.google.com/?cid=17114913281364505533",
+  "rating_label": "5,0 auf Google",
+  "rating_link": "Alle Bewertungen ansehen",
+  "process_meta": "Ablauf",
+  "process_h2": "SO ARBEITEN<br><span class=\"serif\">wir</span>",
+  "faq_meta": "FAQ",
+  "faq_h2": "HÄUFIGE<br><span class=\"serif\">Fragen</span>",
+  "faq": [
+    [
+      "Was kostet ein Video bei A.D.Films24?",
+      "Das hängt vor allem von der Anzahl Drehtage, Locations und Versionen ab. Nach einem kurzen Gespräch bekommt ihr eine klare Offerte mit festem Preis – ohne versteckte Kosten."
+    ],
+    [
+      "Wie lange dauert es bis zum fertigen Video?",
+      "Je nach Umfang wenige Tage bis einige Wochen. Den genauen Zeitplan legen wir gemeinsam in der Offerte fest."
+    ],
+    [
+      "Wie viele Korrekturschleifen braucht es?",
+      "Wir klären vor dem Dreh genau, was das Video leisten soll. Deshalb gab es bisher keine einzige Revisionsanfrage. Und falls doch etwas nicht passt, finden wir eine Lösung."
+    ],
+    [
+      "Dreht ihr auch ausserhalb von Zürich?",
+      "Ja. Wir arbeiten in der ganzen Schweiz und international."
+    ],
+    [
+      "In welchen Formaten bekommen wir das Video?",
+      "In den Formaten, die ihr braucht: zum Beispiel 16:9 für Website und YouTube, 9:16 für Reels und TikTok, 4:5 für den Feed."
+    ],
+    [
+      "Macht ihr auch Drohnenaufnahmen?",
+      "Ja, auf Wunsch – mit Drohnenlizenz A1/A3 für die Schweiz."
+    ]
+  ],
+  "project_types": [
+    "Imagefilm / Unternehmensvideo",
+    "Social-Media-Content",
+    "Restaurant- & Food-Video",
+    "Event-Video",
+    "Produktvideo",
+    "Drohnenaufnahmen",
+    "Anderes"
+  ],
+  "f_budget": "Budget (optional)",
+  "budget_opts": [
+    "Noch offen",
+    "bis CHF 2'000",
+    "CHF 2'000–5'000",
+    "CHF 5'000–10'000",
+    "über CHF 10'000"
+  ],
+  "f_date": "Wunschtermin (optional)",
+  "ph_date": "z. B. Mitte November",
+  "f_source": "Wie habt ihr uns gefunden? (optional)",
+  "source_opts": [
+    "Google",
+    "Instagram",
+    "LinkedIn",
+    "Empfehlung",
+    "Anderes"
+  ],
+  "f_none": "— Bitte wählen —",
+  "lbl_budget": "Budget",
+  "lbl_date": "Wunschtermin",
+  "lbl_source": "Gefunden über",
+  "sticky_inquire": "Projekt anfragen",
+  "sticky_wa": "WhatsApp",
+  "foot_services": "Leistungen",
+  "pj_service": "Passende Leistung"
 }

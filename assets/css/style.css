@@ -1722,3 +1722,39 @@ a.pf-cell { display: block; color: inherit; }
 .lp-more { margin-top: 3rem; }
 @media (max-width: 900px) { .lp-steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) { .lp-cols { grid-template-columns: 1fr; gap: 2.5rem; } .lp-steps { grid-template-columns: 1fr; } }
+
+/* ── Google-Bewertung ── */
+.hero-rating { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bone-60); white-space: nowrap; }
+.hero-rating span { color: #E8B931; letter-spacing: .05em; }
+.hero-rating:hover { color: var(--bone); }
+.g-rating { display: inline-flex; flex-direction: column; gap: .35rem; margin-top: 2rem; padding: 1.1rem 1.3rem; border: 1px solid var(--line-strong); }
+.g-rating .g-stars { color: #E8B931; letter-spacing: .12em; font-size: 1.05rem; }
+.g-rating span:nth-child(2) { font-family: var(--f-display); font-size: 1.6rem; letter-spacing: .03em; }
+.g-rating .g-more { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bone-60); }
+.g-rating:hover { border-color: var(--bone-60); }
+
+/* ── Ablauf auf der Startseite ── */
+#process .proc-steps { margin-top: 3rem; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 3rem; border-top: 1px solid var(--line-strong); }
+.faq-item { border-bottom: 1px solid var(--line-strong); }
+.faq-item summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1.5rem; padding: 1.4rem 0; font-family: var(--f-serif); font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--bone); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-family: var(--f-mono); color: var(--bone-60); transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 0 1.5rem; max-width: 760px; font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--bone-60); }
+.faq-item summary:focus-visible { outline: 1px solid var(--bone); outline-offset: 4px; }
+
+/* ── Mobile: fixe Anfrage-Leiste ── */
+.sticky-cta { display: none; }
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; gap: 1px; background: var(--line-strong);
+    padding-bottom: env(safe-area-inset-bottom); transform: translateY(110%); transition: transform .3s ease; }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta a { flex: 1; text-align: center; padding: 1.05rem .5rem; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+  .sticky-cta-main { background: var(--bone); color: var(--void); }
+  .sticky-cta-wa { background: var(--deep-2); color: var(--bone); }
+  .hero-rating { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .sticky-cta { transition: none; } }

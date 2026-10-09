@@ -9,7 +9,7 @@ Projekte          -> content/projects.json  (+ Video in assets/video/projects/)
 Rechtstexte       -> content/legal/de/*.html bzw. content/legal/en/*.html
 Die erzeugten HTML-Seiten (index.html, en/, projekte/ ...) werden mit ins Git eingecheckt.
 """
-import json, os, re, sys
+import json, os, re, sys, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -112,6 +112,30 @@ def services(t):
 def service_links(l, t):
     links = " ".join(f'<a href="{service_url(l, s)}">{s["nav"][l]}</a>' for s in SERVICES)
     return f'<p class="srv-more" data-sr="u"><span>{t["srv_more_label"]}</span> {links}</p>'
+def opts(items):
+    return "\n".join(f'            <option>{x}</option>' for x in items)
+def faq_items(t):
+    return "\n".join(f'''      <details class="faq-item">
+        <summary>{q}</summary>
+        <p>{a}</p>
+      </details>''' for q, a in t["faq"])
+def process_steps(t):
+    return "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(t["lp_steps"]))
+def business_ld(l, t):
+    org = {"@context": "https://schema.org", "@type": "ProfessionalService", "@id": DOMAIN + "/#business",
+           "name": "A.D.Films24", "alternateName": "A.D.Films24 Studio", "slogan": "Capture More",
+           "description": t["ld_desc"], "url": DOMAIN + home_url(l), "email": MAIL, "telephone": "+41767649300",
+           "logo": DOMAIN + "/icon-512.png", "image": DOMAIN + "/og-image.png",
+           "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"},
+           "areaServed": [{"@type": "City", "name": "Zürich"}, {"@type": "Country", "name": "Schweiz"}],
+           "founder": {"@type": "Person", "name": "Abdi Dhiblawe"},
+           "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": re.sub("&amp;", "&", sv["h1"][l]), "url": DOMAIN + service_url(l, sv)}} for sv in SERVICES],
+           "sameAs": ["https://instagram.com/a.d.films24", "https://www.youtube.com/@adfilms24", t["google_url"]]}
+    site = {"@context": "https://schema.org", "@type": "WebSite", "@id": DOMAIN + "/#website", "name": "A.D.Films24",
+            "url": DOMAIN + "/", "inLanguage": ["de-CH", "en"], "publisher": {"@id": DOMAIN + "/#business"}}
+    faq = {"@context": "https://schema.org", "@type": "FAQPage",
+           "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
+    return "\n".join(f'<script type="application/ld+json">{esc_json(x)}</script>' for x in (org, site, faq))
 SIZES = ["xl", "tall", "wide", "wide", "sq", "sq"]
 BGS = ["bg-a", "bg-b", "bg-c", "bg-d", "bg-e", "bg-f"]
 def projects_grid(l, t):
@@ -149,9 +173,13 @@ def projects_grid(l, t):
 def build_home(l):
     urls = {x: home_url(x) for x in LANGS}
     t = common_ctx(l, urls)
-    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t))
+    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
+             business_ld=business_ld(l, t), process_steps=process_steps(t), faq_items=faq_items(t),
+             project_type_opts=opts(t["project_types"]), budget_opts_html=opts(t["budget_opts"]), source_opts_html=opts(t["source_opts"]),
+             footer_service_links="\n".join(f'      <li><a href="{service_url(l, sv)}">{sv["nav"][l]}</a></li>' for sv in SERVICES),
+             year=datetime.date.today().year)
     keys = ["menu_open", "menu_close", "showreel_title", "showreel_desc", "showreel_client", "showreel_camera", "showreel_year",
-            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail"]
+            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail", "lbl_budget", "lbl_date", "lbl_source"]
     t["i18n_json"] = esc_json({**{k: TEXT[l][k] for k in keys}, "mail": MAIL, "lang": l})
     html = render((ROOT / "templates/home.html").read_text(encoding="utf-8"), t)
     write("index.html" if l == "de" else "en/index.html", html)
@@ -163,8 +191,12 @@ def page_shell(l, urls, title, desc, body, robots="index, follow", extra_head=""
     return render((ROOT / "templates/page.html").read_text(encoding="utf-8"), t)
 
 def footer_links(l):
-    return (f'<a href="{home_url(l)}">{TEXT[l]["legal_home"]}</a>\n    <a href="{LEGAL["imprint"][l]}">{TEXT[l]["foot_imprint"]}</a>\n'
+    svc = "".join(f'\n    <a href="{service_url(l, sv)}">{sv["nav"][l]}</a>' for sv in SERVICES)
+    return (f'<a href="{home_url(l)}">{TEXT[l]["legal_home"]}</a>{svc}\n    <a href="{LEGAL["imprint"][l]}">{TEXT[l]["foot_imprint"]}</a>\n'
             f'    <a href="{LEGAL["privacy"][l]}">{TEXT[l]["foot_privacy"]}</a>\n    <a href="{LEGAL["terms"][l]}">{TEXT[l]["foot_terms"]}</a>')
+def breadcrumb_ld(l, items):
+    return '<script type="application/ld+json">' + esc_json({"@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": DOMAIN + u} for i, (n, u) in enumerate(items)]}) + '</script>'
 
 def legal_wrap(l, urls, body):
     t = TEXT[l]
@@ -188,6 +220,7 @@ def build_legal():
             body += f'\n  <footer class="page-foot">\n    {footer_links(l)}\n  </footer>'
             write(urls[l].lstrip("/"), page_shell(l, urls, title, desc, legal_wrap(l, urls, body)))
 
+CAT_SERVICE = {"commercial": "imagefilm-zuerich", "showreel": "imagefilm-zuerich", "social": "social-media-content-zuerich", "events": "event-video-zuerich"}
 def build_projects():
     for p in PROJECTS:
         urls = {l: project_url(l, p["slug"]) for l in LANGS}
@@ -211,6 +244,10 @@ def build_projects():
                     "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
                     "contentUrl": DOMAIN + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
             draft_note = f'<p class="pj-draft">{t["pj_draft"]}</p>' if draft else ""
+            sv = next((x for x in SERVICES if x["slug"]["de"] == CAT_SERVICE.get(p["category"])), None)
+            related = f'<p class="srv-more lp-more"><span>{t["pj_service"]}</span> <a href="{service_url(l, sv)}">{sv["nav"][l]}</a></p>' if sv else ""
+            if not draft:
+                ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (title, urls[l])])
             body = f'''<nav id="nav" class="pinned pj-nav">
     <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D. Films24" class="nav-logo-img"></a>
     <div class="nav-right">
@@ -231,6 +268,7 @@ def build_projects():
       <h2>{t["pj_cta_h"]}</h2>
       <a href="{home_url(l)}#contact" class="cta-primary">{ARROW} {t["pj_cta"]}</a>
     </div>
+    {related}
     <footer class="page-foot pj-foot">
       {footer_links(l)}
     </footer>
@@ -287,6 +325,7 @@ def build_services():
       {footer_links(l)}
     </footer>
   </main>'''
+            ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (t["n_services"], home_url(l) + "#services"), (re.sub("&amp;", "&", s["h1"][l]), urls[l])])
             html = page_shell(l, urls, s["title"][l], s["meta"][l], body, extra_head=ld, body_class="page-project", css="style.css")
             write(urls[l].lstrip("/"), html)
 
@@ -310,7 +349,7 @@ def build_sitemap():
     def entry(urls, prio, freq):
         alts = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{DOMAIN}{u}"/>' for l, u in urls.items())
         alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{urls["de"]}"/>'
-        return "".join(f'  <url>\n    <loc>{DOMAIN}{urls[l]}</loc>{alts}\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>\n' for l in LANGS)
+        return "".join(f'  <url>\n    <loc>{DOMAIN}{urls[l]}</loc>{alts}\n    <lastmod>{datetime.date.today().isoformat()}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>\n' for l in LANGS)
     out = entry({l: home_url(l) for l in LANGS}, "1.0", "monthly")
     for p in PROJECTS:
         if p.get("published"): out += entry({l: project_url(l, p["slug"]) for l in LANGS}, "0.8", "monthly")

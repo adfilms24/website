@@ -1,6 +1,5 @@
 {
   "meta_desc": "Video production from Zurich for SMEs and companies: brand films, social media content, product and event videos. Reliable, transparent and without endless revision rounds.",
-  "meta_keywords": "video production Zurich, brand film, corporate video, SME video, social media content, product video, event video, drone",
   "title": "A.D.Films24 — Video Production for Businesses in Zurich",
   "og_desc": "Video production for businesses from Zurich — brand films, social media content, product and event videos. Reliable and transparent.",
   "ld_desc": "Video production for SMEs and companies from Zurich: brand films, social media content, product and event videos.",
@@ -173,12 +172,8 @@
   "ph_email": "jane@example.com",
   "f_type": "Project type",
   "f_choose": "— Please choose —",
-  "opt1": "Commercial / Brand film",
-  "opt2": "Social media content",
-  "opt3": "Drone footage",
-  "opt4": "Other",
   "f_msg": "Your project",
-  "ph_msg": "Tell us about your vision — timeline, budget, goals …",
+  "ph_msg": "What should the video achieve, and where will it be used?",
   "f_hp": "Website (leave empty)",
   "f_send": "Send request",
   "f_note1": "No advertising. Just real answers.",
@@ -286,5 +281,73 @@
       "Finished in the formats you need."
     ]
   ],
-  "srv_more_label": "More on"
+  "srv_more_label": "More on",
+  "google_url": "https://maps.google.com/?cid=17114913281364505533",
+  "rating_label": "5.0 on Google",
+  "rating_link": "See all reviews",
+  "process_meta": "Process",
+  "process_h2": "HOW WE<br><span class=\"serif\">work</span>",
+  "faq_meta": "FAQ",
+  "faq_h2": "FREQUENT<br><span class=\"serif\">questions</span>",
+  "faq": [
+    [
+      "What does a video with A.D.Films24 cost?",
+      "It mainly depends on the number of shooting days, locations and versions. After a short call you get a clear quote with a fixed price – no hidden costs."
+    ],
+    [
+      "How long does it take to get the finished video?",
+      "Depending on the scope, a few days to a few weeks. We set the exact timeline together in the quote."
+    ],
+    [
+      "How many revision rounds are needed?",
+      "We settle exactly what the video needs to achieve before the shoot. That's why there hasn't been a single revision request so far. And if something doesn't fit, we find a solution."
+    ],
+    [
+      "Do you also shoot outside Zurich?",
+      "Yes. We work all over Switzerland and internationally."
+    ],
+    [
+      "Which formats do we get?",
+      "Whatever you need: for example 16:9 for website and YouTube, 9:16 for reels and TikTok, 4:5 for the feed."
+    ],
+    [
+      "Do you offer drone footage?",
+      "Yes, on request – with an A1/A3 drone licence for Switzerland."
+    ]
+  ],
+  "project_types": [
+    "Brand film / corporate video",
+    "Social media content",
+    "Restaurant & food video",
+    "Event video",
+    "Product video",
+    "Drone footage",
+    "Other"
+  ],
+  "f_budget": "Budget (optional)",
+  "budget_opts": [
+    "Not sure yet",
+    "up to CHF 2,000",
+    "CHF 2,000–5,000",
+    "CHF 5,000–10,000",
+    "over CHF 10,000"
+  ],
+  "f_date": "Preferred date (optional)",
+  "ph_date": "e.g. mid-November",
+  "f_source": "How did you find us? (optional)",
+  "source_opts": [
+    "Google",
+    "Instagram",
+    "LinkedIn",
+    "Recommendation",
+    "Other"
+  ],
+  "f_none": "— Please choose —",
+  "lbl_budget": "Budget",
+  "lbl_date": "Preferred date",
+  "lbl_source": "Found via",
+  "sticky_inquire": "Request a project",
+  "sticky_wa": "WhatsApp",
+  "foot_services": "Services",
+  "pj_service": "Related service"
 }
