@@ -61,11 +61,23 @@
       "en": "ROOFTOP SPORTCLUB — BRAND FILM"
     },
     "desc": {
-      "de": "Imagefilm für den Rooftop Sportclub in Zürich: Training auf der Dachterrasse, Calisthenics und Community, gefilmt in 4K.",
-      "en": "Brand film for Rooftop Sportclub in Zurich: training on the rooftop terrace, calisthenics and community, shot in 4K."
+      "de": "Imagefilm für den Pop-up des Rooftop Sportclub in Zürich: Live-Training auf der Dachterrasse, Calisthenics und Community, gefilmt in 4K für Social Media.",
+      "en": "Brand film for the Rooftop Sportclub pop-up in Zurich: live training on the rooftop terrace, calisthenics and community, shot in 4K for social media."
     },
     "uploadDate": "2026-07-09",
-    "duration": "PT32S"
+    "duration": "PT32S",
+    "story": {
+      "de": [
+        "Der Rooftop Sportclub war ein Pop-up auf einer Dachterrasse in Zürich, also nur für kurze Zeit offen. Ziel war, in dieser Zeit möglichst viel Sichtbarkeit zu bekommen – vor allem auf Instagram.",
+        "Wir haben ein Live-Training begleitet und uns auf die Emotionen konzentriert: Anstrengung, Energie und Community. Geschnitten für Instagram, im Format, das dort am besten funktioniert.",
+        "Das Video kam gut an und hat dem Pop-up genau die Sichtbarkeit gebracht, die es in der kurzen Laufzeit brauchte."
+      ],
+      "en": [
+        "Rooftop Sportclub was a pop-up on a rooftop terrace in Zurich, open only for a short time. The goal was to get as much visibility as possible during that time – above all on Instagram.",
+        "We filmed a live training session and focused on emotion: effort, energy and community. Edited for Instagram, in the format that works best there.",
+        "The video was well received and gave the pop-up exactly the visibility it needed during its short run."
+      ]
+    }
   },
   {
     "slug": "sushi-restaurant-zuerich",
@@ -79,11 +91,21 @@
       "en": "SUSHI RESTAURANT ZURICH — KITCHEN FILM"
     },
     "desc": {
-      "de": "Film für ein Sushi-Restaurant in Zürich: der Koch, Messer, Fisch und Handwerk in der Küche, erzählt in ruhigen, dokumentarischen Bildern.",
-      "en": "Film for a sushi restaurant in Zurich: the chef, knives, fish and craft in the kitchen, told in calm, documentary images."
+      "de": "Film zur Eröffnung eines Sushi-Restaurants in Zürich: Food-Tasting, der Koch bei der Arbeit, Messer, Fisch und Handwerk in ruhigen, dokumentarischen Bildern.",
+      "en": "Film for the opening of a sushi restaurant in Zurich: food tasting, the chef at work, knives, fish and craft in calm, documentary images."
     },
     "uploadDate": "2026-01-19",
-    "duration": "PT1M29S"
+    "duration": "PT1M29S",
+    "story": {
+      "de": [
+        "Zur Eröffnung wollte das Restaurant zeigen, was Gäste erwartet: frischen Fisch, echtes Handwerk und einen Koch, der weiss, was er tut.",
+        "Wir haben das Food-Tasting zur Eröffnung begleitet und den Koch in der Küche porträtiert. Daraus entstand ein Film im Querformat für die Website und Versionen im Hochformat für Social Media."
+      ],
+      "en": [
+        "For the opening, the restaurant wanted to show what guests can expect: fresh fish, real craft and a chef who knows what he is doing.",
+        "We covered the opening food tasting and portrayed the chef in the kitchen. The result was a landscape film for the website and vertical versions for social media."
+      ]
+    }
   },
   {
     "slug": "drivecab",
@@ -101,7 +123,19 @@
       "en": "Social media clip for the chauffeur service DRIVECAB in Zurich: Maybach, interior and service moments at Lake Zurich, vertical for Instagram."
     },
     "uploadDate": "2026-09-17",
-    "duration": "PT12S"
+    "duration": "PT12S",
+    "story": {
+      "de": [
+        "DRIVECAB wollte mehr Buchungen und einen Instagram-Auftritt, der zum Premium-Service passt.",
+        "Wir haben den Maybach, das Interieur und typische Service-Momente am Zürichsee gefilmt – kurz, hochkant und auf Instagram zugeschnitten.",
+        "Der Kunde ist zufrieden mit dem Ergebnis, der Clip zeigt den Service so hochwertig, wie er ist."
+      ],
+      "en": [
+        "DRIVECAB wanted more bookings and an Instagram presence that matches its premium service.",
+        "We filmed the Maybach, the interior and typical service moments at Lake Zurich – short, vertical and tailored to Instagram.",
+        "The client is happy with the result; the clip shows the service as premium as it is."
+      ]
+    }
   },
   {
     "slug": "phunnid",
