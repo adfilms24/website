@@ -11,13 +11,13 @@
       "en": "SHOWREEL 2026"
     },
     "desc": {
-      "de": "Ein Auszug aus unserer aktuellen Arbeit: Cinematography, Slow Motion und Bildsprache aus Zürich.",
-      "en": "A selection of our current work: cinematography, slow motion and visual storytelling from Zurich."
+      "de": "Ein Auszug aus unserer Arbeit für Unternehmen: Gastro, Barbershops, Retail, Fitness, Events und Zürich, gefilmt in 4K.",
+      "en": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich, shot in 4K."
     },
     "video": "/assets/video/showreel.mp4",
     "poster": "/assets/video/showreel-poster.jpg",
-    "duration": "PT26S",
-    "uploadDate": "2026-10-09"
+    "duration": "PT2M7S",
+    "uploadDate": "2026-10-10"
   },
   {
     "slug": "loco-birria",
