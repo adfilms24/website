@@ -40,6 +40,9 @@ def target_file(url: str, page: Path) -> Path | None:
     path = urlsplit(url).path
     if not path:
         return None
+    # Von Vercel zur Laufzeit ausgeliefert (Web Analytics), nicht im Repo
+    if path.startswith("/_vercel/"):
+        return None
     base = ROOT if path.startswith("/") else page.parent
     f = (base / path.lstrip("/")).resolve()
     return f / "index.html" if path.endswith("/") else f
