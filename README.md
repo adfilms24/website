@@ -41,6 +41,9 @@ Kategorien (`category`): `commercial`, `social`, `drone`, `real-estate`, `events
 
 ## Sonstiges
 
-- Lade-Intro: wird nur beim ersten Besuch gezeigt (`localStorage`-Schlüssel `adf24_intro_seen`).
+- Kein Cookie-Banner: Die Seite setzt keine Cookies (Vercel Analytics ist cookielos). Kommt ein Tool mit Cookies dazu, braucht es wieder eine Einwilligung.
+- Kundenstimmen: `testimonials` in `content/de.json` / `content/en.json`.
+- Leistungsliste der Startseite: `link` je Eintrag in `services` (Slug einer Leistungsseite oder `#anker`).
+- Neues Showreel: unter gleichem Namen ersetzen ist ok, `build.py` hängt eine Prüfsumme an (`?v=…`).
 - Kontaktformular: EmailJS (Service/Template-ID in `assets/js/main.js`).
 - Sicherheits-Header und Caching: `vercel.json`.
