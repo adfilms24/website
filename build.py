@@ -298,7 +298,7 @@ def build_projects():
             if not draft:
                 ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (title, urls[l])])
             body = f'''<nav id="nav" class="pinned pj-nav">
-    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24" class="nav-logo-img" width="325" height="90"></a>
+    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52"></a>
     <div class="nav-right">
       <a href="{home_url(l)}#portfolio" class="nav-lang pj-backlink">{t["pj_back"]}</a>
       <a href="{urls[other(l)]}" class="nav-lang" hreflang="{other(l)}" lang="{other(l)}" aria-label="{t["lang_switch_aria"]}">{t["lang_switch_label"]}</a>
@@ -350,7 +350,7 @@ def build_services():
                 "description": s["meta"][l], "areaServed": {"@type": "City", "name": "Zürich" if l == "de" else "Zurich"},
                 "provider": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}, "url": DOMAIN + urls[l]}) + '</script>'
             body = f'''<nav id="nav" class="pinned pj-nav">
-    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24" class="nav-logo-img" width="325" height="90"></a>
+    <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52"></a>
     <div class="nav-right">
       <a href="{home_url(l)}#services" class="nav-lang pj-backlink">← {t["n_services"]}</a>
       <a href="{urls[other(l)]}" class="nav-lang" hreflang="{other(l)}" lang="{other(l)}" aria-label="{t["lang_switch_aria"]}">{t["lang_switch_label"]}</a>
