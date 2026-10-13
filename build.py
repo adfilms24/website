@@ -19,7 +19,7 @@ MAIL = "info@adfilms24.ch"
 
 def load(p): return json.loads((ROOT / p).read_text(encoding="utf-8"))
 import hashlib
-_ASSET_RE = re.compile(r'(?<=["\'(=])(/assets/(?:css|js|vendor)/[\w.-]+\.(?:css|js)|/assets/video/[\w./-]+\.(?:mp4|jpg|jpeg|png|webp)|/cookie-consent\.js)(?=["\')\s>])')
+_ASSET_RE = re.compile(r'(?<=["\'(=])(/assets/(?:css|js|vendor)/[\w.-]+\.(?:css|js)|/assets/video/[\w./-]+\.(?:mp4|jpg|jpeg|png|webp))(?=["\')\s>])')
 def _ver(path):
     f = ROOT / path.lstrip("/")
     return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
@@ -102,11 +102,15 @@ def marquee(t):
 def gear(t):
     return "\n".join(f'            <div class="gear-row"><span class="gear-name">{n}</span><span class="gear-type">{ty}</span></div>' for n, ty in t["gear"])
 ARROW = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>'
-def services(t):
+def services(l, t):
+    """Leistungsliste der Startseite; "link" in content/<lang>.json = Slug einer Leistungsseite oder ein #Anker."""
     out = []
+    by_slug = {sv["slug"]["de"]: sv for sv in SERVICES}
     for s in t["services"]:
+        link = s.get("link", "#contact")
+        href = link if link.startswith("#") else service_url(l, by_slug[link])
         tags = "\n".join(f'          <span class="srv-tag">{x}</span>' for x in s["tags"])
-        out.append(f'''      <div class="srv-item">
+        out.append(f'''      <a class="srv-item" href="{href}">
         <div class="srv-num">{s["num"]}</div>
         <div class="srv-name">{s["name"]}<em>{s["sub"]}</em></div>
         <div class="srv-tags">
@@ -115,13 +119,23 @@ def services(t):
         <div class="srv-arrow">
           {ARROW}
         </div>
-      </div>''')
+      </a>''')
     return "\n\n" + "\n\n".join(out) + "\n"
 def service_links(l, t):
     links = " ".join(f'<a href="{service_url(l, s)}">{s["nav"][l]}</a>' for s in SERVICES)
     return f'<p class="srv-more" data-sr="u"><span>{t["srv_more_label"]}</span> {links}</p>'
 def opts(items):
     return "\n".join(f'            <option>{x}</option>' for x in items)
+def testimonials(t):
+    note = f'\n        <p class="test-note">{t["testimonials_note"]}</p>' if t.get("testimonials_note") else ""
+    return "\n".join(f'''        <div class="test-card" data-sr="r" data-d="{i + 1}">
+          <span class="test-q">&ldquo;</span>
+          <p class="test-body">{q}</p>
+          <div class="test-foot"><div>
+            <div class="test-author-name">{name}</div>
+            <div class="test-author-role">{role}</div>
+          </div></div>
+        </div>''' for i, (q, name, role) in enumerate(t["testimonials"])) + note
 def faq_items(t):
     return "\n".join(f'''      <details class="faq-item">
         <summary>{q}</summary>
@@ -161,7 +175,7 @@ def business_ld(l, t):
     faq = {"@context": "https://schema.org", "@type": "FAQPage",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
     return "\n".join(f'<script type="application/ld+json">{esc_json(x)}</script>' for x in (org, site, faq))
-SIZES = ["xl", "tall", "wide", "wide", "sq", "sq"]
+SIZES = ["xl", "tall", "wide", "wide", "wide", "wide"]  # je zwei Kacheln füllen eine Reihe (6+4 bzw. 5+5 von 10 Spalten)
 BGS = ["bg-a", "bg-b", "bg-c", "bg-d", "bg-e", "bg-f"]
 def projects_grid(l, t):
     pub = [p for p in PROJECTS if p.get("published")]
@@ -173,7 +187,7 @@ def projects_grid(l, t):
         bg = "pf-cell-bg has-img" if poster else f"pf-cell-bg {BGS[i % 6]}"
         glyph = "" if poster else f'<span class="pf-glyph">{title[:1]}</span>'
         play = '\n        <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>' if vid else ""
-        size = "xl" if len(pub) == 1 else SIZES[i % 6]
+        size = "xl" if len(pub) == 1 else ("full" if i == len(pub) - 1 and len(pub) % 2 else SIZES[i % 6])
         feat = " featured" if vid and poster else ""
         cells.append(f'''      <a class="pf-cell{feat}" href="{project_url(l, p["slug"])}" data-size="{size}" data-cat="{p["category"]}" aria-label="{title} — {tag_of(p, l)}">
         <div class="{bg}"{style}>{glyph}</div>{play}
@@ -198,14 +212,16 @@ def projects_grid(l, t):
 def build_home(l):
     urls = {x: home_url(x) for x in LANGS}
     t = common_ctx(l, urls)
-    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
+    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(l, t), testimonials=testimonials(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
              business_ld=business_ld(l, t), process_steps=process_steps(t), proc_steps_html=proc_steps_html(t), look_tabs_html=look_tabs_html(t), faq_items=faq_items(t),
              project_type_opts=opts(t["project_types"]), budget_opts_html=opts(t["budget_opts"]), source_opts_html=opts(t["source_opts"]),
              footer_service_links="\n".join(f'      <li><a href="{service_url(l, sv)}">{sv["nav"][l]}</a></li>' for sv in SERVICES),
              year=datetime.date.today().year)
     keys = ["menu_open", "menu_close", "showreel_title", "showreel_desc", "showreel_client", "showreel_camera", "showreel_year",
-            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail", "lbl_budget", "lbl_date", "lbl_source"]
-    t["i18n_json"] = esc_json({**{k: TEXT[l][k] for k in keys}, "mail": MAIL, "lang": l})
+            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail", "lbl_budget", "lbl_date", "lbl_source", "lbl_phone"]
+    # Showreel-Pfade laufen durch version_assets (?v=…), damit ein neues Video trotz Jahres-Cache sofort ankommt
+    t["i18n_json"] = esc_json({**{k: TEXT[l][k] for k in keys}, "mail": MAIL, "lang": l,
+                               "showreel_src": "/assets/video/showreel.mp4", "showreel_poster": "/assets/video/showreel-poster.webp"})
     html = render((ROOT / "templates/home.html").read_text(encoding="utf-8"), t)
     write("index.html" if l == "de" else "en/index.html", html)
 

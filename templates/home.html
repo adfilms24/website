@@ -54,7 +54,6 @@
 <link rel="preload" href="/assets/video/showreel-poster.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="/assets/css/style.css">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
-<link rel="preload" href="/cookie-consent.js" as="script">
 </head>
 <body>
 <a class="skip-link" href="#main">{{skip}}</a>
@@ -340,39 +339,8 @@
         <a href="{{google_url}}" target="_blank" rel="noopener" class="g-rating" data-sr="u" data-d="3"><span class="g-stars" aria-hidden="true">★</span><span>{{rating_label}}</span><span class="g-more">{{rating_link}} →</span></a>
       </div>
       <div class="test-cards-col">
-        <!-- Echte Google-Bewertungen, unverändert übernommen -->
-        <div class="test-card" data-sr="r" data-d="1">
-          <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen."</p>
-          <div class="test-foot"><div>
-            <div class="test-author-name">Mahmoud Badri</div>
-            <div class="test-author-role">Personal Trainer</div>
-          </div></div>
-        </div>
-        <div class="test-card" data-sr="r" data-d="2">
-          <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen."</p>
-          <div class="test-foot"><div>
-            <div class="test-author-name">Safiya Qasil</div>
-            <div class="test-author-role">ATTAR ONE</div>
-          </div></div>
-        </div>
-        <div class="test-card" data-sr="r" data-d="3">
-          <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Amazing work!🤝"</p>
-          <div class="test-foot"><div>
-            <div class="test-author-name">Parash Hamal</div>
-            <div class="test-author-role">PHUNNID</div>
-          </div></div>
-        </div>
-        <div class="test-card" data-sr="r" data-d="4">
-          <span class="test-q">&ldquo;</span>
-          <p class="test-body">Helped me expand my model portfolio beautifully - very excited for future collaboration!✨</p>
-          <div class="test-foot"><div>
-            <div class="test-author-name">Shanike</div>
-            <div class="test-author-role">Model</div>
-          </div></div>
-        </div>
+        <!-- Echte Google-Bewertungen, Texte in content/<lang>.json ("testimonials") -->
+{{testimonials}}
       </div>
     </div>
   </div>
@@ -440,6 +408,10 @@
         <div class="f-group">
           <label for="f-email">{{f_email}}</label>
           <input id="f-email" name="email" type="email" placeholder="{{ph_email}}" autocomplete="email" required>
+        </div>
+        <div class="f-group">
+          <label for="f-telefon">{{f_phone}}</label>
+          <input id="f-telefon" name="telefon" type="tel" placeholder="{{ph_phone}}" autocomplete="tel">
         </div>
         <div class="f-group">
           <label for="f-projekttyp">{{f_type}}</label>
@@ -558,6 +530,5 @@
 <script defer src="/assets/js/main.js"></script>
 <script defer src="/assets/js/crm-lead.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/cookie-consent.js"></script>
 </body>
 </html>

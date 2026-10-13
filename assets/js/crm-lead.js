@@ -32,6 +32,7 @@
           p_email: f.get('email') || '',
           p_project_type: f.get('projekttyp') || '',
           p_message: [f.get('nachricht') || '',
+            f.get('telefon') ? 'Telefon: ' + f.get('telefon') : '',
             f.get('budget') ? 'Budget: ' + f.get('budget') : '',
             f.get('termin') ? 'Wunschtermin: ' + f.get('termin') : '',
             f.get('quelle') ? 'Gefunden über: ' + f.get('quelle') : ''].filter(Boolean).join('\n'),

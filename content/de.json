@@ -13,7 +13,7 @@
   "m_services": "LEISTUNGEN",
   "m_clients": "KUNDEN",
   "m_contact": "KONTAKT",
-  "mnav_bottom": "© 2025 · Switzerland & International",
+  "mnav_bottom": "© {{year}} · Schweiz & International",
   "n_projects": "Projekte",
   "n_about": "Über uns",
   "n_services": "Leistungen",
@@ -58,7 +58,7 @@
   "contact_bg": "HALLO.",
   "contact_meta": "Kontakt",
   "contact_h2": "LASS UNS<br>REDEN.",
-  "contact_tagline": "Erzähl uns, was dein Video erreichen soll. Wir melden uns persönlich — ",
+  "contact_tagline": "Erzähl uns, was dein Video erreichen soll. Wir melden uns persönlich, in der Regel innerhalb von 24 Stunden.",
   "lbl_email": "E-Mail",
   "f_first": "Vorname",
   "f_last": "Nachname",
@@ -160,7 +160,8 @@
         "Pre-Production",
         "Multi-Location",
         "Color Grading"
-      ]
+      ],
+      "link": "imagefilm-zuerich"
     },
     {
       "num": "02",
@@ -170,7 +171,8 @@
         "Reels & TikTok",
         "Monatlich",
         "Analytics"
-      ]
+      ],
+      "link": "social-media-content-zuerich"
     },
     {
       "num": "03",
@@ -180,7 +182,8 @@
         "DaVinci Resolve",
         "Custom LUTs",
         "Sound Design"
-      ]
+      ],
+      "link": "#look"
     },
     {
       "num": "04",
@@ -190,7 +193,8 @@
         "A1/A3 Lizenz CH",
         "DJI Inspire 3",
         "4K/6K"
-      ]
+      ],
+      "link": "#contact"
     },
     {
       "num": "05",
@@ -200,7 +204,8 @@
         "Brand Story",
         "Corporate",
         "Produkt"
-      ]
+      ],
+      "link": "imagefilm-zuerich"
     },
     {
       "num": "06",
@@ -210,7 +215,8 @@
         "Multi-Kamera",
         "Same-Day-Edit",
         "Livestream"
-      ]
+      ],
+      "link": "event-video-zuerich"
     },
     {
       "num": "07",
@@ -220,7 +226,8 @@
         "Redaktionsplan",
         "Posting",
         "Reporting"
-      ]
+      ],
+      "link": "social-media-management-zuerich"
     },
     {
       "num": "08",
@@ -230,7 +237,8 @@
         "Meta & TikTok",
         "LinkedIn",
         "Tracking"
-      ]
+      ],
+      "link": "social-media-werbung-zuerich"
     },
     {
       "num": "09",
@@ -240,7 +248,8 @@
         "Website",
         "CRM",
         "Automation"
-      ]
+      ],
+      "link": "digitale-systeme-kmu-zuerich"
     }
   ],
   "menu_close": "Menü schliessen",
@@ -450,5 +459,31 @@
   "mon_alt": "Live-Bild der Kamera auf dem Handy während eines Drehs",
   "grade_title": "Color Grading in DaVinci Resolve",
   "grade_text": "Jede Aufnahme wird einzeln abgestimmt: Nodes für Belichtung, Farbe und Hauttöne, kontrolliert mit Scopes statt nach Gefühl. So sieht euer Video auf jedem Bildschirm gleich gut aus.",
-  "grade_alt": "Color-Grading-Oberfläche in DaVinci Resolve mit Nodes, Primaries und RGB-Parade"
+  "grade_alt": "Color-Grading-Oberfläche in DaVinci Resolve mit Nodes, Primaries und RGB-Parade",
+  "testimonials_note": "",
+  "f_phone": "Telefon (optional)",
+  "ph_phone": "+41 …",
+  "lbl_phone": "Telefon",
+  "testimonials": [
+    [
+      "„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen.\"",
+      "Mahmoud Badri",
+      "Personal Trainer"
+    ],
+    [
+      "„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen.\"",
+      "Safiya Qasil",
+      "ATTAR ONE"
+    ],
+    [
+      "„Amazing work!🤝\"",
+      "Parash Hamal",
+      "PHUNNID"
+    ],
+    [
+      "Helped me expand my model portfolio beautifully - very excited for future collaboration!✨",
+      "Shanike",
+      "Model"
+    ]
+  ]
 }

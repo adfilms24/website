@@ -51,10 +51,10 @@
     <thead><tr><th>Bereich</th><th>Daten</th><th>Zweck</th><th>Grundlage (DSGVO)</th></tr></thead>
     <tbody>
       <tr><td>Besuch der Website</td><td>IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Referrer, Browser- und Geräteangaben</td><td>Auslieferung, Stabilität und Sicherheit der Website</td><td>Art. 6 Abs. 1 lit. f (berechtigtes Interesse)</td></tr>
-      <tr><td>Kontaktformular</td><td>Vorname, Nachname, E-Mail-Adresse, Projekttyp, Nachricht</td><td>Beantwortung Ihrer Anfrage, Erfassung im Kundenverwaltungssystem (CRM), Angebotserstellung</td><td>Art. 6 Abs. 1 lit. b (vorvertraglich) bzw. lit. f</td></tr>
+      <tr><td>Kontaktformular</td><td>Vorname, Nachname, E-Mail-Adresse, Projekttyp, Nachricht; freiwillig: Telefon, Budget, Wunschtermin, wie Sie uns gefunden haben</td><td>Beantwortung Ihrer Anfrage, Erfassung im Kundenverwaltungssystem (CRM), Angebotserstellung</td><td>Art. 6 Abs. 1 lit. b (vorvertraglich) bzw. lit. f</td></tr>
       <tr><td>E-Mail / WhatsApp / Telefon</td><td>Kontaktdaten und Inhalt Ihrer Nachricht</td><td>Kommunikation, Auftragsabwicklung</td><td>Art. 6 Abs. 1 lit. b bzw. lit. f</td></tr>
       <tr><td>Kundenportal (nur Kundinnen und Kunden)</td><td>Name, Firma, E-Mail-Adresse, Telefon, Projektangaben, hochgeladene Dateien, Kommentare mit Zeitmarke im Video, Freigaben, Rechnungen</td><td>Projektabwicklung, Abstimmung, Lieferung und Abrechnung</td><td>Art. 6 Abs. 1 lit. b (Vertrag)</td></tr>
-      <tr><td>Cookie-Hinweis, Intro</td><td>Ihre Auswahl (Akzeptieren / Nur notwendige) und die Angabe, dass das Intro gezeigt wurde, im Browser-Speicher</td><td>Ihre Wahl merken, Intro nur einmal zeigen</td><td>Art. 6 Abs. 1 lit. f</td></tr>
+      <tr><td>Spam-Schutz Kontaktformular</td><td>Zeitpunkt Ihrer letzten Anfrage im Sitzungsspeicher des Browsers (wird beim Schliessen des Tabs gelöscht)</td><td>Mehrfaches Absenden verhindern</td><td>Art. 6 Abs. 1 lit. f</td></tr>
     </tbody>
   </table>
   </div>
@@ -79,7 +79,7 @@
     Bearbeitung Ihrer Anfrage und gebe sie nicht zu Werbezwecken weiter.
   </p>
   <p>
-    Zusätzlich wird Ihre Anfrage (Name, E-Mail-Adresse, Projekttyp, Nachricht) als Kontakt in meinem
+    Zusätzlich wird Ihre Anfrage (Name, E-Mail-Adresse, Projekttyp, Nachricht und freiwillige Angaben) als Kontakt in meinem
     Kundenverwaltungssystem (CRM) gespeichert, damit ich sie nachverfolgen und beantworten kann. Die Datenbank
     wird von der <strong>Supabase Inc.</strong> betrieben; die Server stehen in der EU (Irland).
   </p>
@@ -117,10 +117,9 @@
   <h2 id="lokal">8. Lokaler Speicher, Cookies und Tracking</h2>
   <p>
     Diese Website setzt <strong>keine Tracking- und keine Analyse-Cookies</strong> und bindet keine Werbe-
-    oder Social-Media-Plugins ein. Ihre Wahl im Cookie-Hinweis und die Information, dass Sie das Lade-Intro bereits gesehen haben, werden nicht als Cookie, sondern
-    im lokalen Speicher Ihres Browsers (<code>localStorage</code>, Schlüssel <code>adf24_cookie_consent</code> und <code>adf24_intro_seen</code>)
-    abgelegt und verlassen Ihr Gerät nicht. Sie können diesen Eintrag jederzeit in den
-    Browser-Einstellungen löschen.
+    oder Social-Media-Plugins ein. Ein Cookie-Hinweis ist deshalb nicht nötig. Nach dem Absenden des Kontaktformulars wird nur der
+    Zeitpunkt der Anfrage im Sitzungsspeicher Ihres Browsers (<code>sessionStorage</code>) abgelegt, um doppeltes Absenden zu verhindern.
+    Dieser Eintrag verlässt Ihr Gerät nicht und wird beim Schliessen des Tabs automatisch gelöscht.
   </p>
   <p>
     Für eine anonyme Besucherstatistik nutzen wir <strong>Vercel Web Analytics</strong> (Vercel Inc., siehe Ziffer 4).

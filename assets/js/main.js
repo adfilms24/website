@@ -157,7 +157,7 @@ document.getElementById('modalScrim').addEventListener('click', closeModal);
 /* ── SHOWREEL ─── */
 function openShowreel() {
   fillModal(tr('showreel_title','Showreel 2026'), tr('showreel_desc',''), tr('showreel_client','A.D.Films24'), tr('showreel_camera','Sony FX3'), tr('showreel_year','2026'));
-  playInModal('/assets/video/showreel.mp4', '/assets/video/showreel-poster.webp');
+  playInModal(tr('showreel_src', '/assets/video/showreel.mp4'), tr('showreel_poster', '/assets/video/showreel-poster.webp'));
   showModal();
 }
 document.getElementById('reelBtn').addEventListener('click', openShowreel);
@@ -182,9 +182,9 @@ document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 const SEND_LABEL = document.getElementById('sendBtn').innerHTML;
 const MAIL = tr('mail', 'info@adfilms24.ch');
 const COOLDOWN_MS = 30000;
-/* Budget, Wunschtermin und Herkunft an die Nachricht anhängen (EmailJS-Template bleibt unverändert) */
+/* Telefon, Budget, Wunschtermin und Herkunft an die Nachricht anhängen (EmailJS-Template bleibt unverändert) */
 function withDetails(fd, msg) {
-  const rows = [['budget','lbl_budget','Budget'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
+  const rows = [['telefon','lbl_phone','Phone'], ['budget','lbl_budget','Budget'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
     .map(([k, lk, fb]) => (fd.get(k) ? `${tr(lk, fb)}: ${fd.get(k)}` : ''))
     .filter(Boolean);
   return rows.length ? `${msg}\n\n— ${rows.join('\n')}` : msg;
