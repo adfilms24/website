@@ -211,6 +211,36 @@
         "Same-Day-Edit",
         "Livestream"
       ]
+    },
+    {
+      "num": "07",
+      "name": "SOCIAL MEDIA MANAGEMENT",
+      "sub": "Seiten betreuen & wachsen",
+      "tags": [
+        "Redaktionsplan",
+        "Posting",
+        "Reporting"
+      ]
+    },
+    {
+      "num": "08",
+      "name": "SOCIAL ADS",
+      "sub": "Werbekampagnen, die Anfragen bringen",
+      "tags": [
+        "Meta & TikTok",
+        "LinkedIn",
+        "Tracking"
+      ]
+    },
+    {
+      "num": "09",
+      "name": "DIGITALE SYSTEME",
+      "sub": "Optimierung & Automatisierung",
+      "tags": [
+        "Website",
+        "CRM",
+        "Automation"
+      ]
     }
   ],
   "menu_close": "Menü schliessen",
@@ -326,6 +356,9 @@
     "Event-Video",
     "Produktvideo",
     "Drohnenaufnahmen",
+    "Social-Media-Management",
+    "Social-Media-Werbung (Ads)",
+    "Digitale Systeme / Automatisierung",
     "Anderes"
   ],
   "f_budget": "Budget (optional)",

@@ -156,6 +156,36 @@
         "Same-day edit",
         "Livestream"
       ]
+    },
+    {
+      "num": "07",
+      "name": "SOCIAL MEDIA MANAGEMENT",
+      "sub": "Running & Growing Your Pages",
+      "tags": [
+        "Content calendar",
+        "Posting",
+        "Reporting"
+      ]
+    },
+    {
+      "num": "08",
+      "name": "SOCIAL ADS",
+      "sub": "Campaigns That Bring Enquiries",
+      "tags": [
+        "Meta & TikTok",
+        "LinkedIn",
+        "Tracking"
+      ]
+    },
+    {
+      "num": "09",
+      "name": "DIGITAL SYSTEMS",
+      "sub": "Optimisation & Automation",
+      "tags": [
+        "Website",
+        "CRM",
+        "Automation"
+      ]
     }
   ],
   "clients_meta": "Clients",
@@ -326,6 +356,9 @@
     "Event video",
     "Product video",
     "Drone footage",
+    "Social media management",
+    "Social media ads",
+    "Digital systems / automation",
     "Other"
   ],
   "f_budget": "Budget (optional)",

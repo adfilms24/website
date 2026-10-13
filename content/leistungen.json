@@ -218,5 +218,296 @@
         "Trade fairs and conferences"
       ]
     }
+  },
+  {
+    "slug": {
+      "de": "social-media-management-zuerich",
+      "en": "social-media-management-zurich"
+    },
+    "project": "social-media",
+    "nav": {
+      "de": "Social-Media-Management",
+      "en": "Social media management"
+    },
+    "title": {
+      "de": "Social-Media-Management für KMU in Zürich — A.D.Films24",
+      "en": "Social Media Management for SMEs in Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Social-Media-Management für KMU in Zürich",
+      "en": "Social media management for SMEs in Zurich"
+    },
+    "meta": {
+      "de": "Wir betreuen eure Instagram-, TikTok- und LinkedIn-Seiten: Planung, Content, Posting und Auswertung aus einer Hand. Für KMU in Zürich, monatlich und transparent.",
+      "en": "We run your Instagram, TikTok and LinkedIn pages: planning, content, posting and reporting from one place. For SMEs in Zurich, monthly and transparent."
+    },
+    "intro": {
+      "de": "Gute Videos bringen wenig, wenn niemand regelmässig postet. Wir übernehmen eure Social-Media-Seiten komplett: vom Redaktionsplan über den Content bis zum Posting und zur monatlichen Auswertung. Ihr gebt frei, wir kümmern uns um den Rest.",
+      "en": "Great videos don't help much if nobody posts regularly. We take over your social media pages completely: from the content calendar and the content itself to posting and a monthly report. You approve, we handle the rest."
+    },
+    "includes": {
+      "de": [
+        "Redaktionsplan pro Monat, abgestimmt auf eure Ziele",
+        "Content-Produktion: Reels, Fotos und Texte",
+        "Posting zu den besten Zeiten",
+        "Profil-Optimierung (Bio, Highlights, Links)",
+        "Monatlicher Report mit den wichtigsten Zahlen"
+      ],
+      "en": [
+        "Monthly content calendar aligned with your goals",
+        "Content production: reels, photos and captions",
+        "Posting at the best times",
+        "Profile optimisation (bio, highlights, links)",
+        "Monthly report with the key numbers"
+      ]
+    },
+    "for": {
+      "de": [
+        "KMU ohne Zeit für eigene Social-Media-Arbeit",
+        "Restaurants, Studios und Läden mit lokaler Kundschaft",
+        "Firmen, die auf Instagram oder LinkedIn sichtbar werden wollen"
+      ],
+      "en": [
+        "SMEs without time to run their own social media",
+        "Restaurants, studios and shops with local customers",
+        "Companies that want to be visible on Instagram or LinkedIn"
+      ]
+    },
+    "steps": {
+      "de": [
+        [
+          "Gespräch",
+          "Wir klären Ziele, Zielgruppe und Kanäle."
+        ],
+        [
+          "Analyse & Plan",
+          "Wir prüfen eure Profile und erstellen den ersten Monatsplan."
+        ],
+        [
+          "Content & Posting",
+          "Wir produzieren, ihr gebt frei, wir posten."
+        ],
+        [
+          "Report",
+          "Jeden Monat Zahlen und klare nächste Schritte."
+        ]
+      ],
+      "en": [
+        [
+          "Call",
+          "We clarify goals, audience and channels."
+        ],
+        [
+          "Audit & plan",
+          "We review your profiles and build the first monthly plan."
+        ],
+        [
+          "Content & posting",
+          "We produce, you approve, we post."
+        ],
+        [
+          "Report",
+          "Numbers and clear next steps every month."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Nichts geht online ohne eure Freigabe. Monatlich kündbar, ohne lange Vertragsbindung.",
+      "en": "Nothing goes live without your approval. Cancel monthly, no long contract."
+    }
+  },
+  {
+    "slug": {
+      "de": "social-media-werbung-zuerich",
+      "en": "social-media-ads-zurich"
+    },
+    "project": null,
+    "nav": {
+      "de": "Social-Media-Werbung",
+      "en": "Social media ads"
+    },
+    "title": {
+      "de": "Social-Media-Werbung (Meta, TikTok, LinkedIn Ads) Zürich — A.D.Films24",
+      "en": "Social Media Ads (Meta, TikTok, LinkedIn) Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Social-Media-Werbung für KMU in Zürich",
+      "en": "Social media ads for SMEs in Zurich"
+    },
+    "meta": {
+      "de": "Wir planen, gestalten und betreuen eure Werbekampagnen auf Instagram, Facebook, TikTok und LinkedIn: mit eigenen Video-Ads, sauberem Tracking und klarem Reporting.",
+      "en": "We plan, create and manage your ad campaigns on Instagram, Facebook, TikTok and LinkedIn: with our own video ads, clean tracking and clear reporting."
+    },
+    "intro": {
+      "de": "Mit Werbung erreicht ihr genau die Leute, die euch noch nicht kennen. Wir setzen eure Kampagnen auf Instagram, Facebook, TikTok und LinkedIn auf, produzieren die Video-Ads selbst und optimieren laufend, damit euer Budget in Anfragen und Kunden ankommt.",
+      "en": "Ads let you reach exactly the people who don't know you yet. We set up your campaigns on Instagram, Facebook, TikTok and LinkedIn, produce the video ads ourselves and optimise continuously so your budget turns into enquiries and customers."
+    },
+    "includes": {
+      "de": [
+        "Kampagnenstrategie: Ziel, Zielgruppe und Budget",
+        "Video- und Bild-Ads aus eigener Produktion",
+        "Einrichtung von Werbekonto, Pixel und Tracking",
+        "Laufende Optimierung und A/B-Tests",
+        "Reporting zu Reichweite, Klicks und Kosten pro Anfrage"
+      ],
+      "en": [
+        "Campaign strategy: goal, audience and budget",
+        "Video and image ads from our own production",
+        "Set-up of ad account, pixel and tracking",
+        "Ongoing optimisation and A/B tests",
+        "Reporting on reach, clicks and cost per enquiry"
+      ]
+    },
+    "for": {
+      "de": [
+        "Neueröffnungen, die schnell bekannt werden wollen",
+        "KMU, die planbar neue Anfragen gewinnen wollen",
+        "Firmen, die Fachkräfte über Social Media suchen"
+      ],
+      "en": [
+        "New openings that want to become known fast",
+        "SMEs that want a steady flow of new enquiries",
+        "Companies recruiting staff via social media"
+      ]
+    },
+    "steps": {
+      "de": [
+        [
+          "Gespräch",
+          "Wir klären Ziel, Zielgruppe und Werbebudget."
+        ],
+        [
+          "Setup",
+          "Werbekonto, Tracking und Zielgruppen werden sauber eingerichtet."
+        ],
+        [
+          "Ads & Start",
+          "Wir produzieren die Ads und starten die Kampagne nach eurer Freigabe."
+        ],
+        [
+          "Optimierung",
+          "Wir passen laufend an und berichten, was es gebracht hat."
+        ]
+      ],
+      "en": [
+        [
+          "Call",
+          "We clarify goal, audience and ad budget."
+        ],
+        [
+          "Set-up",
+          "Ad account, tracking and audiences are set up properly."
+        ],
+        [
+          "Ads & launch",
+          "We produce the ads and launch the campaign once you approve."
+        ],
+        [
+          "Optimisation",
+          "We adjust continuously and report on the results."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Das Werbebudget läuft über euer eigenes Werbekonto. Ihr seht jederzeit, wofür jeder Franken ausgegeben wird.",
+      "en": "The ad budget runs through your own ad account. You always see where every franc goes."
+    }
+  },
+  {
+    "slug": {
+      "de": "digitale-systeme-kmu-zuerich",
+      "en": "digital-systems-smes-zurich"
+    },
+    "project": null,
+    "nav": {
+      "de": "Digitale Systeme",
+      "en": "Digital systems"
+    },
+    "title": {
+      "de": "Digitale Systeme & Automatisierung für KMU in Zürich — A.D.Films24",
+      "en": "Digital Systems & Automation for SMEs in Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Digitale Systeme &amp; Automatisierung für KMU",
+      "en": "Digital systems &amp; automation for SMEs"
+    },
+    "meta": {
+      "de": "Wir optimieren eure digitalen Abläufe: schnellere Website, Kontaktformulare, CRM, Online-Buchung und Automatisierungen. Für KMU in Zürich, verständlich erklärt.",
+      "en": "We optimise your digital workflows: faster website, contact forms, CRM, online booking and automations. For SMEs in Zurich, explained in plain language."
+    },
+    "intro": {
+      "de": "Viele KMU verlieren Zeit mit Abläufen, die ein gutes System erledigen könnte. Wir schauen uns eure Website, Tools und Prozesse an und machen sie schneller und einfacher: von der Website über Anfragen und Kundenverwaltung bis zur Automatisierung wiederkehrender Aufgaben.",
+      "en": "Many SMEs lose time on tasks a good system could handle. We look at your website, tools and processes and make them faster and simpler: from your website to enquiries, customer management and automating repetitive tasks."
+    },
+    "includes": {
+      "de": [
+        "Analyse von Website, Tools und Abläufen",
+        "Website-Optimierung: Tempo, Google-Sichtbarkeit, Mobile",
+        "Kontaktformulare, Online-Buchung und Anfragen-Management",
+        "Einrichtung von CRM und Kundenverwaltung",
+        "Automatisierungen und Einführung für euer Team"
+      ],
+      "en": [
+        "Review of website, tools and workflows",
+        "Website optimisation: speed, Google visibility, mobile",
+        "Contact forms, online booking and enquiry management",
+        "Set-up of CRM and customer management",
+        "Automations and onboarding for your team"
+      ]
+    },
+    "for": {
+      "de": [
+        "KMU, die Anfragen noch per Hand und Excel verwalten",
+        "Firmen mit langsamer oder veralteter Website",
+        "Teams, die wiederkehrende Aufgaben automatisieren wollen"
+      ],
+      "en": [
+        "SMEs still managing enquiries by hand and in spreadsheets",
+        "Companies with a slow or outdated website",
+        "Teams that want to automate repetitive tasks"
+      ]
+    },
+    "steps": {
+      "de": [
+        [
+          "Gespräch",
+          "Wir klären, wo es heute hakt und was Zeit kostet."
+        ],
+        [
+          "Analyse & Offerte",
+          "Konkrete Vorschläge mit klarem Preis."
+        ],
+        [
+          "Umsetzung",
+          "Wir richten ein, testen und übernehmen eure Daten."
+        ],
+        [
+          "Übergabe",
+          "Einführung für euer Team und Support danach."
+        ]
+      ],
+      "en": [
+        [
+          "Call",
+          "We clarify where things get stuck and what costs time."
+        ],
+        [
+          "Review & quote",
+          "Concrete proposals with a clear price."
+        ],
+        [
+          "Implementation",
+          "We set up, test and migrate your data."
+        ],
+        [
+          "Handover",
+          "Onboarding for your team and support afterwards."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Verständlich erklärt, ohne Fachchinesisch. Ihr behaltet die volle Kontrolle über eure Daten und Konten.",
+      "en": "Explained in plain language, no jargon. You keep full control of your data and accounts."
+    }
   }
 ]

@@ -327,7 +327,7 @@ def build_services():
                          f'    <div class="pj-video{' pj-video--v' if p.get('format') == 'vertical' else ''}"><video controls playsinline preload="metadata"{pa}><source src="{vid}" type="video/mp4"></video></div>')
             inc = "".join(f"<li>{x}</li>" for x in s["includes"][l])
             who = "".join(f"<li>{x}</li>" for x in s["for"][l])
-            steps = "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(t["lp_steps"]))
+            steps = "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(s.get("steps", {}).get(l, t["lp_steps"])))
             more = " ".join(f'<a href="{service_url(l, o)}">{o["nav"][l]}</a>' for o in SERVICES if o is not s)
             ld = '<script type="application/ld+json">' + esc_json({
                 "@context": "https://schema.org", "@type": "Service", "name": re.sub(r"&amp;", "&", s["h1"][l]),
@@ -351,7 +351,7 @@ def build_services():
     {video}
     <h2 class="lp-h">{t["lp_process"]}</h2>
     <ol class="lp-steps">{steps}</ol>
-    <p class="lp-promise">{t["lp_promise"]}</p>
+    <p class="lp-promise">{s.get("promise", {}).get(l, t["lp_promise"])}</p>
     <div class="pj-cta">
       <h2>{t["lp_cta_h"]}</h2>
       <a href="{home_url(l)}#contact" class="cta-primary">{ARROW} {t["pj_cta"]}</a>
