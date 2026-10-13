@@ -1506,7 +1506,7 @@ footer {
 .hero-bg-ph {
   background:
     linear-gradient(180deg, rgba(6,6,6,0.55), rgba(6,6,6,0.75)),
-    url('/assets/video/showreel-poster.webp') center / cover no-repeat,
+    var(--poster, none) center / cover no-repeat, /* --poster kommt versioniert aus templates/home.html */
     #060606;
 }
 .hero-bg video {
