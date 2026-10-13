@@ -83,8 +83,8 @@
   <p>
     Personendaten werden rechtmässig, nach Treu und Glauben und verhältnismässig bearbeitet, nur
     für die hier genannten Zwecke und nur so lange, wie es dafür nötig ist. Es findet kein Profiling
-    und keine automatisierte Einzelentscheidung statt. Diese Website verwendet keine Werbe- oder
-    Analyse-Dienste.
+    und keine automatisierte Einzelentscheidung statt. Diese Website verwendet keine Werbe-Dienste; für eine
+    anonyme Besucherstatistik wird Vercel Web Analytics eingesetzt (siehe Ziffer 8).
   </p>
 
   <h2 id="daten">3. Welche Daten wir bearbeiten</h2>
@@ -158,12 +158,19 @@
 
   <h2 id="lokal">8. Lokaler Speicher, Cookies und Tracking</h2>
   <p>
-    Diese Website setzt <strong>keine Tracking- und keine Analyse-Cookies</strong> und bindet keine Werbe-,
-    Statistik- oder Social-Media-Plugins ein. Ihre Wahl im Cookie-Hinweis und die Information, dass Sie das Lade-Intro bereits gesehen haben, werden nicht als Cookie, sondern
+    Diese Website setzt <strong>keine Tracking- und keine Analyse-Cookies</strong> und bindet keine Werbe-
+    oder Social-Media-Plugins ein. Ihre Wahl im Cookie-Hinweis und die Information, dass Sie das Lade-Intro bereits gesehen haben, werden nicht als Cookie, sondern
     im lokalen Speicher Ihres Browsers (<code>localStorage</code>, Schlüssel <code>adf24_cookie_consent</code> und <code>adf24_intro_seen</code>)
     abgelegt und verlassen Ihr Gerät nicht. Sie können diesen Eintrag jederzeit in den
-    Browser-Einstellungen löschen. Sollten künftig Analyse-Werkzeuge eingesetzt werden, wird diese
-    Erklärung angepasst und Ihre Einwilligung vorgängig eingeholt.
+    Browser-Einstellungen löschen.
+  </p>
+  <p>
+    Für eine anonyme Besucherstatistik nutzen wir <strong>Vercel Web Analytics</strong> (Vercel Inc., siehe Ziffer 4).
+    Erfasst werden die aufgerufene Seite, die verweisende Seite, Land, Browser, Betriebssystem und Gerätetyp.
+    Es werden keine Cookies gesetzt und nichts auf Ihrem Gerät gespeichert; Besuche werden nur über einen
+    Hashwert unterschieden, der täglich neu erzeugt wird. Ein Wiedererkennen über mehrere Tage oder Websites
+    hinweg ist damit nicht möglich, und wir können die Daten keiner Person zuordnen. Zweck ist es, die
+    Website zu verbessern und zu sehen, welche Inhalte gelesen werden.
   </p>
 
   <h2 id="extern">9. Externe Links, Schriften und Videos</h2>
@@ -238,6 +245,7 @@
     <a href="/agb.html">AGB</a>
   </footer>
 </div>
+<script defer src="/_vercel/insights/script.js"></script>
 <script src="/cookie-consent.js?v=6d237825"></script>
 </body>
 </html>
