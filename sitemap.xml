@@ -253,6 +253,60 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.adfilms24.ch/leistungen/social-media-management-zuerich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/social-media-management-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/social-media-management-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/social-media-management-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/services/social-media-management-zurich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/social-media-management-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/social-media-management-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/social-media-management-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/leistungen/social-media-werbung-zuerich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/social-media-werbung-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/social-media-ads-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/social-media-werbung-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/services/social-media-ads-zurich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/social-media-werbung-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/social-media-ads-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/social-media-werbung-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/leistungen/digitale-systeme-kmu-zuerich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/digitale-systeme-kmu-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/digital-systems-smes-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/digitale-systeme-kmu-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/services/digital-systems-smes-zurich.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/leistungen/digitale-systeme-kmu-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/services/digital-systems-smes-zurich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/leistungen/digitale-systeme-kmu-zuerich.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.adfilms24.ch/impressum.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/impressum.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/imprint.html"/>
