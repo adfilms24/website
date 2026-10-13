@@ -157,7 +157,7 @@ document.getElementById('modalScrim').addEventListener('click', closeModal);
 /* ── SHOWREEL ─── */
 function openShowreel() {
   fillModal(tr('showreel_title','Showreel 2026'), tr('showreel_desc',''), tr('showreel_client','A.D.Films24'), tr('showreel_camera','Sony FX3'), tr('showreel_year','2026'));
-  playInModal('/assets/video/showreel.mp4', '/assets/video/showreel-poster.jpg');
+  playInModal('/assets/video/showreel.mp4', '/assets/video/showreel-poster.webp');
   showModal();
 }
 document.getElementById('reelBtn').addEventListener('click', openShowreel);

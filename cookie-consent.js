@@ -53,7 +53,7 @@
       "position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:99999;" +
       "max-width:560px;margin:0 auto;background:#0e0e0e;color:#EDE9E0;" +
       "border:1px solid rgba(255,255,255,0.16);border-radius:4px;" +
-      "padding:1.25rem 1.5rem;font-family:'JetBrains Mono','Courier New',monospace;" +
+      "padding:1.25rem 1.5rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;" +
       "font-size:0.8rem;line-height:1.5;box-shadow:0 10px 40px rgba(0,0,0,0.5);" +
       "cursor:auto;";
 
@@ -103,9 +103,11 @@
     showBanner();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
+  // Das Skript steht am Ende von <body>: dann gleich anzeigen, damit der Banner
+  // mit dem ersten Bild erscheint und nicht erst nach DOMContentLoaded.
+  if (document.body) {
     init();
+  } else {
+    document.addEventListener("DOMContentLoaded", init);
   }
 })();

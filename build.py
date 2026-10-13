@@ -54,8 +54,8 @@ LEGAL = {  # Schlüssel -> {lang: (Pfad, Dateiname-im-content)}
 }
 LEGAL_SRC = {"imprint": {"de": "impressum", "en": "imprint"}, "privacy": {"de": "datenschutz", "en": "privacy"}, "terms": {"de": "agb", "en": "terms"}}
 LEGAL_META = {
- "imprint": {"de": ("Impressum — A.D.Films24", "Impressum von A.D.Films24 — Abdi Dhiblawe, Cinematographer & Content Creator, Schweiz."),
-             "en": ("Imprint — A.D.Films24", "Imprint of A.D.Films24 — Abdi Dhiblawe, cinematographer & content creator, Switzerland.")},
+ "imprint": {"de": ("Impressum — A.D.Films24", "Impressum von A.D.Films24 Studio, Videoproduktion für Unternehmen in Zürich. Verantwortlich: Abdi Dhiblawe."),
+             "en": ("Imprint — A.D.Films24", "Imprint of A.D.Films24 Studio, video production for businesses in Zurich. Responsible: Abdi Dhiblawe.")},
  "privacy": {"de": ("Datenschutzerklärung — A.D.Films24", "Datenschutzerklärung von A.D.Films24 — Informationen zur Bearbeitung von Personendaten nach Schweizer DSG und DSGVO."),
              "en": ("Privacy policy — A.D.Films24", "Privacy policy of A.D.Films24 — information on the processing of personal data under the Swiss FADP and GDPR.")},
  "terms":   {"de": ("AGB — A.D.Films24", "Allgemeine Geschäftsbedingungen (AGB) von A.D.Films24."),

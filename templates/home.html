@@ -54,6 +54,7 @@
 <link rel="preload" href="/assets/video/showreel-poster.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="/assets/css/style.css">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="preload" href="/cookie-consent.js" as="script">
 </head>
 <body>
 <a class="skip-link" href="#main">{{skip}}</a>
@@ -213,10 +214,10 @@
       <!-- Bildspalte: Porträt + Behind the Scenes -->
       <div class="about-img-col" data-sr="l">
         <div class="about-main-img">
-          <img src="/assets/img/portrait-abdi.webp" alt="{{portrait_alt}}" width="900" height="1200" loading="lazy" decoding="async">
+          <img src="/assets/img/portrait-abdi.webp" srcset="/assets/img/portrait-abdi-640.webp 640w, /assets/img/portrait-abdi.webp 900w" sizes="(max-width: 900px) 90vw, 30vw" alt="{{portrait_alt}}" width="900" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="about-bts-img">
-          <img src="/assets/img/bts-zuerich.webp" alt="{{bts_alt}}" width="600" height="600" loading="lazy" decoding="async">
+          <img src="/assets/img/bts-zuerich.webp" srcset="/assets/img/bts-zuerich-360.webp 360w, /assets/img/bts-zuerich.webp 600w" sizes="(max-width: 900px) 45vw, 15vw" alt="{{bts_alt}}" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <div class="about-data-tag">{{about_tag}}</div>
       </div>
@@ -556,6 +557,6 @@
 <script defer src="/assets/vendor/emailjs.min.js"></script>
 <script defer src="/assets/js/main.js"></script>
 <script defer src="/assets/js/crm-lead.js"></script>
-<script defer src="/cookie-consent.js"></script>
+<script src="/cookie-consent.js"></script>
 </body>
 </html>
