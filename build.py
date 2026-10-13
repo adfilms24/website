@@ -129,6 +129,23 @@ def faq_items(t):
       </details>''' for q, a in t["faq"])
 def process_steps(t):
     return "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(t["lp_steps"]))
+PROC_ICONS = {
+    "talk": "M4 5h11v8H8l-4 3zM9 15v2h7l4 3v-9h-3",
+    "plan": "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M9 15l2 2 4-4",
+    "cam": "M3 8h11v9H3zM14 11l6-3v9l-6-3M6 5h4",
+    "monitor": "M7 3h10v18H7zM11 18h2M10.5 8.5v5l4-2.5z",
+    "grade": "M4 7h10M18 7h2M4 17h4M12 17h8M14 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M8 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0",
+}
+def proc_steps_html(t):
+    n = len(t["proc_steps"])
+    return "".join(
+        f'<li class="proc-step" data-sr="u" data-d="{min(i + 1, 5)}"><span class="proc-ico" aria-hidden="true">'
+        f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{PROC_ICONS[ic]}"/></svg></span>'
+        f'<span class="proc-n">{i + 1:02d} <span>/ {n:02d}</span></span><strong>{a}</strong><span class="proc-t">{b}</span></li>'
+        for i, (ic, a, b) in enumerate(t["proc_steps"]))
+def look_tabs_html(t):
+    return "".join(f'<button type="button" class="look-tab{" on" if i == 0 else ""}" data-look="{k}" aria-pressed="{"true" if i == 0 else "false"}">{lab}</button>'
+                   for i, (k, lab) in enumerate(t["look_tabs"]))
 def business_ld(l, t):
     org = {"@context": "https://schema.org", "@type": "ProfessionalService", "@id": DOMAIN + "/#business",
            "name": "A.D.Films24", "alternateName": "A.D.Films24 Studio", "slogan": "Capture More",
@@ -182,7 +199,7 @@ def build_home(l):
     urls = {x: home_url(x) for x in LANGS}
     t = common_ctx(l, urls)
     t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
-             business_ld=business_ld(l, t), process_steps=process_steps(t), faq_items=faq_items(t),
+             business_ld=business_ld(l, t), process_steps=process_steps(t), proc_steps_html=proc_steps_html(t), look_tabs_html=look_tabs_html(t), faq_items=faq_items(t),
              project_type_opts=opts(t["project_types"]), budget_opts_html=opts(t["budget_opts"]), source_opts_html=opts(t["source_opts"]),
              footer_service_links="\n".join(f'      <li><a href="{service_url(l, sv)}">{sv["nav"][l]}</a></li>' for sv in SERVICES),
              year=datetime.date.today().year)

@@ -360,5 +360,62 @@
     "Result"
   ],
   "portrait_alt": "Abdi Dhiblawe, CEO of A.D.Films24 Studio",
-  "bts_alt": "Camera rig at a window high above Zurich"
+  "bts_alt": "Camera rig at a window high above Zurich",
+  "proc_steps": [
+    [
+      "talk",
+      "We clarify what the video needs to do",
+      "Goal, audience and channel are set before a camera rolls."
+    ],
+    [
+      "plan",
+      "Concept and quote up front",
+      "Flow, scenes and formats are planned, with a clear price."
+    ],
+    [
+      "cam",
+      "Shoot on site",
+      "Cinema camera, lighting and sound at your place, without holding up your business."
+    ],
+    [
+      "monitor",
+      "Live monitoring on set",
+      "You see key shots right away, not only in the edit."
+    ],
+    [
+      "grade",
+      "Edit, grade and delivery",
+      "Raw footage becomes your look, finished in every format."
+    ]
+  ],
+  "look_meta": "Image quality",
+  "look_h2": "FROM RAW FOOTAGE<br><span class=\"serif\">to the look</span>",
+  "look_desc": "We shoot in S-Log3. Straight out of the camera the image looks flat, but it keeps every detail in highlights and shadows. Colour grading turns it into Rec.709: the finished image as it should look on phones and screens.",
+  "look_before": "S-Log3",
+  "look_before_sub": "raw footage",
+  "look_after": "Rec.709",
+  "look_after_sub": "graded by A.D.Films24",
+  "look_hint": "Drag the slider",
+  "look_slider_aria": "Move the before/after comparison",
+  "look_tabs": [
+    [
+      "taps",
+      "Bar"
+    ],
+    [
+      "kitchen",
+      "Kitchen"
+    ],
+    [
+      "food",
+      "Plate"
+    ]
+  ],
+  "look_alt": "Shot from LOCO BIRRIÁ restaurant in Zurich",
+  "mon_title": "Live monitoring on set",
+  "mon_text": "During the shoot we look at the live image together, on the monitor or right on your phone. You decide on the spot, and the first cut holds no surprises.",
+  "mon_alt": "Live camera image on a phone during a shoot",
+  "grade_title": "Colour grading in DaVinci Resolve",
+  "grade_text": "Every shot is balanced individually: nodes for exposure, colour and skin tones, checked on scopes instead of by eye. Your video looks right on every screen.",
+  "grade_alt": "DaVinci Resolve colour page with nodes, primaries and RGB parade"
 }

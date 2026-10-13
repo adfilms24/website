@@ -360,5 +360,62 @@
     "Ergebnis"
   ],
   "portrait_alt": "Abdi Dhiblawe, CEO von A.D.Films24 Studio",
-  "bts_alt": "Kamera-Rig am Fenster hoch über Zürich"
+  "bts_alt": "Kamera-Rig am Fenster hoch über Zürich",
+  "proc_steps": [
+    [
+      "talk",
+      "Wir klären, was das Video leisten soll",
+      "Ziel, Zielgruppe und Kanal stehen fest, bevor eine Kamera läuft."
+    ],
+    [
+      "plan",
+      "Konzept und Offerte vorab",
+      "Ablauf, Szenen und Formate sind geplant, mit klarem Preis."
+    ],
+    [
+      "cam",
+      "Dreh vor Ort",
+      "Cinema-Kamera, Licht und Ton bei euch, ohne euren Betrieb aufzuhalten."
+    ],
+    [
+      "monitor",
+      "Live-Monitoring am Set",
+      "Ihr seht wichtige Einstellungen sofort, nicht erst im Schnitt."
+    ],
+    [
+      "grade",
+      "Schnitt, Grading und Abgabe",
+      "Aus Rohmaterial wird euer Look, fertig in allen Formaten."
+    ]
+  ],
+  "look_meta": "Bildqualität",
+  "look_h2": "VOM ROHMATERIAL<br><span class=\"serif\">zum Look</span>",
+  "look_desc": "Wir drehen in S-Log3. Direkt aus der Kamera wirkt das Bild flach, behält aber alle Details in Licht und Schatten. Im Color Grading wird daraus Rec.709: das fertige Bild, wie es auf Handy und Bildschirm aussehen soll.",
+  "look_before": "S-Log3",
+  "look_before_sub": "Rohmaterial",
+  "look_after": "Rec.709",
+  "look_after_sub": "Grading A.D.Films24",
+  "look_hint": "Regler ziehen",
+  "look_slider_aria": "Vorher-Nachher-Vergleich verschieben",
+  "look_tabs": [
+    [
+      "taps",
+      "Bar"
+    ],
+    [
+      "kitchen",
+      "Küche"
+    ],
+    [
+      "food",
+      "Teller"
+    ]
+  ],
+  "look_alt": "Aufnahme aus dem Restaurant LOCO BIRRIÁ in Zürich",
+  "mon_title": "Live-Monitoring am Set",
+  "mon_text": "Während des Drehs schauen wir das Bild live mit euch an, auf dem Monitor oder direkt auf dem Handy. So entscheidet ihr vor Ort mit, und beim ersten Schnitt gibt es keine Überraschungen.",
+  "mon_alt": "Live-Bild der Kamera auf dem Handy während eines Drehs",
+  "grade_title": "Color Grading in DaVinci Resolve",
+  "grade_text": "Jede Aufnahme wird einzeln abgestimmt: Nodes für Belichtung, Farbe und Hauttöne, kontrolliert mit Scopes statt nach Gefühl. So sieht euer Video auf jedem Bildschirm gleich gut aus.",
+  "grade_alt": "Color-Grading-Oberfläche in DaVinci Resolve mit Nodes, Primaries und RGB-Parade"
 }

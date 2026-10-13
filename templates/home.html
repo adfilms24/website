@@ -278,8 +278,52 @@
   <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
     <div class="s-meta" data-sr="u">{{process_meta}}</div>
     <h2 class="h-display" data-sr="u" data-d="2">{{process_h2}}</h2>
-    <ol class="lp-steps proc-steps" data-sr="u" data-d="3">{{process_steps}}</ol>
+    <ol class="proc-list">{{proc_steps_html}}</ol>
     <p class="lp-promise" data-sr="u">{{lp_promise}}</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     BILDQUALITÄT: LOG → REC.709, LIVE-MONITORING
+══════════════════════════════════════════ -->
+<section class="section" id="look" style="background:var(--deep-1);">
+  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div class="srv-header">
+      <div>
+        <div class="s-meta" data-sr="u">{{look_meta}}</div>
+        <h2 class="h-display" data-sr="u" data-d="2">{{look_h2}}</h2>
+      </div>
+      <p class="srv-header-desc" data-sr="r" data-d="2">{{look_desc}}</p>
+    </div>
+    <div class="look-grid">
+      <figure class="look-cmp" data-sr="u" data-d="2">
+        <div class="look-frame" id="lookFrame" style="--pos:50%">
+          <img id="look709" src="/assets/img/look/taps-709.webp" alt="{{look_alt}}" width="1600" height="900" loading="lazy" decoding="async">
+          <img id="lookLog" class="look-log" src="/assets/img/look/taps-log.webp" alt="" width="1600" height="900" loading="lazy" decoding="async">
+          <span class="look-lbl look-lbl-l">{{look_before}}<span class="lbl-sub"> · {{look_before_sub}}</span></span>
+          <span class="look-lbl look-lbl-r">{{look_after}}<span class="lbl-sub"> · {{look_after_sub}}</span></span>
+          <span class="look-handle" aria-hidden="true"></span>
+          <input type="range" class="look-range" id="lookRange" min="0" max="100" value="50" aria-label="{{look_slider_aria}}">
+        </div>
+        <figcaption class="look-bar"><span class="look-hint">↔ {{look_hint}}</span><span class="look-tabs">{{look_tabs_html}}</span></figcaption>
+      </figure>
+      <article class="mon-card" data-sr="r" data-d="3">
+        <img src="/assets/img/look/monitoring.webp" alt="{{mon_alt}}" width="960" height="1200" loading="lazy" decoding="async">
+        <div class="mon-body">
+          <span class="proc-n">04 <span>/ 05</span></span>
+          <h3>{{mon_title}}</h3>
+          <p>{{mon_text}}</p>
+        </div>
+      </article>
+    </div>
+    <article class="grade-card" data-sr="u" data-d="2">
+      <img src="/assets/img/look/resolve.webp" alt="{{grade_alt}}" width="1600" height="934" loading="lazy" decoding="async">
+      <div class="mon-body">
+        <span class="proc-n">05 <span>/ 05</span></span>
+        <h3>{{grade_title}}</h3>
+        <p>{{grade_text}}</p>
+      </div>
+    </article>
   </div>
 </section>
 

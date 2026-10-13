@@ -257,3 +257,18 @@ document.querySelector('.contact-form').addEventListener('submit', sendForm);
   new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
   new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);
 })();
+
+// Vorher/Nachher-Regler: S-Log3 gegen Rec.709
+(function () {
+  var frame = document.getElementById('lookFrame'), range = document.getElementById('lookRange');
+  if (!frame || !range) return;
+  var log = document.getElementById('lookLog'), g = document.getElementById('look709');
+  range.addEventListener('input', function () { frame.style.setProperty('--pos', range.value + '%'); });
+  document.querySelectorAll('.look-tab').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-look');
+      log.src = '/assets/img/look/' + k + '-log.webp'; g.src = '/assets/img/look/' + k + '-709.webp';
+      document.querySelectorAll('.look-tab').forEach(function (x) { var on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    });
+  });
+})();
