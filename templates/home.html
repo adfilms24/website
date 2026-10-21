@@ -63,7 +63,7 @@
 <div id="ring"></div>
 
 <!-- ── MOBILE NAV ─────────────────────── -->
-<div id="mnav" inert aria-label="{{menu_aria}}">
+<nav id="mnav" inert aria-label="{{menu_aria}}">
   <a href="#hero" class="mnav-item">{{m_home}}</a>
   <a href="#portfolio" class="mnav-item">{{m_projects}}</a>
   <a href="#about" class="mnav-item">{{m_about}}</a>
@@ -72,10 +72,10 @@
   <a href="#contact" class="mnav-item">{{m_contact}}</a>
   <a href="{{lang_switch_url}}" class="mnav-item mnav-lang" hreflang="{{other_lang}}" lang="{{other_lang}}">{{lang_switch_label}}</a>
   <p class="mnav-bottom">{{mnav_bottom}}</p>
-</div>
+</nav>
 
 <!-- ── NAV ────────────────────────────── -->
-<nav id="nav">
+<nav id="nav" aria-label="{{nav_aria}}">
   <a href="#hero" class="nav-logo">
     <img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52">
   </a>
@@ -131,11 +131,11 @@
   <div class="timecode" id="tc">00:00:00:00</div>
 
   <!-- Floating showreel -->
-  <button class="reel-trigger" id="reelBtn">
-    <div class="reel-ring-outer">
-      <div class="reel-ring-spin"></div>
+  <button type="button" class="reel-trigger" id="reelBtn">
+    <span class="reel-ring-outer">
+      <span class="reel-ring-spin"></span>
       <span class="reel-icon">▶</span>
-    </div>
+    </span>
     <span class="reel-caption">{{reel_caption}}</span>
   </button>
 
@@ -490,15 +490,15 @@
 </footer>
 
 <!-- Mobile: fixe Anfrage-Leiste -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="#contact" class="sticky-cta-main" tabindex="-1">{{sticky_inquire}}</a>
-  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa" tabindex="-1">{{sticky_wa}}</a>
+<div class="sticky-cta" id="stickyCta" inert>
+  <a href="#contact" class="sticky-cta-main">{{sticky_inquire}}</a>
+  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa">{{sticky_wa}}</a>
 </div>
 
 <!-- ══════════════════════════════════════
      MODAL
 ══════════════════════════════════════════ -->
-<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true">
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true" inert>
   <div class="modal-scrim" id="modalScrim"></div>
   <div class="modal-panel">
     <button type="button" class="modal-close" id="modalClose" aria-label="{{close_aria}}">✕</button>
@@ -514,9 +514,9 @@
       <h2 class="modal-title" id="mT">—</h2>
       <p class="modal-desc" id="mD">—</p>
       <div class="modal-meta">
-        <div class="modal-meta-row"><label>{{modal_client}}</label><span id="mC">—</span></div>
-        <div class="modal-meta-row"><label>{{modal_camera}}</label><span id="mK">—</span></div>
-        <div class="modal-meta-row"><label>{{modal_year}}</label><span id="mY">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">{{modal_client}}</span><span id="mC">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">{{modal_camera}}</span><span id="mK">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">{{modal_year}}</span><span id="mY">—</span></div>
       </div>
     </div>
   </div>

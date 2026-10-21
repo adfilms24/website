@@ -121,6 +121,7 @@ function fillModal(t, d, c, k, y) {
 }
 function showModal() {
   lastFocus = document.activeElement;
+  modalEl.inert = false;   /* geschlossen ist der Dialog für Tastatur und Screenreader gesperrt */
   modalEl.classList.add('open');
   modalEl.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -136,6 +137,7 @@ function closeModal() {
   if (!modalEl.classList.contains('open')) return;
   modalEl.classList.remove('open');
   modalEl.setAttribute('aria-hidden', 'true');
+  modalEl.inert = true;
   document.body.style.overflow = '';
   const v = modalVid.querySelector('video'); if (v) { v.pause(); }
   setTimeout(() => { if (!modalEl.classList.contains('open')) modalVid.innerHTML = modalVidDefault; }, 450);
@@ -251,8 +253,7 @@ document.querySelector('.contact-form').addEventListener('submit', sendForm);
   const update = () => {
     const show = !heroVisible && !contactVisible;
     bar.classList.toggle('show', show);
-    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-    bar.querySelectorAll('a').forEach(a => a.tabIndex = show ? 0 : -1);
+    bar.inert = !show;
   };
   new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
   new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; update(); }).observe(contact);

@@ -56,7 +56,7 @@
 }
 </script>
 <link rel="preload" href="/assets/video/showreel-poster.webp?v=4baac764" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/assets/css/style.css?v=008c3c3d">
+<link rel="stylesheet" href="/assets/css/style.css?v=873ccb81">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -67,7 +67,7 @@
 <div id="ring"></div>
 
 <!-- ── MOBILE NAV ─────────────────────── -->
-<div id="mnav" inert aria-label="Main menu">
+<nav id="mnav" inert aria-label="Main menu">
   <a href="#hero" class="mnav-item">HOME</a>
   <a href="#portfolio" class="mnav-item">PROJECTS</a>
   <a href="#about" class="mnav-item">ABOUT</a>
@@ -76,10 +76,10 @@
   <a href="#contact" class="mnav-item">CONTACT</a>
   <a href="/" class="mnav-item mnav-lang" hreflang="de" lang="de">DE</a>
   <p class="mnav-bottom">© 2026 · Switzerland & International</p>
-</div>
+</nav>
 
 <!-- ── NAV ────────────────────────────── -->
-<nav id="nav">
+<nav id="nav" aria-label="Main navigation">
   <a href="#hero" class="nav-logo">
     <img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52">
   </a>
@@ -135,11 +135,11 @@
   <div class="timecode" id="tc">00:00:00:00</div>
 
   <!-- Floating showreel -->
-  <button class="reel-trigger" id="reelBtn">
-    <div class="reel-ring-outer">
-      <div class="reel-ring-spin"></div>
+  <button type="button" class="reel-trigger" id="reelBtn">
+    <span class="reel-ring-outer">
+      <span class="reel-ring-spin"></span>
       <span class="reel-icon">▶</span>
-    </div>
+    </span>
     <span class="reel-caption">Showreel 2026</span>
   </button>
 
@@ -606,7 +606,7 @@
         </div>
         <div class="test-card" data-sr="r" data-d="4">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">Helped me expand my model portfolio beautifully - very excited for future collaboration!✨</p>
+          <p class="test-body">“Helped me expand my model portfolio beautifully - very excited for future collaboration!✨”</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Shanike</div>
             <div class="test-author-role">Model</div>
@@ -808,15 +808,15 @@
 </footer>
 
 <!-- Mobile: fixe Anfrage-Leiste -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="#contact" class="sticky-cta-main" tabindex="-1">Request a project</a>
-  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa" tabindex="-1">WhatsApp</a>
+<div class="sticky-cta" id="stickyCta" inert>
+  <a href="#contact" class="sticky-cta-main">Request a project</a>
+  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa">WhatsApp</a>
 </div>
 
 <!-- ══════════════════════════════════════
      MODAL
 ══════════════════════════════════════════ -->
-<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true">
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true" inert>
   <div class="modal-scrim" id="modalScrim"></div>
   <div class="modal-panel">
     <button type="button" class="modal-close" id="modalClose" aria-label="Close">✕</button>
@@ -832,9 +832,9 @@
       <h2 class="modal-title" id="mT">—</h2>
       <p class="modal-desc" id="mD">—</p>
       <div class="modal-meta">
-        <div class="modal-meta-row"><label>Client</label><span id="mC">—</span></div>
-        <div class="modal-meta-row"><label>Camera</label><span id="mK">—</span></div>
-        <div class="modal-meta-row"><label>Year</label><span id="mY">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Client</span><span id="mC">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Camera</span><span id="mK">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Year</span><span id="mY">—</span></div>
       </div>
     </div>
   </div>
@@ -845,7 +845,7 @@
 ══════════════════════════════════════════ -->
 <script type="application/json" id="i18n">{"menu_open": "Open menu", "menu_close": "Close menu", "showreel_title": "Showreel 2026", "showreel_desc": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.", "showreel_client": "A.D.Films24", "showreel_camera": "Sony FX3", "showreel_year": "2026", "form_wait": "Please wait {s} more seconds before sending again.", "form_sending": "… Sending", "form_sending_status": "Sending your request …", "form_sent_btn": "✓ &nbsp;Sent!", "form_ok": "Thank you! Your request has arrived. We'll get back to you as soon as possible.", "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}<\/a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>.", "lbl_budget": "Budget", "lbl_date": "Preferred date", "lbl_source": "Found via", "lbl_phone": "Phone", "mail": "info@adfilms24.ch", "lang": "en", "showreel_src": "/assets/video/showreel.mp4?v=d38a9fe7", "showreel_poster": "/assets/video/showreel-poster.webp?v=4baac764"}</script>
 <script defer src="/assets/vendor/emailjs.min.js?v=27113873"></script>
-<script defer src="/assets/js/main.js?v=752caed5"></script>
+<script defer src="/assets/js/main.js?v=e9876620"></script>
 <script defer src="/assets/js/crm-lead.js?v=931e265d"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
