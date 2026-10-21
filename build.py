@@ -30,9 +30,12 @@ FONTS_CSS = (ROOT / "assets/fonts/fonts.css").read_text(encoding="utf-8")
 def inline_fonts(html):
     """fonts.css direkt in die Seite: spart eine blockierende Anfrage beim ersten Laden."""
     return html.replace('<link rel="stylesheet" href="/assets/fonts/fonts.css">', "<style>" + re.sub(r"\s+", " ", FONTS_CSS).strip() + "</style>")
+CHANGED = set()  # Seiten, deren Inhalt sich bei diesem Build geändert hat (für lastmod in der Sitemap)
 def write(rel, text):
     if rel.endswith(".html"): text = version_assets(inline_fonts(text))
-    p = ROOT / rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(text, encoding="utf-8")
+    p = ROOT / rel; p.parent.mkdir(parents=True, exist_ok=True)
+    if not p.exists() or p.read_text(encoding="utf-8") != text: CHANGED.add("/" + rel)
+    p.write_text(text, encoding="utf-8")
 def render(tpl, ctx):
     """{{key}} durch Werte ersetzen; Werte dürfen selbst {{key}} enthalten (2 Durchgänge)."""
     for _ in range(3):
@@ -398,10 +401,17 @@ def build_404():
     write("404.html", html)
 
 def build_sitemap():
+    # lastmod nur erneuern, wenn sich die Seite geändert hat. So bleibt der Build an jedem Tag gleich (CI) und Google sieht echte Änderungsdaten.
+    sm = ROOT / "sitemap.xml"
+    old = dict(re.findall(r"<loc>" + re.escape(DOMAIN) + r"(.*?)</loc>.*?<lastmod>(.*?)</lastmod>", sm.read_text(encoding="utf-8"), re.S)) if sm.exists() else {}
+    today = datetime.date.today().isoformat()
+    def lastmod(u):
+        f = u + "index.html" if u.endswith("/") else u
+        return today if f in CHANGED or u not in old else old[u]
     def entry(urls, prio, freq):
         alts = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{DOMAIN}{u}"/>' for l, u in urls.items())
         alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{urls["de"]}"/>'
-        return "".join(f'  <url>\n    <loc>{DOMAIN}{urls[l]}</loc>{alts}\n    <lastmod>{datetime.date.today().isoformat()}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>\n' for l in LANGS)
+        return "".join(f'  <url>\n    <loc>{DOMAIN}{urls[l]}</loc>{alts}\n    <lastmod>{lastmod(urls[l])}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>\n' for l in LANGS)
     out = entry({l: home_url(l) for l in LANGS}, "1.0", "monthly")
     for p in PROJECTS:
         if p.get("published"): out += entry({l: project_url(l, p["slug"]) for l in LANGS}, "0.8", "monthly")

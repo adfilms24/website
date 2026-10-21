@@ -7,6 +7,7 @@
   "vo_desc": "Showreel 2026 von A.D.Films24: Cinematography, Slow Motion und Bildsprache aus Zürich.",
   "loader_label": "Loading",
   "menu_aria": "Hauptmenü",
+  "nav_aria": "Hauptnavigation",
   "m_home": "HOME",
   "m_projects": "PROJEKTE",
   "m_about": "ÜBER UNS",
@@ -116,7 +117,7 @@
   "gear": [
     [
       "Sony FX3",
-      "Cinema Kamera"
+      "Cinema-Kamera"
     ],
     [
       "Gimbal Ronin RS5",
@@ -127,11 +128,11 @@
       "Hauptobjektiv"
     ],
     [
-      "Drone",
+      "Drohne",
       "Luftaufnahmen"
     ],
     [
-      "Microphone",
+      "Mikrofon",
       "Audio"
     ],
     [
@@ -466,22 +467,22 @@
   "lbl_phone": "Telefon",
   "testimonials": [
     [
-      "„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen.\"",
+      "„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen.“",
       "Mahmoud Badri",
       "Personal Trainer"
     ],
     [
-      "„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen.\"",
+      "„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen.“",
       "Safiya Qasil",
       "ATTAR ONE"
     ],
     [
-      "„Amazing work!🤝\"",
+      "„Amazing work!🤝“",
       "Parash Hamal",
       "PHUNNID"
     ],
     [
-      "Helped me expand my model portfolio beautifully - very excited for future collaboration!✨",
+      "„Helped me expand my model portfolio beautifully - very excited for future collaboration!✨“",
       "Shanike",
       "Model"
     ]

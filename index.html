@@ -56,7 +56,7 @@
 }
 </script>
 <link rel="preload" href="/assets/video/showreel-poster.webp?v=4baac764" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/assets/css/style.css?v=008c3c3d">
+<link rel="stylesheet" href="/assets/css/style.css?v=873ccb81">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -67,7 +67,7 @@
 <div id="ring"></div>
 
 <!-- ── MOBILE NAV ─────────────────────── -->
-<div id="mnav" inert aria-label="Hauptmenü">
+<nav id="mnav" inert aria-label="Hauptmenü">
   <a href="#hero" class="mnav-item">HOME</a>
   <a href="#portfolio" class="mnav-item">PROJEKTE</a>
   <a href="#about" class="mnav-item">ÜBER UNS</a>
@@ -76,10 +76,10 @@
   <a href="#contact" class="mnav-item">KONTAKT</a>
   <a href="/en/" class="mnav-item mnav-lang" hreflang="en" lang="en">EN</a>
   <p class="mnav-bottom">© 2026 · Schweiz & International</p>
-</div>
+</nav>
 
 <!-- ── NAV ────────────────────────────── -->
-<nav id="nav">
+<nav id="nav" aria-label="Hauptnavigation">
   <a href="#hero" class="nav-logo">
     <img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52">
   </a>
@@ -135,11 +135,11 @@
   <div class="timecode" id="tc">00:00:00:00</div>
 
   <!-- Floating showreel -->
-  <button class="reel-trigger" id="reelBtn">
-    <div class="reel-ring-outer">
-      <div class="reel-ring-spin"></div>
+  <button type="button" class="reel-trigger" id="reelBtn">
+    <span class="reel-ring-outer">
+      <span class="reel-ring-spin"></span>
       <span class="reel-icon">▶</span>
-    </div>
+    </span>
     <span class="reel-caption">Showreel 2026</span>
   </button>
 
@@ -354,11 +354,11 @@
         <div class="gear-section">
           <div class="gear-head">Equipment</div>
           <div class="gear-rows">
-            <div class="gear-row"><span class="gear-name">Sony FX3</span><span class="gear-type">Cinema Kamera</span></div>
+            <div class="gear-row"><span class="gear-name">Sony FX3</span><span class="gear-type">Cinema-Kamera</span></div>
             <div class="gear-row"><span class="gear-name">Gimbal Ronin RS5</span><span class="gear-type">Stabilisierung</span></div>
             <div class="gear-row"><span class="gear-name">Sony 24-70mm GM II</span><span class="gear-type">Hauptobjektiv</span></div>
-            <div class="gear-row"><span class="gear-name">Drone</span><span class="gear-type">Luftaufnahmen</span></div>
-            <div class="gear-row"><span class="gear-name">Microphone</span><span class="gear-type">Audio</span></div>
+            <div class="gear-row"><span class="gear-name">Drohne</span><span class="gear-type">Luftaufnahmen</span></div>
+            <div class="gear-row"><span class="gear-name">Mikrofon</span><span class="gear-type">Audio</span></div>
             <div class="gear-row"><span class="gear-name">MacBook Pro</span><span class="gear-type">Workstation</span></div>
             <div class="gear-row"><span class="gear-name">DaVinci Resolve Studio / Adobe Premiere Pro</span><span class="gear-type">Color Grading</span></div>
             <div class="gear-row"><span class="gear-name">Aperture Light & Dome</span><span class="gear-type">Lichtsystem</span></div>
@@ -582,7 +582,7 @@
         <!-- Echte Google-Bewertungen, Texte in content/<lang>.json ("testimonials") -->
         <div class="test-card" data-sr="r" data-d="1">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen."</p>
+          <p class="test-body">„Sehr professionelle Zusammenarbeit mit Ad Films 24. Das Team arbeitet zuverlässig, kreativ und termingerecht. Die Qualität der Produktion war ausgezeichnet, und unsere Vorstellungen wurden perfekt umgesetzt. Kommunikation und Service waren während des gesamten Projekts hervorragend. Klare Empfehlung für alle, die hochwertige Werbe- und Videoproduktionen suchen.“</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Mahmoud Badri</div>
             <div class="test-author-role">Personal Trainer</div>
@@ -590,7 +590,7 @@
         </div>
         <div class="test-card" data-sr="r" data-d="2">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen."</p>
+          <p class="test-body">„Ich war sehr zufrieden mit deiner Arbeit und kann es nur jedem weiterempfehlen.“</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Safiya Qasil</div>
             <div class="test-author-role">ATTAR ONE</div>
@@ -598,7 +598,7 @@
         </div>
         <div class="test-card" data-sr="r" data-d="3">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">„Amazing work!🤝"</p>
+          <p class="test-body">„Amazing work!🤝“</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Parash Hamal</div>
             <div class="test-author-role">PHUNNID</div>
@@ -606,7 +606,7 @@
         </div>
         <div class="test-card" data-sr="r" data-d="4">
           <span class="test-q">&ldquo;</span>
-          <p class="test-body">Helped me expand my model portfolio beautifully - very excited for future collaboration!✨</p>
+          <p class="test-body">„Helped me expand my model portfolio beautifully - very excited for future collaboration!✨“</p>
           <div class="test-foot"><div>
             <div class="test-author-name">Shanike</div>
             <div class="test-author-role">Model</div>
@@ -807,15 +807,15 @@
 </footer>
 
 <!-- Mobile: fixe Anfrage-Leiste -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="#contact" class="sticky-cta-main" tabindex="-1">Projekt anfragen</a>
-  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa" tabindex="-1">WhatsApp</a>
+<div class="sticky-cta" id="stickyCta" inert>
+  <a href="#contact" class="sticky-cta-main">Projekt anfragen</a>
+  <a href="https://wa.me/41767649300" target="_blank" rel="noopener" class="sticky-cta-wa">WhatsApp</a>
 </div>
 
 <!-- ══════════════════════════════════════
      MODAL
 ══════════════════════════════════════════ -->
-<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true">
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT" aria-hidden="true" inert>
   <div class="modal-scrim" id="modalScrim"></div>
   <div class="modal-panel">
     <button type="button" class="modal-close" id="modalClose" aria-label="Schliessen">✕</button>
@@ -831,9 +831,9 @@
       <h2 class="modal-title" id="mT">—</h2>
       <p class="modal-desc" id="mD">—</p>
       <div class="modal-meta">
-        <div class="modal-meta-row"><label>Kunde</label><span id="mC">—</span></div>
-        <div class="modal-meta-row"><label>Kamera</label><span id="mK">—</span></div>
-        <div class="modal-meta-row"><label>Jahr</label><span id="mY">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Kunde</span><span id="mC">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Kamera</span><span id="mK">—</span></div>
+        <div class="modal-meta-row"><span class="modal-meta-lbl">Jahr</span><span id="mY">—</span></div>
       </div>
     </div>
   </div>
@@ -844,7 +844,7 @@
 ══════════════════════════════════════════ -->
 <script type="application/json" id="i18n">{"menu_open": "Menü öffnen", "menu_close": "Menü schliessen", "showreel_title": "Showreel 2026", "showreel_desc": "Ein Auszug aus unserer Arbeit für Unternehmen: Gastro, Barbershops, Retail, Fitness, Events und Zürich – gefilmt in 4K, mit eigenem Grading.", "showreel_client": "A.D.Films24", "showreel_camera": "Sony FX3", "showreel_year": "2026", "form_wait": "Bitte warte noch {s} Sekunden, bevor du erneut sendest.", "form_sending": "… Wird gesendet", "form_sending_status": "Deine Anfrage wird gesendet …", "form_sent_btn": "✓ &nbsp;Gesendet!", "form_ok": "Danke! Deine Anfrage ist angekommen. Wir melden uns so schnell wie möglich bei dir.", "form_fail": "Das Senden hat leider nicht geklappt. Bitte versuche es nochmals oder schreibe direkt an <a href=\"mailto:{mail}\">{mail}<\/a> bzw. per <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>.", "lbl_budget": "Budget", "lbl_date": "Wunschtermin", "lbl_source": "Gefunden über", "lbl_phone": "Telefon", "mail": "info@adfilms24.ch", "lang": "de", "showreel_src": "/assets/video/showreel.mp4?v=d38a9fe7", "showreel_poster": "/assets/video/showreel-poster.webp?v=4baac764"}</script>
 <script defer src="/assets/vendor/emailjs.min.js?v=27113873"></script>
-<script defer src="/assets/js/main.js?v=752caed5"></script>
+<script defer src="/assets/js/main.js?v=e9876620"></script>
 <script defer src="/assets/js/crm-lead.js?v=931e265d"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

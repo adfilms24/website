@@ -9,6 +9,7 @@
   "skip": "Skip to content",
   "loader_label": "Loading",
   "menu_aria": "Main menu",
+  "nav_aria": "Main navigation",
   "m_home": "HOME",
   "m_projects": "PROJECTS",
   "m_about": "ABOUT",
@@ -481,7 +482,7 @@
       "PHUNNID"
     ],
     [
-      "Helped me expand my model portfolio beautifully - very excited for future collaboration!✨",
+      "“Helped me expand my model portfolio beautifully - very excited for future collaboration!✨”",
       "Shanike",
       "Model"
     ]
