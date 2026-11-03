@@ -1,14 +1,29 @@
 /* crm-lead.js — schickt jede Website-Anfrage zusätzlich als Lead ins CRM.
  * Die bestehende EmailJS-Logik in main.js bleibt unverändert; dieses Skript lauscht nur mit.
  * Einbinden: <script src="/assets/js/crm-lead.js" defer></script> direkt nach main.js.
- * Der Key ist der öffentliche Supabase-Key: er darf nur die Funktion submit_lead aufrufen. */
+ * Der Key ist der öffentliche Supabase-Key: er darf nur die Funktionen submit_inquiry und submit_lead aufrufen.
+ * submit_inquiry nimmt Budget, Zeitrahmen, Branche und die Herkunft (attribution.js) mit; fehlt sie in der
+ * Datenbank noch, geht die Anfrage wie bisher über submit_lead. */
 (function () {
-  var ENDPOINT = 'https://mvgqksltpcqflazrjamx.supabase.co/rest/v1/rpc/submit_lead';
+  var BASE = 'https://mvgqksltpcqflazrjamx.supabase.co/rest/v1/rpc/';
   var KEY = 'sb_publishable_5nwJrgDdH6Hxrk6YTwuROg_h6JXM9ek';
   var COOLDOWN_MS = 30000;
 
   var form = document.querySelector('.contact-form');
   if (!form) return;
+
+  function post(fn, body) {
+    return fetch(BASE + fn, {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'content-type': 'application/json', apikey: KEY },
+      body: JSON.stringify(body),
+    });
+  }
+
+  function attribution() {
+    try { return JSON.parse(sessionStorage.getItem('adf24_attr') || '{}') || {}; } catch (e) { return {}; }
+  }
 
   form.addEventListener('submit', function () {
     try {
@@ -22,23 +37,48 @@
       if (now - last < COOLDOWN_MS) return;
       sessionStorage.setItem('adf24_crm_last', String(now));
 
-      fetch(ENDPOINT, {
-        method: 'POST',
-        keepalive: true,
-        headers: { 'content-type': 'application/json', apikey: KEY },
-        body: JSON.stringify({
-          p_first: f.get('vorname') || '',
-          p_last: f.get('nachname') || '',
-          p_email: f.get('email') || '',
-          p_project_type: f.get('projekttyp') || '',
-          p_message: [f.get('nachricht') || '',
-            f.get('telefon') ? 'Telefon: ' + f.get('telefon') : '',
-            f.get('budget') ? 'Budget: ' + f.get('budget') : '',
-            f.get('termin') ? 'Wunschtermin: ' + f.get('termin') : '',
-            f.get('quelle') ? 'Gefunden über: ' + f.get('quelle') : ''].filter(Boolean).join('\n'),
-          p_hp: '',
-        }),
-      }).catch(function () { /* Die Mail über EmailJS ist der Hauptweg; CRM-Fehler bleiben still */ });
+      var a = attribution();
+      var val = function (k) { return f.get(k) || ''; };
+      var timeframe = [val('zeitrahmen'), val('termin')].filter(Boolean).join(' · ');
+      var inquiry = {
+        p_first: val('vorname'),
+        p_last: val('nachname'),
+        p_email: val('email'),
+        p_phone: val('telefon'),
+        p_company: val('firma'),
+        p_project_type: val('projekttyp'),
+        p_budget: val('budget'),
+        p_timeframe: timeframe,
+        p_industry: val('branche'),
+        p_message: val('nachricht'),
+        p_found_via: val('quelle'),
+        p_utm_source: a.utm_source || '',
+        p_utm_medium: a.utm_medium || '',
+        p_utm_campaign: a.utm_campaign || '',
+        p_utm_content: a.utm_content || '',
+        p_landing: a.landing || '',
+        p_referrer: a.referrer ? 'https://' + a.referrer : '',
+        p_hp: '',
+      };
+      var legacy = {
+        p_first: inquiry.p_first,
+        p_last: inquiry.p_last,
+        p_email: inquiry.p_email,
+        p_project_type: inquiry.p_project_type,
+        p_message: [val('nachricht'),
+          val('firma') ? 'Firma: ' + val('firma') : '',
+          val('branche') ? 'Branche: ' + val('branche') : '',
+          val('telefon') ? 'Telefon: ' + val('telefon') : '',
+          val('budget') ? 'Budget: ' + val('budget') : '',
+          timeframe ? 'Zeitrahmen: ' + timeframe : '',
+          val('quelle') ? 'Gefunden über: ' + val('quelle') : ''].filter(Boolean).join('\n'),
+        p_hp: '',
+      };
+
+      // 404 = submit_inquiry ist in der Datenbank noch nicht angelegt → altes Verfahren
+      post('submit_inquiry', inquiry)
+        .then(function (res) { if (res.status === 404) return post('submit_lead', legacy); })
+        .catch(function () { /* Die Mail über EmailJS ist der Hauptweg; CRM-Fehler bleiben still */ });
     } catch (e) { /* nie das Formular stören */ }
   });
 })();

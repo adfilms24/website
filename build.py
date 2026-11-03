@@ -10,6 +10,7 @@ Rechtstexte       -> content/legal/de/*.html bzw. content/legal/en/*.html
 Die erzeugten HTML-Seiten (index.html, en/, projekte/ ...) werden mit ins Git eingecheckt.
 """
 import json, os, re, sys, datetime
+import html as htmllib
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -129,6 +130,10 @@ def service_links(l, t):
     return f'<p class="srv-more" data-sr="u"><span>{t["srv_more_label"]}</span> {links}</p>'
 def opts(items):
     return "\n".join(f'            <option>{x}</option>' for x in items)
+def radios(name, items, required=False):
+    """Auswahl-Chips für das mehrstufige Anfrageformular (ein Wert pro Gruppe)."""
+    req = " required" if required else ""
+    return "\n".join(f'            <label class="f-chip"><input type="radio" name="{name}" value="{htmllib.escape(x, quote=True)}"{req}><span>{x}</span></label>' for x in items)
 def testimonials(t):
     note = f'\n        <p class="test-note">{t["testimonials_note"]}</p>' if t.get("testimonials_note") else ""
     return "\n".join(f'''        <div class="test-card" data-sr="r" data-d="{i + 1}">
@@ -217,11 +222,13 @@ def build_home(l):
     t = common_ctx(l, urls)
     t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(l, t), testimonials=testimonials(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
              business_ld=business_ld(l, t), process_steps=process_steps(t), proc_steps_html=proc_steps_html(t), look_tabs_html=look_tabs_html(t), faq_items=faq_items(t),
-             project_type_opts=opts(t["project_types"]), budget_opts_html=opts(t["budget_opts"]), source_opts_html=opts(t["source_opts"]),
+             project_type_radios=radios("projekttyp", t["project_types"], required=True), budget_radios=radios("budget", t["budget_opts"]),
+             timeframe_radios=radios("zeitrahmen", t["timeframe_opts"]), industry_radios=radios("branche", t["industry_opts"]), source_opts_html=opts(t["source_opts"]),
              footer_service_links="\n".join(f'      <li><a href="{service_url(l, sv)}">{sv["nav"][l]}</a></li>' for sv in SERVICES),
              year=datetime.date.today().year)
     keys = ["menu_open", "menu_close", "showreel_title", "showreel_desc", "showreel_client", "showreel_camera", "showreel_year",
-            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail", "lbl_budget", "lbl_date", "lbl_source", "lbl_phone"]
+            "form_wait", "form_sending", "form_sending_status", "form_sent_btn", "form_ok", "form_fail", "lbl_budget", "lbl_date", "lbl_source", "lbl_phone",
+            "lbl_timeframe", "lbl_industry", "lbl_company", "step_of"]
     # Showreel-Pfade laufen durch version_assets (?v=…), damit ein neues Video trotz Jahres-Cache sofort ankommt
     t["i18n_json"] = esc_json({**{k: TEXT[l][k] for k in keys}, "mail": MAIL, "lang": l,
                                "showreel_src": "/assets/video/showreel.mp4", "showreel_poster": "/assets/video/showreel-poster.webp"})

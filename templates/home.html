@@ -394,64 +394,87 @@
         </div>
       </div>
 
-      <form class="contact-form" data-sr="r" data-d="2">
-        <div class="f-row">
+      <form class="contact-form" data-sr="r" data-d="2" novalidate>
+        <p class="f-progress" aria-live="polite" hidden></p>
+        <fieldset class="f-step" data-step="1">
+          <legend class="f-q">{{step_q1}}</legend>
+          <div class="f-chips">
+{{project_type_radios}}
+          </div>
+        </fieldset>
+        <fieldset class="f-step" data-step="2">
+          <legend class="f-q">{{step_q2}}</legend>
           <div class="f-group">
-            <label for="f-vorname">{{f_first}}</label>
-            <input id="f-vorname" name="vorname" type="text" placeholder="{{ph_first}}" autocomplete="given-name" required>
+            <span class="f-lbl">{{f_budget}}</span>
+            <div class="f-chips">
+{{budget_radios}}
+            </div>
           </div>
           <div class="f-group">
-            <label for="f-nachname">{{f_last}}</label>
-            <input id="f-nachname" name="nachname" type="text" placeholder="{{ph_last}}" autocomplete="family-name" required>
-          </div>
-        </div>
-        <div class="f-group">
-          <label for="f-email">{{f_email}}</label>
-          <input id="f-email" name="email" type="email" placeholder="{{ph_email}}" autocomplete="email" required>
-        </div>
-        <div class="f-group">
-          <label for="f-telefon">{{f_phone}}</label>
-          <input id="f-telefon" name="telefon" type="tel" placeholder="{{ph_phone}}" autocomplete="tel">
-        </div>
-        <div class="f-group">
-          <label for="f-projekttyp">{{f_type}}</label>
-          <select id="f-projekttyp" name="projekttyp" required>
-            <option value="" disabled selected>{{f_choose}}</option>
-{{project_type_opts}}
-          </select>
-        </div>
-        <div class="f-row">
-          <div class="f-group">
-            <label for="f-budget">{{f_budget}}</label>
-            <select id="f-budget" name="budget">
-              <option value="">{{f_none}}</option>
-{{budget_opts_html}}
-            </select>
+            <span class="f-lbl">{{f_timeframe}}</span>
+            <div class="f-chips">
+{{timeframe_radios}}
+            </div>
           </div>
           <div class="f-group">
             <label for="f-termin">{{f_date}}</label>
             <input id="f-termin" name="termin" type="text" placeholder="{{ph_date}}">
           </div>
-        </div>
-        <div class="f-group">
-          <label for="f-quelle">{{f_source}}</label>
-          <select id="f-quelle" name="quelle">
-            <option value="">{{f_none}}</option>
+        </fieldset>
+        <fieldset class="f-step" data-step="3">
+          <legend class="f-q">{{step_q3}}</legend>
+          <div class="f-chips">
+{{industry_radios}}
+          </div>
+          <div class="f-group">
+            <label for="f-firma">{{f_company}}</label>
+            <input id="f-firma" name="firma" type="text" placeholder="{{ph_company}}" autocomplete="organization">
+          </div>
+        </fieldset>
+        <fieldset class="f-step" data-step="4">
+          <legend class="f-q">{{step_q4}}</legend>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-vorname">{{f_first}}</label>
+              <input id="f-vorname" name="vorname" type="text" placeholder="{{ph_first}}" autocomplete="given-name" required>
+            </div>
+            <div class="f-group">
+              <label for="f-nachname">{{f_last}}</label>
+              <input id="f-nachname" name="nachname" type="text" placeholder="{{ph_last}}" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="f-email">{{f_email}}</label>
+            <input id="f-email" name="email" type="email" placeholder="{{ph_email}}" autocomplete="email" required>
+          </div>
+          <div class="f-group">
+            <label for="f-telefon">{{f_phone}}</label>
+            <input id="f-telefon" name="telefon" type="tel" placeholder="{{ph_phone}}" autocomplete="tel">
+          </div>
+          <div class="f-group">
+            <label for="f-quelle">{{f_source}}</label>
+            <select id="f-quelle" name="quelle">
+              <option value="">{{f_none}}</option>
 {{source_opts_html}}
-          </select>
-        </div>
-        <div class="f-group">
-          <label for="f-nachricht">{{f_msg}}</label>
-          <textarea id="f-nachricht" name="nachricht" placeholder="{{ph_msg}}"></textarea>
-        </div>
-        <div class="hp" aria-hidden="true"><label for="f-website">{{f_hp}}</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="f-send">
-          <button type="submit" class="cta-primary" id="sendBtn">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
-            {{f_send}}
-          </button>
-          <p class="f-note">{{f_note1}}</p>
-          <p class="f-note">{{f_note2}}</p>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="f-nachricht">{{f_msg}}</label>
+            <textarea id="f-nachricht" name="nachricht" placeholder="{{ph_msg}}"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="f-website">{{f_hp}}</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="f-send">
+            <button type="submit" class="cta-primary" id="sendBtn">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
+              {{f_send}}
+            </button>
+            <p class="f-note">{{f_note1}}</p>
+            <p class="f-note">{{f_note2}}</p>
+          </div>
+        </fieldset>
+        <div class="f-nav" hidden>
+          <button type="button" class="f-back">{{btn_back}}</button>
+          <button type="button" class="cta-primary f-next">{{btn_next}}</button>
         </div>
       <p class="f-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
@@ -527,6 +550,7 @@
 ══════════════════════════════════════════ -->
 <script type="application/json" id="i18n">{{i18n_json}}</script>
 <script defer src="/assets/vendor/emailjs.min.js"></script>
+<script defer src="/assets/js/attribution.js"></script>
 <script defer src="/assets/js/main.js"></script>
 <script defer src="/assets/js/crm-lead.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
