@@ -50,6 +50,12 @@ jobs:
         run: |
           trim() { printf %s "$1" | tr -d '[:space:]'; }
           acct=$(trim "$R2_ACCOUNT_ID"); key=$(trim "$R2_ACCESS_KEY_ID"); secret=$(trim "$R2_SECRET_ACCESS_KEY")
+          # Falls die ganze S3-Adresse (https://<id>.r2.cloudflarestorage.com) eingetragen wurde, nur die ID nehmen
+          acct=$(printf %s "$acct" | sed -E 's#^https?://##; s#\.r2\.cloudflarestorage\.com.*$##; s#/.*$##' | tr 'A-F' 'a-f')
+          if ! printf %s "$acct" | grep -qE '^[0-9a-f]{32}$'; then
+            echo "::error::R2_ACCOUNT_ID sieht nicht wie eine Cloudflare Account ID aus (erwartet 32 Zeichen 0-9/a-f, erhalten ${#acct} Zeichen). Sie steht in Cloudflare unter R2 → Übersicht → Account Details."
+            exit 1
+          fi
           echo "::add-mask::$acct"; echo "::add-mask::$key"; echo "::add-mask::$secret"
           { echo "R2_ENDPOINT=https://$acct.r2.cloudflarestorage.com"; echo "AWS_ACCESS_KEY_ID=$key"; echo "AWS_SECRET_ACCESS_KEY=$secret"; } >> "$GITHUB_ENV"
         env:
