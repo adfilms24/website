@@ -4,24 +4,26 @@
     <loc>https://www.adfilms24.ch/projekte/showreel-2026.html</loc>
     <video:video>
       <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/showreel-poster.jpg</video:thumbnail_loc>
-      <video:title>Showreel 2026: Videoproduktion Zürich</video:title>
-      <video:description>Ein Auszug aus unserer Arbeit für Unternehmen: Gastro, Barbershops, Retail, Fitness, Events und Zürich, gefilmt in 4K.</video:description>
+      <video:title>A.D.Films24 — Showreel 2026: Cinematic Videoproduktion Zürich</video:title>
+      <video:description>Cinematic Showreel von A.D.Films24 Studio Zürich. Imagefilme, Food-Content und Event-Videos für KMU und Brands.</video:description>
       <video:content_loc>https://media.adfilms24.ch/assets/video/showreel.mp4</video:content_loc>
       <video:duration>127</video:duration>
-      <video:publication_date>2026-10-10</video:publication_date>
+      <video:publication_date>2026-01-15T08:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
     <loc>https://www.adfilms24.ch/en/projects/showreel-2026.html</loc>
     <video:video>
       <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/showreel-poster.jpg</video:thumbnail_loc>
-      <video:title>Showreel 2026: Video Production Zurich</video:title>
-      <video:description>A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich, shot in 4K.</video:description>
+      <video:title>A.D.Films24 — Showreel 2026: Cinematic Video Production Zurich</video:title>
+      <video:description>Cinematic showreel by A.D.Films24 Studio Zurich. Brand films, food content and event videos for SMEs and brands.</video:description>
       <video:content_loc>https://media.adfilms24.ch/assets/video/showreel.mp4</video:content_loc>
       <video:duration>127</video:duration>
-      <video:publication_date>2026-10-10</video:publication_date>
+      <video:publication_date>2026-01-15T08:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -34,6 +36,7 @@
       <video:duration>79</video:duration>
       <video:publication_date>2026-10-18</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -46,30 +49,33 @@
       <video:duration>79</video:duration>
       <video:publication_date>2026-10-18</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
     <loc>https://www.adfilms24.ch/projekte/loco-birria.html</loc>
     <video:video>
       <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/loco-birria.jpg</video:thumbnail_loc>
-      <video:title>Restaurant-Video Zürich: Loco Birriá</video:title>
-      <video:description>Video- und Social-Media-Content für das Restaurant LOCO BIRRIÁ in Zürich: Küche, Gerichte, Bar und Team, produziert für Instagram, TikTok und die Website.</video:description>
+      <video:title>LOCO BIRRIÁ Food &amp; Restaurant Video Zürich — A.D.Films24</video:title>
+      <video:description>Authentische Food- und Bar-Videoproduktion für LOCO BIRRIÁ im Legere Zürich. S-Log3 Cinematography und Color Grading.</video:description>
       <video:content_loc>https://media.adfilms24.ch/assets/video/projects/loco-birria.mp4</video:content_loc>
       <video:duration>25</video:duration>
-      <video:publication_date>2026-10-09</video:publication_date>
+      <video:publication_date>2026-10-13T10:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
     <loc>https://www.adfilms24.ch/en/projects/loco-birria.html</loc>
     <video:video>
       <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/loco-birria.jpg</video:thumbnail_loc>
-      <video:title>Restaurant Video Zurich: Loco Birriá</video:title>
-      <video:description>Video and social media content for the restaurant LOCO BIRRIÁ in Zurich: kitchen, dishes, bar and team, produced for Instagram, TikTok and the website.</video:description>
+      <video:title>LOCO BIRRIÁ Food &amp; Restaurant Video Zurich — A.D.Films24</video:title>
+      <video:description>Authentic food and bar video production for LOCO BIRRIÁ at Legere Zurich. S-Log3 cinematography and colour grading.</video:description>
       <video:content_loc>https://media.adfilms24.ch/assets/video/projects/loco-birria.mp4</video:content_loc>
       <video:duration>25</video:duration>
-      <video:publication_date>2026-10-09</video:publication_date>
+      <video:publication_date>2026-10-13T10:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -82,6 +88,7 @@
       <video:duration>32</video:duration>
       <video:publication_date>2026-07-09</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -94,6 +101,7 @@
       <video:duration>32</video:duration>
       <video:publication_date>2026-07-09</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -106,6 +114,7 @@
       <video:duration>89</video:duration>
       <video:publication_date>2026-01-19</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -118,6 +127,7 @@
       <video:duration>89</video:duration>
       <video:publication_date>2026-01-19</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -130,6 +140,7 @@
       <video:duration>12</video:duration>
       <video:publication_date>2026-09-17</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -142,6 +153,7 @@
       <video:duration>12</video:duration>
       <video:publication_date>2026-09-17</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -154,6 +166,7 @@
       <video:duration>33</video:duration>
       <video:publication_date>2026-09-16</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -166,6 +179,7 @@
       <video:duration>33</video:duration>
       <video:publication_date>2026-09-16</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -178,6 +192,7 @@
       <video:duration>29</video:duration>
       <video:publication_date>2026-06-15</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -190,6 +205,7 @@
       <video:duration>29</video:duration>
       <video:publication_date>2026-06-15</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -202,6 +218,7 @@
       <video:duration>45</video:duration>
       <video:publication_date>2025-11-11</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -214,6 +231,7 @@
       <video:duration>45</video:duration>
       <video:publication_date>2025-11-11</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -226,6 +244,7 @@
       <video:duration>21</video:duration>
       <video:publication_date>2026-06-22</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
   <url>
@@ -238,6 +257,7 @@
       <video:duration>21</video:duration>
       <video:publication_date>2026-06-22</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
     </video:video>
   </url>
 </urlset>

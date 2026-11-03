@@ -17,10 +17,18 @@
     "video": "/assets/video/showreel.mp4",
     "poster": "/assets/video/showreel-poster.jpg",
     "duration": "PT2M7S",
-    "uploadDate": "2026-10-10",
+    "uploadDate": "2026-01-15T08:00:00+01:00",
     "seo": {
       "de": "Showreel 2026: Videoproduktion Zürich",
       "en": "Showreel 2026: Video Production Zurich"
+    },
+    "video_name": {
+      "de": "A.D.Films24 — Showreel 2026: Cinematic Videoproduktion Zürich",
+      "en": "A.D.Films24 — Showreel 2026: Cinematic Video Production Zurich"
+    },
+    "video_desc": {
+      "de": "Cinematic Showreel von A.D.Films24 Studio Zürich. Imagefilme, Food-Content und Event-Videos für KMU und Brands.",
+      "en": "Cinematic showreel by A.D.Films24 Studio Zurich. Brand films, food content and event videos for SMEs and brands."
     }
   },
   {
@@ -88,12 +96,20 @@
         "The team is happy and the collaboration continues: we deliver content for the coming weeks, currently also for their time at Legere until December."
       ]
     },
-    "uploadDate": "2026-10-09",
+    "uploadDate": "2026-10-13T10:00:00+01:00",
     "duration": "PT25S",
     "format": "vertical",
     "seo": {
       "de": "Restaurant-Video Zürich: Loco Birriá",
       "en": "Restaurant Video Zurich: Loco Birriá"
+    },
+    "video_name": {
+      "de": "LOCO BIRRIÁ Food & Restaurant Video Zürich — A.D.Films24",
+      "en": "LOCO BIRRIÁ Food & Restaurant Video Zurich — A.D.Films24"
+    },
+    "video_desc": {
+      "de": "Authentische Food- und Bar-Videoproduktion für LOCO BIRRIÁ im Legere Zürich. S-Log3 Cinematography und Color Grading.",
+      "en": "Authentic food and bar video production for LOCO BIRRIÁ at Legere Zurich. S-Log3 cinematography and colour grading."
     }
   },
   {

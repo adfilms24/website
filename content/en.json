@@ -4,8 +4,6 @@
   "og_desc": "Video production for businesses from Zurich — brand films, social media content, product and event videos. Reliable and transparent.",
   "ld_desc": "Video production for SMEs and companies from Zurich: brand films, social media content, product and event videos.",
   "ld_area": "Switzerland",
-  "vo_name": "Showreel 2026 — A.D.Films24",
-  "vo_desc": "Showreel 2026 by A.D.Films24: cinematography, slow motion and visual storytelling from Zurich.",
   "skip": "Skip to content",
   "loader_label": "Loading",
   "menu_aria": "Main menu",
@@ -52,7 +50,7 @@
   "about_tag": "Abdi Dhiblawe · CEO",
   "about_meta": "About us",
   "about_h2": "YOUR VIDEO,<br><span class=\"serif\">no detours</span>",
-  "about_p1": "We are <strong>A.D.Films24 Studio</strong>, a video studio in Zurich. We produce videos for <strong>SMEs and companies</strong> — from brand films and social media content to events.",
+  "about_p1": "We are <strong>A.D.Films24 Studio</strong>, the video studio of <strong>Abdi Dhiblawe</strong> for <strong>video production in Zurich</strong>. We produce videos for <strong>SMEs, restaurants and events</strong> — from brand films and social media content to event videos. We shoot on the Sony FX3 and colour grade in DaVinci Resolve.",
   "about_p2": "Our clients get what was agreed, and usually a bit more. <strong>So far, not a single revision request.</strong> Because we settle what the video needs to achieve before the shoot, and then deliver exactly that.",
   "about_p3": "Transparent from the start: a clear process, a clear price and an honest assessment, even when something doesn't fit.",
   "gear_head": "Equipment",
@@ -347,8 +345,8 @@
       "Depending on the scope, a few days to a few weeks. We set the exact timeline together in the quote."
     ],
     [
-      "How many revision rounds are needed?",
-      "We settle exactly what the video needs to achieve before the shoot. That's why there hasn't been a single revision request so far. And if something doesn't fit, we find a solution."
+      "Why does A.D.Films24 deliver without revision rounds?",
+      "Because goal, format and target audience are defined before the shoot, and clients review the picture live on set via monitoring before the final edit is done in DaVinci Resolve. That's why there hasn't been a single revision request so far. And if something doesn't fit, we find a solution."
     ],
     [
       "Do you also shoot outside Zurich?",
@@ -523,5 +521,15 @@
   "lbl_timeframe": "Timing",
   "lbl_industry": "Industry",
   "lbl_company": "Company",
-  "f_trust": "No sales pressure. We review your idea and send you a first realistic assessment with a ballpark quote within 24 hours."
+  "f_trust": "No sales pressure. We review your idea and send you a first realistic assessment with a ballpark quote within 24 hours.",
+  "ld_knows": [
+    "Video production Zurich",
+    "Brand film",
+    "Food and restaurant video",
+    "Event video",
+    "Social media content",
+    "Sony FX3",
+    "S-Log3",
+    "DaVinci Resolve colour grading"
+  ]
 }
