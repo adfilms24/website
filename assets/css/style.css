@@ -1828,7 +1828,8 @@ a.pf-cell { display: block; color: inherit; }
 .pj-video.pj-video--v video { object-fit: cover; }
 
 /* ── Ablauf mit Symbolen über Drehfoto ── */
-#process { position: relative; background: linear-gradient(rgba(6,6,6,.86), rgba(6,6,6,.93)), url('/assets/img/look/process-bg.webp') center / cover no-repeat; }
+#process { position: relative; background: linear-gradient(rgba(6,6,6,.86), rgba(6,6,6,.93)) center / cover no-repeat; }
+#process.bg-in { background-image: linear-gradient(rgba(6,6,6,.86), rgba(6,6,6,.93)), url('/assets/img/look/process-bg.webp'); }
 .proc-list { list-style: none; padding: 0; margin: 3.5rem 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5rem 2rem; counter-reset: none; }
 .proc-step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .7rem; position: relative; }
 .proc-step:not(:last-child)::after { content: ""; position: absolute; top: 44px; left: calc(50% + 56px); right: calc(-50% + 56px - 2rem); height: 1px; background: var(--line-strong); }

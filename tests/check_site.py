@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {"templates", "content", "tests", ".git", ".trash", "node_modules", ".vercel"}
-URL_ATTRS = {"href", "src", "poster", "data-src"}
+URL_ATTRS = {"href", "src", "poster", "data-src", "data-bg", "data-poster", "data-poster-m", "data-preview"}
 
 
 class Collector(HTMLParser):

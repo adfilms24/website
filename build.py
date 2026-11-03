@@ -202,7 +202,8 @@ def projects_grid(l, t):
     for i, p in enumerate(pub):
         poster = poster_of(p); vid = has_video(p)
         title = p["title"][l]
-        style = f' style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url(\'{webp_of(poster)}\')"' if poster else ""
+        # Bild erst laden, wenn die Kachel in die Nähe kommt (main.js, lazyBackgrounds): spart auf dem Handy rund 580 KB beim ersten Laden
+        style = f' data-bg="{webp_of(poster)}"' if poster else ""
         bg = "pf-cell-bg has-img" if poster else f"pf-cell-bg {BGS[i % 6]}"
         glyph = "" if poster else f'<span class="pf-glyph">{title[:1]}</span>'
         play = '\n        <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>' if vid else ""
@@ -349,7 +350,7 @@ def build_projects():
       {footer_links(l)}
     </footer>
   </main>'''
-            html = page_shell(l, urls, f'{seo} — A.D.Films24', p["desc"][l], body,
+            html = page_shell(l, urls, f'{seo} — A.D.Films24', p.get("meta", p["desc"])[l], body,
                               robots="noindex, nofollow" if draft else "index, follow", extra_head=ld, body_class="page-project", css="style.css", og_image=og_for(p["slug"]))
             write(urls[l].lstrip("/"), html)
 
