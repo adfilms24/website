@@ -84,8 +84,12 @@ jobs:
           fail=0
           while IFS= read -r f; do
             code=$(curl -s -o /dev/null -w "%{http_code}" -r 0-1023 "$MEDIA/$f")
-            if [ "$code" != "206" ] && [ "$code" != "200" ]; then echo "::error::$f → HTTP $code"; fail=1; fi
+            if [ "$code" != "206" ] && [ "$code" != "200" ]; then echo "::error::$f → HTTP $code"; fail=1; continue; fi
+            # Grösse online = Grösse im Repo, sonst ist die Datei unvollständig
+            remote=$(curl -sI "$MEDIA/$f" | tr -d '\r' | awk -F': ' 'tolower($1)=="content-length"{print $2}')
+            local_size=$(stat -c %s "$f")
+            if [ "$remote" != "$local_size" ]; then echo "::error::$f → online $remote Bytes, im Repo $local_size Bytes"; fail=1; fi
           done < <(find assets/video -name "*.mp4" | sort)
           n=$(find assets/video -name "*.mp4" | wc -l)
-          [ "$fail" = 0 ] && echo "Alle $n Videos sind unter $MEDIA erreichbar." | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$fail" = 0 ] && echo "Alle $n Videos sind unter $MEDIA erreichbar und vollständig (gleiche Grösse wie im Repo)." | tee -a "$GITHUB_STEP_SUMMARY"
           exit $fail
