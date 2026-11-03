@@ -17,6 +17,9 @@ ROOT = Path(__file__).parent
 DOMAIN = "https://www.adfilms24.ch"
 LANGS = ["de", "en"]
 MAIL = "info@adfilms24.ch"
+# Videos (.mp4) liegen in Cloudflare R2 statt in jeder Vercel-Version; gleicher Pfad wie im Repo.
+# Hochgeladen von .github/workflows/videos-r2.yml, von Vercel ausgeschlossen per .vercelignore.
+MEDIA = "https://media.adfilms24.ch"
 
 def load(p): return json.loads((ROOT / p).read_text(encoding="utf-8"))
 import hashlib
@@ -26,7 +29,11 @@ def _ver(path):
     return hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
 def version_assets(html):
     """Hängt ?v=<Prüfsumme> an CSS/JS-Dateien an, damit Browser nach Änderungen sofort die neue Datei laden."""
-    return _ASSET_RE.sub(lambda m: f"{m.group(1)}?v={_ver(m.group(1))}", html)
+    def sub(m):
+        path = m.group(1)
+        host = MEDIA if path.endswith(".mp4") else ""
+        return f"{host}{path}?v={_ver(path)}"
+    return _ASSET_RE.sub(sub, html)
 FONTS_CSS = (ROOT / "assets/fonts/fonts.css").read_text(encoding="utf-8")
 def inline_fonts(html):
     """fonts.css direkt in die Seite: spart eine blockierende Anfrage beim ersten Laden."""
@@ -306,7 +313,7 @@ def build_projects():
                     "@context": "https://schema.org", "@type": "VideoObject", "name": seo, "description": p["desc"][l],
                     "thumbnailUrl": (DOMAIN + poster) if poster else DOMAIN + "/og-image.png",
                     "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
-                    "contentUrl": DOMAIN + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
+                    "contentUrl": MEDIA + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
             draft_note = f'<p class="pj-draft">{t["pj_draft"]}</p>' if draft else ""
             # Optional in projects.json: "story": {"de": ["Ausgangslage …", "Umsetzung …", "Ergebnis …"], "en": [...]}
             story = "".join(f'<h2 class="pj-story-h">{h}</h2><p class="pj-story">{txt}</p>' for h, txt in zip(t["pj_story"], p.get("story", {}).get(l, [])))

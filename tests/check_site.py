@@ -34,7 +34,12 @@ class Collector(HTMLParser):
                 self.urls += [part.strip().split(" ")[0] for part in v.split(",") if part.strip()]
 
 
+MEDIA = "https://media.adfilms24.ch/"  # Videos in Cloudflare R2, gleicher Pfad wie im Repo
+
+
 def target_file(url: str, page: Path) -> Path | None:
+    if url.startswith(MEDIA):  # muss im Repo liegen, damit der Upload-Workflow sie nach R2 bringt
+        return (ROOT / urlsplit(url).path.lstrip("/")).resolve()
     if url.startswith(("http://", "https://", "mailto:", "tel:", "data:", "#", "javascript:", "//")):
         return None
     path = urlsplit(url).path
