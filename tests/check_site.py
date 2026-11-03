@@ -75,11 +75,16 @@ def main() -> int:
             if f is not None and not f.exists():
                 errors.append(f"{rel}: Ziel fehlt -> {url}")
 
-    sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-    for loc in re.findall(r"<loc>(.*?)</loc>", sitemap):
-        f = target_file(urlsplit(loc).path or "/", ROOT / "index.html")
-        if f is None or not f.exists():
-            errors.append(f"sitemap.xml: Ziel fehlt -> {loc}")
+    # sitemap.xml = Index, der auf die Teil-Sitemaps zeigt; diese müssen existieren und ihre Seiten auch
+    for loc in re.findall(r"<loc>(.*?)</loc>", (ROOT / "sitemap.xml").read_text(encoding="utf-8")):
+        part = ROOT / urlsplit(loc).path.lstrip("/")
+        if not part.exists():
+            errors.append(f"sitemap.xml: Teil-Sitemap fehlt -> {loc}")
+            continue
+        for page_loc in re.findall(r"<url>\s*<loc>(.*?)</loc>", part.read_text(encoding="utf-8")):
+            f = target_file(urlsplit(page_loc).path or "/", ROOT / "index.html")
+            if f is None or not f.exists():
+                errors.append(f"{part.name}: Ziel fehlt -> {page_loc}")
 
     for e in errors:
         print("FEHLER", e)

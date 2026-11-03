@@ -473,7 +473,9 @@ def build_404():
 
 def build_sitemap():
     # lastmod nur erneuern, wenn sich die Seite geändert hat. So bleibt der Build an jedem Tag gleich (CI) und Google sieht echte Änderungsdaten.
-    sm = ROOT / "sitemap.xml"
+    # sitemap.xml ist ein Sitemap-Index (in der Search Console registriert) -> sitemap-pages.xml + video-sitemap.xml
+    sm = ROOT / "sitemap-pages.xml"
+    if not sm.exists(): sm = ROOT / "sitemap.xml"  # einmalig: Daten aus der alten Seiten-Sitemap übernehmen
     old = dict(re.findall(r"<loc>" + re.escape(DOMAIN) + r"(.*?)</loc>.*?<lastmod>(.*?)</lastmod>", sm.read_text(encoding="utf-8"), re.S)) if sm.exists() else {}
     today = datetime.date.today().isoformat()
     def lastmod(u):
@@ -488,7 +490,11 @@ def build_sitemap():
         if p.get("published"): out += entry({l: project_url(l, p["slug"]) for l in LANGS}, "0.8", "monthly")
     for sv in SERVICES: out += entry({l: service_url(l, sv) for l in LANGS}, "0.9", "monthly")
     for k in LEGAL: out += entry({l: LEGAL[k][l] for l in LANGS}, "0.2", "yearly")
-    write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + out + '</urlset>\n')
+    write("sitemap-pages.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + out + '</urlset>\n')
+    newest = max(re.findall(r"<lastmod>(.*?)</lastmod>", out))
+    write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+          f'  <sitemap>\n    <loc>{DOMAIN}/sitemap-pages.xml</loc>\n    <lastmod>{newest}</lastmod>\n  </sitemap>\n'
+          f'  <sitemap>\n    <loc>{DOMAIN}/video-sitemap.xml</loc>\n  </sitemap>\n</sitemapindex>\n')
 
 def build_video_sitemap():
     """Eigene Video-Sitemap für Google: nur die Projektseiten (dort ist das Video der Hauptinhalt = «Watch Page»)."""
