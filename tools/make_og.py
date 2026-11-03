@@ -47,4 +47,5 @@ for sv in json.loads((ROOT / "content/leistungen.json").read_text()):
 for p in projects.values():
     if p.get("published"):
         card(poster(p["slug"]), "A.D.Films24 · Projekt", p["title"]["de"].replace(" — ", "\n"), ROOT / f"og/{p['slug']}.jpg")
+card(ROOT / "assets/video/showreel-poster.jpg", "A.D.Films24 · Videoproduktion", "Videoproduktion\nin Zürich", ROOT / "og/home.jpg")
 print("OK:", len(list((ROOT / "og").glob("*.jpg"))), "Vorschaubilder in og/")

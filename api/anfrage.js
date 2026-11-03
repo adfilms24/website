@@ -52,6 +52,22 @@ function clientIp(req) {
   return xf || req.headers['x-real-ip'] || '';
 }
 
+// Einfaches Limit pro IP (pro Server-Instanz, best effort): max. 5 Anfragen in 10 Minuten
+const LIMIT = 5;
+const WINDOW_MS = 10 * 60 * 1000;
+const hits = new Map();
+
+function limited(ip, now = Date.now()) {
+  if (!ip) return false;
+  const recent = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) {
+    for (const [k, v] of hits) if (!v.length || now - v[v.length - 1] >= WINDOW_MS) hits.delete(k);
+  }
+  return recent.length > LIMIT;
+}
+
 async function verifyToken(secret, token, ip) {
   const body = new URLSearchParams({ secret, response: token });
   if (ip) body.set('remoteip', ip);
@@ -143,6 +159,11 @@ module.exports = async function handler(req, res) {
   }
   if (!cfg.enabled) return res.status(503).json({ error: 'not_configured' });
 
+  if (limited(clientIp(req))) {
+    res.setHeader('retry-after', '600');
+    return res.status(429).json({ error: 'rate' });
+  }
+
   const body = parseBody(req);
   if (!body || typeof body.token !== 'string' || !body.token || body.token.length > 4096) {
     return res.status(400).json({ error: 'token' });
@@ -169,3 +190,4 @@ module.exports = async function handler(req, res) {
   if (!mailed && !saved) return res.status(502).json({ error: 'delivery' });
   return res.status(200).json({ ok: true, mailed, saved });
 };
+module.exports._resetLimit = () => hits.clear();
