@@ -57,6 +57,13 @@ jobs:
             exit 1
           fi
           echo "::add-mask::$acct"; echo "::add-mask::$key"; echo "::add-mask::$secret"
+          if [ "$acct" = "$key" ]; then
+            echo "::error::R2_ACCOUNT_ID enthält dieselbe Zeichenfolge wie R2_ACCESS_KEY_ID. Bitte die Account ID aus Cloudflare (R2 → Übersicht → Account Details) eintragen."; exit 1
+          fi
+          # Gibt es zu dieser Account ID einen R2-Endpunkt? Bei falscher ID schlägt schon die Verbindung fehl.
+          if ! curl -s -o /dev/null --max-time 15 "https://$acct.r2.cloudflarestorage.com/"; then
+            echo "::error::Mit dieser R2_ACCOUNT_ID ist kein R2-Speicher erreichbar. Wahrscheinlich ist es eine andere ID (z.B. Zone ID der Domain). Richtige Stelle: Cloudflare → R2 → Übersicht → Account Details → Account ID."; exit 1
+          fi
           { echo "R2_ENDPOINT=https://$acct.r2.cloudflarestorage.com"; echo "AWS_ACCESS_KEY_ID=$key"; echo "AWS_SECRET_ACCESS_KEY=$secret"; } >> "$GITHUB_ENV"
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
