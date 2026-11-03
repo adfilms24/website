@@ -85,6 +85,10 @@ def has_video(p):
     if p.get("video"): return p["video"]
     f = f"assets/video/projects/{p['slug']}.mp4"
     return "/" + f if (ROOT / f).exists() else None
+def preview_of(p):
+    """Kurzer stummer Clip (4 s, klein) für die Vorschau beim Hovern im Portfolio, falls vorhanden."""
+    f = f"assets/video/previews/{p['slug']}.mp4"
+    return "/" + f if (ROOT / f).exists() else None
 def webp_of(path):
     """Gleiches Bild als WebP, falls vorhanden (kleiner); sonst das Original."""
     if path and path.endswith(".jpg") and (ROOT / (path[:-4] + ".webp").lstrip("/")).exists(): return path[:-4] + ".webp"
@@ -197,7 +201,9 @@ def projects_grid(l, t):
         play = '\n        <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>' if vid else ""
         size = "xl" if len(pub) == 1 else ("full" if i == len(pub) - 1 and len(pub) % 2 else SIZES[i % 6])
         feat = " featured" if vid and poster else ""
-        cells.append(f'''      <a class="pf-cell{feat}" href="{project_url(l, p["slug"])}" data-size="{size}" data-cat="{p["category"]}" aria-label="{title} — {tag_of(p, l)}">
+        prev = preview_of(p) if vid else None
+        prev_attr = f' data-preview="{prev}"' if prev else ""
+        cells.append(f'''      <a class="pf-cell{feat}" href="{project_url(l, p["slug"])}" data-size="{size}" data-cat="{p["category"]}"{prev_attr} aria-label="{title} — {tag_of(p, l)}">
         <div class="{bg}"{style}>{glyph}</div>{play}
         <div class="pf-overlay">
           <div class="pf-tag">{tag_of(p, l)}</div>
