@@ -221,6 +221,103 @@
   },
   {
     "slug": {
+      "de": "hochzeitsvideo-zuerich",
+      "en": "wedding-video-zurich"
+    },
+    "project": "",
+    "nav": {
+      "de": "Hochzeit",
+      "en": "Weddings"
+    },
+    "title": {
+      "de": "Hochzeitsvideo Zürich — A.D.Films24",
+      "en": "Wedding Video Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Hochzeitsvideo in Zürich",
+      "en": "Wedding video in Zurich"
+    },
+    "meta": {
+      "de": "Hochzeitsvideos in Zürich: ein Film von eurem Tag, wie er war. Trauung, Reden und Fest, dazu kurze Clips für Instagram.",
+      "en": "Wedding videos in Zurich: a film of your day as it really was. Ceremony, speeches and party, plus short clips for Instagram."
+    },
+    "intro": {
+      "de": "Von eurem Hochzeitstag bleiben ein paar Fotos und viele Erinnerungen, die mit der Zeit verblassen. Wir begleiten euch ruhig im Hintergrund und machen daraus einen Film, den ihr in zwanzig Jahren noch gerne anschaut.",
+      "en": "Your wedding day leaves a few photos and many memories that fade over time. We stay in the background and turn the day into a film you will still enjoy watching in twenty years."
+    },
+    "includes": {
+      "de": [
+        "Begleitung vom Getting Ready bis zum Fest, so lange ihr wollt",
+        "Hochzeitsfilm mit den schönsten Momenten des Tages",
+        "Trauung und Reden mit sauberem Ton",
+        "Kurze Clips im Hochformat für Instagram",
+        "Drohnenaufnahmen, wo sie erlaubt sind"
+      ],
+      "en": [
+        "Coverage from getting ready to the party, as long as you like",
+        "A wedding film with the best moments of the day",
+        "Ceremony and speeches with clean sound",
+        "Short vertical clips for Instagram",
+        "Drone shots where they are allowed"
+      ]
+    },
+    "for": {
+      "de": [
+        "Standesamt, Kirche, freie Trauung oder Nikkah",
+        "Grosse Feste und kleine Hochzeiten im engen Kreis",
+        "Paare, die echte Momente statt gestellter Szenen wollen"
+      ],
+      "en": [
+        "Civil, church, free ceremony or Nikkah",
+        "Big celebrations and small weddings with close family",
+        "Couples who want real moments instead of posed scenes"
+      ]
+    },
+    "steps": {
+      "de": [
+        [
+          "Kennenlernen",
+          "Wir besprechen euren Ablauf, eure Wünsche und wer euch wichtig ist."
+        ],
+        [
+          "Offerte & Ablaufplan",
+          "Klarer Preis und ein Plan, wann wir wo sind."
+        ],
+        [
+          "Hochzeitstag",
+          "Wir sind dezent dabei, ihr feiert."
+        ],
+        [
+          "Schnitt & Abgabe",
+          "Euer Film und die Clips kommen per Link zum Herunterladen."
+        ]
+      ],
+      "en": [
+        [
+          "Getting to know you",
+          "We go through your schedule, your wishes and the people who matter to you."
+        ],
+        [
+          "Quote & schedule",
+          "A clear price and a plan of where we are when."
+        ],
+        [
+          "Wedding day",
+          "We stay in the background, you celebrate."
+        ],
+        [
+          "Edit & delivery",
+          "Your film and the clips arrive as a download link."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Euer Film zeigt euren Tag, wie er war: ohne nachgestellte Szenen, mit den Worten aus Trauung und Reden.",
+      "en": "Your film shows your day as it was: no re-enacted scenes, with the words from the ceremony and the speeches."
+    }
+  },
+  {
+    "slug": {
       "de": "social-media-management-zuerich",
       "en": "social-media-management-zurich"
     },
