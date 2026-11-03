@@ -470,7 +470,15 @@ const LIGHT_DATA = (() => { const c = navigator.connection || {}; return !c.save
   const v = sec.querySelector('.scrub-video');
   const words = sec.querySelectorAll('.scrub-word');
   const live = window.matchMedia('(min-width: 900px)').matches && !REDUCED && LIGHT_DATA;
-  if (!live) { sec.classList.add('static'); return; }
+  if (!live) {
+    sec.classList.add('static');
+    // Standbild: auf Hochkant-Bildschirmen reicht der Ausschnitt aus der Bildmitte (gleiche Schärfe, rund 40 % kleiner)
+    const box = sec.querySelector('.scrub-sticky');
+    const tall = box.clientWidth / Math.max(1, box.clientHeight) <= 0.92; // Ausschnitt ist 1000 × 1080 px
+    v.poster = (tall && v.dataset.posterM) || v.dataset.poster;
+    return;
+  }
+  v.poster = v.dataset.poster;
 
   let target = 0, cur = 0, raf = 0, dur = 0;
   const progress = () => {
