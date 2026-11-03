@@ -7,12 +7,12 @@
  *   TURNSTILE_SITE_KEY    öffentlicher Schlüssel des Turnstile-Widgets
  *   TURNSTILE_SECRET_KEY  geheimer Schlüssel des Widgets
  *   RESEND_API_KEY        Resend-Schlüssel mit Senderecht für adfilms24.ch
- * Fehlt einer davon, antwortet die Funktion mit enabled:false bzw. 503 und das Formular sendet wie bisher über EmailJS. */
+ * Fehlt einer davon, antwortet die Funktion mit enabled:false bzw. 503 und das Formular zeigt die Ausweichkontakte. */
 
 const SITEVERIFY = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const RESEND = 'https://api.resend.com/emails';
 const CRM = 'https://mvgqksltpcqflazrjamx.supabase.co/rest/v1/rpc/';
-// Öffentlicher Supabase-Schlüssel (steht auch in crm-lead.js); darf nur submit_inquiry und submit_lead aufrufen
+// Öffentlicher Supabase-Schlüssel; darf nur submit_inquiry und submit_lead aufrufen
 const CRM_KEY = 'sb_publishable_5nwJrgDdH6Hxrk6YTwuROg_h6JXM9ek';
 const MAIL = 'info@adfilms24.ch';
 

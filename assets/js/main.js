@@ -3,8 +3,6 @@ let I18N = {};
 try { I18N = JSON.parse(document.getElementById('i18n').textContent); } catch (_) {}
 const tr = (k, fb) => (I18N[k] !== undefined ? I18N[k] : fb);
 
-/* EmailJS (Public Key ist für den Browser gedacht; in EmailJS die erlaubten Domains auf adfilms24.ch beschränken) */
-if (window.emailjs) emailjs.init("mzeYAXh6J84HSDX5j");
 const FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ── CURSOR (nur Geräte mit Maus; Animationsschleife läuft nur während der Bewegung) ─── */
@@ -184,14 +182,6 @@ document.getElementById('reelBtn2').addEventListener('click', openShowreel);
 const SEND_LABEL = document.getElementById('sendBtn').innerHTML;
 const MAIL = tr('mail', 'info@adfilms24.ch');
 const COOLDOWN_MS = 30000;
-/* Telefon, Budget, Wunschtermin und Herkunft an die Nachricht anhängen (EmailJS-Template bleibt unverändert) */
-function withDetails(fd, msg) {
-  const rows = [['firma','lbl_company','Company'], ['branche','lbl_industry','Industry'], ['telefon','lbl_phone','Phone'], ['budget','lbl_budget','Budget'],
-                ['zeitrahmen','lbl_timeframe','Timing'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
-    .map(([k, lk, fb]) => (fd.get(k) ? `${tr(lk, fb)}: ${fd.get(k)}` : ''))
-    .filter(Boolean);
-  return rows.length ? `${msg}\n\n— ${rows.join('\n')}` : msg;
-}
 function setStatus(el, cls, html) { el.className = 'f-status ' + cls; el.innerHTML = html; }
 
 /* ── FORMULAR IN SCHRITTEN: Projektart → Budget & Zeit → Branche → Kontakt ───
@@ -247,7 +237,7 @@ const FormSteps = (function () {
 
 /* ── SPAM-SCHUTZ: unsichtbarer Check (Cloudflare Turnstile) ───
    /api/anfrage sagt, ob der Check eingerichtet ist. Erst wenn der Kontaktbereich näher kommt, wird
-   das Skript von Cloudflare geladen. Ist er nicht eingerichtet, sendet das Formular wie bisher über EmailJS. */
+   das Skript von Cloudflare geladen. Der Server schickt die Anfrage per Resend an info@ und legt sie im CRM ab. */
 const Guard = (function () {
   const form = document.querySelector('.contact-form');
   const SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
@@ -314,7 +304,7 @@ function attributionData() {
   try { return JSON.parse(sessionStorage.getItem('adf24_attr') || '{}') || {}; } catch (_) { return {}; }
 }
 
-/* Weg 1: über /api/anfrage (mit Spam-Check). Liefert 'ok', 'fallback' (nicht eingerichtet) oder wirft einen Fehler. */
+/* Schickt die Anfrage an /api/anfrage (mit Spam-Check). Wirft bei jedem Fehler, dann zeigt das Formular die Ausweichkontakte. */
 async function sendViaServer(fd) {
   const token = await Guard.token();
   const fields = {};
@@ -324,7 +314,6 @@ async function sendViaServer(fd) {
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ token, fields, attr: attributionData(), lang: document.documentElement.lang || 'de' }),
   });
-  if (res.status === 503) return 'fallback';
   if (!res.ok) throw new Error('server ' + res.status);
   return 'ok';
 }
@@ -351,33 +340,16 @@ async function sendForm(e) {
   if (wait > 0) { setStatus(st, 'err', tr('form_wait','Please wait {s} seconds.').replace('{s}', Math.ceil(wait/1000))); return; }
 
   const fd = new FormData(form);
-  const vorname = fd.get('vorname') || '';
-  const nachname = fd.get('nachname') || '';
-  const projekttyp = fd.get('projekttyp') || '';
-  const templateParams = {
-    name:        `${vorname} ${nachname}`.trim(),
-    title:       projekttyp,
-    email:       fd.get('email') || '',
-    projekttyp:  projekttyp,
-    nachricht:   withDetails(fd, fd.get('nachricht') || ''),
-  };
 
   btn.disabled = true;
   btn.innerHTML = tr('form_sending','… Sending');
   setStatus(st, '', tr('form_sending_status','Sending …'));
 
-  /* Spam-Schutz 3: unsichtbarer Check. Ist er eingerichtet, übernimmt der Server Mail und CRM. */
+  /* Spam-Schutz 3: unsichtbarer Check. Der Server übernimmt Mail und CRM. */
   let guarded = false;
   try { guarded = await Guard.init(); } catch (_) {}
 
-  const viaEmailJs = () => {
-    try { if (window.adf24CrmLead) window.adf24CrmLead(form); } catch (_) {}
-    return emailjs.send('service_3bk9u16', 'template_d87r2kf', templateParams);
-  };
-  let sending;
-  if (guarded === true) sending = sendViaServer(fd).then((r) => (r === 'fallback' ? viaEmailJs() : r));
-  else if (guarded === 'blocked') sending = Promise.reject(new Error('check blocked'));
-  else sending = Promise.resolve().then(viaEmailJs);
+  const sending = guarded === true ? sendViaServer(fd) : Promise.reject(new Error(guarded === 'blocked' ? 'check blocked' : 'check off'));
 
   sending
     .then(() => {
