@@ -56,7 +56,7 @@
 }
 </script>
 <link rel="preload" href="/assets/video/showreel-poster.webp?v=4baac764" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/assets/css/style.css?v=873ccb81">
+<link rel="stylesheet" href="/assets/css/style.css?v=e3df112a">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -689,81 +689,115 @@
         </div>
       </div>
 
-      <form class="contact-form" data-sr="r" data-d="2">
-        <div class="f-row">
+      <form class="contact-form" data-sr="r" data-d="2" novalidate>
+        <p class="f-progress" aria-live="polite" hidden></p>
+        <fieldset class="f-step" data-step="1">
+          <legend class="f-q">What kind of project are you planning?</legend>
+          <div class="f-chips">
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Brand film / corporate video" required><span>Brand film / corporate video</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Social media content" required><span>Social media content</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Restaurant &amp; food video" required><span>Restaurant & food video</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Event video" required><span>Event video</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Product video" required><span>Product video</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Drone footage" required><span>Drone footage</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Social media management" required><span>Social media management</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Social media ads" required><span>Social media ads</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Digital systems / automation" required><span>Digital systems / automation</span></label>
+            <label class="f-chip"><input type="radio" name="projekttyp" value="Other" required><span>Other</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="f-step" data-step="2">
+          <legend class="f-q">What budget and timing do you have in mind?</legend>
           <div class="f-group">
-            <label for="f-vorname">First name</label>
-            <input id="f-vorname" name="vorname" type="text" placeholder="John" autocomplete="given-name" required>
+            <span class="f-lbl">Budget (optional)</span>
+            <div class="f-chips">
+            <label class="f-chip"><input type="radio" name="budget" value="Not sure yet"><span>Not sure yet</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="up to CHF 2,000"><span>up to CHF 2,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="CHF 2,000–5,000"><span>CHF 2,000–5,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="CHF 5,000–10,000"><span>CHF 5,000–10,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="over CHF 10,000"><span>over CHF 10,000</span></label>
+            </div>
           </div>
           <div class="f-group">
-            <label for="f-nachname">Last name</label>
-            <input id="f-nachname" name="nachname" type="text" placeholder="Smith" autocomplete="family-name" required>
-          </div>
-        </div>
-        <div class="f-group">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" placeholder="john.smith@gmail.com" autocomplete="email" required>
-        </div>
-        <div class="f-group">
-          <label for="f-telefon">Phone (optional)</label>
-          <input id="f-telefon" name="telefon" type="tel" placeholder="+41 …" autocomplete="tel">
-        </div>
-        <div class="f-group">
-          <label for="f-projekttyp">Project type</label>
-          <select id="f-projekttyp" name="projekttyp" required>
-            <option value="" disabled selected>— Please choose —</option>
-            <option>Brand film / corporate video</option>
-            <option>Social media content</option>
-            <option>Restaurant & food video</option>
-            <option>Event video</option>
-            <option>Product video</option>
-            <option>Drone footage</option>
-            <option>Social media management</option>
-            <option>Social media ads</option>
-            <option>Digital systems / automation</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="f-row">
-          <div class="f-group">
-            <label for="f-budget">Budget (optional)</label>
-            <select id="f-budget" name="budget">
-              <option value="">— Please choose —</option>
-            <option>Not sure yet</option>
-            <option>up to CHF 2,000</option>
-            <option>CHF 2,000–5,000</option>
-            <option>CHF 5,000–10,000</option>
-            <option>over CHF 10,000</option>
-            </select>
+            <span class="f-lbl">Timing (optional)</span>
+            <div class="f-chips">
+            <label class="f-chip"><input type="radio" name="zeitrahmen" value="As soon as possible"><span>As soon as possible</span></label>
+            <label class="f-chip"><input type="radio" name="zeitrahmen" value="Within 1 month"><span>Within 1 month</span></label>
+            <label class="f-chip"><input type="radio" name="zeitrahmen" value="In 1–3 months"><span>In 1–3 months</span></label>
+            <label class="f-chip"><input type="radio" name="zeitrahmen" value="Later / not sure yet"><span>Later / not sure yet</span></label>
+            </div>
           </div>
           <div class="f-group">
             <label for="f-termin">Preferred date (optional)</label>
             <input id="f-termin" name="termin" type="text" placeholder="e.g. mid-November">
           </div>
-        </div>
-        <div class="f-group">
-          <label for="f-quelle">How did you find us? (optional)</label>
-          <select id="f-quelle" name="quelle">
-            <option value="">— Please choose —</option>
+        </fieldset>
+        <fieldset class="f-step" data-step="3">
+          <legend class="f-q">What industry are you in?</legend>
+          <div class="f-chips">
+            <label class="f-chip"><input type="radio" name="branche" value="Hospitality &amp; food"><span>Hospitality & food</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Health &amp; practice"><span>Health & practice</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Trades &amp; construction"><span>Trades & construction</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Real estate"><span>Real estate</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Beauty &amp; lifestyle"><span>Beauty & lifestyle</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Startup / tech"><span>Startup / tech</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Events &amp; music"><span>Events & music</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Retail / e-commerce"><span>Retail / e-commerce</span></label>
+            <label class="f-chip"><input type="radio" name="branche" value="Other"><span>Other</span></label>
+          </div>
+          <div class="f-group">
+            <label for="f-firma">Company (optional)</label>
+            <input id="f-firma" name="firma" type="text" placeholder="e.g. Café Rosso" autocomplete="organization">
+          </div>
+        </fieldset>
+        <fieldset class="f-step" data-step="4">
+          <legend class="f-q">How can we reach you?</legend>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-vorname">First name</label>
+              <input id="f-vorname" name="vorname" type="text" placeholder="John" autocomplete="given-name" required>
+            </div>
+            <div class="f-group">
+              <label for="f-nachname">Last name</label>
+              <input id="f-nachname" name="nachname" type="text" placeholder="Smith" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="john.smith@gmail.com" autocomplete="email" required>
+          </div>
+          <div class="f-group">
+            <label for="f-telefon">Phone (optional)</label>
+            <input id="f-telefon" name="telefon" type="tel" placeholder="+41 …" autocomplete="tel">
+          </div>
+          <div class="f-group">
+            <label for="f-quelle">How did you find us? (optional)</label>
+            <select id="f-quelle" name="quelle">
+              <option value="">— Please choose —</option>
             <option>Google</option>
             <option>Instagram</option>
             <option>LinkedIn</option>
             <option>Recommendation</option>
             <option>Other</option>
-          </select>
-        </div>
-        <div class="f-group">
-          <label for="f-nachricht">Your project</label>
-          <textarea id="f-nachricht" name="nachricht" placeholder="What should the video achieve, and where will it be used?"></textarea>
-        </div>
-        <div class="hp" aria-hidden="true"><label for="f-website">Website (leave empty)</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="f-send">
-          <button type="submit" class="cta-primary" id="sendBtn">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
-            Send request
-          </button>
-          <p class="f-note">No advertising. Just real answers.</p>
-          <p class="f-note">By submitting you accept our <a href="/en/privacy.html" style="text-decoration:underline;">privacy policy</a>.</p>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="f-nachricht">Your project</label>
+            <textarea id="f-nachricht" name="nachricht" placeholder="What should the video achieve, and where will it be used?"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="f-website">Website (leave empty)</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="f-send">
+            <button type="submit" class="cta-primary" id="sendBtn">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>
+              Send request
+            </button>
+            <p class="f-note">No advertising. Just real answers.</p>
+            <p class="f-note">By submitting you accept our <a href="/en/privacy.html" style="text-decoration:underline;">privacy policy</a>.</p>
+          </div>
+        </fieldset>
+        <div class="f-nav" hidden>
+          <button type="button" class="f-back">Back</button>
+          <button type="button" class="cta-primary f-next">Next</button>
         </div>
       <p class="f-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
@@ -843,10 +877,11 @@
 <!-- ══════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
-<script type="application/json" id="i18n">{"menu_open": "Open menu", "menu_close": "Close menu", "showreel_title": "Showreel 2026", "showreel_desc": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.", "showreel_client": "A.D.Films24", "showreel_camera": "Sony FX3", "showreel_year": "2026", "form_wait": "Please wait {s} more seconds before sending again.", "form_sending": "… Sending", "form_sending_status": "Sending your request …", "form_sent_btn": "✓ &nbsp;Sent!", "form_ok": "Thank you! Your request has arrived. We'll get back to you as soon as possible.", "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}<\/a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>.", "lbl_budget": "Budget", "lbl_date": "Preferred date", "lbl_source": "Found via", "lbl_phone": "Phone", "mail": "info@adfilms24.ch", "lang": "en", "showreel_src": "/assets/video/showreel.mp4?v=d38a9fe7", "showreel_poster": "/assets/video/showreel-poster.webp?v=4baac764"}</script>
+<script type="application/json" id="i18n">{"menu_open": "Open menu", "menu_close": "Close menu", "showreel_title": "Showreel 2026", "showreel_desc": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.", "showreel_client": "A.D.Films24", "showreel_camera": "Sony FX3", "showreel_year": "2026", "form_wait": "Please wait {s} more seconds before sending again.", "form_sending": "… Sending", "form_sending_status": "Sending your request …", "form_sent_btn": "✓ &nbsp;Sent!", "form_ok": "Thank you! Your request has arrived. We'll get back to you as soon as possible.", "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}<\/a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>.", "lbl_budget": "Budget", "lbl_date": "Preferred date", "lbl_source": "Found via", "lbl_phone": "Phone", "lbl_timeframe": "Timing", "lbl_industry": "Industry", "lbl_company": "Company", "step_of": "Step {n} of {m}", "mail": "info@adfilms24.ch", "lang": "en", "showreel_src": "/assets/video/showreel.mp4?v=d38a9fe7", "showreel_poster": "/assets/video/showreel-poster.webp?v=4baac764"}</script>
 <script defer src="/assets/vendor/emailjs.min.js?v=27113873"></script>
-<script defer src="/assets/js/main.js?v=e9876620"></script>
-<script defer src="/assets/js/crm-lead.js?v=931e265d"></script>
+<script defer src="/assets/js/attribution.js?v=cbad93ce"></script>
+<script defer src="/assets/js/main.js?v=dd401e4a"></script>
+<script defer src="/assets/js/crm-lead.js?v=948a5ba3"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

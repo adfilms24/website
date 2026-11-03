@@ -186,12 +186,64 @@ const MAIL = tr('mail', 'info@adfilms24.ch');
 const COOLDOWN_MS = 30000;
 /* Telefon, Budget, Wunschtermin und Herkunft an die Nachricht anhängen (EmailJS-Template bleibt unverändert) */
 function withDetails(fd, msg) {
-  const rows = [['telefon','lbl_phone','Phone'], ['budget','lbl_budget','Budget'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
+  const rows = [['firma','lbl_company','Company'], ['branche','lbl_industry','Industry'], ['telefon','lbl_phone','Phone'], ['budget','lbl_budget','Budget'],
+                ['zeitrahmen','lbl_timeframe','Timing'], ['termin','lbl_date','Date'], ['quelle','lbl_source','Source']]
     .map(([k, lk, fb]) => (fd.get(k) ? `${tr(lk, fb)}: ${fd.get(k)}` : ''))
     .filter(Boolean);
   return rows.length ? `${msg}\n\n— ${rows.join('\n')}` : msg;
 }
 function setStatus(el, cls, html) { el.className = 'f-status ' + cls; el.innerHTML = html; }
+
+/* ── FORMULAR IN SCHRITTEN: Projektart → Budget & Zeit → Branche → Kontakt ───
+   Ohne JavaScript bleiben alle Schritte sichtbar. */
+const FormSteps = (function () {
+  const form = document.querySelector('.contact-form');
+  const steps = form ? [...form.querySelectorAll('.f-step')] : [];
+  if (steps.length < 2) return { goTo() {}, reset() {}, stepOf() { return 0; } };
+  const nav = form.querySelector('.f-nav');
+  const back = form.querySelector('.f-back');
+  const next = form.querySelector('.f-next');
+  const prog = form.querySelector('.f-progress');
+  const fields = (i) => [...steps[i].querySelectorAll('input, select, textarea')];
+  let cur = 0;
+
+  function goTo(i, focus) {
+    cur = Math.max(0, Math.min(steps.length - 1, i));
+    steps.forEach((s, k) => { s.hidden = k !== cur; });
+    back.hidden = cur === 0;
+    next.hidden = cur === steps.length - 1;
+    prog.textContent = tr('step_of', 'Step {n} of {m}').replace('{n}', cur + 1).replace('{m}', steps.length);
+    form.dataset.step = String(cur + 1);
+    if (focus) {
+      const first = fields(cur).find((el) => el.type !== 'hidden' && !el.closest('.hp'));
+      const checked = steps[cur].querySelector('input[type=radio]:checked');
+      (checked || first)?.focus({ preventScroll: true });
+      const top = form.getBoundingClientRect().top + window.scrollY - 90;
+      if (form.getBoundingClientRect().top < 60) window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+  function forward() {
+    const bad = fields(cur).find((el) => !el.checkValidity());
+    if (bad) { bad.reportValidity(); return; }
+    goTo(cur + 1, true);
+  }
+  next.addEventListener('click', forward);
+  back.addEventListener('click', () => goTo(cur - 1, true));
+  // Projektart gewählt → gleich weiter
+  steps[0].addEventListener('change', (e) => { if (e.target.name === 'projekttyp') setTimeout(forward, 180); });
+  // Enter in einem Feld vor dem letzten Schritt: weiter statt absenden
+  form.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && cur < steps.length - 1 && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); forward(); }
+  });
+  nav.hidden = false;
+  prog.hidden = false;
+  goTo(0, false);
+  return {
+    goTo,
+    reset: () => goTo(0, false),
+    stepOf: (el) => Math.max(0, steps.findIndex((s) => s.contains(el))),
+  };
+})();
 
 function sendForm(e) {
   e.preventDefault();
@@ -203,7 +255,11 @@ function sendForm(e) {
   if (form.elements['website'] && form.elements['website'].value) { form.reset(); return; }
 
   /* Browser-Validierung mit Hinweis */
-  if (!form.checkValidity()) { form.reportValidity(); return; }
+  if (!form.checkValidity()) {
+    const bad = form.querySelector('input:invalid, select:invalid, textarea:invalid');
+    if (bad) { FormSteps.goTo(FormSteps.stepOf(bad)); bad.reportValidity(); } else form.reportValidity();
+    return;
+  }
 
   /* Spam-Schutz 2: Pause zwischen zwei Anfragen */
   let last = 0; try { last = +sessionStorage.getItem('adf24_last_send') || 0; } catch (_) {}
@@ -232,7 +288,7 @@ function sendForm(e) {
       btn.innerHTML = tr('form_sent_btn','✓ Sent');
       btn.style.background = '#1a6b3a';
       setStatus(st, 'ok', tr('form_ok','Thank you!'));
-      setTimeout(() => { btn.disabled = false; btn.innerHTML = SEND_LABEL; btn.style.background = ''; form.reset(); }, 3500);
+      setTimeout(() => { btn.disabled = false; btn.innerHTML = SEND_LABEL; btn.style.background = ''; form.reset(); FormSteps.reset(); }, 3500);
     })
     .catch((err) => {
       console.error('EmailJS Fehler:', err);

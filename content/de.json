@@ -486,5 +486,36 @@
       "Shanike",
       "Model"
     ]
-  ]
+  ],
+  "step_q1": "Was für ein Projekt planst du?",
+  "step_q2": "Welches Budget und welchen Zeitrahmen hast du im Kopf?",
+  "step_q3": "In welcher Branche bist du unterwegs?",
+  "step_q4": "Wie erreichen wir dich?",
+  "f_timeframe": "Zeitrahmen (optional)",
+  "timeframe_opts": [
+    "So schnell wie möglich",
+    "Innerhalb 1 Monat",
+    "In 1–3 Monaten",
+    "Später / noch offen"
+  ],
+  "f_industry": "Branche (optional)",
+  "industry_opts": [
+    "Gastronomie",
+    "Gesundheit & Praxis",
+    "Handwerk & Bau",
+    "Immobilien",
+    "Beauty & Lifestyle",
+    "Startup / Tech",
+    "Event & Musik",
+    "Handel / E-Commerce",
+    "Andere"
+  ],
+  "f_company": "Firma (optional)",
+  "ph_company": "z. B. Café Rosso",
+  "btn_next": "Weiter",
+  "btn_back": "Zurück",
+  "step_of": "Schritt {n} von {m}",
+  "lbl_timeframe": "Zeitrahmen",
+  "lbl_industry": "Branche",
+  "lbl_company": "Firma"
 }
