@@ -18,6 +18,7 @@ function req(method, body, headers = {}) {
 const FIELDS = { vorname: 'Anna', nachname: 'Muster', email: 'anna@example.ch', projekttyp: 'Imagefilm', nachricht: 'Hallo', budget: 'CHF 2\'000–5\'000', website: '' };
 
 function setup({ human = true, mailOk = true, crmStatus = 200 } = {}) {
+  handler._resetLimit();
   const calls = [];
   global.fetch = async (url, opts) => {
     calls.push({ url, opts });
@@ -119,4 +120,19 @@ test('andere Methoden: 405', async () => {
   setup();
   const r = fakeRes(); await handler(req('PUT'), r);
   assert.strictEqual(r.statusCode, 405);
+});
+
+test('mehr als 5 Anfragen pro IP in 10 Minuten: 429', async () => {
+  const calls = setup();
+  for (let i = 0; i < 5; i++) {
+    const r = fakeRes(); await handler(req('POST', { token: 'ok', fields: FIELDS }), r);
+    assert.strictEqual(r.statusCode, 200);
+  }
+  const before = calls.length;
+  const r = fakeRes(); await handler(req('POST', { token: 'ok', fields: FIELDS }), r);
+  assert.strictEqual(r.statusCode, 429);
+  assert.strictEqual(r.headers['retry-after'], '600');
+  assert.strictEqual(calls.length, before, 'kein Turnstile-, Mail- oder CRM-Aufruf mehr');
+  const other = fakeRes(); await handler(req('POST', { token: 'ok', fields: FIELDS }, { 'x-forwarded-for': '198.51.100.9' }), other);
+  assert.strictEqual(other.statusCode, 200, 'andere IP nicht betroffen');
 });
