@@ -1961,3 +1961,15 @@ a.srv-item { color: inherit; text-decoration: none; }
 .endscreen-replay:focus-visible, .endscreen-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .pj-video--v .endscreen-q { font-size: 1.9rem; }
 @media (prefers-reduced-motion: reduce) { .endscreen, .endscreen-q { transition: none; } }
+
+/* ── Anfrage-Buttons auf Projekt- und Leistungsseiten (Formular + WhatsApp mit Vorlage) ── */
+.cta-pair { display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
+.lp-cta-top { margin-top: 2rem; }
+.lp-reply { font-size: .78rem; color: var(--bone-60); letter-spacing: .04em; }
+.lp-faq { margin: 0 0 1rem; }
+h2.lp-h + .lp-faq { margin-top: 0; }
+@media (max-width: 520px) {
+  .cta-pair .cta-primary, .cta-pair .cta-ghost { flex: 1 1 100%; justify-content: center; }
+}
+/* Lange Wörter («Unternehmensvideo») sprengen sonst auf dem Handy den Rand */
+.pj-title { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }

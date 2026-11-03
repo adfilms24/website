@@ -11,6 +11,7 @@ Die erzeugten HTML-Seiten (index.html, en/, projekte/ ...) werden mit ins Git ei
 """
 import json, os, re, sys, datetime
 import html as htmllib
+from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -269,6 +270,20 @@ def breadcrumb_ld(l, items):
     return '<script type="application/ld+json">' + esc_json({"@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": DOMAIN + u} for i, (n, u) in enumerate(items)]}) + '</script>'
 
+WA_NUMBER = "41767649300"
+def contact_href(l, sv=None):
+    """Link zum Formular. Mit ?typ=N ist die Projektart schon gewählt und das Formular startet bei Schritt 2."""
+    return home_url(l) + (f'?typ={sv["form_type"]}' if sv and "form_type" in sv else "") + "#contact"
+def cta_buttons(l, t, sv=None):
+    """Anfrage-Button + WhatsApp mit vorausgefülltem Text (Leistung im Text, damit klar ist, worum es geht)."""
+    topic = sv["nav"][l] if sv else t["pj_cta"]
+    wa = f'https://wa.me/{WA_NUMBER}?text=' + quote(t["wa_text"].replace("{x}", topic))
+    return (f'<a href="{contact_href(l, sv)}" class="cta-primary">{ARROW} {t["pj_cta"]}</a>'
+            f'<a href="{wa}" class="cta-ghost cta-wa" target="_blank" rel="noopener">{t["wa_cta"]}</a>')
+def faq_ld(pairs):
+    return '<script type="application/ld+json">' + esc_json({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in pairs]}) + '</script>'
+
 def legal_wrap(l, urls, body):
     t = TEXT[l]
     return f'''<div class="wrap">
@@ -346,7 +361,7 @@ def build_projects():
     </div>
     <div class="pj-cta">
       <h2>{t["pj_cta_h"]}</h2>
-      <a href="{home_url(l)}#contact" class="cta-primary">{ARROW} {t["pj_cta"]}</a>
+      <div class="cta-pair">{cta_buttons(l, t, sv)}</div>
     </div>
     {related}
     <footer class="page-foot pj-foot">
@@ -372,6 +387,9 @@ def build_services():
             inc = "".join(f"<li>{x}</li>" for x in s["includes"][l])
             who = "".join(f"<li>{x}</li>" for x in s["for"][l])
             steps = "".join(f'<li><span class="lp-step-n">0{i+1}</span><strong>{a}</strong><span>{b}</span></li>' for i, (a, b) in enumerate(s.get("steps", {}).get(l, t["lp_steps"])))
+            pairs = s.get("faq", {}).get(l, [])
+            faq = (f'<h2 class="lp-h">{t["lp_faq"]}</h2>\n    <div class="faq-list lp-faq">' + "".join(
+                f'<details class="faq-item"><summary>{q}</summary><p>{a}</p></details>' for q, a in pairs) + '</div>') if pairs else ""
             more = " ".join(f'<a href="{service_url(l, o)}">{o["nav"][l]}</a>' for o in SERVICES if o is not s)
             ld = '<script type="application/ld+json">' + esc_json({
                 "@context": "https://schema.org", "@type": "Service", "name": re.sub(r"&amp;", "&", s["h1"][l]),
@@ -388,6 +406,7 @@ def build_services():
     <p class="s-meta">{t["lp_meta"]}</p>
     <h1 class="h-display pj-title">{s["h1"][l]}</h1>
     <p class="lp-intro">{s["intro"][l]}</p>
+    <div class="cta-pair lp-cta-top">{cta_buttons(l, t, s)}<span class="lp-reply">{t["lp_reply"]}</span></div>
     <div class="lp-cols">
       <div><h2 class="lp-h">{t["lp_includes"]}</h2><ul class="lp-list">{inc}</ul></div>
       <div><h2 class="lp-h">{t["lp_for"]}</h2><ul class="lp-list">{who}</ul></div>
@@ -396,15 +415,17 @@ def build_services():
     <h2 class="lp-h">{t["lp_process"]}</h2>
     <ol class="lp-steps">{steps}</ol>
     <p class="lp-promise">{s.get("promise", {}).get(l, t["lp_promise"])}</p>
+    {faq}
     <div class="pj-cta">
       <h2>{t["lp_cta_h"]}</h2>
-      <a href="{home_url(l)}#contact" class="cta-primary">{ARROW} {t["pj_cta"]}</a>
+      <div class="cta-pair">{cta_buttons(l, t, s)}</div>
     </div>
     <p class="srv-more lp-more"><span>{t["lp_more"]}</span> {more}</p>
     <footer class="page-foot pj-foot">
       {footer_links(l)}
     </footer>
   </main>'''
+            if pairs: ld += faq_ld(pairs)
             ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (t["n_services"], home_url(l) + "#services"), (re.sub("&amp;", "&", s["h1"][l]), urls[l])])
             html = page_shell(l, urls, s["title"][l], s["meta"][l], body, extra_head=ld, body_class="page-project", css="style.css", og_image=og_for(s["slug"]["de"]))
             write(urls[l].lstrip("/"), html)
@@ -444,8 +465,31 @@ def build_sitemap():
     for k in LEGAL: out += entry({l: LEGAL[k][l] for l in LANGS}, "0.2", "yearly")
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + out + '</urlset>\n')
 
+def build_video_sitemap():
+    """Eigene Video-Sitemap für Google: nur die Projektseiten (dort ist das Video der Hauptinhalt = «Watch Page»)."""
+    def x(v): return htmllib.escape(str(v), quote=True)
+    def secs(d):
+        m = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", d or "")
+        return (int(m[1] or 0) * 3600 + int(m[2] or 0) * 60 + int(m[3] or 0)) if m else None
+    out = ""
+    for p in PROJECTS:
+        vid = has_video(p)
+        if not (p.get("published") and vid): continue
+        poster = poster_of(p)
+        for l in LANGS:
+            sec = secs(p.get("duration"))
+            out += (f'  <url>\n    <loc>{DOMAIN}{project_url(l, p["slug"])}</loc>\n    <video:video>\n'
+                    f'      <video:thumbnail_loc>{x(DOMAIN + poster if poster else DOMAIN + "/og-image.png")}</video:thumbnail_loc>\n'
+                    f'      <video:title>{x(p.get("seo", {}).get(l) or p["title"][l])}</video:title>\n'
+                    f'      <video:description>{x(p["desc"][l])}</video:description>\n'
+                    f'      <video:content_loc>{x(MEDIA + vid)}</video:content_loc>\n'
+                    + (f'      <video:duration>{sec}</video:duration>\n' if sec else "")
+                    + (f'      <video:publication_date>{p["uploadDate"]}</video:publication_date>\n' if p.get("uploadDate") else "")
+                    + f'      <video:family_friendly>yes</video:family_friendly>\n    </video:video>\n  </url>\n')
+    write("video-sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + out + '</urlset>\n')
+
 if __name__ == "__main__":
     for l in LANGS: build_home(l)
-    build_legal(); build_projects(); build_services(); build_404(); build_sitemap()
+    build_legal(); build_projects(); build_services(); build_404(); build_sitemap(); build_video_sitemap()
     n_pub = sum(1 for p in PROJECTS if p.get("published"))
     print(f"OK: 2 Startseiten, {n_pub} veröffentlichte + {len(PROJECTS)-n_pub} Entwurf-Projekte (je DE/EN), {len(SERVICES)} Leistungsseiten, Rechtstexte, 404, Sitemap")

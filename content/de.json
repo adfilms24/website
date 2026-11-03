@@ -311,6 +311,10 @@
   "lp_example": "Beispiel aus unserem Portfolio",
   "lp_more": "Weitere Leistungen",
   "lp_cta_h": "Projekt besprechen?",
+  "lp_faq": "Häufige Fragen",
+  "wa_cta": "Per WhatsApp fragen",
+  "wa_text": "Hallo A.D.Films24, ich interessiere mich für: {x}. Können wir kurz sprechen?",
+  "lp_reply": "Antwort in der Regel innerhalb von 24 Stunden.",
   "lp_promise": "Bisher gab es keine einzige Revisionsanfrage. Weil wir vor dem Dreh klären, was das Video leisten soll.",
   "lp_steps": [
     [

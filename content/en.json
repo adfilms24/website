@@ -311,6 +311,10 @@
   "lp_example": "Example from our portfolio",
   "lp_more": "More services",
   "lp_cta_h": "Planning a project?",
+  "lp_faq": "Frequently asked questions",
+  "wa_cta": "Ask on WhatsApp",
+  "wa_text": "Hi A.D.Films24, I'm interested in: {x}. Could we have a quick chat?",
+  "lp_reply": "We usually reply within 24 hours.",
   "lp_promise": "So far, not a single revision request. Because we settle what the video needs to achieve before the shoot.",
   "lp_steps": [
     [
