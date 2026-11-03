@@ -1677,6 +1677,8 @@ footer {
 .f-group input:focus-visible, .f-group select:focus-visible, .f-group textarea:focus-visible { outline-offset: 0; }
 #main:focus { outline: none; }
 .hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.f-check { margin-top: .75rem; }
+.f-check:empty { display: none; }
 .f-status { font-size: .8rem; line-height: 1.6; min-height: 1.4em; color: var(--bone-60); }
 .f-status.ok { color: #7fd1a0; }
 .f-status.err { color: #ff9c8a; }
