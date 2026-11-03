@@ -32,10 +32,10 @@
   "scroll": "Scroll",
   "hero_eyebrow": "Video production for businesses · Zurich",
   "hero_sr": "Video production for businesses in Zurich",
-  "hero_desc": "Videos for businesses<br>that land on the first cut.",
+  "hero_desc": "<strong class=\"hero-lead\">Cinema quality that wins customers – without endless revision rounds.</strong>High-end video production for Zurich SMEs, restaurants and brands. From concept to finished campaign asset – on time, transparent and straightforward.",
   "cta_portfolio": "Portfolio",
   "showreel_play_aria": "Play showreel",
-  "cta_showreel": "Showreel",
+  "cta_showreel": "Watch showreel",
   "cta_inquire": "Request a project",
   "cta_youtube": "YouTube channel",
   "c1_label": "Projects delivered",
@@ -59,39 +59,45 @@
   "gear": [
     [
       "Sony FX3",
-      "Cinema camera"
+      "Cinema camera",
+      "Netflix-approved cinema look and true colours that make your business look premium."
     ],
     [
-      "Gimbal Ronin RS5",
-      "Stabilisation"
+      "Gimbal DJI Ronin RS5",
+      "Stabilisation",
+      "Smooth, dynamic camera moves like in the cinema – even with fast action on location."
     ],
     [
       "Sony 24-70mm GM II",
-      "Main lens"
+      "Lens",
+      "Crisp detail and atmospheric background blur for a first-class premium look."
     ],
     [
-      "Drone",
-      "Aerial footage"
+      "Drone (A1/A3 licensed CH)",
+      "Aerial footage",
+      "Spectacular aerial shots for scale, perspective and striking opening scenes."
+    ],
+    [
+      "Atomos Ninja V",
+      "Live monitoring",
+      "Full control on set: you see the image right there on the monitor."
+    ],
+    [
+      "DaVinci Resolve Studio",
+      "Color grading",
+      "Professional colour grading to industry standards for consistent colours on every screen."
     ],
     [
       "Microphone",
       "Audio"
     ],
     [
-      "MacBook Pro",
-      "Workstation"
-    ],
-    [
-      "DaVinci Resolve Studio / Adobe Premiere Pro",
-      "Color grading"
-    ],
-    [
       "Aperture Light & Dome",
       "Lighting"
     ],
     [
-      "Atomos Ninja V",
-      "Monitor"
+      "MacBook Pro / Adobe Premiere Pro",
+      "Editing"
     ]
   ],
   "services_meta": "Services",
@@ -177,25 +183,14 @@
     },
     {
       "num": "08",
-      "name": "SOCIAL ADS",
+      "name": "SOCIAL ADS &amp; CAMPAIGN ASSETS",
       "sub": "Campaigns That Bring Enquiries",
       "tags": [
-        "Meta & TikTok",
+        "Video cuts for Meta & TikTok",
         "LinkedIn",
-        "Tracking"
+        "Format optimisation"
       ],
       "link": "social-media-werbung-zuerich"
-    },
-    {
-      "num": "09",
-      "name": "DIGITAL SYSTEMS",
-      "sub": "Optimisation & Automation",
-      "tags": [
-        "Website",
-        "CRM",
-        "Automation"
-      ],
-      "link": "digitale-systeme-kmu-zuerich"
     }
   ],
   "clients_meta": "Clients",
@@ -527,5 +522,6 @@
   "step_of": "Step {n} of {m}",
   "lbl_timeframe": "Timing",
   "lbl_industry": "Industry",
-  "lbl_company": "Company"
+  "lbl_company": "Company",
+  "f_trust": "No sales pressure. We review your idea and send you a first realistic assessment with a ballpark quote within 24 hours."
 }

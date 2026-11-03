@@ -26,10 +26,10 @@
   "scroll": "Scroll",
   "hero_eyebrow": "Videoproduktion für Unternehmen · Zürich",
   "hero_sr": "Videoproduktion für Unternehmen in Zürich",
-  "hero_desc": "Videos für Unternehmen,<br>die beim ersten Schnitt sitzen.",
+  "hero_desc": "<strong class=\"hero-lead\">Cinema-Qualität, die Kunden gewinnt – ohne endlose Korrekturschleifen.</strong>High-End-Videoproduktion für Zürcher KMU, Gastronomie und Brands. Von der Konzeption bis zum fertigen Kampagnen-Asset – termingerecht, transparent und ohne Umwege.",
   "cta_portfolio": "Portfolio",
   "showreel_play_aria": "Showreel abspielen",
-  "cta_showreel": "Showreel",
+  "cta_showreel": "Showreel ansehen",
   "cta_inquire": "Projekt anfragen",
   "cta_youtube": "YouTube Kanal",
   "c1_label": "Projekte realisiert",
@@ -117,39 +117,45 @@
   "gear": [
     [
       "Sony FX3",
-      "Cinema-Kamera"
+      "Cinema-Kamera",
+      "Netflix-zertifizierter Kinolook und echte Farben, die dein Unternehmen hochwertig wirken lassen."
     ],
     [
-      "Gimbal Ronin RS5",
-      "Stabilisierung"
+      "Gimbal DJI Ronin RS5",
+      "Stabilisierung",
+      "Ruhige, dynamische Kamerafahrten wie im Kino – selbst bei schnellen Bewegungen vor Ort."
     ],
     [
       "Sony 24-70mm GM II",
-      "Hauptobjektiv"
+      "Objektiv",
+      "Gestochen scharfe Details und stimmungsvolle Unschärfe für einen erstklassigen Premium-Look."
     ],
     [
-      "Drohne",
-      "Luftaufnahmen"
+      "Drohne (A1/A3 CH-lizenziert)",
+      "Luftaufnahmen",
+      "Spektakuläre Luftaufnahmen für Weite, Perspektive und eindrucksvolle Eröffnungsszenen."
+    ],
+    [
+      "Atomos Ninja V",
+      "Live-Monitoring",
+      "Volle Kontrolle am Set: Du siehst das Bild direkt vor Ort auf dem Monitor."
+    ],
+    [
+      "DaVinci Resolve Studio",
+      "Color Grading",
+      "Professionelles Color Grading nach Industrie-Standards für konsistente Farben auf jedem Bildschirm."
     ],
     [
       "Mikrofon",
       "Audio"
     ],
     [
-      "MacBook Pro",
-      "Workstation"
-    ],
-    [
-      "DaVinci Resolve Studio / Adobe Premiere Pro",
-      "Color Grading"
-    ],
-    [
       "Aperture Light & Dome",
       "Lichtsystem"
     ],
     [
-      "Atomos Ninja V",
-      "Monitor"
+      "MacBook Pro / Adobe Premiere Pro",
+      "Schnitt"
     ]
   ],
   "services": [
@@ -232,25 +238,14 @@
     },
     {
       "num": "08",
-      "name": "SOCIAL ADS",
+      "name": "SOCIAL ADS &amp; KAMPAGNEN-ASSETS",
       "sub": "Werbekampagnen, die Anfragen bringen",
       "tags": [
-        "Meta & TikTok",
+        "Video-Cuts für Meta & TikTok",
         "LinkedIn",
-        "Tracking"
+        "Format-Optimierung"
       ],
       "link": "social-media-werbung-zuerich"
-    },
-    {
-      "num": "09",
-      "name": "DIGITALE SYSTEME",
-      "sub": "Optimierung & Automatisierung",
-      "tags": [
-        "Website",
-        "CRM",
-        "Automation"
-      ],
-      "link": "digitale-systeme-kmu-zuerich"
     }
   ],
   "menu_close": "Menü schliessen",
@@ -527,5 +522,6 @@
   "step_of": "Schritt {n} von {m}",
   "lbl_timeframe": "Zeitrahmen",
   "lbl_industry": "Branche",
-  "lbl_company": "Firma"
+  "lbl_company": "Firma",
+  "f_trust": "Kein Verkaufsdruck. Wir prüfen dein Konzept und schicken dir innerhalb von 24 Stunden eine erste realistische Einschätzung samt Richtofferte."
 }
