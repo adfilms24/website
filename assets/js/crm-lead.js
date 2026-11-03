@@ -1,6 +1,6 @@
-/* crm-lead.js — schickt jede Website-Anfrage zusätzlich als Lead ins CRM.
- * Die bestehende EmailJS-Logik in main.js bleibt unverändert; dieses Skript lauscht nur mit.
- * Einbinden: <script src="/assets/js/crm-lead.js" defer></script> direkt nach main.js.
+/* crm-lead.js — legt eine Website-Anfrage als Lead im CRM an, wenn das Formular über EmailJS sendet.
+ * Läuft der unsichtbare Spam-Check (api/anfrage.js), speichert der Server die Anfrage selbst und dieses Skript bleibt still.
+ * main.js ruft window.adf24CrmLead(form) auf. Einbinden: <script src="/assets/js/crm-lead.js" defer></script> nach main.js.
  * Der Key ist der öffentliche Supabase-Key: er darf nur die Funktionen submit_inquiry und submit_lead aufrufen.
  * submit_inquiry nimmt Budget, Zeitrahmen, Branche und die Herkunft (attribution.js) mit; fehlt sie in der
  * Datenbank noch, geht die Anfrage wie bisher über submit_lead. */
@@ -25,7 +25,7 @@
     try { return JSON.parse(sessionStorage.getItem('adf24_attr') || '{}') || {}; } catch (e) { return {}; }
   }
 
-  form.addEventListener('submit', function () {
+  window.adf24CrmLead = function () {
     try {
       // Dieselben Vorprüfungen wie main.js, damit nur echte, gültige Anfragen ins CRM gehen
       if (!form.checkValidity()) return;
@@ -80,5 +80,5 @@
         .then(function (res) { if (res.status === 404) return post('submit_lead', legacy); })
         .catch(function () { /* Die Mail über EmailJS ist der Hauptweg; CRM-Fehler bleiben still */ });
     } catch (e) { /* nie das Formular stören */ }
-  });
+  };
 })();

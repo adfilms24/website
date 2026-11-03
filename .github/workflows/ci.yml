@@ -25,3 +25,8 @@ jobs:
           fi
       - name: Interne Links und Assets
         run: python3 tests/check_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Formular-Funktion (api/anfrage.js)
+        run: node --test tests/api-anfrage.test.js
