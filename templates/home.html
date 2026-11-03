@@ -60,7 +60,7 @@
 
 <!-- ── CURSOR ─────────────────────────── -->
 <div id="dot"></div>
-<div id="ring"></div>
+<div id="ring"><span class="ring-label" aria-hidden="true">Play</span></div>
 
 <!-- ── MOBILE NAV ─────────────────────── -->
 <nav id="mnav" inert aria-label="{{menu_aria}}">
@@ -178,6 +178,21 @@
 <div class="intro-band">
   {{ticker}}
 </div>
+
+<!-- Scroll-Film: Video läuft mit dem Scrollen (nur Desktop; sonst Standbild) -->
+<section class="scrub" id="scrub" aria-label="{{scrub_aria}}">
+  <div class="scrub-sticky">
+    <video class="scrub-video" muted playsinline preload="none" poster="/assets/video/scrub-alpen.webp" data-src="/assets/video/scrub-alpen.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="scrub-shade"></div>
+    <p class="scrub-words">
+      <span class="scrub-word">{{scrub_w1}}</span>
+      <span class="scrub-word">{{scrub_w2}}</span>
+      <span class="scrub-word">{{scrub_w3}}</span>
+    </p>
+    <div class="scrub-meta">{{scrub_meta}}</div>
+    <div class="scrub-bar" aria-hidden="true"><span></span></div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════
      PORTFOLIO

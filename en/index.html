@@ -56,7 +56,7 @@
 }
 </script>
 <link rel="preload" href="/assets/video/showreel-poster.webp?v=4baac764" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/assets/css/style.css?v=e3df112a">
+<link rel="stylesheet" href="/assets/css/style.css?v=911ce10c">
 <noscript><style>[data-sr]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -64,7 +64,7 @@
 
 <!-- ── CURSOR ─────────────────────────── -->
 <div id="dot"></div>
-<div id="ring"></div>
+<div id="ring"><span class="ring-label" aria-hidden="true">Play</span></div>
 
 <!-- ── MOBILE NAV ─────────────────────── -->
 <nav id="mnav" inert aria-label="Main menu">
@@ -201,6 +201,21 @@
   </div>
 </div>
 
+<!-- Scroll-Film: Video läuft mit dem Scrollen (nur Desktop; sonst Standbild) -->
+<section class="scrub" id="scrub" aria-label="Clip from the showreel">
+  <div class="scrub-sticky">
+    <video class="scrub-video" muted playsinline preload="none" poster="/assets/video/scrub-alpen.webp?v=406504aa" data-src="/assets/video/scrub-alpen.mp4?v=533242bc" aria-hidden="true" tabindex="-1"></video>
+    <div class="scrub-shade"></div>
+    <p class="scrub-words">
+      <span class="scrub-word">Light.</span>
+      <span class="scrub-word">Motion.</span>
+      <span class="scrub-word">Story.</span>
+    </p>
+    <div class="scrub-meta">From the 2026 showreel · scroll</div>
+    <div class="scrub-bar" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════════════
      PORTFOLIO
 ══════════════════════════════════════════ -->
@@ -218,7 +233,7 @@
 
     <div class="pf-filters" role="group" aria-label="Filter projects" data-sr="u" style="margin-bottom:1.5rem"><button type="button" class="pf-btn active" data-f="all">All</button><button type="button" class="pf-btn" data-f="showreel">Showreel</button><button type="button" class="pf-btn" data-f="events">Events</button><button type="button" class="pf-btn" data-f="food">Food & hospitality</button><button type="button" class="pf-btn" data-f="fitness">Fitness</button><button type="button" class="pf-btn" data-f="automotive">Automotive</button><button type="button" class="pf-btn" data-f="commercial">Commercial</button><button type="button" class="pf-btn" data-f="social">Social media</button></div>
     <div class="pf-mosaic" data-sr="u" data-d="2">
-      <a class="pf-cell featured" href="/en/projects/showreel-2026.html" data-size="xl" data-cat="showreel" aria-label="SHOWREEL 2026 — Showreel · 2026">
+      <a class="pf-cell featured" href="/en/projects/showreel-2026.html" data-size="xl" data-cat="showreel" data-preview="/assets/video/previews/showreel-2026.mp4?v=0c9f00a6" aria-label="SHOWREEL 2026 — Showreel · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/showreel-poster.webp?v=4baac764')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -226,7 +241,7 @@
           <div class="pf-title">SHOWREEL 2026</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/thizzy-showcase-zuerich.html" data-size="tall" data-cat="events" aria-label="THIZZY — SHOWCASE @ VIOR ZURICH — Events · 2026">
+      <a class="pf-cell featured" href="/en/projects/thizzy-showcase-zuerich.html" data-size="tall" data-cat="events" data-preview="/assets/video/previews/thizzy-showcase-zuerich.mp4?v=cc16dd2d" aria-label="THIZZY — SHOWCASE @ VIOR ZURICH — Events · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/thizzy-showcase-zuerich.webp?v=4b574235')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -234,7 +249,7 @@
           <div class="pf-title">THIZZY — SHOWCASE @ VIOR ZURICH</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/loco-birria.html" data-size="wide" data-cat="food" aria-label="LOCO BIRRIÁ — RESTAURANT CONTENT — Food & hospitality · 2026">
+      <a class="pf-cell featured" href="/en/projects/loco-birria.html" data-size="wide" data-cat="food" data-preview="/assets/video/previews/loco-birria.mp4?v=1e38096b" aria-label="LOCO BIRRIÁ — RESTAURANT CONTENT — Food & hospitality · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/loco-birria.webp?v=ee245982')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -242,7 +257,7 @@
           <div class="pf-title">LOCO BIRRIÁ — RESTAURANT CONTENT</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/rooftop-sportclub.html" data-size="wide" data-cat="fitness" aria-label="ROOFTOP SPORTCLUB — BRAND FILM — Fitness · 2026">
+      <a class="pf-cell featured" href="/en/projects/rooftop-sportclub.html" data-size="wide" data-cat="fitness" data-preview="/assets/video/previews/rooftop-sportclub.mp4?v=1858667d" aria-label="ROOFTOP SPORTCLUB — BRAND FILM — Fitness · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/rooftop-sportclub.webp?v=3c6b2c30')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -250,7 +265,7 @@
           <div class="pf-title">ROOFTOP SPORTCLUB — BRAND FILM</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/sushi-restaurant-zuerich.html" data-size="wide" data-cat="food" aria-label="SUSHI RESTAURANT ZURICH — KITCHEN FILM — Food & hospitality · 2026">
+      <a class="pf-cell featured" href="/en/projects/sushi-restaurant-zuerich.html" data-size="wide" data-cat="food" data-preview="/assets/video/previews/sushi-restaurant-zuerich.mp4?v=5b75bb57" aria-label="SUSHI RESTAURANT ZURICH — KITCHEN FILM — Food & hospitality · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/sushi-restaurant-zuerich.webp?v=68a2deae')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -258,7 +273,7 @@
           <div class="pf-title">SUSHI RESTAURANT ZURICH — KITCHEN FILM</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/drivecab.html" data-size="wide" data-cat="automotive" aria-label="DRIVECAB — CHAUFFEUR SERVICE — Automotive · 2026">
+      <a class="pf-cell featured" href="/en/projects/drivecab.html" data-size="wide" data-cat="automotive" data-preview="/assets/video/previews/drivecab.mp4?v=47bf18fe" aria-label="DRIVECAB — CHAUFFEUR SERVICE — Automotive · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/drivecab.webp?v=1f985bbe')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -266,7 +281,7 @@
           <div class="pf-title">DRIVECAB — CHAUFFEUR SERVICE</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/phunnid.html" data-size="xl" data-cat="commercial" aria-label="PHUNNID — BRAND SHOOTING — Commercial · 2026">
+      <a class="pf-cell featured" href="/en/projects/phunnid.html" data-size="xl" data-cat="commercial" data-preview="/assets/video/previews/phunnid.mp4?v=dba798f6" aria-label="PHUNNID — BRAND SHOOTING — Commercial · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/phunnid.webp?v=c095d9cc')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -274,7 +289,7 @@
           <div class="pf-title">PHUNNID — BRAND SHOOTING</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/social-media.html" data-size="tall" data-cat="social" aria-label="BADRI — PERSONAL TRAINING — Social media · 2026">
+      <a class="pf-cell featured" href="/en/projects/social-media.html" data-size="tall" data-cat="social" data-preview="/assets/video/previews/social-media.mp4?v=7fb5465a" aria-label="BADRI — PERSONAL TRAINING — Social media · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/social-media.webp?v=52798999')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -282,7 +297,7 @@
           <div class="pf-title">BADRI — PERSONAL TRAINING</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/events.html" data-size="wide" data-cat="events" aria-label="ATTAR ONE — EVENT — Events · 2025">
+      <a class="pf-cell featured" href="/en/projects/events.html" data-size="wide" data-cat="events" data-preview="/assets/video/previews/events.mp4?v=0f3a241d" aria-label="ATTAR ONE — EVENT — Events · 2025">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/events.webp?v=0ac04bff')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -290,7 +305,7 @@
           <div class="pf-title">ATTAR ONE — EVENT</div>
         </div>
       </a>
-      <a class="pf-cell featured" href="/en/projects/commercial.html" data-size="wide" data-cat="commercial" aria-label="SHANIKE — MODEL COMMERCIAL — Commercial · 2026">
+      <a class="pf-cell featured" href="/en/projects/commercial.html" data-size="wide" data-cat="commercial" data-preview="/assets/video/previews/commercial.mp4?v=515e85ae" aria-label="SHANIKE — MODEL COMMERCIAL — Commercial · 2026">
         <div class="pf-cell-bg has-img" style="background-image:linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('/assets/video/projects/commercial.webp?v=a1d95ae8')"></div>
         <div class="pf-play"><svg width="22" height="24" viewBox="0 0 16 18" fill="none"><path d="M2 2L14 9L2 16V2Z" fill="#EDE9E0"/></svg></div>
         <div class="pf-overlay">
@@ -880,7 +895,7 @@
 <script type="application/json" id="i18n">{"menu_open": "Open menu", "menu_close": "Close menu", "showreel_title": "Showreel 2026", "showreel_desc": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.", "showreel_client": "A.D.Films24", "showreel_camera": "Sony FX3", "showreel_year": "2026", "form_wait": "Please wait {s} more seconds before sending again.", "form_sending": "… Sending", "form_sending_status": "Sending your request …", "form_sent_btn": "✓ &nbsp;Sent!", "form_ok": "Thank you! Your request has arrived. We'll get back to you as soon as possible.", "form_fail": "Sorry, sending didn't work. Please try again or write directly to <a href=\"mailto:{mail}\">{mail}<\/a> or via <a href=\"https://wa.me/41767649300\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>.", "lbl_budget": "Budget", "lbl_date": "Preferred date", "lbl_source": "Found via", "lbl_phone": "Phone", "lbl_timeframe": "Timing", "lbl_industry": "Industry", "lbl_company": "Company", "step_of": "Step {n} of {m}", "mail": "info@adfilms24.ch", "lang": "en", "showreel_src": "/assets/video/showreel.mp4?v=d38a9fe7", "showreel_poster": "/assets/video/showreel-poster.webp?v=4baac764"}</script>
 <script defer src="/assets/vendor/emailjs.min.js?v=27113873"></script>
 <script defer src="/assets/js/attribution.js?v=cbad93ce"></script>
-<script defer src="/assets/js/main.js?v=dd401e4a"></script>
+<script defer src="/assets/js/main.js?v=3317b966"></script>
 <script defer src="/assets/js/crm-lead.js?v=948a5ba3"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

@@ -329,3 +329,80 @@ document.querySelector('.contact-form').addEventListener('submit', sendForm);
     });
   });
 })();
+
+/* ── MOTION: Play-Cursor, Hover-Clips im Portfolio, Scroll-Film ───
+   Alles nur mit Maus, ohne «Bewegung reduzieren» und ohne Datensparmodus. Videos laden erst bei Bedarf. */
+const LIGHT_DATA = (() => { const c = navigator.connection || {}; return !c.saveData && !/(^|-)2g$/.test(c.effectiveType || ''); })();
+
+(function playCursor() {
+  const ring = document.getElementById('ring');
+  if (!FINE_POINTER || !ring) return;
+  document.querySelectorAll('.pf-cell.featured, .pf-cell[data-preview], #reelBtn, #reelBtn2').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('play'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('play'));
+  });
+})();
+
+(function hoverClips() {
+  if (!FINE_POINTER || REDUCED || !LIGHT_DATA) return;
+  document.querySelectorAll('.pf-cell[data-preview]').forEach(cell => {
+    let v = null, inside = false;
+    cell.addEventListener('mouseenter', () => {
+      inside = true;
+      if (!v) {
+        v = document.createElement('video');
+        v.className = 'pf-preview';
+        v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+        v.setAttribute('aria-hidden', 'true'); v.tabIndex = -1;
+        v.src = cell.dataset.preview;
+        cell.querySelector('.pf-cell-bg').after(v);
+      }
+      v.play().then(() => { if (inside) cell.classList.add('previewing'); else v.pause(); }).catch(() => {});
+    });
+    cell.addEventListener('mouseleave', () => {
+      inside = false;
+      cell.classList.remove('previewing');
+      if (v) setTimeout(() => { if (!inside) v.pause(); }, 600);
+    });
+  });
+})();
+
+(function scrollFilm() {
+  const sec = document.getElementById('scrub');
+  if (!sec) return;
+  const v = sec.querySelector('.scrub-video');
+  const words = sec.querySelectorAll('.scrub-word');
+  const live = window.matchMedia('(min-width: 900px)').matches && !REDUCED && LIGHT_DATA;
+  if (!live) { sec.classList.add('static'); return; }
+
+  let target = 0, cur = 0, raf = 0, dur = 0;
+  const progress = () => {
+    const r = sec.getBoundingClientRect();
+    return Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
+  };
+  function frame() {
+    cur += (target - cur) * 0.14;
+    if (Math.abs(target - cur) < 0.0004) cur = target;
+    sec.style.setProperty('--p', cur.toFixed(4));
+    if (dur && !v.seeking) {
+      const t = Math.min(dur - 0.05, cur * dur);
+      if (Math.abs(v.currentTime - t) > 0.02) v.currentTime = t;
+    }
+    words.forEach((w, i) => w.classList.toggle('on', cur > 0.18 + i * 0.22));
+    raf = cur !== target ? requestAnimationFrame(frame) : 0;
+  }
+  const kick = () => { target = progress(); if (!raf) raf = requestAnimationFrame(frame); };
+
+  // Video erst laden, wenn der Abschnitt näher kommt
+  new IntersectionObserver((entries, obs) => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    v.src = v.dataset.src;
+    v.addEventListener('loadedmetadata', () => { dur = v.duration || 0; kick(); }, { once: true });
+    v.load();
+  }, { rootMargin: '100% 0px' }).observe(sec);
+
+  addEventListener('scroll', kick, { passive: true });
+  addEventListener('resize', kick);
+  kick();
+})();
