@@ -315,6 +315,9 @@ def build_projects():
                     "thumbnailUrl": (DOMAIN + poster) if poster else DOMAIN + "/og-image.png",
                     "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
                     "contentUrl": MEDIA + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
+                # og:video: Facebook/LinkedIn können das Video direkt im Feed zeigen; WhatsApp & iMessage nutzen weiter og:image
+                ld += (f'<meta property="og:video" content="{MEDIA + vid}"><meta property="og:video:secure_url" content="{MEDIA + vid}">'
+                       f'<meta property="og:video:type" content="video/mp4">')
             draft_note = f'<p class="pj-draft">{t["pj_draft"]}</p>' if draft else ""
             # Optional in projects.json: "story": {"de": ["Ausgangslage …", "Umsetzung …", "Ergebnis …"], "en": [...]}
             story = "".join(f'<h2 class="pj-story-h">{h}</h2><p class="pj-story">{txt}</p>' for h, txt in zip(t["pj_story"], p.get("story", {}).get(l, [])))
