@@ -1,0 +1,95 @@
+name: Videos nach R2
+
+# Lädt alle .mp4 aus assets/video nach Cloudflare R2 (Bucket adfilms24-media), ausgeliefert über
+# https://media.adfilms24.ch. Vercel bekommt die Videos nicht mehr mit (.vercelignore), damit nicht
+# jede Website-Version 160 MB Speicher belegt. Läuft, wenn sich Videos oder dieser Workflow ändern,
+# und auf Knopfdruck unter Actions. Löscht nichts in R2.
+#
+# Secrets im Repo (Settings → Secrets and variables → Actions):
+#   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY  (R2-Token mit «Object Read & Write» für adfilms24-media)
+
+on:
+  push:
+    paths:
+      - "assets/video/**"
+      - ".github/workflows/videos-r2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: videos-r2
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    name: Hochladen und prüfen
+    runs-on: ubuntu-latest
+    env:
+      BUCKET: adfilms24-media
+      MEDIA: https://media.adfilms24.ch
+      AWS_DEFAULT_REGION: auto
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Secrets vorhanden
+        run: |
+          missing=""
+          for s in R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY; do
+            [ -n "$(eval echo \${$s:-})" ] || missing="$missing $s"
+          done
+          if [ -n "$missing" ]; then echo "::error::Fehlende Secrets:$missing"; exit 1; fi
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+      - name: Zugang vorbereiten
+        # Leerzeichen und Zeilenumbrüche, die beim Kopieren mit in die Secrets geraten, entfernen
+        run: |
+          trim() { printf %s "$1" | tr -d '[:space:]'; }
+          acct=$(trim "$R2_ACCOUNT_ID"); key=$(trim "$R2_ACCESS_KEY_ID"); secret=$(trim "$R2_SECRET_ACCESS_KEY")
+          # Falls die ganze S3-Adresse (https://<id>.r2.cloudflarestorage.com) eingetragen wurde, nur die ID nehmen
+          acct=$(printf %s "$acct" | sed -E 's#^https?://##; s#\.r2\.cloudflarestorage\.com.*$##; s#/.*$##' | tr 'A-F' 'a-f')
+          if ! printf %s "$acct" | grep -qE '^[0-9a-f]{32}$'; then
+            echo "::error::R2_ACCOUNT_ID sieht nicht wie eine Cloudflare Account ID aus (erwartet 32 Zeichen 0-9/a-f, erhalten ${#acct} Zeichen). Sie steht in Cloudflare unter R2 → Übersicht → Account Details."
+            exit 1
+          fi
+          echo "::add-mask::$acct"; echo "::add-mask::$key"; echo "::add-mask::$secret"
+          if [ "$acct" = "$key" ]; then
+            echo "::error::R2_ACCOUNT_ID enthält dieselbe Zeichenfolge wie R2_ACCESS_KEY_ID. Bitte die Account ID aus Cloudflare (R2 → Übersicht → Account Details) eintragen."; exit 1
+          fi
+          # Gibt es zu dieser Account ID einen R2-Endpunkt? Bei falscher ID schlägt schon die Verbindung fehl.
+          if ! curl -s -o /dev/null --max-time 15 "https://$acct.r2.cloudflarestorage.com/"; then
+            echo "::error::Mit dieser R2_ACCOUNT_ID ist kein R2-Speicher erreichbar. Wahrscheinlich ist es eine andere ID (z.B. Zone ID der Domain). Richtige Stelle: Cloudflare → R2 → Übersicht → Account Details → Account ID."; exit 1
+          fi
+          { echo "R2_ENDPOINT=https://$acct.r2.cloudflarestorage.com"; echo "AWS_ACCESS_KEY_ID=$key"; echo "AWS_SECRET_ACCESS_KEY=$secret"; } >> "$GITHUB_ENV"
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+      - name: Videos hochladen
+        run: |
+          set -euo pipefail
+          # Gleicher Pfad wie im Repo; nur geänderte Dateien werden übertragen
+          aws s3 sync assets/video "s3://$BUCKET/assets/video" --endpoint-url "$R2_ENDPOINT" \
+            --exclude "*" --include "*.mp4" --content-type video/mp4 \
+            --cache-control "public, max-age=31536000" --size-only --no-progress
+
+      - name: Jedes Video ist öffentlich erreichbar
+        run: |
+          set -uo pipefail
+          fail=0
+          while IFS= read -r f; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -r 0-1023 "$MEDIA/$f")
+            if [ "$code" != "206" ] && [ "$code" != "200" ]; then echo "::error::$f → HTTP $code"; fail=1; continue; fi
+            # Grösse online = Grösse im Repo, sonst ist die Datei unvollständig
+            remote=$(curl -sI "$MEDIA/$f" | tr -d '\r' | awk -F': ' 'tolower($1)=="content-length"{print $2}')
+            local_size=$(stat -c %s "$f")
+            if [ "$remote" != "$local_size" ]; then echo "::error::$f → online $remote Bytes, im Repo $local_size Bytes"; fail=1; fi
+          done < <(find assets/video -name "*.mp4" | sort)
+          n=$(find assets/video -name "*.mp4" | wc -l)
+          [ "$fail" = 0 ] && echo "Alle $n Videos sind unter $MEDIA erreichbar und vollständig (gleiche Grösse wie im Repo)." | tee -a "$GITHUB_STEP_SUMMARY"
+          exit $fail

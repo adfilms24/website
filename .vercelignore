@@ -7,3 +7,5 @@ tests
 README.md
 .github
 tools
+# Videos kommen von media.adfilms24.ch (Cloudflare R2), damit nicht jede Version 160 MB belegt
+assets/video/**/*.mp4
