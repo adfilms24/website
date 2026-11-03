@@ -29,7 +29,79 @@
     "video_desc": {
       "de": "Cinematic Showreel von A.D.Films24 Studio Zürich. Imagefilme, Food-Content und Event-Videos für KMU und Brands.",
       "en": "Cinematic showreel by A.D.Films24 Studio Zurich. Brand films, food content and event videos for SMEs and brands."
-    }
+    },
+    "chapters": [
+      [
+        0,
+        {
+          "de": "Central, Zürich",
+          "en": "Central, Zurich"
+        }
+      ],
+      [
+        5,
+        {
+          "de": "Niederdorf, Zürich",
+          "en": "Niederdorf, Zurich"
+        }
+      ],
+      [
+        7,
+        {
+          "de": "Gemüseladen, Birmingham",
+          "en": "Greengrocer, Birmingham"
+        }
+      ],
+      [
+        10,
+        {
+          "de": "Sushi Restaurant, Zürich",
+          "en": "Sushi restaurant, Zurich"
+        }
+      ],
+      [
+        27,
+        {
+          "de": "LOCO BIRRIÁ, Zürich",
+          "en": "LOCO BIRRIÁ, Zurich"
+        }
+      ],
+      [
+        54,
+        {
+          "de": "Awet Barber, Zürich",
+          "en": "Awet Barber, Zurich"
+        }
+      ],
+      [
+        75,
+        {
+          "de": "Shanike Model, Zürich",
+          "en": "Shanike model, Zurich"
+        }
+      ],
+      [
+        80,
+        {
+          "de": "Swiss Alps, Rüti",
+          "en": "Swiss Alps, Rüti"
+        }
+      ],
+      [
+        87,
+        {
+          "de": "Rooftop Sportsclub, Zürich",
+          "en": "Rooftop Sportsclub, Zurich"
+        }
+      ],
+      [
+        101,
+        {
+          "de": "Mandeeq Somalisches Essen, Afro-Pfingsten",
+          "en": "Mandeeq Somali food, Afro-Pfingsten"
+        }
+      ]
+    ]
   },
   {
     "slug": "thizzy-showcase-zuerich",
