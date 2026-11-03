@@ -228,6 +228,12 @@ const FormSteps = (function () {
   nav.hidden = false;
   prog.hidden = false;
   goTo(0, false);
+  // Von einer Leistungs- oder Projektseite (?typ=N): Projektart ist schon gewählt, Formular startet bei Schritt 2
+  try {
+    const n = parseInt(new URLSearchParams(location.search).get('typ'), 10);
+    const pick = Number.isInteger(n) ? steps[0].querySelectorAll('input[name=projekttyp]')[n] : null;
+    if (pick) { pick.checked = true; goTo(1, false); }
+  } catch (e) { /* ohne Vorauswahl einfach bei Schritt 1 */ }
   return {
     goTo,
     reset: () => goTo(0, false),

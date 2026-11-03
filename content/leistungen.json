@@ -52,6 +52,37 @@
         "Companies looking to attract skilled staff",
         "Openings and company anniversaries"
       ]
+    },
+    "form_type": 0,
+    "faq": {
+      "de": [
+        [
+          "Was kostet ein Imagefilm in Zürich?",
+          "Das hängt vom Umfang ab, also von Drehtagen, Locations und Versionen. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis, ohne versteckte Kosten."
+        ],
+        [
+          "Wie lange dauert ein Imagefilm von der Anfrage bis zum fertigen Video?",
+          "Je nach Umfang wenige Tage bis einige Wochen. Den Zeitplan mit Dreh- und Liefertermin legen wir in der Offerte fest."
+        ],
+        [
+          "Bekommen wir auch Versionen für Social Media?",
+          "Ja. Auf Wunsch schneiden wir neben der Website-Version auch Kurzfassungen in 9:16 für Reels und TikTok sowie 4:5 für den Feed."
+        ]
+      ],
+      "en": [
+        [
+          "What does a brand film in Zurich cost?",
+          "It depends on the scope: shooting days, locations and versions. After a short call you get a quote with a fixed price and no hidden costs."
+        ],
+        [
+          "How long does it take from enquiry to finished film?",
+          "Depending on the scope, a few days to a few weeks. We fix the shooting and delivery dates in the quote."
+        ],
+        [
+          "Do we also get versions for social media?",
+          "Yes. Besides the website version we can cut short versions in 9:16 for Reels and TikTok and 4:5 for the feed."
+        ]
+      ]
     }
   },
   {
@@ -106,6 +137,37 @@
         "Restaurants, gyms, hair salons and shops",
         "Brands with their own Instagram presence",
         "Companies that want to be visible on LinkedIn"
+      ]
+    },
+    "form_type": 1,
+    "faq": {
+      "de": [
+        [
+          "Wie viele Reels bekommen wir pro Drehtag?",
+          "Das hängt vom Konzept und den Locations ab. Wir planen den Drehtag so, dass möglichst viele fertige Clips entstehen, und sagen euch die Anzahl vorher in der Offerte."
+        ],
+        [
+          "Gibt es Social-Media-Content auch als Monatspaket?",
+          "Ja. Ihr könnt einzelne Drehs buchen oder ein monatliches Paket mit regelmässigem Content."
+        ],
+        [
+          "Für welche Plattformen produziert ihr?",
+          "Für Instagram, TikTok und LinkedIn, in den passenden Formaten 9:16, 4:5 und 16:9."
+        ]
+      ],
+      "en": [
+        [
+          "How many Reels do we get per shooting day?",
+          "It depends on the concept and locations. We plan the day to get as many finished clips as possible and state the number in the quote."
+        ],
+        [
+          "Is social media content available as a monthly package?",
+          "Yes. You can book single shoots or a monthly package with regular content."
+        ],
+        [
+          "Which platforms do you produce for?",
+          "Instagram, TikTok and LinkedIn, in the right formats: 9:16, 4:5 and 16:9."
+        ]
       ]
     }
   },
@@ -162,6 +224,37 @@
         "New openings",
         "Caterers and food brands"
       ]
+    },
+    "form_type": 2,
+    "faq": {
+      "de": [
+        [
+          "Wann dreht ihr im Restaurant?",
+          "Nach Absprache, zum Beispiel vor dem Service oder an einem Ruhetag, damit eure Gäste nicht gestört werden."
+        ],
+        [
+          "Was kostet ein Restaurant-Video?",
+          "Das hängt vom Umfang ab, also von Drehtagen, Locations und Versionen. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis, ohne versteckte Kosten."
+        ],
+        [
+          "Bekommen wir Clips für Instagram und TikTok?",
+          "Ja. Die Clips liefern wir im Hochformat 9:16, bereit zum Posten."
+        ]
+      ],
+      "en": [
+        [
+          "When do you shoot in the restaurant?",
+          "By arrangement, for example before service or on a closing day, so your guests are not disturbed."
+        ],
+        [
+          "What does a restaurant video cost?",
+          "It depends on the scope: shooting days, locations and versions. After a short call you get a quote with a fixed price and no hidden costs."
+        ],
+        [
+          "Do we get clips for Instagram and TikTok?",
+          "Yes. We deliver the clips in vertical 9:16, ready to post."
+        ]
+      ]
     }
   },
   {
@@ -216,6 +309,37 @@
         "Corporate events and anniversaries",
         "Openings and product launches",
         "Trade fairs and conferences"
+      ]
+    },
+    "form_type": 3,
+    "faq": {
+      "de": [
+        [
+          "Wie schnell bekommen wir das Event-Video?",
+          "Den Liefertermin legen wir vorher in der Offerte fest. Auf Wunsch liefern wir erste Clips für Social Media schneller als den Highlight-Film."
+        ],
+        [
+          "Was kostet ein Event-Video in Zürich?",
+          "Das hängt vom Umfang ab, also von Drehtagen, Locations und Versionen. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis, ohne versteckte Kosten."
+        ],
+        [
+          "Filmt ihr auch ausserhalb von Zürich?",
+          "Ja. Wir arbeiten in der ganzen Schweiz und international."
+        ]
+      ],
+      "en": [
+        [
+          "How fast do we get the event video?",
+          "We fix the delivery date in the quote. On request we deliver first social media clips before the highlight film."
+        ],
+        [
+          "What does an event video in Zurich cost?",
+          "It depends on the scope: shooting days, locations and versions. After a short call you get a quote with a fixed price and no hidden costs."
+        ],
+        [
+          "Do you also film outside Zurich?",
+          "Yes. We work all over Switzerland and abroad."
+        ]
       ]
     }
   },
@@ -314,6 +438,37 @@
     "promise": {
       "de": "Euer Film zeigt euren Tag, wie er war: ohne nachgestellte Szenen, mit den Worten aus Trauung und Reden.",
       "en": "Your film shows your day as it was: no re-enacted scenes, with the words from the ceremony and the speeches."
+    },
+    "form_type": 9,
+    "faq": {
+      "de": [
+        [
+          "Was kostet ein Hochzeitsvideo in Zürich?",
+          "Das hängt davon ab, wie lange wir dabei sind und welche Teile des Tages ihr im Film wollt. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis."
+        ],
+        [
+          "Wie weit im Voraus sollten wir anfragen?",
+          "So früh wie möglich, sobald euer Datum feststeht. Beliebte Termine im Sommer sind schnell vergeben."
+        ],
+        [
+          "Bekommen wir auch kurze Clips für Instagram?",
+          "Ja. Neben dem Film gibt es kurze Clips im Hochformat, die ihr direkt teilen könnt."
+        ]
+      ],
+      "en": [
+        [
+          "What does a wedding video in Zurich cost?",
+          "It depends on how long we are there and which parts of the day you want in the film. After a short call you get a quote with a fixed price."
+        ],
+        [
+          "How far in advance should we enquire?",
+          "As early as possible, once your date is set. Popular summer dates go quickly."
+        ],
+        [
+          "Do we also get short clips for Instagram?",
+          "Yes. Besides the film you get short vertical clips you can share right away."
+        ]
+      ]
     }
   },
   {
@@ -411,6 +566,37 @@
     "promise": {
       "de": "Nichts geht online ohne eure Freigabe. Monatlich kündbar, ohne lange Vertragsbindung.",
       "en": "Nothing goes live without your approval. Cancel monthly, no long contract."
+    },
+    "form_type": 6,
+    "faq": {
+      "de": [
+        [
+          "Wie lange läuft ein Social-Media-Paket?",
+          "Monatspakete sind mit einem Monat Frist kündbar. Ihr bindet euch also nicht langfristig."
+        ],
+        [
+          "Müssen wir uns um die Inhalte kümmern?",
+          "Nein. Wir planen, produzieren und posten. Ihr gebt nur noch frei, was online geht."
+        ],
+        [
+          "Garantiert ihr mehr Follower oder Kunden?",
+          "Eine Garantie gibt es bei Social Media nicht. Ihr bekommt aber jeden Monat eine Auswertung, damit ihr seht, was wirkt."
+        ]
+      ],
+      "en": [
+        [
+          "How long does a social media package run?",
+          "Monthly packages can be cancelled with one month's notice, so there is no long-term lock-in."
+        ],
+        [
+          "Do we have to take care of the content?",
+          "No. We plan, produce and post. You only approve what goes online."
+        ],
+        [
+          "Do you guarantee more followers or customers?",
+          "Nobody can guarantee results on social media. But you get a monthly report so you can see what works."
+        ]
+      ]
     }
   },
   {
@@ -508,6 +694,37 @@
     "promise": {
       "de": "Das Werbebudget läuft über euer eigenes Werbekonto. Ihr seht jederzeit, wofür jeder Franken ausgegeben wird.",
       "en": "The ad budget runs through your own ad account. You always see where every franc goes."
+    },
+    "form_type": 7,
+    "faq": {
+      "de": [
+        [
+          "Über wessen Werbekonto laufen die Ads?",
+          "Das Werbebudget läuft über euer eigenes Werbekonto. So behaltet ihr die volle Kontrolle über Kosten und Daten."
+        ],
+        [
+          "Wie viel Werbebudget braucht es?",
+          "Das hängt von Ziel und Zielgruppe ab. Wir besprechen vorher, welches Budget für euer Ziel sinnvoll ist."
+        ],
+        [
+          "Produziert ihr die Video-Ads selbst?",
+          "Ja. Konzept, Dreh und Schnitt der Ads kommen von uns, abgestimmt auf die jeweilige Plattform."
+        ]
+      ],
+      "en": [
+        [
+          "Whose ad account do the ads run on?",
+          "The ad budget runs on your own ad account, so you keep full control over costs and data."
+        ],
+        [
+          "How much ad budget do we need?",
+          "It depends on your goal and audience. We discuss up front which budget makes sense for your goal."
+        ],
+        [
+          "Do you produce the video ads yourselves?",
+          "Yes. Concept, shoot and edit of the ads come from us, tailored to each platform."
+        ]
+      ]
     }
   },
   {
@@ -605,6 +822,37 @@
     "promise": {
       "de": "Verständlich erklärt, ohne Fachchinesisch. Ihr behaltet die volle Kontrolle über eure Daten und Konten.",
       "en": "Explained in plain language, no jargon. You keep full control of your data and accounts."
+    },
+    "form_type": 8,
+    "faq": {
+      "de": [
+        [
+          "Was heisst «digitale Systeme» konkret?",
+          "Zum Beispiel eine schnellere Website, ein Anfrageformular, das direkt im CRM landet, oder automatische Abläufe, die euch Routinearbeit abnehmen."
+        ],
+        [
+          "Müssen wir unsere bestehenden Tools ersetzen?",
+          "Nicht unbedingt. Wir schauen zuerst, was ihr habt, und bauen darauf auf, wo es sinnvoll ist."
+        ],
+        [
+          "Wie starten wir?",
+          "Mit einem kurzen Gespräch über eure Abläufe. Danach bekommt ihr einen Vorschlag mit festem Preis."
+        ]
+      ],
+      "en": [
+        [
+          "What does 'digital systems' mean in practice?",
+          "For example a faster website, an enquiry form that goes straight into your CRM, or automated workflows that take routine work off your hands."
+        ],
+        [
+          "Do we have to replace our existing tools?",
+          "Not necessarily. We first look at what you have and build on it where it makes sense."
+        ],
+        [
+          "How do we start?",
+          "With a short call about your workflows. Then you get a proposal with a fixed price."
+        ]
+      ]
     }
   }
 ]
