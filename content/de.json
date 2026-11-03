@@ -3,8 +3,6 @@
   "title": "A.D.Films24 — Videoproduktion für Unternehmen in Zürich",
   "og_desc": "Videoproduktion für Unternehmen aus Zürich — Imagefilme, Social-Media-Content, Produkt- und Eventvideos. Zuverlässig und transparent.",
   "ld_desc": "Videoproduktion für KMU und Unternehmen aus Zürich: Imagefilme, Social-Media-Content, Produkt- und Eventvideos.",
-  "vo_name": "Showreel 2026 — A.D.Films24",
-  "vo_desc": "Showreel 2026 von A.D.Films24: Cinematography, Slow Motion und Bildsprache aus Zürich.",
   "loader_label": "Loading",
   "menu_aria": "Hauptmenü",
   "nav_aria": "Hauptnavigation",
@@ -46,7 +44,7 @@
   "about_tag": "Abdi Dhiblawe · CEO",
   "about_meta": "Über uns",
   "about_h2": "DEIN VIDEO,<br><span class=\"serif\">ohne Umwege</span>",
-  "about_p1": "Wir sind <strong>A.D.Films24 Studio</strong>, ein Videostudio aus Zürich. Wir produzieren Videos für <strong>KMU und Unternehmen</strong> — vom Imagefilm über Social-Media-Content bis zum Event.",
+  "about_p1": "Wir sind <strong>A.D.Films24 Studio</strong>, das Videostudio von <strong>Abdi Dhiblawe</strong> für <strong>Videoproduktion in Zürich</strong>. Wir produzieren Videos für <strong>KMU, Gastronomie und Events</strong> — vom Imagefilm über Social-Media-Content bis zum Event-Video. Gedreht wird mit der Sony FX3, das Color Grading entsteht in DaVinci Resolve.",
   "about_p2": "Unsere Kunden bekommen, was abgemacht ist, und meistens etwas mehr. <strong>Bisher gab es keine einzige Revisionsanfrage.</strong> Weil wir vor dem Dreh klären, was das Video leisten soll, und danach genau das liefern.",
   "about_p3": "Transparent von Anfang an: ein klarer Ablauf, ein klarer Preis und eine ehrliche Einschätzung, auch wenn etwas nicht passt.",
   "gear_head": "Equipment",
@@ -347,8 +345,8 @@
       "Je nach Umfang wenige Tage bis einige Wochen. Den genauen Zeitplan legen wir gemeinsam in der Offerte fest."
     ],
     [
-      "Wie viele Korrekturschleifen braucht es?",
-      "Wir klären vor dem Dreh genau, was das Video leisten soll. Deshalb gab es bisher keine einzige Revisionsanfrage. Und falls doch etwas nicht passt, finden wir eine Lösung."
+      "Warum liefert A.D.Films24 ohne Revisionsschleifen?",
+      "Weil Ziel, Format und Zielgruppe vor dem Dreh definiert werden und Kunden das Bild live am Set über Monitoring begutachten, bevor der finale Schnitt in DaVinci Resolve erfolgt. Deshalb gab es bisher keine einzige Revisionsanfrage. Und falls doch etwas nicht passt, finden wir eine Lösung."
     ],
     [
       "Dreht ihr auch ausserhalb von Zürich?",
@@ -523,5 +521,15 @@
   "lbl_timeframe": "Zeitrahmen",
   "lbl_industry": "Branche",
   "lbl_company": "Firma",
-  "f_trust": "Kein Verkaufsdruck. Wir prüfen dein Konzept und schicken dir innerhalb von 24 Stunden eine erste realistische Einschätzung samt Richtofferte."
+  "f_trust": "Kein Verkaufsdruck. Wir prüfen dein Konzept und schicken dir innerhalb von 24 Stunden eine erste realistische Einschätzung samt Richtofferte.",
+  "ld_knows": [
+    "Videoproduktion Zürich",
+    "Imagefilm",
+    "Food- und Restaurant-Video",
+    "Event-Video",
+    "Social-Media-Content",
+    "Sony FX3",
+    "S-Log3",
+    "DaVinci Resolve Color Grading"
+  ]
 }

@@ -181,6 +181,30 @@ def proc_steps_html(t):
 def look_tabs_html(t):
     return "".join(f'<button type="button" class="look-tab{" on" if i == 0 else ""}" data-look="{k}" aria-pressed="{"true" if i == 0 else "false"}">{lab}</button>'
                    for i, (k, lab) in enumerate(t["look_tabs"]))
+def video_id(l, p): return DOMAIN + project_url(l, p["slug"]) + "#video"
+def video_ld(l, p):
+    """schema.org/VideoObject für ein Projektvideo. Optional in projects.json:
+    "video_name"/"video_desc" {de,en}: eigener Videotitel/-text für Google & KI-Suche,
+    "chapters": [[Sekunde, {"de": "…", "en": "…"}], …]: Key Moments (nur echte Zeitmarken eintragen)."""
+    vid, poster = has_video(p), poster_of(p)
+    page = DOMAIN + project_url(l, p["slug"])
+    d = {"@context": "https://schema.org", "@type": "VideoObject", "@id": video_id(l, p),
+         "name": p.get("video_name", {}).get(l) or p.get("seo", {}).get(l) or p["title"][l],
+         "description": p.get("video_desc", {}).get(l) or p["desc"][l],
+         "thumbnailUrl": (DOMAIN + poster) if poster else DOMAIN + "/og-image.png",
+         "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
+         "contentUrl": MEDIA + vid, "url": page, "inLanguage": "de-CH" if l == "de" else "en",
+         "creator": {"@id": DOMAIN + "/#business"}, "publisher": {"@id": DOMAIN + "/#business"}}
+    ch = p.get("chapters") or []
+    if ch:
+        ends = [s for s, _ in ch[1:]] + [video_secs(p.get("duration")) or ch[-1][0] + 1]
+        d["hasPart"] = [{"@type": "Clip", "name": n[l], "startOffset": s, "endOffset": e, "url": f"{page}#t={s}"}
+                        for (s, n), e in zip(ch, ends)]
+    return d
+def video_secs(dur):
+    m = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", dur or "")
+    return (int(m[1] or 0) * 3600 + int(m[2] or 0) * 60 + int(m[3] or 0)) if m else None
+SHOWCASE = ["showreel-2026", "loco-birria"]  # Hauptvideos, mit dem Unternehmen verknüpft (subjectOf)
 def business_ld(l, t):
     org = {"@context": "https://schema.org", "@type": "ProfessionalService", "@id": DOMAIN + "/#business",
            "name": "A.D.Films24", "alternateName": "A.D.Films24 Studio", "slogan": "Capture More",
@@ -188,14 +212,18 @@ def business_ld(l, t):
            "logo": DOMAIN + "/icon-512.png", "image": DOMAIN + "/og-image.png",
            "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"},
            "areaServed": [{"@type": "City", "name": "Zürich"}, {"@type": "Country", "name": "Schweiz"}],
-           "founder": {"@type": "Person", "name": "Abdi Dhiblawe"},
+           "founder": {"@type": "Person", "@id": DOMAIN + "/#abdi", "name": "Abdi Dhiblawe", "jobTitle": t["about_tag"].split("·")[-1].strip(),
+                       "worksFor": {"@id": DOMAIN + "/#business"}, "knowsAbout": t["ld_knows"]},
+           "knowsAbout": t["ld_knows"],
+           "subjectOf": [{"@id": video_id(l, p)} for p in PROJECTS if p["slug"] in SHOWCASE and p.get("published") and has_video(p)],
            "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": re.sub("&amp;", "&", sv["h1"][l]), "url": DOMAIN + service_url(l, sv)}} for sv in SERVICES],
            "sameAs": ["https://instagram.com/a.d.films24", "https://www.youtube.com/@adfilms24", t["google_url"]]}
     site = {"@context": "https://schema.org", "@type": "WebSite", "@id": DOMAIN + "/#website", "name": "A.D.Films24",
             "url": DOMAIN + "/", "inLanguage": ["de-CH", "en"], "publisher": {"@id": DOMAIN + "/#business"}}
     faq = {"@context": "https://schema.org", "@type": "FAQPage",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
-    return "\n".join(f'<script type="application/ld+json">{esc_json(x)}</script>' for x in (org, site, faq))
+    reel = [video_ld(l, p) for p in PROJECTS if p["slug"] == "showreel-2026" and p.get("published") and has_video(p)]
+    return "\n".join(f'<script type="application/ld+json">{esc_json(x)}</script>' for x in (org, site, faq, *reel))
 SIZES = ["xl", "tall", "wide", "wide", "wide", "wide"]  # je zwei Kacheln füllen eine Reihe (6+4 bzw. 5+5 von 10 Spalten)
 BGS = ["bg-a", "bg-b", "bg-c", "bg-d", "bg-e", "bg-f"]
 def projects_grid(l, t):
@@ -326,11 +354,7 @@ def build_projects():
                 if val: rows.append(f'<div><dt>{t[lab]}</dt><dd>{val}</dd></div>')
             ld = ""
             if vid and not draft:
-                ld = ('<script type="application/ld+json">' + esc_json({
-                    "@context": "https://schema.org", "@type": "VideoObject", "name": seo, "description": p["desc"][l],
-                    "thumbnailUrl": (DOMAIN + poster) if poster else DOMAIN + "/og-image.png",
-                    "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
-                    "contentUrl": MEDIA + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
+                ld = '<script type="application/ld+json">' + esc_json(video_ld(l, p)) + '</script>'
                 # og:video: Facebook/LinkedIn können das Video direkt im Feed zeigen; WhatsApp & iMessage nutzen weiter og:image
                 ld += (f'<meta property="og:video" content="{MEDIA + vid}"><meta property="og:video:secure_url" content="{MEDIA + vid}">'
                        f'<meta property="og:video:type" content="video/mp4">')
@@ -481,12 +505,13 @@ def build_video_sitemap():
             sec = secs(p.get("duration"))
             out += (f'  <url>\n    <loc>{DOMAIN}{project_url(l, p["slug"])}</loc>\n    <video:video>\n'
                     f'      <video:thumbnail_loc>{x(DOMAIN + poster if poster else DOMAIN + "/og-image.png")}</video:thumbnail_loc>\n'
-                    f'      <video:title>{x(p.get("seo", {}).get(l) or p["title"][l])}</video:title>\n'
-                    f'      <video:description>{x(p["desc"][l])}</video:description>\n'
+                    f'      <video:title>{x(p.get("video_name", {}).get(l) or p.get("seo", {}).get(l) or p["title"][l])}</video:title>\n'
+                    f'      <video:description>{x(p.get("video_desc", {}).get(l) or p["desc"][l])}</video:description>\n'
                     f'      <video:content_loc>{x(MEDIA + vid)}</video:content_loc>\n'
                     + (f'      <video:duration>{sec}</video:duration>\n' if sec else "")
                     + (f'      <video:publication_date>{p["uploadDate"]}</video:publication_date>\n' if p.get("uploadDate") else "")
-                    + f'      <video:family_friendly>yes</video:family_friendly>\n    </video:video>\n  </url>\n')
+                    + f'      <video:family_friendly>yes</video:family_friendly>\n'
+                    + f'      <video:uploader info="{DOMAIN}/">A.D.Films24 Studio</video:uploader>\n    </video:video>\n  </url>\n')
     write("video-sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + out + '</urlset>\n')
 
 if __name__ == "__main__":
