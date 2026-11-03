@@ -259,6 +259,136 @@
   },
   {
     "slug": {
+      "de": "content-partner-zuerich",
+      "en": "content-partner-zurich"
+    },
+    "project": "loco-birria",
+    "nav": {
+      "de": "Monthly Content Partner",
+      "en": "Monthly Content Partner"
+    },
+    "title": {
+      "de": "Monthly Content Partner Zürich: Video-Content im Abo — A.D.Films24",
+      "en": "Monthly Content Partner Zurich: Video Content Subscription — A.D.Films24"
+    },
+    "h1": {
+      "de": "Monthly Content Partner in Zürich",
+      "en": "Monthly Content Partner in Zurich"
+    },
+    "meta": {
+      "de": "Ein Drehtag pro Monat, fertige Reels zum fixen Monatspreis: Video-Content im Abo für Restaurants, Brands und KMU in Zürich. Planbar, ohne jedes Mal neu zu offerieren.",
+      "en": "One shoot day a month, finished reels at a fixed monthly price: a video content subscription for restaurants, brands and SMEs in Zurich. Predictable, without a new quote every time."
+    },
+    "intro": {
+      "de": "Auf Instagram und TikTok gewinnt, wer regelmässig gute Videos zeigt. Als Monthly Content Partner kommen wir jeden Monat zu euch, drehen einen Tag und liefern fertige Reels für die nächsten Wochen. Ihr habt einen festen Monatspreis und müsst euch um nichts kümmern.",
+      "en": "On Instagram and TikTok, the brands that win are the ones that post good videos regularly. As your Monthly Content Partner we come to you every month, shoot for a day and deliver finished reels for the weeks ahead. You pay a fixed monthly price and don't have to worry about a thing."
+    },
+    "includes": {
+      "de": [
+        "1 Drehtag pro Monat bei euch vor Ort",
+        "Rund 8 fertige Reels pro Monat (9:16, auf Wunsch 4:5) mit Untertiteln",
+        "Content-Plan für den Monat, abgestimmt auf Angebote und Anlässe",
+        "Schnitt, Color Grading und lizenzfreie Musik",
+        "1 Korrekturrunde pro Reel inklusive",
+        "Fester Ansprechpartner, Antwort innerhalb von 24 Stunden"
+      ],
+      "en": [
+        "1 shoot day per month on site",
+        "Around 8 finished reels per month (9:16, 4:5 on request) with subtitles",
+        "A monthly content plan built around your offers and events",
+        "Editing, colour grading and licence-free music",
+        "1 revision round per reel included",
+        "A fixed contact person, reply within 24 hours"
+      ]
+    },
+    "for": {
+      "de": [
+        "Restaurants, Bars und Cafés mit wechselnder Karte",
+        "Brands und Shops, die laufend Produkte zeigen wollen",
+        "Fitnessstudios, Barbershops und KMU mit aktivem Social Media"
+      ],
+      "en": [
+        "Restaurants, bars and cafés with a changing menu",
+        "Brands and shops that want to show products regularly",
+        "Gyms, barbershops and SMEs with active social media"
+      ]
+    },
+    "form_type": 1,
+    "steps": {
+      "de": [
+        [
+          "Gespräch",
+          "Wir klären Ziele, Kanäle und wie viel Content ihr braucht."
+        ],
+        [
+          "Plan",
+          "Vor jedem Drehtag bekommt ihr den Content-Plan für den Monat."
+        ],
+        [
+          "Drehtag",
+          "Ein Tag bei euch: Gerichte, Produkte, Team und Atmosphäre."
+        ],
+        [
+          "Lieferung",
+          "Die Reels kommen fertig geschnitten zur Freigabe, bereit zum Posten."
+        ]
+      ],
+      "en": [
+        [
+          "Call",
+          "We clarify goals, channels and how much content you need."
+        ],
+        [
+          "Plan",
+          "Before each shoot day you get the content plan for the month."
+        ],
+        [
+          "Shoot day",
+          "One day on site: dishes, products, team and atmosphere."
+        ],
+        [
+          "Delivery",
+          "The reels arrive fully edited for approval, ready to post."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Fester Monatspreis, kein neues Offerieren jeden Monat. Kündbar mit einem Monat Frist.",
+      "en": "A fixed monthly price, no new quote every month. Cancel with one month's notice."
+    },
+    "faq": {
+      "de": [
+        [
+          "Was kostet der Monthly Content Partner?",
+          "Ihr zahlt einen festen Monatspreis. Er hängt davon ab, wie viele Reels und Drehtage ihr braucht. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis, ohne versteckte Kosten."
+        ],
+        [
+          "Wie lange läuft das Abo?",
+          "Kündbar mit einem Monat Frist. Wir empfehlen mindestens drei Monate, weil sich ein wiedererkennbarer Stil und die Wirkung auf Social Media erst über mehrere Monate aufbauen."
+        ],
+        [
+          "Postet ihr die Videos auch?",
+          "Auf Wunsch ja. Mit unserem Social-Media-Management übernehmen wir auch Planung, Posting und den monatlichen Report."
+        ]
+      ],
+      "en": [
+        [
+          "What does the Monthly Content Partner cost?",
+          "You pay a fixed monthly price. It depends on how many reels and shoot days you need. After a short call you get a quote with a fixed price and no hidden costs."
+        ],
+        [
+          "How long does the subscription run?",
+          "You can cancel with one month's notice. We recommend at least three months, because a recognisable style and the effect on social media build up over several months."
+        ],
+        [
+          "Do you also post the videos?",
+          "Yes, if you like. With our social media management we also handle planning, posting and the monthly report."
+        ]
+      ]
+    }
+  },
+  {
+    "slug": {
       "de": "event-video-zuerich",
       "en": "event-video-zurich"
     },
