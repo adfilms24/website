@@ -1973,3 +1973,13 @@ h2.lp-h + .lp-faq { margin-top: 0; }
 }
 /* Lange Wörter («Unternehmensvideo») sprengen sonst auf dem Handy den Rand */
 .pj-title { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
+
+/* Hero: Kernaussage + Unterzeile */
+.hero-desc { max-width: 470px; }
+.hero-lead { display: block; margin-bottom: .7rem; font-family: var(--f-serif); font-style: normal; font-weight: 400; font-size: clamp(1.15rem, 1.9vw, 1.5rem); line-height: 1.35; color: var(--bone); }
+/* Equipment: Nutzen unter dem Gerätenamen */
+.gear-name { display: flex; flex-direction: column; gap: .3rem; }
+.gear-benefit { font-family: var(--f-serif); font-style: italic; font-size: .92rem; line-height: 1.5; color: var(--bone-60); max-width: 520px; }
+/* Kontaktformular: Vertrauenshinweis direkt über dem Senden-Button */
+.f-trust { margin: 1.4rem 0 1rem; padding-left: .9rem; border-left: 2px solid var(--accent); font-family: var(--f-serif); font-style: italic; font-size: .98rem; line-height: 1.6; color: var(--bone-60); max-width: 560px; }
+.anchor-alias { position: relative; top: -90px; display: block; height: 0; }

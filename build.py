@@ -116,7 +116,8 @@ def marquee(t):
     row = "\n".join(f'    <span class="dm-item">{a} <span class="o">{b}</span></span>' for a, b in t["marquee"])
     return f'<div class="divider-marquee" aria-hidden="true">\n{row}\n{row}\n  </div>'
 def gear(t):
-    return "\n".join(f'            <div class="gear-row"><span class="gear-name">{n}</span><span class="gear-type">{ty}</span></div>' for n, ty in t["gear"])
+    # Optional dritter Eintrag: Nutzen in einem Satz (was der Kunde davon hat)
+    return "\n".join(f'            <div class="gear-row"><span class="gear-name">{g[0]}' + (f'<span class="gear-benefit">{g[2]}</span>' if len(g) > 2 else "") + f'</span><span class="gear-type">{g[1]}</span></div>' for g in t["gear"])
 ARROW = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6H11M6 1L11 6L6 11" stroke="currentColor" stroke-width="1.3"/></svg>'
 def services(l, t):
     """Leistungsliste der Startseite; "link" in content/<lang>.json = Slug einer Leistungsseite oder ein #Anker."""
