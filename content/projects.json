@@ -17,7 +17,11 @@
     "video": "/assets/video/showreel.mp4",
     "poster": "/assets/video/showreel-poster.jpg",
     "duration": "PT2M7S",
-    "uploadDate": "2026-10-10"
+    "uploadDate": "2026-10-10",
+    "seo": {
+      "de": "Showreel 2026: Videoproduktion Zürich",
+      "en": "Showreel 2026: Video Production Zurich"
+    }
   },
   {
     "slug": "thizzy-showcase-zuerich",
@@ -27,8 +31,8 @@
     "camera": "Sony FX3",
     "client": "N'Joy Organisation",
     "title": {
-      "de": "THIZZY — SHOWCASE @ VIOR ZÜRICH",
-      "en": "THIZZY — SHOWCASE @ VIOR ZURICH"
+      "de": "THIZZY SHOWCASE — EVENT-VIDEO VIOR ZÜRICH",
+      "en": "THIZZY SHOWCASE — EVENT VIDEO VIOR ZURICH"
     },
     "desc": {
       "de": "Event-Film vom Showcase des Rappers Thizzy am 17. August 2026 im VIOR in Zürich, organisiert von der N'Joy Organisation: Fans, Bühne und Energie des Abends, geschnitten für Website und Social Media.",
@@ -47,7 +51,11 @@
       ]
     },
     "uploadDate": "2026-10-18",
-    "duration": "PT1M19S"
+    "duration": "PT1M19S",
+    "seo": {
+      "de": "Event-Video Zürich: Thizzy Showcase im VIOR",
+      "en": "Event Video Zurich: Thizzy Showcase at VIOR"
+    }
   },
   {
     "slug": "loco-birria",
@@ -57,8 +65,8 @@
     "camera": "Sony FX3 · Atomos Ninja V",
     "client": "LOCO BIRRIÁ, Zürich",
     "title": {
-      "de": "LOCO BIRRIÁ — RESTAURANT CONTENT",
-      "en": "LOCO BIRRIÁ — RESTAURANT CONTENT"
+      "de": "LOCO BIRRIÁ — RESTAURANT-VIDEO ZÜRICH",
+      "en": "LOCO BIRRIÁ — RESTAURANT VIDEO ZURICH"
     },
     "desc": {
       "de": "Video- und Social-Media-Content für das Restaurant LOCO BIRRIÁ in Zürich: Küche, Gerichte, Bar und Team, produziert für Instagram, TikTok und die Website.",
@@ -78,7 +86,11 @@
     },
     "uploadDate": "2026-10-09",
     "duration": "PT25S",
-    "format": "vertical"
+    "format": "vertical",
+    "seo": {
+      "de": "Restaurant-Video Zürich: Loco Birriá",
+      "en": "Restaurant Video Zurich: Loco Birriá"
+    }
   },
   {
     "slug": "rooftop-sportclub",
@@ -88,8 +100,8 @@
     "camera": "Sony FX3",
     "client": "Rooftop Sportclub Zürich",
     "title": {
-      "de": "ROOFTOP SPORTCLUB — IMAGEFILM",
-      "en": "ROOFTOP SPORTCLUB — BRAND FILM"
+      "de": "ROOFTOP SPORTCLUB — FITNESS-IMAGEFILM ZÜRICH",
+      "en": "ROOFTOP SPORTCLUB — FITNESS BRAND FILM ZURICH"
     },
     "desc": {
       "de": "Imagefilm für den Pop-up des Rooftop Sportclub in Zürich: Live-Training auf der Dachterrasse, Calisthenics und Community, gefilmt in 4K für Social Media.",
@@ -108,6 +120,10 @@
         "We filmed a live training session and focused on emotion: effort, energy and community. Edited for Instagram, in the format that works best there.",
         "The video was well received and gave the pop-up exactly the visibility it needed during its short run."
       ]
+    },
+    "seo": {
+      "de": "Fitness-Imagefilm Zürich: Rooftop Sportclub",
+      "en": "Fitness Brand Film Zurich: Rooftop Sportclub"
     }
   },
   {
@@ -118,8 +134,8 @@
     "camera": "Sony FX3",
     "client": "Sushi-Restaurant, Zürich",
     "title": {
-      "de": "SUSHI-RESTAURANT ZÜRICH — KÜCHENFILM",
-      "en": "SUSHI RESTAURANT ZURICH — KITCHEN FILM"
+      "de": "SUSHI-RESTAURANT — FOOD-VIDEO ZÜRICH",
+      "en": "SUSHI RESTAURANT — FOOD VIDEO ZURICH"
     },
     "desc": {
       "de": "Film zur Eröffnung eines Sushi-Restaurants in Zürich: Food-Tasting, der Koch bei der Arbeit, Messer, Fisch und Handwerk in ruhigen, dokumentarischen Bildern.",
@@ -136,6 +152,10 @@
         "For the opening, the restaurant wanted to show what guests can expect: fresh fish, real craft and a chef who knows what he is doing.",
         "We covered the opening food tasting and portrayed the chef in the kitchen. The result was a landscape film for the website and vertical versions for social media."
       ]
+    },
+    "seo": {
+      "de": "Food-Video Zürich: Eröffnung Sushi-Restaurant",
+      "en": "Food Video Zurich: Sushi Restaurant Opening"
     }
   },
   {
@@ -146,8 +166,8 @@
     "camera": "Sony FX3",
     "client": "DRIVECAB",
     "title": {
-      "de": "DRIVECAB — CHAUFFEUR SERVICE",
-      "en": "DRIVECAB — CHAUFFEUR SERVICE"
+      "de": "DRIVECAB — CHAUFFEUR-SERVICE VIDEO ZÜRICH",
+      "en": "DRIVECAB — CHAUFFEUR SERVICE VIDEO ZURICH"
     },
     "desc": {
       "de": "Social-Media-Clip für den Chauffeur-Service DRIVECAB in Zürich: Maybach, Interieur und Service-Momente am Zürichsee, vertikal für Instagram.",
@@ -167,7 +187,11 @@
         "The client is happy with the result; the clip shows the service as premium as it is."
       ]
     },
-    "format": "vertical"
+    "format": "vertical",
+    "seo": {
+      "de": "Chauffeur-Service Video Zürich: DRIVECAB",
+      "en": "Chauffeur Service Video Zurich: DRIVECAB"
+    }
   },
   {
     "slug": "phunnid",
@@ -177,15 +201,31 @@
     "camera": "",
     "client": "PHUNNID",
     "title": {
-      "de": "PHUNNID — BRAND SHOOTING",
-      "en": "PHUNNID — BRAND SHOOTING"
+      "de": "PHUNNID — FASHION BRAND-SHOOTING",
+      "en": "PHUNNID — FASHION BRAND SHOOT"
     },
     "desc": {
       "de": "Brand-Präsentation eines neuen Kleidungsstücks — hochwertig inszeniert für Marke und Social Media.",
       "en": "Brand presentation of a new garment — premium staging for the brand and social media."
     },
     "duration": "PT33S",
-    "uploadDate": "2026-09-16"
+    "uploadDate": "2026-09-16",
+    "seo": {
+      "de": "Fashion Brand-Shooting: PHUNNID",
+      "en": "Fashion Brand Shoot: PHUNNID"
+    },
+    "story": {
+      "de": [
+        "Hinter PHUNNID steht eine Freundschaft: Wir kennen uns schon lange, und irgendwann wurde daraus eine Zusammenarbeit. Für ein neues Kleidungsstück brauchte die Marke Bilder, die so hochwertig wirken wie das Produkt.",
+        "Wir haben ein Brand-Shooting inszeniert, das das Stück in den Mittelpunkt stellt und zur Haltung der Marke passt.",
+        "Entstanden ist Material für die Präsentation des neuen Stücks und für Social Media."
+      ],
+      "en": [
+        "PHUNNID started with a friendship: we have known each other for a long time, and at some point it turned into a collaboration. For a new garment, the brand needed images that look as premium as the product.",
+        "We staged a brand shoot that puts the piece at the centre and fits the attitude of the brand.",
+        "The result is footage for presenting the new piece and for social media."
+      ]
+    }
   },
   {
     "slug": "social-media",
@@ -195,8 +235,8 @@
     "camera": "",
     "client": "Mahmoud Badri",
     "title": {
-      "de": "BADRI — PERSONAL TRAINING",
-      "en": "BADRI — PERSONAL TRAINING"
+      "de": "BADRI — PERSONAL-TRAINER REELS",
+      "en": "BADRI — PERSONAL TRAINER REELS"
     },
     "desc": {
       "de": "Social-Media-Content für Personal Trainer Mahmoud Badri — vertikal fürs Feed.",
@@ -204,7 +244,23 @@
     },
     "duration": "PT29S",
     "uploadDate": "2026-06-15",
-    "format": "vertical"
+    "format": "vertical",
+    "seo": {
+      "de": "Personal-Trainer Reels: Mahmoud Badri",
+      "en": "Personal Trainer Reels: Mahmoud Badri"
+    },
+    "story": {
+      "de": [
+        "Mahmoud Badri ist Personal Trainer. Mit ihm wollten wir arbeiten, weil er Ehrgeiz und Disziplin vorlebt, und genau das sollte sein Content zeigen.",
+        "Wir haben ihn beim Training begleitet und Clips im Hochformat für seinen Feed produziert: nah dran, ohne Inszenierung.",
+        "Content, der zeigt, wofür er steht: Fokus, Konsequenz und echte Arbeit."
+      ],
+      "en": [
+        "Mahmoud Badri is a personal trainer. We wanted to work with him because he lives ambition and discipline, and that is exactly what his content should show.",
+        "We followed him during training and produced vertical clips for his feed: up close, nothing staged.",
+        "Content that shows what he stands for: focus, consistency and real work."
+      ]
+    }
   },
   {
     "slug": "events",
@@ -214,8 +270,8 @@
     "camera": "",
     "client": "Safiya Qasil — ATTAR ONE",
     "title": {
-      "de": "ATTAR ONE — EVENT",
-      "en": "ATTAR ONE — EVENT"
+      "de": "ATTAR ONE — EVENT-VIDEO SOCIAL MEDIA",
+      "en": "ATTAR ONE — EVENT VIDEO SOCIAL MEDIA"
     },
     "desc": {
       "de": "Event-Coverage für Safiya Qasil (ATTAR ONE) — vertikal eingefangen für Social Media.",
@@ -223,7 +279,11 @@
     },
     "duration": "PT45S",
     "uploadDate": "2025-11-11",
-    "format": "vertical"
+    "format": "vertical",
+    "seo": {
+      "de": "Event-Video für Social Media: ATTAR ONE",
+      "en": "Event Video for Social Media: ATTAR ONE"
+    }
   },
   {
     "slug": "commercial",
@@ -233,62 +293,30 @@
     "camera": "",
     "client": "Shanike",
     "title": {
-      "de": "SHANIKE — MODEL COMMERCIAL",
-      "en": "SHANIKE — MODEL COMMERCIAL"
+      "de": "SHANIKE — MODEL-SHOOTING ZÜRICH",
+      "en": "SHANIKE — MODEL SHOOT ZURICH"
     },
     "desc": {
       "de": "Model-Content für Shanike: cineastisch inszeniert für Portfolio und Social Media.",
       "en": "Model content for Shanike: cinematically staged for portfolio and social media."
     },
     "duration": "PT21S",
-    "uploadDate": "2026-06-22"
-  },
-  {
-    "slug": "real-estate",
-    "published": false,
-    "category": "real-estate",
-    "year": "",
-    "camera": "",
-    "client": "",
-    "title": {
-      "de": "Real-Estate-Projekt",
-      "en": "Real estate project"
+    "uploadDate": "2026-06-22",
+    "seo": {
+      "de": "Model-Shooting Zürich: Shanike",
+      "en": "Model Shoot Zurich: Shanike"
     },
-    "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
-    }
-  },
-  {
-    "slug": "drone",
-    "published": false,
-    "category": "drone",
-    "year": "",
-    "camera": "",
-    "client": "",
-    "title": {
-      "de": "Drohnen-Projekt",
-      "en": "Drone project"
-    },
-    "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
-    }
-  },
-  {
-    "slug": "travel",
-    "published": false,
-    "category": "travel",
-    "year": "",
-    "camera": "",
-    "client": "",
-    "title": {
-      "de": "Travel-Projekt",
-      "en": "Travel project"
-    },
-    "desc": {
-      "de": "Dieses Projekt wird in Kürze veröffentlicht. Video und Beschreibung folgen.",
-      "en": "This project will be published soon. Video and description to follow."
+    "story": {
+      "de": [
+        "Shanike haben wir spontan in Zürich getroffen, und es hat sofort gepasst.",
+        "Aus der Begegnung wurde ein Model-Shooting: cineastisch inszeniert, mit Fokus auf Ausdruck, Licht und Stil.",
+        "Entstanden ist Content für ihr Portfolio und für Social Media."
+      ],
+      "en": [
+        "We met Shanike by chance in Zurich, and it clicked straight away.",
+        "The encounter turned into a model shoot: staged cinematically, with a focus on expression, light and style.",
+        "The result is content for her portfolio and for social media."
+      ]
     }
   },
   {

@@ -290,6 +290,7 @@ def build_projects():
         for l in LANGS:
             t = TEXT[l]; vid = has_video(p); poster = poster_of(p)
             title = p["title"][l]; draft = not p.get("published")
+            seo = p.get("seo", {}).get(l) or title  # Google-Titel mit Leistung und Ort, z.B. «Restaurant-Video Zürich: Loco Birriá»
             cat = t["categories"].get(p["category"], p["category"])
             if vid:
                 pa = f' poster="{webp_of(poster)}"' if poster else ""
@@ -302,7 +303,7 @@ def build_projects():
             ld = ""
             if vid and not draft:
                 ld = ('<script type="application/ld+json">' + esc_json({
-                    "@context": "https://schema.org", "@type": "VideoObject", "name": title, "description": p["desc"][l],
+                    "@context": "https://schema.org", "@type": "VideoObject", "name": seo, "description": p["desc"][l],
                     "thumbnailUrl": (DOMAIN + poster) if poster else DOMAIN + "/og-image.png",
                     "uploadDate": p.get("uploadDate", "2026-01-01"), **({"duration": p["duration"]} if p.get("duration") else {}),
                     "contentUrl": DOMAIN + vid, "publisher": {"@type": "Organization", "name": "A.D.Films24", "url": DOMAIN + "/"}}) + '</script>')
@@ -312,7 +313,7 @@ def build_projects():
             sv = next((x for x in SERVICES if x["slug"]["de"] == CAT_SERVICE.get(p["category"])), None)
             related = f'<p class="srv-more lp-more"><span>{t["pj_service"]}</span> <a href="{service_url(l, sv)}">{sv["nav"][l]}</a></p>' if sv else ""
             if not draft:
-                ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (title, urls[l])])
+                ld += breadcrumb_ld(l, [(t["legal_home"], home_url(l)), (seo, urls[l])])
             body = f'''<nav id="nav" class="pinned pj-nav">
     <a href="{home_url(l)}" class="nav-logo" aria-label="A.D. Films24"><img src="/logo.svg" alt="A.D.Films24 – Capture More" class="nav-logo-img" width="302" height="52"></a>
     <div class="nav-right">
@@ -341,7 +342,7 @@ def build_projects():
       {footer_links(l)}
     </footer>
   </main>'''
-            html = page_shell(l, urls, f'{title} — A.D.Films24', p["desc"][l], body,
+            html = page_shell(l, urls, f'{seo} — A.D.Films24', p["desc"][l], body,
                               robots="noindex, nofollow" if draft else "index, follow", extra_head=ld, body_class="page-project", css="style.css", og_image=og_for(p["slug"]))
             write(urls[l].lstrip("/"), html)
 
