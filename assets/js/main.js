@@ -245,7 +245,91 @@ const FormSteps = (function () {
   };
 })();
 
-function sendForm(e) {
+/* ── SPAM-SCHUTZ: unsichtbarer Check (Cloudflare Turnstile) ───
+   /api/anfrage sagt, ob der Check eingerichtet ist. Erst wenn der Kontaktbereich näher kommt, wird
+   das Skript von Cloudflare geladen. Ist er nicht eingerichtet, sendet das Formular wie bisher über EmailJS. */
+const Guard = (function () {
+  const form = document.querySelector('.contact-form');
+  const SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+  let ready = null, box = null, widget = null, pending = null;
+
+  function settle(ok, val) {
+    if (!pending) return;
+    const p = pending; pending = null; clearTimeout(p.timer);
+    ok ? p.res(val) : p.rej(new Error(val || 'turnstile'));
+  }
+  function loadScript() {
+    return new Promise((res, rej) => {
+      if (window.turnstile) return res();
+      const s = document.createElement('script');
+      s.src = SRC; s.async = true; s.onload = res; s.onerror = () => rej(new Error('script'));
+      document.head.appendChild(s);
+    });
+  }
+  function render(sitekey) {
+    box = document.createElement('div');
+    box.className = 'f-check';
+    form.querySelector('.f-send').appendChild(box);
+    widget = window.turnstile.render(box, {
+      sitekey,
+      execution: 'execute',
+      appearance: 'interaction-only',
+      language: document.documentElement.lang || 'auto',
+      callback: (t) => settle(true, t),
+      'error-callback': (code) => { settle(false, 'error ' + code); return true; },
+      'expired-callback': () => { try { window.turnstile.reset(widget); } catch (_) {} },
+      'timeout-callback': () => settle(false, 'timeout'),
+    });
+  }
+  function init() {
+    if (ready) return ready;
+    ready = fetch('/api/anfrage', { headers: { accept: 'application/json' } })
+      .then((r) => (r.ok ? r.json() : { enabled: false }))
+      .catch(() => ({ enabled: false }))
+      .then((cfg) => {
+        if (!cfg || !cfg.enabled || !cfg.sitekey) return false;
+        return loadScript().then(() => { render(cfg.sitekey); return true; }).catch(() => 'blocked');
+      });
+    return ready;
+  }
+  function token() {
+    return new Promise((res, rej) => {
+      settle(false, 'restart');
+      pending = { res, rej, timer: setTimeout(() => settle(false, 'timeout'), 45000) };
+      try { window.turnstile.reset(widget); window.turnstile.execute(box); } catch (e) { settle(false, 'execute'); }
+    });
+  }
+  if (form) {
+    const section = document.getElementById('contact') || form;
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { io.disconnect(); init(); } }, { rootMargin: '800px 0px' });
+      io.observe(section);
+    } else init();
+    form.addEventListener('focusin', init, { once: true });
+  }
+  return { init, token };
+})();
+
+function attributionData() {
+  try { return JSON.parse(sessionStorage.getItem('adf24_attr') || '{}') || {}; } catch (_) { return {}; }
+}
+
+/* Weg 1: über /api/anfrage (mit Spam-Check). Liefert 'ok', 'fallback' (nicht eingerichtet) oder wirft einen Fehler. */
+async function sendViaServer(fd) {
+  const token = await Guard.token();
+  const fields = {};
+  fd.forEach((v, k) => { if (typeof v === 'string') fields[k] = v; });
+  const res = await fetch('/api/anfrage', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ token, fields, attr: attributionData(), lang: document.documentElement.lang || 'de' }),
+  });
+  if (res.status === 503) return 'fallback';
+  if (!res.ok) throw new Error('server ' + res.status);
+  return 'ok';
+}
+
+async function sendForm(e) {
   e.preventDefault();
   const form = e.target;
   const btn = document.getElementById('sendBtn');
@@ -282,7 +366,20 @@ function sendForm(e) {
   btn.innerHTML = tr('form_sending','… Sending');
   setStatus(st, '', tr('form_sending_status','Sending …'));
 
-  emailjs.send('service_3bk9u16', 'template_d87r2kf', templateParams)
+  /* Spam-Schutz 3: unsichtbarer Check. Ist er eingerichtet, übernimmt der Server Mail und CRM. */
+  let guarded = false;
+  try { guarded = await Guard.init(); } catch (_) {}
+
+  const viaEmailJs = () => {
+    try { if (window.adf24CrmLead) window.adf24CrmLead(form); } catch (_) {}
+    return emailjs.send('service_3bk9u16', 'template_d87r2kf', templateParams);
+  };
+  let sending;
+  if (guarded === true) sending = sendViaServer(fd).then((r) => (r === 'fallback' ? viaEmailJs() : r));
+  else if (guarded === 'blocked') sending = Promise.reject(new Error('check blocked'));
+  else sending = Promise.resolve().then(viaEmailJs);
+
+  sending
     .then(() => {
       try { sessionStorage.setItem('adf24_last_send', String(Date.now())); } catch (_) {}
       btn.innerHTML = tr('form_sent_btn','✓ Sent');
@@ -291,7 +388,7 @@ function sendForm(e) {
       setTimeout(() => { btn.disabled = false; btn.innerHTML = SEND_LABEL; btn.style.background = ''; form.reset(); FormSteps.reset(); }, 3500);
     })
     .catch((err) => {
-      console.error('EmailJS Fehler:', err);
+      console.error('Formular-Fehler:', err);
       btn.disabled = false;
       btn.innerHTML = SEND_LABEL;
       setStatus(st, 'err', tr('form_fail','Sending failed.').replace(/\{mail\}/g, MAIL));
