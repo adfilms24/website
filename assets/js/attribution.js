@@ -1,5 +1,5 @@
 /* attribution.js — merkt sich für diese Sitzung, woher jemand kam (UTM-Parameter, verweisende Website, erste Seite).
- * Wird nur beim Absenden des Anfrageformulars mitgeschickt (crm-lead.js), damit das CRM zeigt, welcher Kanal Anfragen bringt.
+ * Wird nur beim Absenden des Anfrageformulars mitgeschickt (an /api/anfrage), damit das CRM zeigt, welcher Kanal Anfragen bringt.
  * Sitzungsspeicher statt Cookie: verlässt das Gerät nicht von selbst und ist beim Schliessen des Tabs weg.
  * Erste Berührung der Sitzung zählt. Von der verweisenden Website wird nur der Hostname gespeichert. */
 (function () {

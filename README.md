@@ -45,5 +45,5 @@ Kategorien (`category`): `commercial`, `social`, `drone`, `real-estate`, `events
 - Kundenstimmen: `testimonials` in `content/de.json` / `content/en.json`.
 - Leistungsliste der Startseite: `link` je Eintrag in `services` (Slug einer Leistungsseite oder `#anker`).
 - Neues Showreel: unter gleichem Namen ersetzen ist ok, `build.py` hängt eine Prüfsumme an (`?v=…`).
-- Kontaktformular: EmailJS (Service/Template-ID in `assets/js/main.js`).
+- Kontaktformular: `api/anfrage.js` (Vercel-Funktion) prüft Cloudflare Turnstile, sendet per Resend an info@ und legt die Anfrage im CRM ab.
 - Sicherheits-Header und Caching: `vercel.json`.
