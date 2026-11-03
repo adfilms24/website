@@ -63,4 +63,17 @@
     const v = e.target;
     if (v instanceof HTMLVideoElement && v.parentElement) remove(v.parentElement);
   }, true);
+
+  // Kapitel-Links für Google Key Moments (…/showreel-2026.html#t=27): Projektvideo springt an diese Stelle
+  function seek() {
+    const m = location.hash.match(/^#t=(\d+(?:\.\d+)?)$/);
+    const v = m && document.querySelector('.pj-video video');
+    if (!v) return;
+    const go = () => { v.currentTime = parseFloat(m[1]); };
+    if (v.readyState >= 1) go(); else v.addEventListener('loadedmetadata', go, { once: true });
+    if (v.preload === 'none') v.preload = 'metadata';
+    v.scrollIntoView({ block: 'center', behavior: reduced ? 'auto' : 'smooth' });
+  }
+  seek();
+  window.addEventListener('hashchange', seek);
 })();
