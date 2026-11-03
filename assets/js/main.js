@@ -427,6 +427,21 @@ document.querySelector('.contact-form').addEventListener('submit', sendForm);
   });
 })();
 
+/* ── Bilder unterhalb des Hero erst laden, wenn sie in die Nähe kommen ──
+   Portfolio-Kacheln (data-bg) und Hintergrund von #process. Auf dem Handy bleibt so die Leitung frei für Schrift und Hero. */
+function whenNear(el, fn, margin) {
+  if (!('IntersectionObserver' in window)) { fn(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) { io.disconnect(); fn(); } }, { rootMargin: (margin || '600px') + ' 0px' });
+  io.observe(el);
+}
+(function lazyBackgrounds() {
+  document.querySelectorAll('.pf-cell-bg[data-bg]').forEach(el => whenNear(el, () => {
+    el.style.backgroundImage = "linear-gradient(rgba(6,6,6,.25),rgba(6,6,6,.35)),url('" + el.dataset.bg + "')";
+  }));
+  const proc = document.getElementById('process');
+  if (proc) whenNear(proc, () => proc.classList.add('bg-in'));
+})();
+
 /* ── MOTION: Play-Cursor, Hover-Clips im Portfolio, Scroll-Film ───
    Alles nur mit Maus, ohne «Bewegung reduzieren» und ohne Datensparmodus. Videos laden erst bei Bedarf. */
 const LIGHT_DATA = (() => { const c = navigator.connection || {}; return !c.saveData && !/(^|-)2g$/.test(c.effectiveType || ''); })();
@@ -475,7 +490,7 @@ const LIGHT_DATA = (() => { const c = navigator.connection || {}; return !c.save
     // Standbild: auf Hochkant-Bildschirmen reicht der Ausschnitt aus der Bildmitte (gleiche Schärfe, rund 40 % kleiner)
     const box = sec.querySelector('.scrub-sticky');
     const tall = box.clientWidth / Math.max(1, box.clientHeight) <= 0.92; // Ausschnitt ist 1000 × 1080 px
-    v.poster = (tall && v.dataset.posterM) || v.dataset.poster;
+    whenNear(sec, () => { v.poster = (tall && v.dataset.posterM) || v.dataset.poster; });
     return;
   }
   v.poster = v.dataset.poster;
