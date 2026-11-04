@@ -259,6 +259,240 @@
   },
   {
     "slug": {
+      "de": "employer-branding-video-zuerich",
+      "en": "employer-branding-video-zurich"
+    },
+    "project": "thizzy-showcase-zuerich",
+    "nav": {
+      "de": "Employer Branding",
+      "en": "Employer branding"
+    },
+    "title": {
+      "de": "Employer Branding & Recruiting Video Zürich — A.D.Films24",
+      "en": "Employer Branding & Recruiting Video Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Employer Branding &amp; Recruiting Video in Zürich",
+      "en": "Employer branding &amp; recruiting video in Zurich"
+    },
+    "meta": {
+      "de": "Recruiting-Videos und Employer Branding für Firmen in Zürich: echte Mitarbeitende, echter Arbeitsalltag. Damit die richtigen Bewerbungen kommen.",
+      "en": "Recruiting videos and employer branding for companies in Zurich: real employees, real everyday work. So the right people apply."
+    },
+    "intro": {
+      "de": "Gute Leute bewerben sich dort, wo sie sich den Alltag vorstellen können. Wir drehen mit eurem Team, zeigen Arbeitsplatz, Kultur und Menschen und liefern Videos für Karriereseite, Stelleninserate und Social Media.",
+      "en": "Good people apply where they can picture their everyday work. We shoot with your team, show the workplace, culture and people, and deliver videos for your careers page, job ads and social media."
+    },
+    "includes": {
+      "de": [
+        "Konzept und Interviewfragen, abgestimmt auf die Stellen, die ihr besetzen wollt",
+        "Dreh vor Ort mit Interviews und Arbeitsalltag",
+        "Hauptfilm für Karriereseite und LinkedIn",
+        "Kurze Clips (9:16) für Instagram, TikTok und Stelleninserate",
+        "Untertitel, damit es auch ohne Ton funktioniert"
+      ],
+      "en": [
+        "Concept and interview questions tailored to the roles you want to fill",
+        "On-site shoot with interviews and everyday work",
+        "Main film for your careers page and LinkedIn",
+        "Short clips (9:16) for Instagram, TikTok and job ads",
+        "Subtitles so it works without sound"
+      ]
+    },
+    "for": {
+      "de": [
+        "KMU mit Fachkräftemangel",
+        "Firmen mit Lehrstellen, die junge Leute erreichen wollen",
+        "HR- und Marketing-Teams, die ihre Karriereseite aufwerten wollen"
+      ],
+      "en": [
+        "SMEs facing a skills shortage",
+        "Companies with apprenticeships that want to reach young people",
+        "HR and marketing teams upgrading their careers page"
+      ]
+    },
+    "form_type": 0,
+    "faq": {
+      "de": [
+        [
+          "Müssen unsere Mitarbeitenden vor die Kamera?",
+          "Ja, das macht die Videos glaubwürdig. Wir bereiten alle vor, damit es sich locker anfühlt und niemand etwas auswendig lernen muss."
+        ],
+        [
+          "Was kostet ein Recruiting-Video?",
+          "Das hängt vom Umfang ab, also von Drehtagen, Interviews und Versionen. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis."
+        ]
+      ],
+      "en": [
+        [
+          "Do our employees have to be on camera?",
+          "Yes, that is what makes the videos credible. We prepare everyone so it feels relaxed and nobody has to learn lines."
+        ],
+        [
+          "What does a recruiting video cost?",
+          "It depends on the scope: shoot days, interviews and versions. After a short call you get a quote with a fixed price."
+        ]
+      ]
+    }
+  },
+  {
+    "slug": {
+      "de": "unternehmensdoku-zuerich",
+      "en": "brand-documentary-zurich"
+    },
+    "project": "rooftop-sportclub",
+    "nav": {
+      "de": "Brand Documentary",
+      "en": "Brand documentary"
+    },
+    "title": {
+      "de": "Brand Documentary & Unternehmensdoku Zürich — A.D.Films24",
+      "en": "Brand Documentary & Company Film Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Brand Documentary &amp; Unternehmensdoku in Zürich",
+      "en": "Brand documentary &amp; company documentary in Zurich"
+    },
+    "meta": {
+      "de": "Dokumentarfilme für Firmen in Zürich: die echte Geschichte hinter eurer Marke, erzählt von den Menschen, die sie machen. Für Website, Events und Social Media.",
+      "en": "Documentary films for companies in Zurich: the real story behind your brand, told by the people who make it. For your website, events and social media."
+    },
+    "intro": {
+      "de": "Eine Brand Documentary erzählt, warum es euch gibt, nicht nur was ihr verkauft. Wir begleiten Gründer, Team und Kunden über einen oder mehrere Drehtage und machen daraus einen Film, der hängen bleibt.",
+      "en": "A brand documentary tells why you exist, not just what you sell. We follow founders, team and customers over one or more shoot days and turn it into a film that sticks."
+    },
+    "includes": {
+      "de": [
+        "Recherche und Story-Konzept",
+        "Interviews und Beobachtung im echten Alltag",
+        "Dreh mit Cinema-Kamera, Licht und Ton",
+        "Hauptfilm plus Kapitel und Kurzversionen für Social Media",
+        "Color Grading, Sounddesign und lizenzierte Musik"
+      ],
+      "en": [
+        "Research and story concept",
+        "Interviews and observation in real everyday life",
+        "Shoot with cinema camera, lighting and sound",
+        "Main film plus chapters and short versions for social media",
+        "Colour grading, sound design and licensed music"
+      ]
+    },
+    "for": {
+      "de": [
+        "Firmen mit einer Geschichte, die mehr ist als ein Produkt",
+        "Jubiläen, Neueröffnungen und Neuausrichtungen",
+        "Gründer, die ihre Marke persönlich zeigen wollen"
+      ],
+      "en": [
+        "Companies with a story that is more than a product",
+        "Anniversaries, openings and rebrands",
+        "Founders who want to show their brand personally"
+      ]
+    },
+    "form_type": 0,
+    "faq": {
+      "de": [
+        [
+          "Wie lange ist eine Brand Documentary?",
+          "Meist 3 bis 8 Minuten für den Hauptfilm, dazu kurze Versionen für Social Media."
+        ],
+        [
+          "Was kostet eine Unternehmensdoku?",
+          "Das hängt von Drehtagen, Orten und Länge ab. Nach einem kurzen Gespräch bekommt ihr eine Offerte mit festem Preis."
+        ]
+      ],
+      "en": [
+        [
+          "How long is a brand documentary?",
+          "Usually 3 to 8 minutes for the main film, plus short versions for social media."
+        ],
+        [
+          "What does a company documentary cost?",
+          "It depends on shoot days, locations and length. After a short call you get a quote with a fixed price."
+        ]
+      ]
+    }
+  },
+  {
+    "slug": {
+      "de": "werbevideo-ad-creatives-zuerich",
+      "en": "ad-creative-video-zurich"
+    },
+    "project": "phunnid",
+    "nav": {
+      "de": "Ad-Creatives",
+      "en": "Ad creatives"
+    },
+    "title": {
+      "de": "Werbevideo & Ad-Creatives Zürich: Performance-Videos — A.D.Films24",
+      "en": "Ad Creative & Performance Video Zurich — A.D.Films24"
+    },
+    "h1": {
+      "de": "Werbevideo &amp; Ad-Creatives in Zürich",
+      "en": "Ad creative &amp; performance video in Zurich"
+    },
+    "meta": {
+      "de": "Ad-Creatives für Meta, TikTok und YouTube: kurze Werbevideos mit starkem Einstieg und mehreren Varianten zum Testen. Produziert in Zürich.",
+      "en": "Ad creatives for Meta, TikTok and YouTube: short ads with a strong hook and several variants to test. Produced in Zurich."
+    },
+    "intro": {
+      "de": "Eine Anzeige hat zwei Sekunden, bevor weitergescrollt wird. Wir drehen kurze Werbevideos mit starkem Einstieg und liefern mehrere Varianten, damit ihr testen könnt, was am besten funktioniert.",
+      "en": "An ad has two seconds before people scroll on. We shoot short ads with a strong hook and deliver several variants so you can test what works best."
+    },
+    "includes": {
+      "de": [
+        "Ideen und Hooks, abgestimmt auf euer Angebot und eure Zielgruppe",
+        "Dreh mit Produkt, Team oder Kunden",
+        "Mehrere Varianten (Hook, Länge, Format) zum Testen",
+        "Formate 9:16, 4:5 und 16:9 mit Untertiteln",
+        "Auf Wunsch zusammen mit unserer Kampagnen-Betreuung"
+      ],
+      "en": [
+        "Ideas and hooks tailored to your offer and audience",
+        "Shoot with product, team or customers",
+        "Several variants (hook, length, format) for testing",
+        "9:16, 4:5 and 16:9 formats with subtitles",
+        "Optionally combined with our campaign management"
+      ]
+    },
+    "for": {
+      "de": [
+        "Firmen, die bereits Werbung schalten und bessere Creatives brauchen",
+        "Shops und Brands mit Produkten zum Zeigen",
+        "Agenturen, die Video-Creatives auslagern wollen"
+      ],
+      "en": [
+        "Companies already running ads that need better creatives",
+        "Shops and brands with products to show",
+        "Agencies that want to outsource video creatives"
+      ]
+    },
+    "form_type": 7,
+    "faq": {
+      "de": [
+        [
+          "Schaltet ihr die Werbung auch?",
+          "Auf Wunsch ja, über euer eigenes Werbekonto. Mehr dazu auf der Seite Social-Media-Werbung."
+        ],
+        [
+          "Wie viele Varianten bekommen wir?",
+          "Das legen wir in der Offerte fest. Meist sind es 3 bis 6 Varianten pro Dreh, damit sich Tests lohnen."
+        ]
+      ],
+      "en": [
+        [
+          "Do you also run the ads?",
+          "On request, yes, through your own ad account. See our social media ads page."
+        ],
+        [
+          "How many variants do we get?",
+          "We set that in the quote. Usually 3 to 6 variants per shoot so testing pays off."
+        ]
+      ]
+    }
+  },
+  {
+    "slug": {
       "de": "content-partner-zuerich",
       "en": "content-partner-zurich"
     },
