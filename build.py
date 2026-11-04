@@ -171,6 +171,15 @@ PROC_ICONS = {
     "monitor": "M7 3h10v18H7zM11 18h2M10.5 8.5v5l4-2.5z",
     "grade": "M4 7h10M18 7h2M4 17h4M12 17h8M14 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M8 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0",
 }
+def problems(l, t):
+    """Problem-Block der Startseite: Business-Problem, Lösung, Link auf die passende Leistungsseite."""
+    by_slug = {sv["slug"]["de"]: sv for sv in SERVICES}
+    return "\n".join(f'''      <a class="prob-item" href="{service_url(l, by_slug[p[3]])}" data-sr="u" data-d="{i + 1}">
+        <h3 class="prob-name">{p[0]}</h3>
+        <p class="prob-text">{p[1]}</p>
+        <span class="prob-link">{p[2]} {ARROW}</span>
+      </a>''' for i, p in enumerate(t["problems"]))
+
 def proc_steps_html(t):
     n = len(t["proc_steps"])
     return "".join(
@@ -264,7 +273,7 @@ def projects_grid(l, t):
 def build_home(l):
     urls = {x: home_url(x) for x in LANGS}
     t = common_ctx(l, urls)
-    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(l, t), testimonials=testimonials(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
+    t.update(ticker=ticker(t), marquee=marquee(t), gear=gear(t), services=services(l, t), problems_html=problems(l, t), testimonials=testimonials(t), service_links=service_links(l, t), projects_grid=projects_grid(l, t),
              business_ld=business_ld(l, t), process_steps=process_steps(t), proc_steps_html=proc_steps_html(t), look_tabs_html=look_tabs_html(t), faq_items=faq_items(t),
              project_type_radios=radios("projekttyp", t["project_types"], required=True), budget_radios=radios("budget", t["budget_opts"]),
              timeframe_radios=radios("zeitrahmen", t["timeframe_opts"]), industry_radios=radios("branche", t["industry_opts"]), source_opts_html=opts(t["source_opts"]),

@@ -531,5 +531,27 @@
     "Sony FX3",
     "S-Log3",
     "DaVinci Resolve Color Grading"
+  ],
+  "problems_meta": "Wofür Firmen uns holen",
+  "problems_h2": "Drei Probleme, die Video löst",
+  "problems": [
+    [
+      "Ihr findet keine Fachkräfte",
+      "Recruiting-Videos mit eurem echten Team zeigen Bewerbenden, wie es bei euch wirklich ist. Für Karriereseite, LinkedIn und Stelleninserate.",
+      "Employer Branding Video",
+      "employer-branding-video-zuerich"
+    ],
+    [
+      "Man kennt euch nicht",
+      "Eine Brand Documentary oder ein Imagefilm erzählt, warum es euch gibt. Monatlicher Social Content hält euch danach sichtbar.",
+      "Brand Documentary",
+      "unternehmensdoku-zuerich"
+    ],
+    [
+      "Eure Werbung bringt zu wenig",
+      "Kurze Ad-Creatives mit starkem Einstieg und mehreren Varianten zum Testen, für Meta, TikTok und YouTube.",
+      "Ad-Creatives",
+      "werbevideo-ad-creatives-zuerich"
+    ]
   ]
 }
