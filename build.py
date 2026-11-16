@@ -529,8 +529,26 @@ def build_video_sitemap():
                     + f'      <video:uploader info="{DOMAIN}/">A.D.Films24 Studio</video:uploader>\n    </video:video>\n  </url>\n')
     write("video-sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + out + '</urlset>\n')
 
+def build_llms():
+    """llms.txt: kurze Markdown-Übersicht für KI-Assistenten (ChatGPT, Perplexity, Gemini …). Bewusst ohne Preise."""
+    def plain(x): return htmllib.unescape(re.sub(r"<[^>]+>", "", x)).strip()
+    t, te = load("content/de.json"), load("content/en.json")
+    out = "# A.D.Films24 Studio\n\n"
+    out += f"> {plain(t['ld_desc'])} Gegründet und geführt von Abdi Dhiblawe in Zürich, Schweiz.\n\n"
+    out += "\n\n".join(plain(t[k]) for k in ("about_p1", "about_p2")) + "\n\n"
+    out += "- Region: Zürich und Umgebung, auf Anfrage ganze Schweiz\n- Sprachen: Deutsch, Englisch\n"
+    out += f"- Kontakt: {MAIL}, +41 76 764 93 00, Anfrageformular {DOMAIN}/#kontakt\n"
+    out += "- Preise: individuelle Offerte nach kurzem Gespräch (Umfang, Drehtage, Versionen)\n"
+    out += "- English version: " + DOMAIN + "/en/\n\n"
+    out += "## Leistungen\n\n" + "".join(f"- [{plain(sv['h1']['de'])}]({DOMAIN}{service_url('de', sv)}): {plain(sv['meta']['de'])}\n" for sv in SERVICES)
+    out += "\n## Projekte\n\n" + "".join(f"- [{plain(p['title']['de'])}]({DOMAIN}{project_url('de', p['slug'])}) ({p.get('year', '')}, Kunde: {p.get('client', '')}): {plain(p['desc']['de'])}\n" for p in PROJECTS if p.get("published"))
+    out += "\n## Häufige Fragen\n\n" + "".join(f"- **{plain(q)}** {plain(a)}\n" for q, a in t["faq"] if "CHF" not in a)
+    out += "\n## Optional\n\n" + "".join(f"- [{plain(sv['h1']['en'])}]({DOMAIN}{service_url('en', sv)})\n" for sv in SERVICES)
+    out += f"- [Impressum]({DOMAIN}/impressum.html)\n- [AGB]({DOMAIN}/agb.html)\n"
+    write("llms.txt", out)
+
 if __name__ == "__main__":
     for l in LANGS: build_home(l)
-    build_legal(); build_projects(); build_services(); build_404(); build_sitemap(); build_video_sitemap()
+    build_legal(); build_projects(); build_services(); build_404(); build_sitemap(); build_video_sitemap(); build_llms()
     n_pub = sum(1 for p in PROJECTS if p.get("published"))
     print(f"OK: 2 Startseiten, {n_pub} veröffentlichte + {len(PROJECTS)-n_pub} Entwurf-Projekte (je DE/EN), {len(SERVICES)} Leistungsseiten, Rechtstexte, 404, Sitemap")
