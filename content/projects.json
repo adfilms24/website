@@ -142,6 +142,82 @@
     }
   },
   {
+    "slug": "careful-dark-mode",
+    "published": true,
+    "category": "nightlife",
+    "year": "2026",
+    "camera": "Sony FX3",
+    "client": "Careful",
+    "title": {
+      "de": "CAREFUL DARK MODE CLUB BELLEVUE",
+      "en": "CAREFUL DARK MODE CLUB BELLEVUE"
+    },
+    "desc": {
+      "de": "Aftermovie der Halloween-Party «Dark Mode» des Partylabels Careful am 30. Oktober 2026 im Club Bellevue Zürich: DJs, Kostüme und eine Crowd, die bis zum Schluss tanzt.",
+      "en": "Aftermovie of the Halloween party \"Dark Mode\" by party label Careful on 30 October 2026 at Club Bellevue Zurich: DJs, costumes and a crowd dancing until the end."
+    },
+    "story": {
+      "de": [
+        "Das Partylabel Careful hat am 30. Oktober 2026 zum Halloween-Special «Dark Mode» in den Club Bellevue in Zürich geladen. Gesucht war ein Aftermovie, das Lust auf die nächste Party macht.",
+        "Wir waren mitten auf der Tanzfläche: Neonlicht, Kostüme, DJs am Pult und die Crowd ganz nah. Geschnitten auf den Beat, mit eigenem Titel-Look in Pink und Schwarz passend zum Flyer.",
+        "Neben dem 16:9-Film für die Website ist eine Version im Hochformat für Instagram entstanden."
+      ],
+      "en": [
+        "On 30 October 2026, party label Careful hosted its Halloween special \"Dark Mode\" at Club Bellevue in Zurich. The goal was an aftermovie that makes people want to come to the next party.",
+        "We were right on the dance floor: neon light, costumes, DJs on the decks and the crowd up close. Cut to the beat, with a pink and black title look matching the flyer.",
+        "Alongside the 16:9 film for the website, we delivered a vertical version for Instagram."
+      ]
+    },
+    "uploadDate": "2026-11-24",
+    "duration": "PT1M4S",
+    "seo": {
+      "de": "Party-Aftermovie Zürich: Careful Dark Mode im Club Bellevue",
+      "en": "Party Aftermovie Zurich: Careful Dark Mode at Club Bellevue"
+    },
+    "meta": {
+      "de": "Aftermovie der Halloween-Party «Dark Mode» von Careful im Club Bellevue Zürich: Neonlicht, Kostüme, DJs und Crowd, geschnitten auf den Beat.",
+      "en": "Aftermovie of Careful's Halloween party \"Dark Mode\" at Club Bellevue Zurich: neon light, costumes, DJs and crowd, cut to the beat."
+    }
+  },
+  {
+    "slug": "lievin-pre-listening",
+    "published": true,
+    "category": "lifestyle",
+    "year": "2026",
+    "camera": "Sony FX3",
+    "client": "New Aura Entertainment",
+    "title": {
+      "de": "LIEVIN BABY FLOW LISTENING PARTY",
+      "en": "LIEVIN BABY FLOW LISTENING PARTY"
+    },
+    "desc": {
+      "de": "Event-Film zur Baby Flow Listening Party des Zürcher Artists LieVin (New Aura) am 12. November 2026: Pre-Listening des neuen Projekts, Live-Auftritt und eine Community, die mitfeiert.",
+      "en": "Event film of the Baby Flow Listening Party by Zurich artist LieVin (New Aura) on 12 November 2026: a pre-listening of the new project, a live performance and a community celebrating together."
+    },
+    "story": {
+      "de": [
+        "LieVin hat am 12. November 2026 Freunde, Fans und Familie zur Baby Flow Listening Party in Zürich eingeladen, um sein neues Projekt vor dem Release zum ersten Mal zu spielen.",
+        "Wir haben den Abend vom Ankommen bis zum Auftritt begleitet: volle Bude, LieVin am Mikrofon und die Stimmen aus dem Publikum. Die O-Töne des Abends tragen den Film, geschnitten auf den Beat seines eigenen Tracks.",
+        "Neben dem 16:9-Film für die Website ist eine Version im Hochformat für Instagram entstanden."
+      ],
+      "en": [
+        "On 12 November 2026, LieVin invited friends, fans and family to the Baby Flow Listening Party in Zurich to play his new project for the first time before its release.",
+        "We followed the night from the arrival to the performance: a packed room, LieVin on the mic and the voices of the crowd. The film is carried by the night's own sound and cut to the beat of his track.",
+        "Alongside the 16:9 film for the website, we delivered a vertical version for Instagram."
+      ]
+    },
+    "uploadDate": "2026-11-24",
+    "duration": "PT46S",
+    "seo": {
+      "de": "Event-Video Zürich: LieVin Listening Party",
+      "en": "Event Video Zurich: LieVin Listening Party"
+    },
+    "meta": {
+      "de": "Event-Video von der Baby Flow Listening Party des Artists LieVin (New Aura) in Zürich: Pre-Listening, Live-Auftritt und Community, geschnitten auf den Beat.",
+      "en": "Event video of artist LieVin's Baby Flow Listening Party (New Aura) in Zurich: pre-listening, live performance and community, cut to the beat."
+    }
+  },
+  {
     "slug": "loco-birria",
     "published": true,
     "category": "food",

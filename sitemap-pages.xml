@@ -5,7 +5,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/"/>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/"/>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -51,6 +51,42 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/thizzy-showcase-zuerich.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/thizzy-showcase-zuerich.html"/>
     <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/careful-dark-mode.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/careful-dark-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/careful-dark-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/careful-dark-mode.html"/>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/careful-dark-mode.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/careful-dark-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/careful-dark-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/careful-dark-mode.html"/>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/lievin-pre-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/lievin-pre-listening.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/lievin-pre-listening.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/lievin-pre-listening.html"/>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/lievin-pre-listening.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.adfilms24.ch/projekte/lievin-pre-listening.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.adfilms24.ch/en/projects/lievin-pre-listening.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.adfilms24.ch/projekte/lievin-pre-listening.html"/>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
