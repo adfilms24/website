@@ -283,7 +283,9 @@
     "travel": "Travel",
     "automotive": "Automotive",
     "food": "Gastro & Food",
-    "fitness": "Fitness"
+    "fitness": "Fitness",
+    "nightlife": "Party & Nightlife",
+    "lifestyle": "Urban & Lifestyle"
   },
   "legal_back": "← Zurück zur Startseite",
   "legal_home": "Startseite",

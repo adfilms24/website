@@ -53,6 +53,58 @@
     </video:video>
   </url>
   <url>
+    <loc>https://www.adfilms24.ch/projekte/careful-dark-mode.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/careful-dark-mode.jpg</video:thumbnail_loc>
+      <video:title>Party-Aftermovie Zürich: Careful Dark Mode im Club Bellevue</video:title>
+      <video:description>Aftermovie der Halloween-Party «Dark Mode» des Partylabels Careful am 30. Oktober 2026 im Club Bellevue Zürich: DJs, Kostüme und eine Crowd, die bis zum Schluss tanzt.</video:description>
+      <video:content_loc>https://media.adfilms24.ch/assets/video/projects/careful-dark-mode.mp4</video:content_loc>
+      <video:duration>64</video:duration>
+      <video:publication_date>2026-11-24</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/careful-dark-mode.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/careful-dark-mode.jpg</video:thumbnail_loc>
+      <video:title>Party Aftermovie Zurich: Careful Dark Mode at Club Bellevue</video:title>
+      <video:description>Aftermovie of the Halloween party &quot;Dark Mode&quot; by party label Careful on 30 October 2026 at Club Bellevue Zurich: DJs, costumes and a crowd dancing until the end.</video:description>
+      <video:content_loc>https://media.adfilms24.ch/assets/video/projects/careful-dark-mode.mp4</video:content_loc>
+      <video:duration>64</video:duration>
+      <video:publication_date>2026-11-24</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/projekte/lievin-pre-listening.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/lievin-pre-listening.jpg</video:thumbnail_loc>
+      <video:title>Event-Video Zürich: LieVin Listening Party</video:title>
+      <video:description>Event-Film zur Baby Flow Listening Party des Zürcher Artists LieVin (New Aura) am 12. November 2026: Pre-Listening des neuen Projekts, Live-Auftritt und eine Community, die mitfeiert.</video:description>
+      <video:content_loc>https://media.adfilms24.ch/assets/video/projects/lievin-pre-listening.mp4</video:content_loc>
+      <video:duration>46</video:duration>
+      <video:publication_date>2026-11-24</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.adfilms24.ch/en/projects/lievin-pre-listening.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/lievin-pre-listening.jpg</video:thumbnail_loc>
+      <video:title>Event Video Zurich: LieVin Listening Party</video:title>
+      <video:description>Event film of the Baby Flow Listening Party by Zurich artist LieVin (New Aura) on 12 November 2026: a pre-listening of the new project, a live performance and a community celebrating together.</video:description>
+      <video:content_loc>https://media.adfilms24.ch/assets/video/projects/lievin-pre-listening.mp4</video:content_loc>
+      <video:duration>46</video:duration>
+      <video:publication_date>2026-11-24</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.adfilms24.ch/">A.D.Films24 Studio</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://www.adfilms24.ch/projekte/loco-birria.html</loc>
     <video:video>
       <video:thumbnail_loc>https://www.adfilms24.ch/assets/video/projects/loco-birria.jpg</video:thumbnail_loc>
