@@ -236,7 +236,9 @@ def business_ld(l, t):
 SIZES = ["xl", "tall", "wide", "wide", "wide", "wide"]  # je zwei Kacheln füllen eine Reihe (6+4 bzw. 5+5 von 10 Spalten)
 BGS = ["bg-a", "bg-b", "bg-c", "bg-d", "bg-e", "bg-f"]
 def projects_grid(l, t):
-    pub = [p for p in PROJECTS if p.get("published")]
+    # Reihenfolge der Kategorien im Portfolio (ad, 24.11.2026): Automotive, Commercial, Gastro zuerst, Urban & Lifestyle am Schluss
+    order = ["automotive", "commercial", "food", "fitness", "social", "events", "nightlife", "showreel", "lifestyle"]
+    pub = sorted((p for p in PROJECTS if p.get("published")), key=lambda p: order.index(p["category"]) if p["category"] in order else len(order))
     cells = []
     for i, p in enumerate(pub):
         poster = poster_of(p); vid = has_video(p)
