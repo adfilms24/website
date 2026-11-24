@@ -1,8 +1,8 @@
 {
-  "meta_desc": "Video production from Zurich for SMEs and companies: brand films, social media reels, food and event videos. Reliable, transparent, no endless revisions.",
-  "title": "A.D.Films24 — Video Production for Businesses in Zurich",
-  "og_desc": "Video production for businesses from Zurich — brand films, social media content, product and event videos. Reliable and transparent.",
-  "ld_desc": "Video production for SMEs and companies from Zurich: brand films, social media content, product and event videos.",
+  "meta_desc": "Video production from Zurich: brand films, social media content, food, event and brand videos. Shot cinematic, delivered reliably.",
+  "title": "A.D.Films24 — Video Production in Zurich",
+  "og_desc": "Video production from Zurich — brand films, social media content, event and brand videos. Reliable and transparent.",
+  "ld_desc": "Video production from Zurich: brand films, social media content, event and brand videos.",
   "ld_area": "Switzerland",
   "skip": "Skip to content",
   "loader_label": "Loading",
@@ -28,9 +28,9 @@
   "lang_name": "English",
   "reel_caption": "Showreel 2026",
   "scroll": "Scroll",
-  "hero_eyebrow": "Video production for businesses · Zurich",
-  "hero_sr": "Video production for businesses in Zurich",
-  "hero_desc": "<strong class=\"hero-lead\">Cinema quality that wins customers – without endless revision rounds.</strong>High-end video production for Zurich SMEs, restaurants and brands. From concept to finished campaign asset – on time, transparent and straightforward.",
+  "hero_eyebrow": "Video production · Zurich",
+  "hero_sr": "Video production in Zurich",
+  "hero_desc": "<strong class=\"hero-lead\">Cinema quality for brands, people and moments.</strong>From the first idea to the finished video: concept, shoot, edit and grading from one team. On time, transparent and straightforward.",
   "cta_portfolio": "Portfolio",
   "showreel_play_aria": "Play showreel",
   "cta_showreel": "Watch showreel",
@@ -47,18 +47,18 @@
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "SELECTED<br><span class=\"serif\">Work</span>",
   "portfolio_soon": "",
-  "about_tag": "Abdi Dhiblawe · CEO",
+  "about_tag": "A.D.Films24 Studio · Zurich",
   "about_meta": "About us",
   "about_h2": "YOUR VIDEO,<br><span class=\"serif\">no detours</span>",
-  "about_p1": "We are <strong>A.D.Films24 Studio</strong>, the video studio of <strong>Abdi Dhiblawe</strong> for <strong>video production in Zurich</strong>. We produce videos for <strong>SMEs, restaurants and events</strong> — from brand films and social media content to event videos. We shoot on the Sony FX3 and colour grade in DaVinci Resolve.",
-  "about_p2": "Our clients get what was agreed, and usually a bit more. <strong>So far, not a single revision request.</strong> Because we settle what the video needs to achieve before the shoot, and then deliver exactly that.",
+  "about_p1": "We are <strong>A.D.Films24 Studio</strong>, a studio for <strong>video production in Zurich</strong>. We shoot brand films, social media content, events and campaigns. We film on the Sony FX3 and colour grade in-house in DaVinci Resolve.",
+  "about_p2": "Before the shoot we settle what the video needs to achieve, and then we deliver exactly that. Honest, transparent and with a clear process.",
   "about_p3": "Transparent from the start: a clear process, a clear price and an honest assessment, even when something doesn't fit.",
   "gear_head": "Equipment",
   "gear": [
     [
       "Sony FX3",
       "Cinema camera",
-      "Netflix-approved cinema look and true colours that make your business look premium."
+      "Cinema look and true colours that make your footage look premium."
     ],
     [
       "Gimbal DJI Ronin RS5",
@@ -116,13 +116,13 @@
     {
       "num": "02",
       "name": "SOCIAL MEDIA",
-      "sub": "Content Strategy & Production",
+      "sub": "Content, Management &amp; Ads",
       "tags": [
         "Reels & TikTok",
-        "Monthly",
-        "Analytics"
+        "Page management",
+        "Social ads"
       ],
-      "link": "social-media-content-zuerich"
+      "link": "social-media-zuerich"
     },
     {
       "num": "03",
@@ -133,7 +133,7 @@
         "Custom LUTs",
         "Sound design"
       ],
-      "link": "#look"
+      "link": "#process"
     },
     {
       "num": "04",
@@ -167,28 +167,6 @@
         "Livestream"
       ],
       "link": "event-video-zuerich"
-    },
-    {
-      "num": "07",
-      "name": "SOCIAL MEDIA MANAGEMENT",
-      "sub": "Running & Growing Your Pages",
-      "tags": [
-        "Content calendar",
-        "Posting",
-        "Reporting"
-      ],
-      "link": "social-media-management-zuerich"
-    },
-    {
-      "num": "08",
-      "name": "SOCIAL ADS &amp; CAMPAIGN ASSETS",
-      "sub": "Campaigns That Bring Enquiries",
-      "tags": [
-        "Video cuts for Meta & TikTok",
-        "LinkedIn",
-        "Format optimisation"
-      ],
-      "link": "social-media-werbung-zuerich"
     }
   ],
   "clients_meta": "Clients",
@@ -253,7 +231,7 @@
     ]
   ],
   "showreel_title": "Showreel 2026",
-  "showreel_desc": "A selection of our work for businesses: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.",
+  "showreel_desc": "A selection of our work: restaurants, barbershops, retail, fitness, events and Zurich – shot in 4K, with our own grading.",
   "showreel_client": "A.D.Films24",
   "showreel_camera": "Sony FX3",
   "showreel_year": "2026",
@@ -310,7 +288,7 @@
   "wa_cta": "Ask on WhatsApp",
   "wa_text": "Hi A.D.Films24, I'm interested in: {x}. Could we have a quick chat?",
   "lp_reply": "We usually reply within 24 hours.",
-  "lp_promise": "So far, not a single revision request. Because we settle what the video needs to achieve before the shoot.",
+  "lp_promise": "Before the shoot we settle what the video needs to achieve. Then we deliver exactly that.",
   "lp_steps": [
     [
       "Call",
@@ -347,8 +325,8 @@
       "Depending on the scope, a few days to a few weeks. We set the exact timeline together in the quote."
     ],
     [
-      "Why does A.D.Films24 deliver without revision rounds?",
-      "Because goal, format and target audience are defined before the shoot, and clients review the picture live on set via monitoring before the final edit is done in DaVinci Resolve. That's why there hasn't been a single revision request so far. And if something doesn't fit, we find a solution."
+      "Can we have a say during the shoot?",
+      "Yes. We look at the picture live on set with you, on a monitor or right on your phone. You decide on the spot, and there are no surprises in the edit."
     ],
     [
       "Do you also shoot outside Zurich?",
@@ -407,7 +385,7 @@
     "What we did",
     "Result"
   ],
-  "portrait_alt": "Abdi Dhiblawe, CEO of A.D.Films24 Studio",
+  "portrait_alt": "Portrait from the A.D.Films24 Studio team in Zurich",
   "bts_alt": "Camera rig at a window high above Zurich",
   "proc_steps": [
     [

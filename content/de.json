@@ -1,8 +1,8 @@
 {
-  "meta_desc": "Videoproduktion aus Zürich für KMU und Unternehmen: Imagefilme, Social-Media-Reels, Food- und Eventvideos. Zuverlässig, transparent, ohne Korrekturschlaufen.",
-  "title": "A.D.Films24 — Videoproduktion für Unternehmen in Zürich",
-  "og_desc": "Videoproduktion für Unternehmen aus Zürich — Imagefilme, Social-Media-Content, Produkt- und Eventvideos. Zuverlässig und transparent.",
-  "ld_desc": "Videoproduktion für KMU und Unternehmen aus Zürich: Imagefilme, Social-Media-Content, Produkt- und Eventvideos.",
+  "meta_desc": "Videoproduktion aus Zürich: Imagefilme, Social-Media-Content, Food-, Event- und Brand-Videos. Cinematic gedreht, zuverlässig geliefert.",
+  "title": "A.D.Films24 — Videoproduktion in Zürich",
+  "og_desc": "Videoproduktion aus Zürich — Imagefilme, Social-Media-Content, Event- und Brand-Videos. Zuverlässig und transparent.",
+  "ld_desc": "Videoproduktion aus Zürich: Imagefilme, Social-Media-Content, Event- und Brand-Videos.",
   "loader_label": "Loading",
   "menu_aria": "Hauptmenü",
   "nav_aria": "Hauptnavigation",
@@ -22,9 +22,9 @@
   "menu_open": "Menü öffnen",
   "reel_caption": "Showreel 2026",
   "scroll": "Scroll",
-  "hero_eyebrow": "Videoproduktion für Unternehmen · Zürich",
-  "hero_sr": "Videoproduktion für Unternehmen in Zürich",
-  "hero_desc": "<strong class=\"hero-lead\">Cinema-Qualität, die Kunden gewinnt – ohne endlose Korrekturschleifen.</strong>High-End-Videoproduktion für Zürcher KMU, Gastronomie und Brands. Von der Konzeption bis zum fertigen Kampagnen-Asset – termingerecht, transparent und ohne Umwege.",
+  "hero_eyebrow": "Videoproduktion · Zürich",
+  "hero_sr": "Videoproduktion in Zürich",
+  "hero_desc": "<strong class=\"hero-lead\">Cinema-Qualität für Marken, Menschen und Momente.</strong>Von der Idee bis zum fertigen Video: Konzept, Dreh, Schnitt und Grading aus einer Hand. Termingerecht, transparent und ohne Umwege.",
   "cta_portfolio": "Portfolio",
   "showreel_play_aria": "Showreel abspielen",
   "cta_showreel": "Showreel ansehen",
@@ -41,11 +41,11 @@
   "portfolio_meta": "Portfolio",
   "portfolio_h2": "AUSGEWÄHLTE<br><span class=\"serif\">Arbeiten</span>",
   "portfolio_soon": "",
-  "about_tag": "Abdi Dhiblawe · CEO",
+  "about_tag": "A.D.Films24 Studio · Zürich",
   "about_meta": "Über uns",
   "about_h2": "DEIN VIDEO,<br><span class=\"serif\">ohne Umwege</span>",
-  "about_p1": "Wir sind <strong>A.D.Films24 Studio</strong>, das Videostudio von <strong>Abdi Dhiblawe</strong> für <strong>Videoproduktion in Zürich</strong>. Wir produzieren Videos für <strong>KMU, Gastronomie und Events</strong> — vom Imagefilm über Social-Media-Content bis zum Event-Video. Gedreht wird mit der Sony FX3, das Color Grading entsteht in DaVinci Resolve.",
-  "about_p2": "Unsere Kunden bekommen, was abgemacht ist, und meistens etwas mehr. <strong>Bisher gab es keine einzige Revisionsanfrage.</strong> Weil wir vor dem Dreh klären, was das Video leisten soll, und danach genau das liefern.",
+  "about_p1": "Wir sind <strong>A.D.Films24 Studio</strong>, ein Videostudio für <strong>Videoproduktion in Zürich</strong>. Wir drehen Imagefilme, Social-Media-Content, Events und Kampagnen. Gedreht wird mit der Sony FX3, das Color Grading entsteht bei uns in DaVinci Resolve.",
+  "about_p2": "Vor dem Dreh klären wir, was das Video leisten soll, und liefern danach genau das. Ehrlich, transparent und mit einem klaren Ablauf.",
   "about_p3": "Transparent von Anfang an: ein klarer Ablauf, ein klarer Preis und eine ehrliche Einschätzung, auch wenn etwas nicht passt.",
   "gear_head": "Equipment",
   "services_meta": "Leistungen",
@@ -116,7 +116,7 @@
     [
       "Sony FX3",
       "Cinema-Kamera",
-      "Netflix-zertifizierter Kinolook und echte Farben, die dein Unternehmen hochwertig wirken lassen."
+      "Kinolook und echte Farben, die euer Bild hochwertig wirken lassen."
     ],
     [
       "Gimbal DJI Ronin RS5",
@@ -171,13 +171,13 @@
     {
       "num": "02",
       "name": "SOCIAL MEDIA",
-      "sub": "Content Strategy & Production",
+      "sub": "Content, Betreuung &amp; Ads",
       "tags": [
         "Reels & TikTok",
-        "Monatlich",
-        "Analytics"
+        "Seiten betreuen",
+        "Social Ads"
       ],
-      "link": "social-media-content-zuerich"
+      "link": "social-media-zuerich"
     },
     {
       "num": "03",
@@ -188,7 +188,7 @@
         "Custom LUTs",
         "Sound Design"
       ],
-      "link": "#look"
+      "link": "#process"
     },
     {
       "num": "04",
@@ -222,28 +222,6 @@
         "Livestream"
       ],
       "link": "event-video-zuerich"
-    },
-    {
-      "num": "07",
-      "name": "SOCIAL MEDIA MANAGEMENT",
-      "sub": "Seiten betreuen & wachsen",
-      "tags": [
-        "Redaktionsplan",
-        "Posting",
-        "Reporting"
-      ],
-      "link": "social-media-management-zuerich"
-    },
-    {
-      "num": "08",
-      "name": "SOCIAL ADS &amp; KAMPAGNEN-ASSETS",
-      "sub": "Werbekampagnen, die Anfragen bringen",
-      "tags": [
-        "Video-Cuts für Meta & TikTok",
-        "LinkedIn",
-        "Format-Optimierung"
-      ],
-      "link": "social-media-werbung-zuerich"
     }
   ],
   "menu_close": "Menü schliessen",
@@ -251,7 +229,7 @@
   "lang_switch_aria": "EN – Switch to English",
   "lang_name": "Deutsch",
   "showreel_title": "Showreel 2026",
-  "showreel_desc": "Ein Auszug aus unserer Arbeit für Unternehmen: Gastro, Barbershops, Retail, Fitness, Events und Zürich – gefilmt in 4K, mit eigenem Grading.",
+  "showreel_desc": "Ein Auszug aus unserer Arbeit: Gastro, Barbershops, Retail, Fitness, Events und Zürich – gefilmt in 4K, mit eigenem Grading.",
   "showreel_client": "A.D.Films24",
   "showreel_camera": "Sony FX3",
   "showreel_year": "2026",
@@ -310,7 +288,7 @@
   "wa_cta": "Per WhatsApp fragen",
   "wa_text": "Hallo A.D.Films24, ich interessiere mich für: {x}. Können wir kurz sprechen?",
   "lp_reply": "Antwort in der Regel innerhalb von 24 Stunden.",
-  "lp_promise": "Bisher gab es keine einzige Revisionsanfrage. Weil wir vor dem Dreh klären, was das Video leisten soll.",
+  "lp_promise": "Vor dem Dreh klären wir, was das Video leisten soll. Danach liefern wir genau das.",
   "lp_steps": [
     [
       "Gespräch",
@@ -347,8 +325,8 @@
       "Je nach Umfang wenige Tage bis einige Wochen. Den genauen Zeitplan legen wir gemeinsam in der Offerte fest."
     ],
     [
-      "Warum liefert A.D.Films24 ohne Revisionsschleifen?",
-      "Weil Ziel, Format und Zielgruppe vor dem Dreh definiert werden und Kunden das Bild live am Set über Monitoring begutachten, bevor der finale Schnitt in DaVinci Resolve erfolgt. Deshalb gab es bisher keine einzige Revisionsanfrage. Und falls doch etwas nicht passt, finden wir eine Lösung."
+      "Können wir beim Dreh mitreden?",
+      "Ja. Wir schauen das Bild live am Set mit euch an, auf dem Monitor oder direkt auf dem Handy. So entscheidet ihr vor Ort mit, und beim Schnitt gibt es keine Überraschungen."
     ],
     [
       "Dreht ihr auch ausserhalb von Zürich?",
@@ -407,7 +385,7 @@
     "Umsetzung",
     "Ergebnis"
   ],
-  "portrait_alt": "Abdi Dhiblawe, CEO von A.D.Films24 Studio",
+  "portrait_alt": "Portrait aus dem Team von A.D.Films24 Studio in Zürich",
   "bts_alt": "Kamera-Rig am Fenster hoch über Zürich",
   "proc_steps": [
     [
