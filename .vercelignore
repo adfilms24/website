@@ -9,3 +9,5 @@ README.md
 tools
 # Videos kommen von media.adfilms24.ch (Cloudflare R2), damit nicht jede Version 160 MB belegt
 assets/video/**/*.mp4
+# --- Ab hier nur für Vercel, nicht für den Infomaniak-Upload (deploy-infomaniak.yml liest nur bis hier) ---
+api/anfrage.php

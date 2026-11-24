@@ -1,0 +1,103 @@
+name: Website zu Infomaniak
+
+# Lädt die fertige Website per SFTP auf das Infomaniak-Webhosting (Genf, Schweiz).
+# Solange die Domain noch auf Vercel zeigt, ist das eine Testkopie; live wird sie erst mit dem DNS-Wechsel.
+# Videos bleiben auf media.adfilms24.ch (Cloudflare R2) und werden nicht hochgeladen.
+#
+# Secrets im Repo (Settings → Secrets and variables → Actions):
+#   INFOMANIAK_SFTP_HOST      z.B. xxxx.ftp.infomaniak.com (Infomaniak Manager → Hosting → FTP/SSH)
+#   INFOMANIAK_SFTP_USER      FTP/SSH-Benutzer
+#   INFOMANIAK_SFTP_PASSWORD  sein Passwort
+#   INFOMANIAK_SITE_DIR       Ordner der Website auf dem Server, z.B. sites/adfilms24.ch
+#   INFOMANIAK_TEST_URL       Adresse, unter der die Kopie erreichbar ist (vor dem DNS-Wechsel die Vorschau-Adresse von Infomaniak)
+#   TURNSTILE_SITE_KEY, TURNSTILE_SECRET_KEY, RESEND_API_KEY   für das Kontaktformular (gleiche Werte wie in Vercel)
+# Fehlen die SFTP-Secrets, macht der Workflow nichts (grün), damit main nicht rot wird, bevor alles eingerichtet ist.
+
+on:
+  push:
+    branches: [main, infomaniak]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-infomaniak
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Hochladen und prüfen
+    runs-on: ubuntu-latest
+    env:
+      HOST: ${{ secrets.INFOMANIAK_SFTP_HOST }}
+      USER_NAME: ${{ secrets.INFOMANIAK_SFTP_USER }}
+      PASS: ${{ secrets.INFOMANIAK_SFTP_PASSWORD }}
+      SITE_DIR: ${{ secrets.INFOMANIAK_SITE_DIR }}
+      TEST_URL: ${{ secrets.INFOMANIAK_TEST_URL }}
+    steps:
+      - name: Eingerichtet?
+        id: ready
+        run: |
+          missing=""
+          for v in HOST USER_NAME PASS SITE_DIR; do [ -n "$(eval echo \${$v:-})" ] || missing="$missing $v"; done
+          if [ -n "$missing" ]; then
+            echo "::notice::Infomaniak ist noch nicht eingerichtet (fehlt:$missing). Nichts hochgeladen."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.ready.outputs.go == 'true'
+
+      - name: Website bauen und zusammenstellen
+        if: steps.ready.outputs.go == 'true'
+        env:
+          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          set -euo pipefail
+          python3 build.py
+          python3 tools/make_htaccess.py .htaccess
+          mkdir dist
+          # Gleiche Ausnahmen wie .vercelignore, dazu die Vercel-Funktion und Git-Dateien
+          rsync -a --exclude-from=<(sed '/^# --- Ab hier nur für Vercel/,$d' .vercelignore | grep -v '^#' | sed '/^$/d; s#^#/#; s#/\*\*/\*\.mp4$#/**.mp4#') \
+            --exclude '.git*' --exclude 'vercel.json' --exclude 'api/anfrage.js' --exclude '/dist' ./ dist/
+          # Vercel Web Analytics gibt es auf Infomaniak nicht: Skript-Zeile aus der Kopie entfernen
+          find dist -name '*.html' -exec sed -i 's#<script defer src="/_vercel/insights/script.js"></script>##' {} +
+          # Schlüssel für das Kontaktformular (nur auf dem Server, nie im Repo)
+          php -r 'echo "<?php\ndefined(\"ANFRAGE\") or exit;\nreturn " . var_export(["TURNSTILE_SITE_KEY"=>getenv("TURNSTILE_SITE_KEY")?:"", "TURNSTILE_SECRET_KEY"=>getenv("TURNSTILE_SECRET_KEY")?:"", "RESEND_API_KEY"=>getenv("RESEND_API_KEY")?:""], true) . ";\n";' > dist/api/config.php
+          php -l dist/api/anfrage.php
+          php -l dist/api/config.php >/dev/null
+          echo "Videos in dist: $(find dist -name '*.mp4' | wc -l) (soll 0 sein)"
+          du -sh dist
+
+      - name: Per SFTP hochladen
+        if: steps.ready.outputs.go == 'true'
+        run: |
+          set -euo pipefail
+          sudo apt-get -qq update && sudo apt-get -qq install -y lftp >/dev/null
+          # --delete entfernt auf dem Server nur Dateien im Website-Ordner, die es in der neuen Version nicht mehr gibt
+          lftp -u "$USER_NAME","$PASS" "sftp://$HOST" -e "set sftp:auto-confirm yes; set net:max-retries 3; \
+            mirror -R --delete --parallel=4 --verbose=1 dist/ '$SITE_DIR/'; bye"
+
+      - name: Seite und Kontaktformular prüfen
+        if: steps.ready.outputs.go == 'true' && env.TEST_URL != ''
+        run: |
+          set -uo pipefail
+          base="${TEST_URL%/}"; fail=0
+          for p in / /impressum.html /datenschutz.html /en/ /404-test-gibt-es-nicht; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$base$p")
+            want=200; [ "$p" = /404-test-gibt-es-nicht ] && want=404
+            [ "$code" = "$want" ] && echo "$p → $code" || { echo "::error::$p → $code (erwartet $want)"; fail=1; }
+          done
+          api=$(curl -s "$base/api/anfrage")
+          echo "/api/anfrage → $api"
+          echo "$api" | grep -q '"enabled":true' || { echo "::error::Kontaktformular meldet nicht enabled:true"; fail=1; }
+          code=$(curl -s -o /dev/null -w "%{http_code}" "$base/api/config.php")
+          [ "$code" = 403 ] || [ "$code" = 404 ] || { echo "::error::api/config.php ist erreichbar (HTTP $code)"; fail=1; }
+          curl -sI "$base/" | grep -qi '^content-security-policy:' || { echo "::error::Sicherheits-Header fehlen (.htaccess)"; fail=1; }
+          [ "$fail" = 0 ] && echo "Infomaniak-Kopie unter $base ist in Ordnung." | tee -a "$GITHUB_STEP_SUMMARY"
+          exit $fail
