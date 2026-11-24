@@ -76,6 +76,66 @@
       "source": "/en/projects/sushi-chef-ale.html",
       "destination": "/en/projects/sushi-restaurant-zuerich.html",
       "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-content-zuerich.html",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-content-zuerich",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-management-zuerich.html",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-management-zuerich",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-werbung-zuerich.html",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/leistungen/social-media-werbung-zuerich",
+      "destination": "/leistungen/social-media-zuerich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-content-zurich.html",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-content-zurich",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-management-zurich.html",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-management-zurich",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-ads-zurich.html",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/social-media-ads-zurich",
+      "destination": "/en/services/social-media-zurich.html",
+      "permanent": true
     }
   ]
 }

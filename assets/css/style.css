@@ -2167,3 +2167,10 @@ html.lenis, html.lenis body { height: auto; }
   .cta-primary::after { display: none; }
   #nav.nav-hide { transform: none; }
 }
+
+/* Startseite 8 Abschnitte (2026-11): Bildqualität im Ablauf, FAQ im Kontakt, Scroll-Film 2 Bildschirme */
+.look-in-process { margin-top: clamp(4rem, 8vw, 7rem); }
+.look-in-process .look-cmp { margin-top: 2.5rem; }
+.contact-faq { max-width: 1100px; margin: clamp(5rem, 9vw, 8rem) auto 0; position: relative; }
+.contact-faq .h-display, .look-in-process .h-display { font-size: clamp(2.2rem, 5vw, 4.2rem); }
+.scrub { height: 200vh; }

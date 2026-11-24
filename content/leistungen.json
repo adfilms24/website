@@ -18,8 +18,8 @@
       "en": "Brand film &amp; corporate video in Zurich"
     },
     "meta": {
-      "de": "Imagefilme und Unternehmensvideos für KMU in Zürich: Wir zeigen, wer ihr seid und was euch ausmacht. Zuverlässig produziert, ohne endlose Korrekturschlaufen.",
-      "en": "Brand films and corporate videos for SMEs in Zurich: we show who you are and what sets you apart. Reliably produced, without endless revision rounds."
+      "de": "Imagefilme und Unternehmensvideos aus Zürich: Wir zeigen, wer ihr seid und was euch ausmacht. Sauber geplant und zuverlässig geliefert.",
+      "en": "Brand films and corporate videos from Zurich: we show who you are and what sets you apart. Carefully planned and reliably delivered."
     },
     "intro": {
       "de": "Ein Imagefilm muss in wenigen Sekunden zeigen, wer ihr seid und warum man euch vertrauen kann. Wir produzieren Imagefilme und Unternehmensvideos für KMU in Zürich und Umgebung — für Website, Social Media, Messen und Recruiting.",
@@ -87,8 +87,8 @@
   },
   {
     "slug": {
-      "de": "social-media-content-zuerich",
-      "en": "social-media-content-zurich"
+      "de": "social-media-zuerich",
+      "en": "social-media-zurich"
     },
     "project": "social-media",
     "nav": {
@@ -96,77 +96,131 @@
       "en": "Social media"
     },
     "title": {
-      "de": "Social-Media-Content für KMU in Zürich — A.D.Films24",
-      "en": "Social Media Content for SMEs in Zurich — A.D.Films24"
+      "de": "Social Media Zürich: Content, Betreuung und Ads — A.D.Films24",
+      "en": "Social Media Zurich: Content, Management and Ads — A.D.Films24"
     },
     "h1": {
-      "de": "Social-Media-Content für KMU in Zürich",
-      "en": "Social media content for SMEs in Zurich"
+      "de": "Social Media in Zürich: Content, Betreuung und Werbung",
+      "en": "Social media in Zurich: content, management and ads"
     },
     "meta": {
-      "de": "Reels, Kurzvideos und Fotos für Instagram, TikTok und LinkedIn: Social-Media-Content für KMU in Zürich, einzeln oder als monatliches Paket.",
-      "en": "Reels, short videos and photos for Instagram, TikTok and LinkedIn: social media content for SMEs in Zurich, one-off or as a monthly package."
+      "de": "Reels und Kurzvideos, Betreuung eurer Kanäle und Werbekampagnen auf Instagram, TikTok und LinkedIn. Alles aus einer Hand, aus Zürich.",
+      "en": "Reels and short videos, management of your channels and ad campaigns on Instagram, TikTok and LinkedIn. All from one team, based in Zurich."
     },
     "intro": {
-      "de": "Regelmässiger Content wirkt nur, wenn er gut aussieht und zur Marke passt. Wir produzieren Reels, Kurzvideos und Fotos für Instagram, TikTok und LinkedIn — einzeln oder als monatliches Paket.",
-      "en": "Regular content only works if it looks good and fits your brand. We produce reels, short videos and photos for Instagram, TikTok and LinkedIn — one-off or as a monthly package."
+      "de": "Social Media wirkt, wenn drei Dinge zusammenpassen: Content, der gut aussieht, Kanäle, die regelmässig bespielt werden, und Werbung, die die richtigen Leute erreicht. Wir übernehmen davon, was ihr braucht: nur den Content, die ganze Betreuung oder auch die Kampagnen.",
+      "en": "Social media works when three things fit together: content that looks good, channels that are posted to regularly, and ads that reach the right people. We take on whatever you need: just the content, the full management, or the campaigns as well."
     },
     "includes": {
       "de": [
-        "Reels und Kurzvideos im Hochformat (9:16)",
-        "Mehrere Clips aus einem Drehtag",
-        "Schnitt und Untertitel im Stil eurer Marke",
-        "Fotos aus dem gleichen Dreh auf Wunsch",
-        "Ideen für Hooks und Formate"
+        "Reels und Kurzvideos im Hochformat (9:16), mehrere Clips pro Drehtag",
+        "Schnitt und Untertitel im Stil eurer Marke, Fotos aus dem gleichen Dreh auf Wunsch",
+        "Redaktionsplan pro Monat und Posting zu den besten Zeiten",
+        "Profil-Optimierung (Bio, Highlights, Links)",
+        "Werbekampagnen auf Instagram, Facebook, TikTok und LinkedIn mit eigenen Video-Ads",
+        "Einrichtung von Werbekonto, Pixel und Tracking",
+        "Monatlicher Report mit den wichtigsten Kennzahlen"
       ],
       "en": [
-        "Reels and short videos in vertical format (9:16)",
-        "Several clips from one shooting day",
-        "Editing and subtitles in your brand's style",
-        "Photos from the same shoot on request",
-        "Ideas for hooks and formats"
+        "Reels and short videos in vertical format (9:16), several clips per shooting day",
+        "Editing and subtitles in your brand's style, photos from the same shoot on request",
+        "Monthly content calendar and posting at the best times",
+        "Profile optimisation (bio, highlights, links)",
+        "Ad campaigns on Instagram, Facebook, TikTok and LinkedIn with our own video ads",
+        "Set-up of ad account, pixel and tracking",
+        "Monthly report with the key figures"
       ]
     },
     "for": {
       "de": [
-        "Restaurants, Fitnessstudios, Coiffeure und Läden",
-        "Marken mit eigenem Instagram-Auftritt",
-        "Firmen, die auf LinkedIn sichtbar werden wollen"
+        "Marken, Läden und Restaurants mit eigenem Instagram-Auftritt",
+        "Alle, die regelmässig posten wollen, aber keine Zeit dafür haben",
+        "Neueröffnungen und Kampagnen, die schnell Reichweite brauchen"
       ],
       "en": [
-        "Restaurants, gyms, hair salons and shops",
-        "Brands with their own Instagram presence",
-        "Companies that want to be visible on LinkedIn"
+        "Brands, shops and restaurants with their own Instagram presence",
+        "Anyone who wants to post regularly but has no time for it",
+        "New openings and campaigns that need reach fast"
       ]
+    },
+    "steps": {
+      "de": [
+        [
+          "Gespräch",
+          "Wir klären Ziele, Zielgruppe und Kanäle."
+        ],
+        [
+          "Plan",
+          "Wir prüfen eure Profile und erstellen den ersten Monatsplan."
+        ],
+        [
+          "Content & Posting",
+          "Wir produzieren, ihr gebt frei, wir posten oder starten die Kampagne."
+        ],
+        [
+          "Report",
+          "Jeden Monat Zahlen und klare nächste Schritte."
+        ]
+      ],
+      "en": [
+        [
+          "Call",
+          "We clarify goals, audience and channels."
+        ],
+        [
+          "Plan",
+          "We review your profiles and build the first monthly plan."
+        ],
+        [
+          "Content & posting",
+          "We produce, you approve, we post or launch the campaign."
+        ],
+        [
+          "Report",
+          "Numbers and clear next steps every month."
+        ]
+      ]
+    },
+    "promise": {
+      "de": "Nichts geht online ohne eure Freigabe. Werbebudget läuft über euer eigenes Werbekonto, Monatspakete sind monatlich kündbar.",
+      "en": "Nothing goes live without your approval. Ad budget runs through your own ad account, monthly packages can be cancelled monthly."
     },
     "form_type": 1,
     "faq": {
       "de": [
         [
-          "Wie viele Reels bekommen wir pro Drehtag?",
-          "Das hängt vom Konzept und den Locations ab. Wir planen den Drehtag so, dass möglichst viele fertige Clips entstehen, und sagen euch die Anzahl vorher in der Offerte."
+          "Können wir nur Content buchen, ohne Betreuung?",
+          "Ja. Ihr könnt einzelne Drehs buchen, ein monatliches Content-Paket oder die komplette Betreuung inklusive Posting und Werbung."
         ],
         [
-          "Gibt es Social-Media-Content auch als Monatspaket?",
-          "Ja. Ihr könnt einzelne Drehs buchen oder ein monatliches Paket mit regelmässigem Content."
+          "Für welche Plattformen arbeitet ihr?",
+          "Für Instagram, TikTok, Facebook und LinkedIn, in den passenden Formaten 9:16, 4:5 und 16:9."
         ],
         [
-          "Für welche Plattformen produziert ihr?",
-          "Für Instagram, TikTok und LinkedIn, in den passenden Formaten 9:16, 4:5 und 16:9."
+          "Über wessen Werbekonto laufen die Ads?",
+          "Das Werbebudget läuft über euer eigenes Werbekonto. So behaltet ihr die volle Kontrolle über Kosten und Daten."
+        ],
+        [
+          "Garantiert ihr mehr Follower oder Kunden?",
+          "Eine Garantie gibt es bei Social Media nicht. Ihr bekommt aber jeden Monat eine Auswertung, damit ihr seht, was wirkt."
         ]
       ],
       "en": [
         [
-          "How many Reels do we get per shooting day?",
-          "It depends on the concept and locations. We plan the day to get as many finished clips as possible and state the number in the quote."
+          "Can we book content only, without management?",
+          "Yes. You can book single shoots, a monthly content package or full management including posting and ads."
         ],
         [
-          "Is social media content available as a monthly package?",
-          "Yes. You can book single shoots or a monthly package with regular content."
+          "Which platforms do you work on?",
+          "Instagram, TikTok, Facebook and LinkedIn, in the right formats: 9:16, 4:5 and 16:9."
         ],
         [
-          "Which platforms do you produce for?",
-          "Instagram, TikTok and LinkedIn, in the right formats: 9:16, 4:5 and 16:9."
+          "Whose ad account do the ads run on?",
+          "The ad budget runs on your own ad account, so you keep full control over costs and data."
+        ],
+        [
+          "Do you guarantee more followers or customers?",
+          "Nobody can guarantee results on social media. But you get a monthly report so you can see what works."
         ]
       ]
     }
@@ -831,262 +885,6 @@
         [
           "Do we also get short clips for Instagram?",
           "Yes. Besides the film you get short vertical clips you can share right away."
-        ]
-      ]
-    }
-  },
-  {
-    "slug": {
-      "de": "social-media-management-zuerich",
-      "en": "social-media-management-zurich"
-    },
-    "project": "social-media",
-    "nav": {
-      "de": "Social-Media-Management",
-      "en": "Social media management"
-    },
-    "title": {
-      "de": "Social-Media-Management für KMU in Zürich — A.D.Films24",
-      "en": "Social Media Management for SMEs in Zurich — A.D.Films24"
-    },
-    "h1": {
-      "de": "Social-Media-Management für KMU in Zürich",
-      "en": "Social media management for SMEs in Zurich"
-    },
-    "meta": {
-      "de": "Wir betreuen eure Instagram-, TikTok- und LinkedIn-Seiten: Planung, Content, Posting und Auswertung aus einer Hand. Für KMU in Zürich, monatlich.",
-      "en": "We run your Instagram, TikTok and LinkedIn pages: planning, content, posting and reporting from one place. For SMEs in Zurich, monthly and transparent."
-    },
-    "intro": {
-      "de": "Gute Videos bringen wenig, wenn niemand regelmässig postet. Wir übernehmen eure Social-Media-Seiten komplett: vom Redaktionsplan über den Content bis zum Posting und zur monatlichen Auswertung. Ihr gebt frei, wir kümmern uns um den Rest.",
-      "en": "Great videos don't help much if nobody posts regularly. We take over your social media pages completely: from the content calendar and the content itself to posting and a monthly report. You approve, we handle the rest."
-    },
-    "includes": {
-      "de": [
-        "Redaktionsplan pro Monat, abgestimmt auf eure Ziele",
-        "Content-Produktion: Reels, Fotos und Texte",
-        "Posting zu den besten Zeiten",
-        "Profil-Optimierung (Bio, Highlights, Links)",
-        "Monatlicher Report mit den wichtigsten Zahlen"
-      ],
-      "en": [
-        "Monthly content calendar aligned with your goals",
-        "Content production: reels, photos and captions",
-        "Posting at the best times",
-        "Profile optimisation (bio, highlights, links)",
-        "Monthly report with the key numbers"
-      ]
-    },
-    "for": {
-      "de": [
-        "KMU ohne Zeit für eigene Social-Media-Arbeit",
-        "Restaurants, Studios und Läden mit lokaler Kundschaft",
-        "Firmen, die auf Instagram oder LinkedIn sichtbar werden wollen"
-      ],
-      "en": [
-        "SMEs without time to run their own social media",
-        "Restaurants, studios and shops with local customers",
-        "Companies that want to be visible on Instagram or LinkedIn"
-      ]
-    },
-    "steps": {
-      "de": [
-        [
-          "Gespräch",
-          "Wir klären Ziele, Zielgruppe und Kanäle."
-        ],
-        [
-          "Analyse & Plan",
-          "Wir prüfen eure Profile und erstellen den ersten Monatsplan."
-        ],
-        [
-          "Content & Posting",
-          "Wir produzieren, ihr gebt frei, wir posten."
-        ],
-        [
-          "Report",
-          "Jeden Monat Zahlen und klare nächste Schritte."
-        ]
-      ],
-      "en": [
-        [
-          "Call",
-          "We clarify goals, audience and channels."
-        ],
-        [
-          "Audit & plan",
-          "We review your profiles and build the first monthly plan."
-        ],
-        [
-          "Content & posting",
-          "We produce, you approve, we post."
-        ],
-        [
-          "Report",
-          "Numbers and clear next steps every month."
-        ]
-      ]
-    },
-    "promise": {
-      "de": "Nichts geht online ohne eure Freigabe. Monatlich kündbar, ohne lange Vertragsbindung.",
-      "en": "Nothing goes live without your approval. Cancel monthly, no long contract."
-    },
-    "form_type": 6,
-    "faq": {
-      "de": [
-        [
-          "Wie lange läuft ein Social-Media-Paket?",
-          "Monatspakete sind mit einem Monat Frist kündbar. Ihr bindet euch also nicht langfristig."
-        ],
-        [
-          "Müssen wir uns um die Inhalte kümmern?",
-          "Nein. Wir planen, produzieren und posten. Ihr gebt nur noch frei, was online geht."
-        ],
-        [
-          "Garantiert ihr mehr Follower oder Kunden?",
-          "Eine Garantie gibt es bei Social Media nicht. Ihr bekommt aber jeden Monat eine Auswertung, damit ihr seht, was wirkt."
-        ]
-      ],
-      "en": [
-        [
-          "How long does a social media package run?",
-          "Monthly packages can be cancelled with one month's notice, so there is no long-term lock-in."
-        ],
-        [
-          "Do we have to take care of the content?",
-          "No. We plan, produce and post. You only approve what goes online."
-        ],
-        [
-          "Do you guarantee more followers or customers?",
-          "Nobody can guarantee results on social media. But you get a monthly report so you can see what works."
-        ]
-      ]
-    }
-  },
-  {
-    "slug": {
-      "de": "social-media-werbung-zuerich",
-      "en": "social-media-ads-zurich"
-    },
-    "project": null,
-    "nav": {
-      "de": "Social-Media-Werbung",
-      "en": "Social media ads"
-    },
-    "title": {
-      "de": "Social-Media-Werbung Zürich (Meta, TikTok) — A.D.Films24",
-      "en": "Social Media Ads Zurich (Meta, TikTok) — A.D.Films24"
-    },
-    "h1": {
-      "de": "Social-Media-Werbung für KMU in Zürich",
-      "en": "Social media ads for SMEs in Zurich"
-    },
-    "meta": {
-      "de": "Wir planen, gestalten und betreuen eure Werbekampagnen auf Instagram, Facebook, TikTok und LinkedIn: mit eigenen Video-Ads, Tracking und klarem Reporting.",
-      "en": "We plan, create and manage your ad campaigns on Instagram, Facebook, TikTok and LinkedIn: with our own video ads, clean tracking and clear reporting."
-    },
-    "intro": {
-      "de": "Mit Werbung erreicht ihr genau die Leute, die euch noch nicht kennen. Wir setzen eure Kampagnen auf Instagram, Facebook, TikTok und LinkedIn auf, produzieren die Video-Ads selbst und optimieren laufend, damit euer Budget in Anfragen und Kunden ankommt.",
-      "en": "Ads let you reach exactly the people who don't know you yet. We set up your campaigns on Instagram, Facebook, TikTok and LinkedIn, produce the video ads ourselves and optimise continuously so your budget turns into enquiries and customers."
-    },
-    "includes": {
-      "de": [
-        "Kampagnenstrategie: Ziel, Zielgruppe und Budget",
-        "Video- und Bild-Ads aus eigener Produktion",
-        "Einrichtung von Werbekonto, Pixel und Tracking",
-        "Laufende Optimierung und A/B-Tests",
-        "Reporting zu Reichweite, Klicks und Kosten pro Anfrage"
-      ],
-      "en": [
-        "Campaign strategy: goal, audience and budget",
-        "Video and image ads from our own production",
-        "Set-up of ad account, pixel and tracking",
-        "Ongoing optimisation and A/B tests",
-        "Reporting on reach, clicks and cost per enquiry"
-      ]
-    },
-    "for": {
-      "de": [
-        "Neueröffnungen, die schnell bekannt werden wollen",
-        "KMU, die planbar neue Anfragen gewinnen wollen",
-        "Firmen, die Fachkräfte über Social Media suchen"
-      ],
-      "en": [
-        "New openings that want to become known fast",
-        "SMEs that want a steady flow of new enquiries",
-        "Companies recruiting staff via social media"
-      ]
-    },
-    "steps": {
-      "de": [
-        [
-          "Gespräch",
-          "Wir klären Ziel, Zielgruppe und Werbebudget."
-        ],
-        [
-          "Setup",
-          "Werbekonto, Tracking und Zielgruppen werden sauber eingerichtet."
-        ],
-        [
-          "Ads & Start",
-          "Wir produzieren die Ads und starten die Kampagne nach eurer Freigabe."
-        ],
-        [
-          "Optimierung",
-          "Wir passen laufend an und berichten, was es gebracht hat."
-        ]
-      ],
-      "en": [
-        [
-          "Call",
-          "We clarify goal, audience and ad budget."
-        ],
-        [
-          "Set-up",
-          "Ad account, tracking and audiences are set up properly."
-        ],
-        [
-          "Ads & launch",
-          "We produce the ads and launch the campaign once you approve."
-        ],
-        [
-          "Optimisation",
-          "We adjust continuously and report on the results."
-        ]
-      ]
-    },
-    "promise": {
-      "de": "Das Werbebudget läuft über euer eigenes Werbekonto. Ihr seht jederzeit, wofür jeder Franken ausgegeben wird.",
-      "en": "The ad budget runs through your own ad account. You always see where every franc goes."
-    },
-    "form_type": 7,
-    "faq": {
-      "de": [
-        [
-          "Über wessen Werbekonto laufen die Ads?",
-          "Das Werbebudget läuft über euer eigenes Werbekonto. So behaltet ihr die volle Kontrolle über Kosten und Daten."
-        ],
-        [
-          "Wie viel Werbebudget braucht es?",
-          "Das hängt von Ziel und Zielgruppe ab. Wir besprechen vorher, welches Budget für euer Ziel sinnvoll ist."
-        ],
-        [
-          "Produziert ihr die Video-Ads selbst?",
-          "Ja. Konzept, Dreh und Schnitt der Ads kommen von uns, abgestimmt auf die jeweilige Plattform."
-        ]
-      ],
-      "en": [
-        [
-          "Whose ad account do the ads run on?",
-          "The ad budget runs on your own ad account, so you keep full control over costs and data."
-        ],
-        [
-          "How much ad budget do we need?",
-          "It depends on your goal and audience. We discuss up front which budget makes sense for your goal."
-        ],
-        [
-          "Do you produce the video ads yourselves?",
-          "Yes. Concept, shoot and edit of the ads come from us, tailored to each platform."
         ]
       ]
     }

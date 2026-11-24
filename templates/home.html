@@ -162,11 +162,6 @@
   </div>
 </section>
 
-<!-- Ticker band -->
-<div class="intro-band">
-  {{ticker}}
-</div>
-
 <!-- Scroll-Film: Video läuft mit dem Scrollen (nur Desktop; sonst Standbild) -->
 <section class="scrub" id="scrub" aria-label="{{scrub_aria}}">
   <div class="scrub-sticky">
@@ -179,19 +174,6 @@
     </p>
     <div class="scrub-meta">{{scrub_meta}}</div>
     <div class="scrub-bar" aria-hidden="true"><span></span></div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     PROBLEME → LEISTUNG
-══════════════════════════════════════════ -->
-<section class="section" id="probleme">
-  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
-    <div class="s-meta" data-sr="u">{{problems_meta}}</div>
-    <h2 class="h-display" data-sr="u" data-d="2">{{problems_h2}}</h2>
-    <div class="prob-grid">
-{{problems_html}}
-    </div>
   </div>
 </section>
 
@@ -213,11 +195,6 @@
 {{projects_grid}}
   </div>
 </section>
-
-<!-- Full-bleed marquee -->
-<div class="divider-full">
-  {{marquee}}
-</div>
 
 <!-- ══════════════════════════════════════
      ÜBER UNS
@@ -248,9 +225,6 @@
         </p>
         <p class="about-bio">
           {{about_p2}}
-        </p>
-        <p class="about-bio">
-          {{about_p3}}
         </p>
 
         <div class="gear-section">
@@ -296,22 +270,14 @@
     <h2 class="h-display" data-sr="u" data-d="2">{{process_h2}}</h2>
     <ol class="proc-list">{{proc_steps_html}}</ol>
     <p class="lp-promise" data-sr="u">{{lp_promise}}</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     BILDQUALITÄT: LOG → REC.709, LIVE-MONITORING
-══════════════════════════════════════════ -->
-<section class="section" id="look" style="background:var(--deep-1);">
-  <div style="max-width:1440px; margin:0 auto; padding:0 3rem;">
+    <div id="look" class="look-in-process">
     <div class="srv-header">
       <div>
         <div class="s-meta" data-sr="u">{{look_meta}}</div>
-        <h2 class="h-display" data-sr="u" data-d="2">{{look_h2}}</h2>
+        <h3 class="h-display" data-sr="u" data-d="2">{{look_h2}}</h3>
       </div>
       <p class="srv-header-desc" data-sr="r" data-d="2">{{look_desc}}</p>
     </div>
-    <div class="look-grid">
       <figure class="look-cmp" data-sr="u" data-d="2">
         <div class="look-frame" id="lookFrame" style="--pos:50%">
           <img id="look709" src="/assets/img/look/taps-709.webp" alt="{{look_alt}}" width="1600" height="900" loading="lazy" decoding="async">
@@ -323,23 +289,7 @@
         </div>
         <figcaption class="look-bar"><span class="look-hint">↔ {{look_hint}}</span><span class="look-tabs">{{look_tabs_html}}</span></figcaption>
       </figure>
-      <article class="mon-card" data-sr="r" data-d="3">
-        <img src="/assets/img/look/monitoring.webp" alt="{{mon_alt}}" width="960" height="1200" loading="lazy" decoding="async">
-        <div class="mon-body">
-          <span class="proc-n">04 <span>/ 05</span></span>
-          <h3>{{mon_title}}</h3>
-          <p>{{mon_text}}</p>
-        </div>
-      </article>
     </div>
-    <article class="grade-card" data-sr="u" data-d="2">
-      <img src="/assets/img/look/resolve.webp" alt="{{grade_alt}}" width="1600" height="934" loading="lazy" decoding="async">
-      <div class="mon-body">
-        <span class="proc-n">05 <span>/ 05</span></span>
-        <h3>{{grade_title}}</h3>
-        <p>{{grade_text}}</p>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -358,19 +308,6 @@
         <!-- Echte Google-Bewertungen, Texte in content/<lang>.json ("testimonials") -->
 {{testimonials}}
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     FAQ
-══════════════════════════════════════════ -->
-<section class="section" id="faq" style="background:var(--void);">
-  <div style="max-width:1100px; margin:0 auto; padding:0 3rem;">
-    <div class="s-meta" data-sr="u">{{faq_meta}}</div>
-    <h2 class="h-display" data-sr="u" data-d="2">{{faq_h2}}</h2>
-    <div class="faq-list" data-sr="u" data-d="3">
-{{faq_items}}
     </div>
   </div>
 </section>
@@ -496,6 +433,13 @@
         </div>
       <p class="f-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
+    </div>
+    <div class="contact-faq" id="faq">
+    <div class="s-meta" data-sr="u">{{faq_meta}}</div>
+    <h3 class="h-display" data-sr="u" data-d="2">{{faq_h2}}</h3>
+    <div class="faq-list" data-sr="u" data-d="3">
+{{faq_items}}
+    </div>
     </div>
   </div>
 </section>
